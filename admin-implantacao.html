@@ -1,0 +1,144 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Implantação do Novo Site | Quatro Folhas</title>
+    <meta name="description" content="Checklist demonstrativo para publicar o novo site Quatro Folhas no domínio atual com segurança.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-seguranca.html">Segurança</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-manutencao.html">Manutenção</a>
+        <a href="admin-seo.html">SEO</a>
+        <a href="sistema-api.html">Sistema/API</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="mapa-do-site.html">Mapa</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Implantação</p>
+          <h1>Troca do site atual pelo novo sem perder domínio, SEO ou formulários</h1>
+          <p>Esta tela organiza o que vamos conferir antes de publicar no endereço atual da Quatro Folhas.</p>
+          <div class="info-strip">
+            <span>Domínio</span>
+            <span>SSL</span>
+            <span>Backup</span>
+            <span>SEO</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Domínio atual</p>
+          <h2>Mesmo endereço</h2>
+          <p>O novo site deve substituir o antigo com ambiente de teste, backup e plano de retorno.</p>
+          <a class="solid-btn" href="#checklist">Ver checklist</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fases</p>
+            <h2>Publicar com calma, não no escuro</h2>
+          </div>
+          <p>A troca deve acontecer depois de testar o novo site em um ambiente separado e garantir que o site antigo possa ser restaurado se necessário.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Preparar</h3><p>Backup do site atual, acesso ao servidor, SSL, e-mails e domínio confirmados.</p></article>
+          <article><span>2</span><h3>Testar</h3><p>Abrir novo site em ambiente temporario e revisar formulários, links, imagens e mobile.</p></article>
+          <article><span>3</span><h3>Publicar</h3><p>Substituir arquivos, configurar banco/API e manter plano de retorno.</p></article>
+          <article><span>4</span><h3>Monitorar</h3><p>Verificar acesso, formulários, SSL, erros, velocidade e indexação.</p></article>
+        </div>
+      </section>
+
+      <section class="content-band" id="checklist">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Checklist</p>
+            <h2>O que confirmar antes de trocar o site</h2>
+          </div>
+          <p>Vou usar esta lista para te orientar quando chegarmos perto da publicação real.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Item</span><span>Conferência</span><span>Responsável</span><span>Status</span><span>Observação</span></div>
+          <div class="admin-row"><span>Backup atual</span><span>Copiar site antigo completo</span><span>Hospedagem/TI</span><span><mark class="status-ok">Obrigatório</mark></span><span>Arquivos, banco e configurações.</span></div>
+          <div class="admin-row"><span>SSL</span><span>HTTPS ativo no domínio</span><span>Hospedagem</span><span><mark class="status-ok">Obrigatório</mark></span><span>Certificado com renovação automática.</span></div>
+          <div class="admin-row"><span>E-mails</span><span>Garantir que é-mails não sejam afetados</span><span>Hospedagem</span><span><mark class="status-ok">Obrigatório</mark></span><span>Domínio e e-mail podem estar no mesmo provedor.</span></div>
+          <div class="admin-row"><span>Formulários</span><span>Contato, proposta, reserva e vaga funcionando</span><span>Equipe/site</span><span><mark class="status-review">Testar</mark></span><span>Confirmar destino das mensagens.</span></div>
+          <div class="admin-row"><span>SEO</span><span>URLs, títulos, descricoes e redirecionamentos</span><span>Marketing/site</span><span><mark class="status-review">Revisar</mark></span><span>Evitar perder buscas do site atual.</span></div>
+          <div class="admin-row"><span>Plano de retorno</span><span>Como voltar ao site antigo se algo falhar</span><span>TI/Admin</span><span><mark class="status-ok">Obrigatório</mark></span><span>Precisa existir antes da troca.</span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Perguntas para hospedagem</p>
+            <h2>O que vamos precisar confirmar</h2>
+          </div>
+          <p>Quando chegar a hora, você pode enviar esta lista para quem cuida do servidor atual.</p>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Servidor</h3><p>Qual tecnologia o servidor suporta? Site estatico, PHP, Node, banco de dados, armazenamento de arquivos?</p></div>
+          <div class="detail-item"><h3>Banco de dados</h3><p>Existe banco disponível para portal, admin, alunos, boletos, materiais e logs?</p></div>
+          <div class="detail-item"><h3>Backups</h3><p>Backup e automático? Qual frequencia? Por quantos dias fica guardado? Como restaura?</p></div>
+            <div class="detail-item"><h3>Segurança</h3><p>Tem SSL, firewall, proteção DDoS, limite de login, logs e monitoramento?</p></div>
+          <div class="detail-item"><h3>Ambiente de teste</h3><p>Conseguimos testar em subdomínio ou pasta temporaria antes de publicar?</p></div>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Depois da publicação</p>
+            <h2>Primeiras 48 horas de acompanhamento</h2>
+          </div>
+          <p>Após colocar no ar, a prioridade é monitorar o que afeta visitante, aluno e equipe.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Primeira hora</span><h3>Teste basico</h3><p>Home, cursos, agenda, formulários, portal, admin, SSL e mobile.</p><a class="text-btn" href="mapa-do-site.html">Ver mapa</a></article>
+          <article><span class="tag">Mesmo dia</span><h3>Formulários reais</h3><p>Enviar testes de contato, proposta, reserva e cadastro de vaga.</p><a class="text-btn" href="solicitar-proposta.html">Testar proposta</a></article>
+          <article><span class="tag">48 Horas</span><h3>Monitoramento</h3><p>Checar erros, queda, velocidade, acessos e mensagens recebidas.</p><a class="text-btn" href="admin-seguranca.html">Ver segurança</a></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Orientação</p>
+          <h2>Como vou te guiar nessa etapa</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Antes</h3><p>Vou te dizer exatamente o que pedir para a hospedagem e o que precisamos receber de acesso.</p></div>
+          <div class="detail-item"><h3>Durante</h3><p>Vamos publicar primeiro em teste, revisar, depois trocar o site principal.</p></div>
+          <div class="detail-item"><h3>Depois</h3><p>Vamos monitorar formulários, links, SEO, portal, admin e segurança nos primeiros dias.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos Rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas Temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

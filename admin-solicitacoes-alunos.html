@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solicitações de Alunos | Quatro Folhas</title>
+    <meta name="description" content="Fila administrativa para revisar solicitações cadastrais feitas pelo Portal do Aluno.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-tarefas.html">Tarefas</a>
+        <a href="admin-alunos.html">Alunos</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+        <a href="admin-turma.html">Turmas</a>
+        <a href="admin-certificados.html">Certificados</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="portal-perfil.html">Ver perfil</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Solicitações de alunos</p>
+          <h1>Revisão de atualizações cadastrais enviadas pelo portal</h1>
+          <p>A secretaria confere pedidos do aluno antes de alterar dados que afetam login, certificados, boletos, matrícula ou hist?rico.</p>
+          <div class="info-strip">
+            <span>Cadastro</span>
+            <span>Certificados</span>
+            <span>Boletos</span>
+            <span>Auditoria</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Hoje</p>
+          <h2>3 Solicitações</h2>
+          <p>1 altera dado de certificado e deve ser conferida com mais cuidado.</p>
+          <a class="solid-btn" href="#fila">Abrir fila</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Cuidado</p>
+            <h2>Nem toda alteração deve ser autom?tica</h2>
+          </div>
+          <p>Contato pode ser simples. Nome de certificado, turma, boleto e dados de matrícula precisam de aprovação para evitar erro administrativo.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Aluno solicita</h3><p>Pedido enviado pelo portal com campo atual, novo valor e justificativa.</p></article>
+          <article><span>2</span><h3>Secretaria revisa</h3><p>A equipe confere impacto em certificado, boleto, turma ou login.</p></article>
+          <article><span>3</span><h3>Aprova ou recusa</h3><p>O sistema registra decisão, respons?vel e motivo.</p></article>
+          <article><span>4</span><h3>Aluno acompanha</h3><p>O portal mostra status da solicitação e evita mensagens repetidas.</p></article>
+        </div>
+      </section>
+
+      <section class="content-band" id="fila">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fila</p>
+            <h2>Pedidos aguardando ação</h2>
+          </div>
+          <p>Cada item deve ter respons?vel, status e trilha de auditoria.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Aluno</span><span>solicitação</span><span>Impacto</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span><a href="admin-aluno.html">Camila Rocha</a></span><span>Corrigir nome para certificado</span><span>Certificados</span><span><mark class="status-review">Revisar</mark></span><span><a class="text-btn" href="#detalhe">Analisar</a></span></div>
+          <div class="admin-row"><span>Renato Lima</span><span>Atualizar WhatsApp</span><span>Contato</span><span><mark class="status-ok">Simples</mark></span><span>Aprovar</span></div>
+          <div class="admin-row"><span>Paula Mendes</span><span>Trocar e-mail de login</span><span>Acesso</span><span><mark class="status-review">Confirmar</mark></span><span>Analisar</span></div>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="detalhe">
+        <div>
+          <p class="eyebrow">An?lise</p>
+          <h2>Solicitação selecionada</h2>
+          <p>Antes de aprovar, confira se a alteração afeta certificado já emitido, boleto, turma ou login do aluno.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Decisão registrada. O aluno ver? o status atualizado no portal.">
+          <label>Aluno<input type="text" value="Camila Rocha" required></label>
+          <a class="text-btn" href="admin-aluno.html">Abrir ficha completa do aluno</a>
+          <label>Campo solicitado<input type="text" value="Nome completo para certificado" required></label>
+          <label>Valor atual<input type="text" value="Camila Rocha" required></label>
+          <label>Novo valor<input type="text" value="Camila R. Rocha" required></label>
+          <label>Decisão<select required><option>Aprovar</option><option>Recusar</option><option>Pedir documento/comprovante</option><option>Encaminhar para coordenação</option></select></label>
+          <label>Observação para o aluno<textarea rows="4" placeholder="Explique a decisão de forma clara."></textarea></label>
+          <button class="solid-btn" type="submit">Registrar decisão</button>
+        </form>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Regras de aprovação</p>
+            <h2>Quem pode aprovar cada tipo de alteração</h2>
+          </div>
+          <p>Isso reduz risco de algu?m alterar um dado importante sem permissão.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Tipo de dado</span><span>Exemplo</span><span>Quem aprova</span><span>Auditoria</span><span>Observação</span></div>
+      <div class="admin-row"><span>Contato</span><span>WhatsApp, e-mail secund?rio</span><span>Secretaria</span><span><mark class="status-ok">Sim</mark></span><span>Pode ser rápido.</span></div>
+          <div class="admin-row"><span>Acesso</span><span>E-mail de login</span><span>Administrador</span><span><mark class="status-ok">Sim</mark></span><span>Confirmar identidade.</span></div>
+          <div class="admin-row"><span>Certificado</span><span>Nome completo, sobrenome</span><span>Acad?mico/Secretaria</span><span><mark class="status-ok">Sim</mark></span><span>Conferir antes de emitir.</span></div>
+          <div class="admin-row"><span>Financeiro</span><span>Dados ligados a boletos</span><span>Financeiro</span><span><mark class="status-ok">Sim</mark></span><span>Separar de dados pedagógicos.</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Hist?rico</p>
+          <h2>Toda decisão precisa deixar rastro</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Quem pediu</h3><p>Aluno, data, campo alterado, valor antigo, valor novo e justificativa.</p></div>
+          <div class="detail-item"><h3>Quem decidiu</h3><p>Usu?rio interno, perfil, decisão, data e observação.</p></div>
+          <div class="detail-item"><h3>Onde aparece</h3><p>O aluno acompanha no portal e a equipe consulta em auditoria.</p><a class="text-btn" href="admin-auditoria.html">Ver auditoria</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Solicitações cadastrais do portal do aluno.</p></div>
+      <div><h3>Administrativo</h3><nav><a href="admin.html">Painel</a><a href="admin-tarefas.html">Tarefas</a><a href="admin-usuarios.html">Usu?rios</a><a href="admin-auditoria.html">Auditoria</a><a href="portal-perfil.html">Perfil do aluno</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Fluxo demonstrativo de aprovação.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Propostas Recebidas | Quatro Folhas</title>
+    <meta name="description" content="Painel demonstrativo para acompanhar propostas recebidas pelo site Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-comunicacoes.html">Comunicações</a>
+        <a href="admin-boletos.html">Boletos</a>
+        <a href="admin-materiais.html">Materiais</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+        <a href="index.html">Site</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="solicitar-proposta.html">Ver formul?rio</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Comercial</p>
+          <h1>Propostas recebidas pelo site</h1>
+          <p>Pedidos de festa infantil, escolas, empresas, marcas, team building e Locação entram aqui para a equipe responder, negociar e acompanhar até o fechamento.</p>
+          <div class="info-strip">
+            <span>Novas</span>
+            <span>Em atendimento</span>
+            <span>Proposta enviada</span>
+            <span>Fechadas</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Resumo comercial</p>
+          <h2>9 Oportunidades</h2>
+          <p>4 novas, 3 em atendimento, 1 proposta enviada e 1 aguardando data.</p>
+          <a class="solid-btn" href="#fila">Ver fila</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fluxo sugerido</p>
+            <h2>Do formul?rio ao fechamento</h2>
+          </div>
+          <p>A ideia e manter o atendimento simples: o site captura os dados, a equipe chama pelo WhatsApp e registra o andamento.</p>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>1. Receber pedido</h3><p>O formul?rio central identifica tipo de proposta, data, quantidade e observações.</p></div>
+          <div class="detail-item"><h3>2. Contatar pelo WhatsApp</h3><p>O vendedor confirma detalhes, disponibilidade e necessidades do cliente.</p></div>
+          <div class="detail-item"><h3>3. Enviar proposta</h3><p>A equipe registra valor, validade, status e próximo retorno.</p></div>
+        </div>
+      </section>
+
+      <section class="content-band" id="fila">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fila de propostas</p>
+            <h2>Pedidos para atendimento</h2>
+          </div>
+          <p>Na versão final, esta lista pode ser filtrada por respons?vel, tipo, status e data de retorno.</p>
+        </div>
+        <div class="admin-toolbar">
+          <button class="ghost-btn" type="button">Todas</button>
+          <button class="ghost-btn" type="button">Novas</button>
+          <button class="ghost-btn" type="button">Em atendimento</button>
+          <button class="ghost-btn" type="button">Proposta enviada</button>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Tipo</span><span>Cliente</span><span>Data / qtd.</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Festa Infantil</span><span>Mariana Alves</span><span>15/07 - 18 crianças</span><span><mark class="status-ok">Nova</mark></span><span><a class="text-btn" href="admin-proposta-detalhe.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Escolas</span><span>Colegio Particular</span><span>Agosto - 4 turmas</span><span><mark class="status-review">Em atendimento</mark></span><span><a class="text-btn" href="admin-proposta-detalhe.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Team Building</span><span>Empresa de tecnologia</span><span>35 pessoas</span><span><mark class="status-review">Proposta enviada</mark></span><span><a class="text-btn" href="admin-proposta-detalhe.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Locação</span><span>Produtora gastronômica</span><span>2 diarias</span><span><mark class="status-error">Aguardando data</mark></span><span><a class="text-btn" href="admin-proposta-detalhe.html">Abrir</a></span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Permiss?es</p>
+          <h2>O acesso pode ser controlado por perfil</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Comercial</h3><p>Ler, responder e editar status das propostas.</p></div>
+          <div class="detail-item"><h3>Administrador</h3><p>Acessar tudo, trocar respons?vel, exportar e aprovar modelos de proposta.</p></div>
+          <div class="detail-item"><h3>Equipe operacional</h3><p>Visualizar somente data, formato, estrutura e observações necessárias.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

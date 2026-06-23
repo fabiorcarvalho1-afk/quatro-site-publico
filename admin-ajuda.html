@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ajuda do Administrador | Quatro Folhas</title>
+    <meta name="description" content="Guia demonstrativo para administradores e usuários internos gerenciarem o sistema Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-usuarios.html">Usuários</a>
+        <a href="sistema-api.html">Sistema/API</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-seguranca.html">Segurança</a>
+        <a href="admin-privacidade.html">Privacidade</a>
+        <a href="admin-implantacao.html">Implantação</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+        <a href="mapa-do-site.html">Mapa</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin.html">Voltar ao painel</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Ajuda interna</p>
+          <h1>Guia rápido para gerenciar o site, portal e sistema</h1>
+          <p>Uma central simples para administradores e usuários cadastrados entenderem o que cada área faz, o que podem editar e qual rotina seguir.</p>
+          <div class="info-strip">
+            <span>Primeiros passos</span>
+            <span>Permissões</span>
+            <span>Rotinas</span>
+            <span>Boas práticas</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Comece por aqui</p>
+          <h2>Perfil + módulo</h2>
+          <p>Primeiro entenda seu perfil. Depois siga o passo a passo do módulo que você vai gerenciar.</p>
+          <a class="solid-btn" href="#primeiros-passos">Ver guia</a>
+        </div>
+      </section>
+
+      <section class="content-band light" id="primeiros-passos">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Primeiros passos</p>
+            <h2>Como usar o painel sem se perder</h2>
+          </div>
+          <p>O sistema deve orientar a equipe por tarefas, não por telas técnicas. Cada módulo tem uma função clara.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Entre pelo painel</h3><p>Veja pendências, atalhos e tarefas prioritarias do dia.</p></article>
+          <article><span>2</span><h3>Abra seu módulo</h3><p>Financeiro, agenda, materiais, propostas, vagas ou usuários.</p></article>
+          <article><span>3</span><h3>Revise antes de publicar</h3><p>Boletos, materiais, vagas e certificados devem ter conferência antes da liberação.</p></article>
+          <article><span>4</span><h3>Use status</h3><p>Status deixam claro o que é novo, pendente, publicado, confirmado ou bloqueado.</p></article>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Guias por rotina</p>
+            <h2>O que fazer em cada área</h2>
+          </div>
+          <p>Cada card resume a rotina principal e leva para a tela correspondente.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Agenda</span><h3>Cadastrar aula ou turma</h3><p>Crie a aula, defina vagas, data, horário, status comercial e destaque.</p><a class="text-btn" href="admin-agenda.html">Abrir agenda</a></article>
+          <article><span class="tag">Conteúdo</span><h3>Atualizar o site</h3><p>Edite chamadas, fotos, páginas e publicações com revisão antes de publicar.</p><a class="text-btn" href="admin-conteudo.html">Abrir conteúdo</a></article>
+          <article><span class="tag">Mídia</span><h3>Organizar fotos</h3><p>Cadastre imagens com legenda, categoria, status e uso recomendado.</p><a class="text-btn" href="admin-midia.html">Abrir mídia</a></article>
+          <article><span class="tag">SEO</span><h3>Revisar publicação</h3><p>Confira título, descrição, URL e imagem social antes de liberar uma página.</p><a class="text-btn" href="admin-seo.html">Abrir SEO</a></article>
+          <article><span class="tag">Relatórios</span><h3>Acompanhar resultados</h3><p>Veja leads, reservas, propostas, páginas fortes e gargalos do funil.</p><a class="text-btn" href="admin-relatorios.html">Abrir relatórios</a></article>
+          <article><span class="tag">Comunicações</span><h3>Padronizar atendimento</h3><p>Use modelos de WhatsApp, registre retornos e acompanhe follow-ups.</p><a class="text-btn" href="admin-comunicacoes.html">Abrir comunicações</a></article>
+          <article><span class="tag">Configurações</span><h3>Ajustar regras globais</h3><p>Controle dados da escola, contatos, integrações e parâmetros do sistema.</p><a class="text-btn" href="admin-configuracoes.html">Abrir configurações</a></article>
+          <article><span class="tag">Segurança</span><h3>Proteger a operação</h3><p>Revise SSL, backups, monitoramento, acessos, incidentes e continuidade.</p><a class="text-btn" href="admin-seguranca.html">Abrir segurança</a></article>
+          <article><span class="tag">LGPD</span><h3>Organizar privacidade</h3><p>Mapeie dados, finalidade, retenção, consentimento e solicitações do titular.</p><a class="text-btn" href="admin-privacidade.html">Abrir privacidade</a></article>
+          <article><span class="tag">Implantação</span><h3>Publicar novo site</h3><p>Confira domínio, SSL, backup, SEO, formulários e plano de retorno.</p><a class="text-btn" href="admin-implantacao.html">Abrir implantação</a></article>
+          <article><span class="tag">Auditoria</span><h3>Consultar histórico</h3><p>Veja acessos, alterações, aprovações, bloqueios e eventos sensíveis.</p><a class="text-btn" href="admin-auditoria.html">Abrir auditoria</a></article>
+          <article><span class="tag">Alunos</span><h3>Gerenciar turma</h3><p>Adicione alunos, importe confirmados, marque presença e gere certificados.</p><a class="text-btn" href="admin-turma.html">Abrir turma</a></article>
+          <article><span class="tag">Financeiro</span><h3>Publicar boletos</h3><p>Suba PDFs em lote, revise associações e publique somente após conferência.</p><a class="text-btn" href="admin-boletos.html">Abrir boletos</a></article>
+          <article><span class="tag">Materiais</span><h3>Enviar materiais</h3><p>Publique apostilas, receitas e comunicados apenas para a turma correta.</p><a class="text-btn" href="admin-materiais.html">Abrir materiais</a></article>
+          <article><span class="tag">Comercial</span><h3>Responder propostas</h3><p>Acompanhe pedidos, registre status, responsável, próximo retorno e valores.</p><a class="text-btn" href="admin-propostas.html">Abrir propostas</a></article>
+          <article><span class="tag">Acessos</span><h3>Controlar permissões</h3><p>Defina quem pode ler, editar, publicar ou aprovar em cada módulo.</p><a class="text-btn" href="admin-usuarios.html">Abrir usuários</a></article>
+          <article><span class="tag">Tarefas</span><h3>Acompanhar pendências</h3><p>Veja tudo que precisa de ação, separado por módulo, responsável e status.</p><a class="text-btn" href="admin-tarefas.html">Abrir tarefas</a></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Perfis</p>
+          <h2>Quem deve ver o que</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Administrador</h3><p>Vê todos os módulos, cria usuários, edita permissões e aprova configurações críticas.</p></div>
+          <div class="detail-item"><h3>Financeiro</h3><p>Cuida de boletos, pagamentos e referências bancárias. Não precisa editar conteúdo pedagógico.</p></div>
+          <div class="detail-item"><h3>Acadêmico</h3><p>Cuida de turmas, materiais, presença e certificados. Não precisa ver boletos sensíveis.</p></div>
+          <div class="detail-item"><h3>Comercial</h3><p>Cuida de reservas, propostas, empresas, festas e relacionamento com interessados.</p></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Boas práticas</p>
+            <h2>Regras simples para evitar problemas</h2>
+          </div>
+        <p>Essas orientações ajudam a manter o sistema confiável quando mais pessoas usarem.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Área</span><span>Antes de publicar</span><span>Quem aprova</span><span>Risco evitado</span><span>Status ideal</span></div>
+          <div class="admin-row"><span>Boletos</span><span>Conferir aluno e referência</span><span>Financeiro</span><span>Boleto no aluno errado</span><span><mark class="status-review">Revisar</mark></span></div>
+          <div class="admin-row"><span>Materiais</span><span>Conferir turma e arquivo</span><span>Acadêmico</span><span>Material visível para turma errada</span><span><mark class="status-review">Rascunho</mark></span></div>
+          <div class="admin-row"><span>Conteúdo</span><span>Conferir texto, imagem e CTA</span><span>Marketing/Admin</span><span>Página com informação errada</span><span><mark class="status-review">Revisar</mark></span></div>
+          <div class="admin-row"><span>SEO</span><span>Conferir título, URL e imagem social</span><span>Marketing/Admin</span><span>Link ruim no Google ou WhatsApp</span><span><mark class="status-review">Revisar</mark></span></div>
+          <div class="admin-row"><span>Vagas</span><span>Conferir empresa e contato</span><span>Carreira</span><span>Vaga inadequada publicada</span><span><mark class="status-review">Pendente</mark></span></div>
+          <div class="admin-row"><span>Certificados</span><span>Conferir presença</span><span>Acadêmico</span><span>Certificado para ausente</span><span><mark class="status-ok">Elegível</mark></span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos Rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas Temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

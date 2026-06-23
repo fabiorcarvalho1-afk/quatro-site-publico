@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentos do Aluno | Quatro Folhas</title>
+    <meta name="description" content="Arquivo administrativo de documentos do aluno, contratos, comprovantes e anexos.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-alunos.html">Alunos</a>
+        <a href="admin-aluno.html">Ficha</a>
+        <a href="admin-contratos.html">Contratos</a>
+        <a href="admin-midia.html">Mídia</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-aluno.html">Ficha do aluno</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Documentos</p>
+        <h1>Arquivo digital do aluno, com contratos e comprovantes em um só lugar</h1>
+          <p>?rea prevista para guardar documentos administrativos vinculados ao aluno, com permissão por perfil, hist?rico de acesso e organização por tipo.</p>
+          <div class="info-strip">
+            <span>Contratos</span>
+            <span>Comprovantes</span>
+            <span>Hist?rico antigo</span>
+            <span>LGPD</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Aluno selecionado</p>
+          <h2>Camila Rocha</h2>
+          <p>Documentos sens?veis devem ser vistos apenas por perfis autorizados e registrados em auditoria.</p>
+          <a class="solid-btn" href="#anexar">Anexar documento</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Biblioteca do aluno</p>
+            <h2>Documentos vinculados a cadastro, turma e financeiro</h2>
+          </div>
+          <p>O objetivo e evitar arquivo solto no WhatsApp, computador pessoal ou pasta f?sica sem rastreio.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Documento</span><span>Tipo</span><span>Vinculo</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Contrato Chef Profissional 2026</span><span>Contrato Clicksign</span><span>Turma 2026</span><span><mark class="status-review">Aguardando assinatura</mark></span><span>Reenviar link</span></div>
+          <div class="admin-row"><span>Comprovante de matrícula</span><span>Financeiro</span><span>matrícula</span><span><mark class="status-ok">Arquivado</mark></span><span>Baixar</span></div>
+          <div class="admin-row"><span>Contrato impresso antigo</span><span>Digitalização</span><span>Hist?rico</span><span><mark class="status-error">Pendente</mark></span><span>Anexar PDF</span></div>
+          <div class="admin-row"><span>Certificado Massas Artesanais</span><span>Certificado</span><span>Aula avulsa</span><span><mark class="status-ok">Emitido</mark></span><span>Ver certificado</span></div>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="anexar">
+        <div>
+          <p class="eyebrow">Novo anexo</p>
+          <h2>Subir documento com classificação</h2>
+          <p>Na versão real, os arquivos ficar?o em armazenamento seguro, com backup, controle de permissão e registro de acesso.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Documento anexado como rascunho. Na versão real, ele seria salvo no arquivo seguro do aluno.">
+          <label>Aluno<input type="text" value="Camila Rocha" required></label>
+          <label>Tipo de documento<select required><option>Contrato assinado</option><option>Contrato antigo digitalizado</option><option>Comprovante financeiro</option><option>Documento cadastral</option><option>Certificado</option><option>Outro</option></select></label>
+          <label>Vincular a<select required><option>Ficha geral do aluno</option><option>Chef Profissional - Turma 2026</option><option>Massas Artesanais - 20/06</option><option>matrícula/financeiro</option></select></label>
+          <label>nível de acesso<select required><option>Administrador e financeiro</option><option>Administrador, financeiro e secretaria</option><option>Somente administrador</option><option>Liberado também no portal do aluno</option></select></label>
+          <label>Arquivo<input type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"></label>
+          <label>Observação<textarea rows="4" placeholder="Ex.: contrato impresso digitalizado em lote, original f?sico arquivado."></textarea></label>
+          <label class="acceptance"><input type="checkbox" checked>Registrar upload e visualizações em auditoria</label>
+          <label class="acceptance"><input type="checkbox" checked>Incluir arquivo no backup autom?tico</label>
+          <button class="solid-btn" type="submit">Anexar documento</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Organização sugerida</p>
+            <h2>Tipos de arquivo para manter o hist?rico limpo</h2>
+          </div>
+          <p>Essa classificação ajuda na busca, nos relat?rios e na aplicação correta da LGPD.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Contratos</span><h3>Assinados e rascunhos</h3><p>PDF assinado, comprovante Clicksign, modelo usado e status.</p><a class="text-btn" href="admin-contratos.html">Ver contratos</a></article>
+          <article><span class="tag">Financeiro</span><h3>Comprovantes</h3><p>Recibos, comprovantes e arquivos ligados a boletos ou matrículas.</p><a class="text-btn" href="admin-boletos.html">Ver boletos</a></article>
+          <article><span class="tag">Acad?mico</span><h3>Certificados</h3><p>Certificados emitidos, c?digo de validação e segunda via.</p><a class="text-btn" href="admin-certificados.html">Ver certificados</a></article>
+          <article><span class="tag">Hist?rico</span><h3>Digitalização antiga</h3><p>Contratos impressos e documentos f?sicos podem ser anexados aos poucos.</p><a class="text-btn" href="admin-importar-alunos.html">Ver importação</a></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Seguran?a</p>
+          <h2>Documentos exigem cuidado especial</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Permissão</h3><p>CPF, contrato e comprovantes não devem ficar vis?veis para todos os usu?rios administrativos.</p><a class="text-btn" href="admin-usuarios.html">Ver permiss?es</a></div>
+          <div class="detail-item"><h3>Reten??o</h3><p>O sistema precisa definir por quanto tempo cada documento será guardado, conforme finalidade e obrigação legal.</p><a class="text-btn" href="admin-privacidade.html">Ver LGPD</a></div>
+          <div class="detail-item"><h3>Backup</h3><p>Todo anexo importante deve entrar no backup autom?tico e em teste peri?dico de restauração.</p><a class="text-btn" href="admin-manutencao.html">Ver backups</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Arquivo digital do aluno.</p></div>
+      <div><h3>Documentos</h3><nav><a href="admin-documentos.html">Documentos</a><a href="admin-aluno.html">Ficha do aluno</a><a href="admin-contratos.html">Contratos</a><a href="admin-midia.html">Mídia</a><a href="admin-privacidade.html">LGPD</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Arquivos administrativos restritos.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

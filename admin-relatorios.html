@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relat?rios | Quatro Folhas</title>
+    <meta name="description" content="Painel demonstrativo de relat?rios e indicadores do site e sistema Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-tarefas.html">Tarefas</a>
+        <a href="admin-propostas.html">Propostas</a>
+        <a href="admin-comunicacoes.html">Comunicações</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-conteudo.html">Conteúdo</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin.html">Voltar ao painel</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Relat?rios</p>
+          <h1>Veja o que está gerando interesse e onde agir primeiro</h1>
+          <p>Um painel simples para acompanhar p?ginas, propostas, reservas, aulas, portal do aluno e tarefas da equipe.</p>
+          <div class="info-strip">
+            <span>Leads</span>
+            <span>Reservas</span>
+            <span>P?ginas</span>
+            <span>Portal</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Per?odo</p>
+        <h2>?Ltimos 30 dias</h2>
+          <p>156 interessados, 42 reservas, 18 propostas e 9 turmas com movimentação.</p>
+          <a class="solid-btn" href="#indicadores">Ver indicadores</a>
+        </div>
+      </section>
+
+      <section class="content-band light" id="indicadores">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Resumo</p>
+            <h2>Indicadores para decisão rapida</h2>
+          </div>
+          <p>O objetivo e transformar dados em ação: responder leads, ajustar p?ginas, abrir novas turmas e acompanhar pend?ncias.</p>
+        </div>
+        <div class="metric-grid">
+          <article><span>Leads recebidos</span><strong>156</strong><p>+18% contra o per?odo anterior</p></article>
+          <article><span>Reservas de aulas</span><strong>42</strong><p>12 aguardando contato pelo WhatsApp</p></article>
+          <article><span>Propostas B2B</span><strong>18</strong><p>Empresas, escolas e marcas</p></article>
+          <article><span>Acesso ao portal</span><strong>74%</strong><p>Alunos ativos no per?odo</p></article>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Funil comercial</p>
+            <h2>De interesse a matrícula</h2>
+          </div>
+          <p>Como a compra ainda será finalizada pelo atendimento via WhatsApp, este funil ajuda a equipe a não perder interessados pelo caminho.</p>
+        </div>
+        <div class="report-grid">
+          <article class="report-card">
+            <h3>Conversão por etapa</h3>
+            <div class="bar-list">
+              <div><span>Visitantes interessados</span><strong>156</strong><i style="--value: 100%"></i></div>
+              <div><span>Formul?rio enviado</span><strong>72</strong><i style="--value: 72%"></i></div>
+              <div><span>Contato realizado</span><strong>58</strong><i style="--value: 58%"></i></div>
+              <div><span>Pagamento enviado</span><strong>36</strong><i style="--value: 36%"></i></div>
+              <div><span>matrícula confirmada</span><strong>29</strong><i style="--value: 29%"></i></div>
+            </div>
+          </article>
+          <article class="report-card">
+            <h3>Origem dos interessados</h3>
+            <div class="bar-list">
+              <div><span>Instagram / WhatsApp</span><strong>46%</strong><i style="--value: 46%"></i></div>
+              <div><span>Google</span><strong>31%</strong><i style="--value: 31%"></i></div>
+              <div><span>Indicação</span><strong>14%</strong><i style="--value: 14%"></i></div>
+              <div><span>Empresas parceiras</span><strong>9%</strong><i style="--value: 9%"></i></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">P?ginas e cursos</p>
+            <h2>O que mais chama at?ncao</h2>
+          </div>
+          <p>Esses dados ajudam a decidir onde investir em conteúdo, fotos, agenda e atendimento comercial.</p>
+        </div>
+        <div class="admin-toolbar">
+          <div>
+            <strong>Desempenho do site</strong>
+      <span>Ranking demonstrativo dos ?ltimos 30 dias</span>
+          </div>
+          <label>Per?odo<select><option>?ltimos 30 dias</option><option>?ltimos 7 dias</option><option>Este m?s</option><option>Trimestre</option></select></label>
+          <button class="ghost-btn" type="button">Exportar</button>
+          <button class="solid-btn" type="button">Enviar resumo</button>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>P?gina</span><span>Interesses</span><span>Conversão</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>aulas temáticas</span><span>38 contatos</span><span>24%</span><span><mark class="status-ok">Forte</mark></span><span><a class="text-btn" href="aulas-tematicas.html">Ver</a></span></div>
+          <div class="admin-row"><span>Chef Profissional</span><span>31 contatos</span><span>18%</span><span><mark class="status-ok">Estavel</mark></span><span><a class="text-btn" href="chef-profissional.html">Ver</a></span></div>
+          <div class="admin-row"><span>Festa Infantil</span><span>22 contatos</span><span>12%</span><span><mark class="status-review">Otimizar</mark></span><span><a class="text-btn" href="admin-seo.html">Ajustar</a></span></div>
+          <div class="admin-row"><span>Empresas e Marcas</span><span>18 contatos</span><span>16%</span><span><mark class="status-review">Nutrir</mark></span><span><a class="text-btn" href="admin-propostas.html">Abrir</a></span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Leitura prática</p>
+          <h2>O que a equipe faz com esses n?meros</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Comercial</h3><p>Prioriza interessados sem contato, propostas quentes e reservas aguardando link de pagamento.</p></div>
+          <div class="detail-item"><h3>Marketing</h3><p>Melhora p?ginas com muito acesso e pouca conversão, ajustando CTA, foto, SEO e texto.</p></div>
+          <div class="detail-item"><h3>Acad?mico</h3><p>Identifica cursos com demanda para abrir novas turmas ou ajustar datas.</p></div>
+          <div class="detail-item"><h3>Administração</h3><p>Enxerga pend?ncias, produtividade da equipe e áreas que precisam de processo melhor.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

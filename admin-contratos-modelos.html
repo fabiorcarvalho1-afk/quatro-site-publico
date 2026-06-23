@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modelos de Contrato | Quatro Folhas</title>
+    <meta name="description" content="Modelos de contratos, vari?veis autom?ticas e revisão jur?dica para a Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-contratos.html">Contratos</a>
+        <a href="admin-alunos.html">Alunos</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-contratos.html">Voltar</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Modelos de contrato</p>
+          <h1>Textos jur?dicos organizados para preenchimento autom?tico</h1>
+          <p>?rea prevista para guardar os modelos aprovados, controlar versoes e definir quais vari?veis do sistema entram em cada contrato antes do envio ao Clicksign.</p>
+          <div class="info-strip">
+            <span>Versoes</span>
+            <span>Vari?veis</span>
+            <span>Revisão jur?dica</span>
+            <span>Permiss?es</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Recomendação</p>
+          <h2>Comecar com poucos modelos</h2>
+        <p>O ideal é iniciar com contrato de curso profissionalizante, termo de aula avulsa e contrato para empresas/escolas. Depois refinamos casos específicos.</p>
+          <a class="solid-btn" href="#editor">Criar modelo</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Biblioteca</p>
+            <h2>Modelos ativos e em revisão</h2>
+          </div>
+          <p>Somente modelos aprovados devem aparecer para a equipe gerar contrato real.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Modelo</span><span>Aplicação</span><span>Versão</span><span>Status</span><span>Respons?vel</span></div>
+          <div class="admin-row"><span>Curso profissionalizante</span><span>Chef, Confeitaria, Bolos e Doces</span><span>v1.0</span><span><mark class="status-review">Revisão jur?dica</mark></span><span>direção</span></div>
+          <div class="admin-row"><span>Aula temática</span><span>Aulas avulsas e experiências</span><span>v0.7</span><span><mark class="status-error">Rascunho</mark></span><span>Comercial</span></div>
+          <div class="admin-row"><span>Empresas e escolas</span><span>Projetos B2B, escolas e marcas</span><span>v0.9</span><span><mark class="status-review">Conferir cl?usulas</mark></span><span>Administração</span></div>
+          <div class="admin-row"><span>Termo do portal</span><span>Acesso a materiais online</span><span>v1.0</span><span><mark class="status-ok">Pronto para aceite</mark></span><span>Administrador</span></div>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="editor">
+        <div>
+          <p class="eyebrow">Editor do modelo</p>
+          <h2>Cadastro simples do texto-base</h2>
+          <p>Na versão real, o administrador edita o texto, insere vari?veis e envia para aprovação. A equipe operacional apenas usa os modelos liberados.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Modelo salvo como rascunho. Na versão real, ele seguiria para revisão e aprovação.">
+          <label>Nome do modelo<input type="text" value="Contrato de curso profissionalizante" required></label>
+          <label>Tipo<select required><option>Pessoa f?sica - aluno</option><option>Pessoa jur?dica - empresa</option><option>Escola parceira</option><option>Termo de aceite digital</option></select></label>
+          <label>Status<select required><option>Rascunho</option><option>Em revisão jur?dica</option><option>Aprovado para uso</option><option>Inativo</option></select></label>
+          <label>Assinatura<select required><option>Enviar pelo Clicksign</option><option>Aceite interno no portal</option><option>Somente arquivar PDF</option></select></label>
+          <label>Texto-base<textarea rows="8" required>Contrato firmado entre a Quatro Folhas Escola de Gastronomia e {{aluno_nome}}, inscrito no CPF {{aluno_cpf}}, referente ao curso {{curso_nome}}, turma {{turma_nome}}, com início previsto em {{turma_inicio}}.</textarea></label>
+          <label class="acceptance"><input type="checkbox" checked>Exigir aprovação de administrador antes de liberar para uso</label>
+          <label class="acceptance"><input type="checkbox" checked>Registrar alterações em auditoria</label>
+          <button class="solid-btn" type="submit">Salvar modelo</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Vari?veis autom?ticas</p>
+            <h2>Campos que o sistema preenche sozinho</h2>
+          </div>
+          <p>Essas chaves reduzem erro de digitação e mantêm contrato, cadastro, turma e financeiro falando a mesma l?ngua.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Vari?vel</span><span>Origem</span><span>Exemplo</span><span>Obrigat?ria</span><span>Observação</span></div>
+          <div class="admin-row"><span>{{aluno_nome}}</span><span>Ficha do aluno</span><span>Camila Rocha</span><span>Sim</span><span>Nome civil completo.</span></div>
+          <div class="admin-row"><span>{{aluno_cpf}}</span><span>Ficha do aluno</span><span>000.000.000-00</span><span>Sim</span><span>Usar com cuidado por LGPD.</span></div>
+          <div class="admin-row"><span>{{curso_nome}}</span><span>Agenda/turma</span><span>Chef Profissional</span><span>Sim</span><span>Vincula contrato ao produto vendido.</span></div>
+          <div class="admin-row"><span>{{valor_total}}</span><span>Financeiro</span><span>R$ 0.000,00</span><span>Sim</span><span>Deve bat?r com condicao comercial.</span></div>
+          <div class="admin-row"><span>{{parcelas}}</span><span>Financeiro</span><span>10 parcelas</span><span>Opcional</span><span>Pode integrar boletos depois.</span></div>
+          <div class="admin-row"><span>{{respons?vel_nome}}</span><span>Cadastro</span><span>Respons?vel legal</span><span>Quando menor</span><span>Importante para Mini Chef.</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Controle</p>
+          <h2>O que fica protegido</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Permissão por perfil</h3><p>Financeiro pode gerar e acompanhar. Administrador pode editar modelo. Usu?rio comum não altera texto jur?dico.</p><a class="text-btn" href="admin-usuarios.html">Ver usu?rios</a></div>
+          <div class="detail-item"><h3>Trilha de auditoria</h3><p>Cada alteração de modelo registra autor, data, versão anterior e motivo da mudan?a.</p><a class="text-btn" href="admin-auditoria.html">Ver auditoria</a></div>
+          <div class="detail-item"><h3>Clicksign</h3><p>Depois da aprovação do modelo, o sistema pode enviar o documento gerado para o fluxo de assinatura digital.</p><a class="text-btn" href="admin-configuracoes.html">Ver configurações</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Modelos de contrato e assinatura digital.</p></div>
+      <div><h3>Contratos</h3><nav><a href="admin-contratos.html">Fila de contratos</a><a href="admin-contratos-modelos.html">Modelos</a><a href="admin-aluno.html">Ficha do aluno</a><a href="admin-configuracoes.html">Configurações</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Textos jur?dicos dependem de revisão profissional.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

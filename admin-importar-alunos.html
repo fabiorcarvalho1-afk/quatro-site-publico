@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Importar Alunos | Quatro Folhas</title>
+    <meta name="description" content="Tela demonstrativa para importar alunos em lote para turmas e portal Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-alunos.html">Alunos</a>
+        <a href="admin-turma.html">Turmas</a>
+        <a href="admin-reservas.html">Reservas</a>
+        <a href="admin-solicitacoes-alunos.html">Solicitações</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-alunos.html">Voltar alunos</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Importação</p>
+          <h1>Entrada de alunos em lote com confer?ncia antes de publicar</h1>
+          <p>Use para importar listas de reservas confirmadas, planilhas de turmas, aulas para empresas, escolas ou cursos profissionalizantes.</p>
+          <div class="info-strip">
+            <span>Planilha</span>
+            <span>Reservas</span>
+            <span>Confer?ncia</span>
+            <span>Portal</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Fluxo seguro</p>
+          <h2>Importar, revisar, publicar</h2>
+          <p>Nenhum aluno deve entrar no portal sem confer?ncia dos dados principais.</p>
+          <a class="solid-btn" href="#modelo">Ver modelo</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Como funciona</p>
+            <h2>Importação guiada em quatro passos</h2>
+          </div>
+          <p>Na versão real, o sistema pode ler CSV/XLSX, comparar duplicados e sugerir turma automaticamente.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Escolher origem</h3><p>Planilha, reservas confirmadas, lista de empresa ou cadastro manual em lote.</p></article>
+          <article><span>2</span><h3>Mapear campos</h3><p>Nome, e-mail, WhatsApp, turma, status, observação e dados de certificado.</p></article>
+          <article><span>3</span><h3>Revisar alertas</h3><p>Duplicados, e-mail ausente, turma inexistente ou dados incompletos.</p></article>
+          <article><span>4</span><h3>Publicar</h3><p>Criar alunos, vincular turma e liberar acesso conforme decisão da equipe.</p></article>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="modelo">
+        <div>
+          <p class="eyebrow">Nova importação</p>
+          <h2>Configurar origem dos alunos</h2>
+          <p>O arquivo real seria anexado aqui. Neste prot?tipo, a tela mostra o fluxo e as validações esperadas.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Importação simulada. Revise os alunos antes de publicar no portal.">
+          <label>Origem<select required><option>Planilha CSV/XLSX</option><option>Reservas confirmadas</option><option>Lista de escola parceira</option><option>Lista de empresa</option><option>Cadastro manual em lote</option></select></label>
+          <label>Turma destino<select required><option>Chef Profissional - Turma 2026</option><option>Massas Artesanais - 20/06</option><option>Confeitaria Profissional</option><option>Criar nova turma</option></select></label>
+          <label>Status inicial<select required><option>matrícula confirmada</option><option>Aguardando pagamento</option><option>Convidado</option><option>Cortesia</option></select></label>
+          <label>Arquivo<input type="file" accept=".csv,.xlsx,.xls"></label>
+          <label class="acceptance"><input type="checkbox" checked>Detectar possiveis alunos duplicados</label>
+          <label class="acceptance"><input type="checkbox" checked>Revisar antes de liberar acesso ao portal</label>
+          <button class="solid-btn" type="submit">Simular importação</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Prévia</p>
+            <h2>Confer?ncia antes de concluir</h2>
+          </div>
+          <p>O sistema deve separar alunos prontos, incompletos e possiveis duplicados.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Aluno</span><span>E-mail</span><span>Turma</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Camila Rocha</span><span>camila@email.com</span><span>Chef Profissional 2026</span><span><mark class="status-ok">Pronto</mark></span><span><a class="text-btn" href="admin-aluno.html">Abrir ficha</a></span></div>
+          <div class="admin-row"><span>Renato Lima</span><span>renato@email.com</span><span>Massas Artesanais</span><span><mark class="status-ok">Pronto</mark></span><span>Importar</span></div>
+          <div class="admin-row"><span>Paula Mendes</span><span>sem e-mail</span><span>Confeitaria</span><span><mark class="status-error">Incompleto</mark></span><span>Corrigir</span></div>
+          <div class="admin-row"><span>Bruno Carvalho</span><span>bruno@email.com</span><span>Massas Artesanais</span><span><mark class="status-review">Possivel duplicado</mark></span><span>Comparar</span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Modelo de planilha</p>
+            <h2>Campos recomendados</h2>
+          </div>
+          <p>Quanto melhor o padr?o da planilha, menos retrabalho na secretaria.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Campo</span><span>Obrigat?rio</span><span>Exemplo</span><span>Uso</span><span>Observação</span></div>
+          <div class="admin-row"><span>nome_completo</span><span>Sim</span><span>Camila Rocha</span><span>Cadastro e certificado</span><span>Conferir grafia.</span></div>
+          <div class="admin-row"><span>cpf</span><span>Recomendado</span><span>00000000000</span><span>Contrato</span><span>Usar para gerar contratos futuros.</span></div>
+          <div class="admin-row"><span>email</span><span>Sim</span><span>camila@email.com</span><span>Login</span><span>Evitar duplicidade.</span></div>
+          <div class="admin-row"><span>whatsapp</span><span>Sim</span><span>11900000000</span><span>Atendimento</span><span>Padronizar DDD.</span></div>
+          <div class="admin-row"><span>turma</span><span>Sim</span><span>Chef Profissional 2026</span><span>Portal</span><span>Deve existir no sistema.</span></div>
+          <div class="admin-row"><span>sobrenome_validação</span><span>Recomendado</span><span>Rocha</span><span>Certificados</span><span>Usado na validação p?blica.</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Seguran?a</p>
+          <h2>Importar também exige cuidado</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Duplicados</h3><p>Mesmo e-mail, WhatsApp ou nome parecido deve gerar alerta antes de criar novo aluno.</p></div>
+          <div class="detail-item"><h3>Portal</h3><p>O acesso do aluno pode ficar pendente até a secretaria revisar a importação.</p></div>
+          <div class="detail-item"><h3>Auditoria</h3><p>Importações devem registrar arquivo, usu?rio, data, turma e quantidade de alunos criados.</p><a class="text-btn" href="admin-auditoria.html">Ver auditoria</a></div>
+          <div class="detail-item"><h3>Contratos antigos</h3><p>Se houver contrato impresso, o sistema pode manter o aluno com hist?rico basico e permitir anexar digitalização depois.</p><a class="text-btn" href="admin-documentos.html">Ver documentos</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Importação administrativa de alunos.</p></div>
+      <div><h3>Alunos</h3><nav><a href="admin-alunos.html">Lista de alunos</a><a href="admin-importar-alunos.html">Importar alunos</a><a href="admin-aluno.html">Ficha do aluno</a><a href="admin-documentos.html">Documentos</a><a href="admin-turma.html">Turmas</a><a href="admin-solicitacoes-alunos.html">Solicitações</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Fluxo demonstrativo de importação.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

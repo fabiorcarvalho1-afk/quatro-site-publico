@@ -1,0 +1,154 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configurações | Quatro Folhas</title>
+    <meta name="description" content="Central demonstrativa de configurações gerais do site, portal e sistema Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-usuarios.html">Usuários</a>
+        <a href="sistema-api.html">Sistema/API</a>
+        <a href="admin-seguranca.html">Segurança</a>
+        <a href="admin-privacidade.html">Privacidade</a>
+        <a href="admin-implantacao.html">Implantação</a>
+        <a href="admin-comunicacoes.html">Comunicações</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+        <a href="index.html">Site</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin.html">Voltar ao painel</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Configurações</p>
+          <h1>Parâmetros centrais do site, portal e sistema</h1>
+          <p>Uma área restrita para administradores controlarem dados institucionais, contatos, regras do portal, financeiro e integrações futuras.</p>
+          <div class="info-strip">
+            <span>Escola</span>
+            <span>WhatsApp</span>
+            <span>Portal</span>
+            <span>API</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Acesso restrito</p>
+          <h2>Administrador</h2>
+          <p>Configurações afetam muitas áreas. Devem exigir permissão alta e histórico de alterações.</p>
+          <a class="solid-btn" href="#gerais">Editar dados</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Organização</p>
+            <h2>O que fica aqui e o que não fica</h2>
+          </div>
+          <p>Configuração é para regras globais. Conteúdos, aulas, boletos e alunos continuam nos módulos próprios.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Dados da escola</h3><p>Nome, endereço, contatos oficiais, redes sociais e horários.</p></article>
+          <article><span>2</span><h3>Regras do sistema</h3><p>Status padrão, aprovação, notificações, prazos e perfis.</p></article>
+          <article><span>3</span><h3>Integrações</h3><p>WhatsApp, banco, pagamento, e-mail, API, app e armazenamento.</p></article>
+          <article><span>4</span><h3>Auditoria</h3><p>Registro de quem alterou algo crítico e quando isso aconteceu.</p></article>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="gerais">
+        <div>
+          <p class="eyebrow">Dados gerais</p>
+          <h2>Informações que aparecem no site</h2>
+          <p>Esses dados alimentam rodape, contato, SEO local, WhatsApp e materiais institucionais.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Configurações salvas como rascunho. Revise antes de publicar no site.">
+          <label>Nome da escola<input type="text" value="Quatro Folhas Escola de Gastronomia" required></label>
+          <label>Endereço<input type="text" placeholder="Rua, número, bairro, cidade" required></label>
+          <label>WhatsApp principal<input type="tel" placeholder="(00) 00000-0000" required></label>
+          <label>E-mail principal<input type="email" placeholder="contato@quatrofolhas..." required></label>
+          <label>Instagram<input type="text" placeholder="@quatrofolhasgastronomia"></label>
+          <label>Horário de atendimento<textarea rows="3" placeholder="Ex.: Segunda a sexta, das 9h as 18h."></textarea></label>
+          <button class="solid-btn" type="submit">Salvar configurações</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Regras globais</p>
+            <h2>Parâmetros que controlam rotinas importantes</h2>
+          </div>
+          <p>Na versão real, alterar uma regra aqui impacta site, portal, admin e app ao mesmo tempo.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Área</span><span>Configuração</span><span>Valor atual</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Reservas</span><span>Mensagem após envio do formulário</span><span>Contato pelo WhatsApp</span><span><mark class="status-ok">Ativa</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>Boletos</span><span>Publicação exige conferência</span><span>Sim</span><span><mark class="status-ok">Ativa</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>Materiais</span><span>Aluno ve somente turmas vinculadas</span><span>Sim</span><span><mark class="status-ok">Ativa</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>Conteúdo</span><span>Publicação exige aprovação</span><span>Sim</span><span><mark class="status-review">Revisar</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>Certificados</span><span>Gerar apenas para presentes</span><span>Sim</span><span><mark class="status-ok">Ativa</mark></span><span><a class="text-btn" href="admin-certificados-config.html">Editar</a></span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Integrações</p>
+            <h2>Conexoes futuras do sistema</h2>
+          </div>
+          <p>Esta parte prepara o caminho para site, app e sistema compartilharem a mesma API sem duplicar dados.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">WhatsApp</span><h3>Atendimento</h3><p>Número oficial, modelos de mensagem e histórico de follow-up.</p><a class="text-btn" href="admin-comunicacoes.html">Abrir comunicações</a></article>
+          <article><span class="tag">Banco</span><h3>Boletos</h3><p>Importação de PDFs, referências bancárias e publicação no portal.</p><a class="text-btn" href="admin-boletos.html">Abrir boletos</a></article>
+          <article><span class="tag">Pagamentos</span><h3>Links manuais</h3><p>Vendedor envia o link de pagamento depois de confirmar vaga.</p><a class="text-btn" href="admin-reservas.html">Abrir reservas</a></article>
+          <article><span class="tag">App</span><h3>Mesma API</h3><p>O aplicativo futuro deve consumir alunos, materiais, boletos e certificados da mesma base.</p><a class="text-btn" href="sistema-api.html">Ver API</a></article>
+          <article><span class="tag">Clicksign</span><h3>Contratos digitais</h3><p>Integração prevista para gerar, enviar, acompanhar e arquivar contratos assinados.</p><a class="text-btn" href="admin-contratos.html">Ver contratos</a></article>
+          <article><span class="tag">Jurídico</span><h3>Modelos de contrato</h3><p>Textos-base, variáveis automáticas e liberação de modelos para uso pela equipe.</p><a class="text-btn" href="admin-contratos-modelos.html">Ver modelos</a></article>
+          <article><span class="tag">E-mail</span><h3>Notificações</h3><p>Comunicados, propostas, confirmações e avisos internos.</p><a class="text-btn" href="admin-comunicacoes.html">Ver modelos</a></article>
+          <article><span class="tag">Arquivos</span><h3>Mídia e materiais</h3><p>Fotos, PDFs, apostilas, boletos e certificados precisam de armazenamento seguro.</p><a class="text-btn" href="admin-midia.html">Ver mídia</a></article>
+          <article><span class="tag">Certificados</span><h3>Código e validação</h3><p>Formato do código, QR Code, sobrenome obrigatório e nome mascarado.</p><a class="text-btn" href="admin-certificados-config.html">Ver regras</a></article>
+          <article><span class="tag">Segurança</span><h3>Proteção e backups</h3><p>SSL, monitoramento, auditoria, resposta a incidente e continuidade.</p><a class="text-btn" href="admin-seguranca.html">Ver segurança</a></article>
+          <article><span class="tag">LGPD</span><h3>Privacidade</h3><p>Dados pessoais, consentimento, finalidade, retenção e direitos do titular.</p><a class="text-btn" href="admin-privacidade.html">Ver privacidade</a></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Segurança</p>
+          <h2>Configuração precisa de controle</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Permissão alta</h3><p>Somente administradores devem alterar dados institucionais, integrações e regras globais.</p></div>
+          <div class="detail-item"><h3>Histórico</h3><p>Toda alteração importante deve registrar usuário, data, valor anterior e valor novo.</p><a class="text-btn" href="admin-auditoria.html">Ver auditoria</a></div>
+          <div class="detail-item"><h3>Ambiente de teste</h3><p>Integrações com pagamento, app e API devem ser testadas antes de ir para produção.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos Rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas Temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

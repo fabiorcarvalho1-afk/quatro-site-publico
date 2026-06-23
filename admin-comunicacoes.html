@@ -1,0 +1,170 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comunicações e Follow-up | Quatro Folhas</title>
+    <meta name="description" content="Central demonstrativa de comunicações, modelos de mensagem e follow-up do sistema Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-tarefas.html">Tarefas</a>
+        <a href="admin-propostas.html">Propostas</a>
+        <a href="admin-reservas.html">Reservas</a>
+        <a href="admin-boletos.html">Boletos</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-relatorios.html">Ver relatórios</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Comunicações</p>
+          <h1>Mensagens, retornos e follow-up em uma rotina única</h1>
+          <p>Uma central para padronizar WhatsApp, confirmar vagas, enviar links de pagamento, avisar alunos e acompanhar propostas.</p>
+          <div class="info-strip">
+            <span>WhatsApp</span>
+            <span>Modelos</span>
+            <span>Retornos</span>
+            <span>Histórico</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Hoje</p>
+          <h2>17 Contatos</h2>
+          <p>8 reservas aguardando retorno, 4 propostas para follow-up e 5 comunicados de alunos.</p>
+          <a class="solid-btn" href="#fila">Abrir fila</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fluxo</p>
+            <h2>O contato continua humano, mas organizado</h2>
+          </div>
+          <p>A equipe ainda fala pelo WhatsApp. O sistema apenas registra motivo, modelo usado, responsável, próximo retorno e status.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Chega interesse</h3><p>Reserva de aula, proposta, boleto, suporte do aluno ou vaga cadastrada.</p></article>
+          <article><span>2</span><h3>Escolher modelo</h3><p>A equipe usa uma mensagem aprovada e adapta os dados do contato.</p></article>
+          <article><span>3</span><h3>Registrar retorno</h3><p>Salvar se respondeu, se pediu pagamento, se ficou pendente ou se fechou.</p></article>
+          <article><span>4</span><h3>Agendar próxima ação</h3><p>O item volta para a fila se precisar de novo contato.</p></article>
+        </div>
+      </section>
+
+      <section class="content-band" id="fila">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fila de contatos</p>
+            <h2>Quem precisa de mensagem agora</h2>
+          </div>
+          <p>Esta fila junta comercial, financeiro e atendimento sem misturar permissões sensíveis.</p>
+        </div>
+        <div class="admin-toolbar">
+          <div>
+            <strong>Follow-ups de hoje</strong>
+            <span>17 contatos - 5 atrasados - 4 aguardando resposta</span>
+          </div>
+          <label>Tipo<select><option>Todos</option><option>Reserva de aula</option><option>Proposta</option><option>Boleto</option><option>Portal</option></select></label>
+          <button class="ghost-btn" type="button">Filtrar atrasados</button>
+          <button class="solid-btn" type="button">Marcar contato</button>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Origem</span><span>Contato</span><span>Próxima ação</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Reserva</span><span>Ana Paula - Aula Temática</span><span>Confirmar vaga e enviar link</span><span><mark class="status-error">Hoje</mark></span><span><a class="text-btn" href="admin-reserva-detalhe.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Proposta</span><span>Colegio Particular</span><span>Enviar retorno de datas</span><span><mark class="status-review">Aguardando</mark></span><span><a class="text-btn" href="admin-proposta-detalhe.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Financeiro</span><span>Aluno Chef Profissional</span><span>Avisar boleto publicado</span><span><mark class="status-ok">Modelo pronto</mark></span><span><a class="text-btn" href="admin-boletos.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Portal</span><span>Turma Confeitaria</span><span>Avisar material novo</span><span><mark class="status-review">Programar</mark></span><span><a class="text-btn" href="admin-materiais.html">Abrir</a></span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Modelos</p>
+            <h2>Mensagens aprovadas para a equipe usar</h2>
+          </div>
+          <p>Mensagens prontas ajudam a manter o tom premium, agilizam resposta e reduzem erro de informação.</p>
+        </div>
+        <div class="message-grid">
+          <article>
+            <span class="tag">Reserva</span>
+            <h3>Confirmação de interesse</h3>
+            <p>Olá, [nome]. Nossa equipe já entrará em contato pelo WhatsApp para confirmar a vaga e enviar o link de pagamento.</p>
+            <button class="ghost-btn" type="button">Copiar modelo</button>
+          </article>
+          <article>
+            <span class="tag">Pagamento</span>
+            <h3>Link enviado</h3>
+            <p>Olá, [nome]. Segue o link de pagamento da sua vaga. A matrícula será confirmada após a compensação.</p>
+            <button class="ghost-btn" type="button">Copiar modelo</button>
+          </article>
+          <article>
+            <span class="tag">Proposta</span>
+            <h3>Retorno comercial</h3>
+            <p>Olá, [nome]. Recebemos sua solicitação e vamos confirmar disponibilidade, formato e detalhes para enviar a proposta.</p>
+            <button class="ghost-btn" type="button">Copiar modelo</button>
+          </article>
+          <article>
+            <span class="tag">Portal</span>
+            <h3>Material liberado</h3>
+            <p>Olá, turma. Já liberamos o novo material no Portal do Aluno. Acesse com seu login para consultar.</p>
+            <button class="ghost-btn" type="button">Copiar modelo</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-form-section">
+        <div>
+          <p class="eyebrow">Novo modelo</p>
+          <h2>Crie uma mensagem padrão</h2>
+          <p>O administrador pode criar modelos por área e definir se precisam de aprovação antes de uso.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Modelo salvo como rascunho. Envie para aprovação antes de liberar para a equipe.">
+          <label>Área<select required><option value="">Selecione</option><option>Comercial</option><option>Reservas</option><option>Financeiro</option><option>Portal do aluno</option><option>Carreira</option></select></label>
+          <label>Nome do modelo<input type="text" placeholder="Ex.: Follow-up de proposta enviada" required></label>
+          <label>Canal<select required><option>WhatsApp</option><option>E-mail</option><option>Notificação no portal</option></select></label>
+          <label>Mensagem<textarea rows="5" placeholder="Use variáveis como [nome], [curso], [data] e [link]." required></textarea></label>
+          <label>Status<select required><option>Rascunho</option><option>Enviar para revisão</option><option>Aprovado</option></select></label>
+          <button class="solid-btn" type="submit">Salvar modelo</button>
+        </form>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Uso correto</p>
+          <h2>O que esta central resolve</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Menos resposta solta</h3><p>A equipe registra contatos importantes e sabe quando voltar a falar com cada interessado.</p></div>
+          <div class="detail-item"><h3>Padrão de marca</h3><p>Mensagens mantém tom profissional, acolhedor e coerente com a experiência premium.</p></div>
+          <div class="detail-item"><h3>Histórico por pessoa</h3><p>No sistema real, cada aluno, lead ou empresa teria histórico de contatos e retornos.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos Rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas Temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

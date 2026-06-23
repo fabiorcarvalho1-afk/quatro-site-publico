@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biblioteca de mídia | Quatro Folhas</title>
+    <meta name="description" content="Biblioteca demonstrativa de imagens aprovadas para uso no site Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-conteudo.html">Conteúdo</a>
+        <a href="admin-tarefas.html">Tarefas</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+        <a href="index.html">Site</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-conteudo.html">Voltar ao conteúdo</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Biblioteca de mídia</p>
+          <h1>Fotos aprovadas para manter o site bonito e consistente</h1>
+          <p>Um acervo organizado evita que a equipe use imagens repetidas, muito escuras ou fora do padr?o premium da Quatro Folhas.</p>
+          <div class="info-strip">
+            <span>Fotos reais</span>
+            <span>Uso sugerido</span>
+            <span>Status</span>
+            <span>Hist?rico</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Acervo atual</p>
+          <h2>13 Imagens</h2>
+          <p>Fachada, cozinhas, professores, alunos, equipamentos e experiências gastronômicas.</p>
+          <a class="solid-btn" href="#enviar">Enviar imagem</a>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="enviar">
+        <div>
+          <p class="eyebrow">Nova imagem</p>
+          <h2>Cadastre fotos com contexto</h2>
+          <p>No sistema real, cada foto deve ter legenda, uso recomendado e status de aprovação antes de entrar no site.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Imagem cadastrada como rascunho. Revise legenda, uso e permissão antes de aprovar.">
+          <label>Arquivo<input type="file" accept="image/*" required></label>
+          <label>Nome interno<input type="text" placeholder="Ex.: Chef finalizando prato na cozinha" required></label>
+          <label>Categoria<select required><option value="">Selecione</option><option>Fachada</option><option>Cozinha</option><option>Alunos</option><option>Professores</option><option>Pratos</option><option>Eventos</option></select></label>
+          <label>Uso recomendado<select required><option>Hero de p?gina</option><option>Card de curso</option><option>Galeria</option><option>Blog</option><option>Redes sociais</option></select></label>
+          <label>Legenda<textarea rows="3" placeholder="Descreva a imagem de forma ?til para acessibilidade e SEO."></textarea></label>
+          <label>Status<select required><option>Rascunho</option><option>Enviar para revisão</option><option>Aprovada</option><option>Arquivar</option></select></label>
+          <button class="solid-btn" type="submit">Salvar imagem</button>
+        </form>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Acervo</p>
+            <h2>Imagens disponíveis para o site</h2>
+          </div>
+          <p>Cada card indica onde a foto funciona melhor. Assim a equipe escolhe imagem com criterio, não apenas pela primeir? foto da pasta.</p>
+        </div>
+        <div class="admin-toolbar">
+          <div>
+            <strong>Biblioteca visual</strong>
+            <span>10 aprovadas - 2 em revisão - 1 precisa de legenda</span>
+          </div>
+          <label>Categoria<select><option>Todas</option><option>Fachada</option><option>Cozinha</option><option>Alunos</option><option>Pratos</option></select></label>
+          <button class="ghost-btn" type="button">Exportar lista</button>
+          <button class="solid-btn" type="button">Aprovar selecionadas</button>
+        </div>
+        <div class="media-grid">
+          <article>
+            <img src="assets/photos/fachada.png" alt="Fachada iluminada da Quatro Folhas">
+            <div><span class="tag">Hero</span><h3>Fachada noturna</h3><p>Ideal para home, escola e institucional.</p><mark class="status-ok">Aprovada</mark></div>
+          </article>
+          <article>
+            <img src="assets/photos/cozinha-qf.png" alt="Cozinha profissional da escola">
+            <div><span class="tag">Estrutura</span><h3>Cozinha principal</h3><p>Boa para cursos profissionalizantes e portal.</p><mark class="status-ok">Aprovada</mark></div>
+          </article>
+          <article>
+            <img src="assets/photos/chef-fogo.jpg" alt="Chef trabalhando com fogo na cozinha">
+            <div><span class="tag accent">Impacto</span><h3>Chef em ação</h3><p>Forte para aulas temáticas, chef express e experiências.</p><mark class="status-ok">Aprovada</mark></div>
+          </article>
+          <article>
+            <img src="assets/photos/alunos-turma.jpg" alt="Alunos uniformizados na escola">
+            <div><span class="tag">Alunos</span><h3>Turma na cozinha</h3><p>Boa para vida na escola, blog e cursos.</p><mark class="status-review">Revisar</mark></div>
+          </article>
+          <article>
+            <img src="assets/photos/mesa-pratos.jpg" alt="Mesa com pratos preparados em aula">
+          <div><span class="tag">Pratos</span><h3>Servi?o montado</h3><p>Boa para empresas, eventos e aulas temáticas.</p><mark class="status-ok">Aprovada</mark></div>
+          </article>
+          <article>
+            <img src="assets/photos/turma-formada.jpg" alt="Turma formada na Quatro Folhas">
+            <div><span class="tag">Prova social</span><h3>Turma formada</h3><p>Boa para p?gina de cursos e certificados.</p><mark class="status-error">Legenda pendente</mark></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Controle de uso</p>
+            <h2>Onde cada imagem aparece</h2>
+          </div>
+          <p>Isso evita trocar uma foto importante sem perceber que ?la aparece em varias p?ginas do site.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Imagem</span><span>P?gina</span><span>Uso</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>fachada.png</span><span>Home / Mapa / Escola</span><span>Hero e fundo</span><span><mark class="status-ok">Em uso</mark></span><span>Visualizar</span></div>
+          <div class="admin-row"><span>chef-fogo.jpg</span><span>Home / aulas temáticas</span><span>Hero e destaque</span><span><mark class="status-ok">Em uso</mark></span><span>Visualizar</span></div>
+          <div class="admin-row"><span>mesa-pratos.jpg</span><span>Empresas / Agenda</span><span>Fundo e cards</span><span><mark class="status-review">Revisar corte</mark></span><span>Ajustar</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Padr?o visual</p>
+          <h2>Como escolher uma boa foto</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Mostrar a escola real</h3><p>Fachada, cozinha, alunos, professores e preparos reais passam mais confiança que fotos gen?ricas.</p></div>
+          <div class="detail-item"><h3>Priorizar luz e nitidez</h3><p>Fotos muito escuras ou cortadas demais devem ir para revisão antes de virar hero.</p></div>
+          <div class="detail-item"><h3>Evitar repeticao</h3><p>A mesma foto pode aparecer em pontos importantes, mas não deve dominar todas as p?ginas.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Turma e Alunos | Quatro Folhas</title>
+    <meta name="description" content="Painel demonstrativo para gerenciar alunos, presença e certificados de uma turma Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-alunos.html">Alunos</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-reservas.html">Reservas</a>
+        <a href="admin-materiais.html">Materiais</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-agenda.html">Voltar agenda</a>
+        <a class="solid-btn" href="admin-importar-alunos.html">Importar alunos</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Turma</p>
+          <h1>Massas Artesanais - 20/06</h1>
+          <p>Banco de alunos da aula, presença do dia e emissão de certificados para quem concluiu a experiência.</p>
+          <div class="info-strip">
+          <span>12 matriculados</span>
+            <span>10 presentes</span>
+            <span>2 ausentes</span>
+            <span>Certificados</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Status da turma</p>
+          <h2>Pronta para chamada</h2>
+          <p>Depois da aula, marque presença e gere certificados dos presentes.</p>
+          <a class="solid-btn" href="admin-certificados.html">Gerar certificados</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Aluno</p>
+            <h2>Adicionar aluno na turma</h2>
+          </div>
+          <p>Permite inserir aluno manualmente ou importar uma lista a partir das reservas confirmadas.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Aluno adicionado é turma. Na versão real, ele entraria no banco de dados e no portal.">
+          <label>Nome completo<input type="text" placeholder="Nome do aluno" required></label>
+          <label>WhatsApp<input type="tel" placeholder="(11) 90000-0000" required></label>
+          <label>E-mail<input type="email" placeholder="aluno@email.com" required></label>
+          <label>Origem<select required><option>Reserva do site</option><option>Cadastro manual</option><option>WhatsApp</option><option>Importação</option></select></label>
+          <label>Status<select required><option>matrícula confirmada</option><option>Aguardando pagamento</option><option>Cortesia</option><option>Cancelado</option></select></label>
+          <button class="solid-btn" type="submit">Adicionar aluno</button>
+          <a class="text-btn" href="admin-importar-alunos.html">Importar lista de alunos</a>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Chamada</p>
+            <h2>Alunos da turma</h2>
+          </div>
+          <p>A presença marcada aqui define quem podera receber certificado automaticamente.</p>
+        </div>
+        <div class="admin-toolbar">
+          <button class="ghost-btn" type="button">Todos</button>
+          <button class="ghost-btn" type="button">Presentes</button>
+          <button class="ghost-btn" type="button">Ausentes</button>
+          <a class="solid-btn" href="admin-certificados.html">Certificados</a>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span></span><span>Aluno</span><span>Status</span><span>presença</span><span>Certificado</span></div>
+          <div class="admin-row"><span><input type="checkbox" checked></span><span><a href="admin-aluno.html">Camila Rocha</a></span><span><mark class="status-ok">Matriculada</mark></span><span>Presente</span><span><a class="text-btn" href="admin-certificados.html">Gerar</a></span></div>
+          <div class="admin-row"><span><input type="checkbox" checked></span><span>Renato Lima</span><span><mark class="status-ok">Matriculado</mark></span><span>Presente</span><span><a class="text-btn" href="admin-certificados.html">Gerar</a></span></div>
+          <div class="admin-row"><span><input type="checkbox"></span><span>Paula Mendes</span><span><mark class="status-review">Aguardando</mark></span><span>Ausente</span><span>Bloqueado</span></div>
+          <div class="admin-row"><span><input type="checkbox" checked></span><span>Bruno Carvalho</span><span><mark class="status-ok">Matriculado</mark></span><span>Presente</span><span><a class="text-btn" href="admin-certificados.html">Gerar</a></span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Fluxo ideal</p>
+          <h2>Da reserva ao certificado</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>1. Reserva confirmada</h3><p>Aluno que pagou entra automaticamente na turma.</p></div>
+          <div class="detail-item"><h3>2. Presença</h3><p>No dia da aula, a equipe marca quem compareceu.</p></div>
+          <div class="detail-item"><h3>3. Certificado</h3><p>O sistema gera certificado apenas para presentes e libera no portal.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

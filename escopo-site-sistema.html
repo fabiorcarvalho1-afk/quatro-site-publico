@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Escopo Site, Portal, App e Sistema | Quatro Folhas</title>
+    <meta name="description" content="Separação de escopo entre site público, portal do aluno, app e sistema interno da Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <div class="nav-item has-mega">
+          <a href="cursos.html" class="nav-link">Cursos</a>
+          <div class="mega-menu" role="menu">
+            <div class="mega-inner">
+              <div class="mega-lead">
+                <strong>Cursos</strong>
+                <span>Escolha o curso.</span>
+              </div>
+              <div class="mega-grid">
+                <a class="mega-card" href="chef-profissional.html">
+                  <span class="thumb" style="background-image:url('assets/photos/cozinha-bancadas.jpg')"></span>
+                  <span class="title">Chef Profissional</span>
+                </a>
+                <a class="mega-card" href="confeitaria-profissional.html">
+                  <span class="thumb" style="background-image:url('assets/photos/aula-confeitaria.jpg')"></span>
+                  <span class="title">Confeitaria</span>
+                </a>
+                <a class="mega-card" href="cursos-rapidos.html">
+                  <span class="thumb" style="background-image:url('assets/photos/mesa-pratos.jpg')"></span>
+                  <span class="title">Cursos rápidos</span>
+                </a>
+                <a class="mega-card" href="mini-chef.html">
+                  <span class="thumb" style="background-image:url('assets/photos/alunos-turma.jpg')"></span>
+                  <span class="title">Mini Chef</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="index.html">Site</a>
+        <a href="portal-do-aluno.html">Portal</a>
+        <a href="sistema-api.html">Sistema/API</a>
+        
+        <a href="mapa-do-site.html">Mapa</a>
+      
+        <a href="perguntas.html">Perguntas</a>
+        </nav>
+      <div class="header-actions">
+        <div class="lang-switch" aria-label="Idioma">
+          <a class="lang-link is-active" href="index.html" lang="pt-BR">PT</a>
+          <a class="lang-link" href="en/index.html" lang="en">EN</a>
+          <a class="lang-link" href="es/index.html" lang="es">ES</a>
+        </div>
+        <a class="ghost-btn cert-link" data-cert-link href="validar-certificado.html">Validar certificado</a>
+        <a class="ghost-btn" href="portal-do-aluno.html">Portal</a>
+        <a class="solid-btn" href="contato.html">Contato</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Escopo do projeto</p>
+          <h1>Site leve, portal simples, app conectado e sistema robusto</h1>
+          <p>Esta p?gina define a separação correta para a Quatro Folhas: o site vende e posiciona a escola; portal e app at?ndem o aluno; o sistema concentra as operações pesadas.</p>
+          <div class="info-strip">
+            <span>Site público</span>
+            <span>Portal do aluno</span>
+            <span>App</span>
+            <span>Sistema interno</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Decisão</p>
+          <h2>Evitar site pesado</h2>
+          <p>As telas administrativas ficam como refer?ncia do sistema futuro, mas não devem virar parte central do site público.</p>
+          <a class="solid-btn" href="#divisao">Ver divisão</a>
+        </div>
+      </section>
+
+      <section class="content-band light" id="divisao">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Divisão correta</p>
+            <h2>O que cada canal deve fazer</h2>
+          </div>
+        <p>Assim mantemos desempenho, clareza para o visitante e liberdade para evoluir o sistema sem travar o site.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Site</span><h3>Vitrine premium</h3><p>Cursos, agenda, aulas temáticas, Mini Chef, festas, escolas, empresas, parcerias, vagas, proposta e contato.</p><a class="text-btn" href="index.html">Ver site</a></article>
+          <article><span class="tag">Portal</span><h3>Acesso do aluno</h3><p>Materiais, boletos liberados, certificados, comunicados e perfil. Sempre simples e restrito.</p><a class="text-btn" href="portal-do-aluno.html">Ver portal</a></article>
+          <article><span class="tag">App</span><h3>Aluno no celular</h3><p>Mesmos dados do portal: materiais, boletos, avisos, certificados e hist?rico do curso.</p><a class="text-btn" href="sistema-api.html">Ver API</a></article>
+          <article><span class="tag">Sistema</span><h3>Operação interna</h3><p>Cadastro de alunos, turmas, importações, boletos em lote, contratos Clicksign, documentos, presença e relat?rios.</p><a class="text-btn" href="admin-login.html">Acesso interno</a></article>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Boletos</p>
+            <h2>Gestáo no sistema, visualização no portal e app</h2>
+          </div>
+          <p>Essa e a melhor divisão para não sobrecarregar o site e, ao mesmo tempo, facilitar a vida do aluno.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Sistema</h3><p>Financeiro importa boletos em lote, confere nomes, refer?ncias banc?rias e libera arquivos.</p></article>
+          <article><span>2</span><h3>API</h3><p>Armazena status, vencimento, aluno, turma e arquivo com permissão segura.</p></article>
+          <article><span>3</span><h3>Portal</h3><p>Aluno acessa o boleto no navegador, sem depender de envio manual por WhatsApp.</p></article>
+          <article><span>4</span><h3>App</h3><p>O mesmo boleto pode aparecer no app quando ele for desenvolvido.</p></article>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Prioridades</p>
+            <h2>Foco daqui para frente</h2>
+          </div>
+          <p>Vamos preservar o que já desenhamos como refer?ncia e voltar energia para o site público e portal leve.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>?rea</span><span>Fica onde</span><span>Prioridade agora</span><span>Motivo</span><span>próxima ação</span></div>
+          <div class="admin-row"><span>P?ginas comerciais</span><span>Site</span><span>Alta</span><span>Geram percep??o premium e captação.</span><span>Refinar conteúdo e estetica</span></div>
+          <div class="admin-row"><span>Portal do aluno</span><span>Site/portal leve</span><span>Media</span><span>Precisa existir, mas sem virar sistema completo.</span><span>Manter simples</span></div>
+          <div class="admin-row"><span>Boletos</span><span>Sistema + portal/app</span><span>Planejado</span><span>Gestáo e confer?ncias são internas.</span><span>Exibir apenas ao aluno</span></div>
+          <div class="admin-row"><span>Contratos e documentos</span><span>Sistema</span><span>Depois</span><span>Fluxo pesado, jur?dico e operacional.</span><span>Guardar como m?dulo futuro</span></div>
+          <div class="admin-row"><span>App</span><span>App + mesma API</span><span>Depois</span><span>Deve nascer quando a API estiver definida.</span><span>Reaproveitar dados</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Regra de construcao</p>
+          <h2>O site não precisa fazer tudo</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Público</h3><p>O visitante deve entender a escola, escolher uma experiência ou curso e pedir contato com facilidade.</p><a class="text-btn" href="agenda.html">Ver agenda</a></div>
+          <div class="detail-item"><h3>Aluno</h3><p>O aluno deve entrar, baixar o que precisa e sair sem enfrentar uma ?rea confusa.</p><a class="text-btn" href="portal-pagamentos.html">Ver pagamentos</a></div>
+          <div class="detail-item"><h3>Equipe</h3><p>A equipe usa o sistema interno para tudo que ?xige permissão, confer?ncias, anexos, logs e automações.</p><a class="text-btn" href="sistema-api.html">Ver arquitetura</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Site leve e sistema conectado.</p>
+        <form class="footer-optin" data-whatsapp-optin>
+                  
+          <div class="footer-optin-row">
+            <label>
+                    Receba agenda e novidades
+                    <input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="Seu WhatsApp" required>
+                  </label>
+            <button class="solid-btn" type="submit">Quero receber</button>
+          </div>
+                  <label class="footer-consent">
+                    <input name="consent" type="checkbox" required>
+                    Autorizo receber comunicações da Quatro Folhas por WhatsApp.
+                  </label>
+                  
+                  <p class="footer-optin-feedback" hidden>Obrigado! Vamos te atender pelo WhatsApp.</p>
+                </form>
+</div>
+      <div><h3>Canais</h3><nav><a href="index.html">Site público</a><a href="portal-do-aluno.html">Portal do aluno</a><a href="sistema-api.html">Sistema e API</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <nav>
+          <a class="social-link" href="https://instagram.com/quatrofolhasgastronomia" target="_blank" rel="noreferrer" aria-label="Instagram @quatrofolhasgastronomia">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37a4 4 0 1 1-7.9 1.33A4 4 0 0 1 16 11.37Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17.5 6.5h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+            <span>@quatrofolhasgastronomia</span>
+          </a>          <a class="social-link" href="https://facebook.com/quatrofolhasgastronomia" target="_blank" rel="noreferrer" aria-label="Facebook quatrofolhasgastronomia">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v3H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span>quatrofolhasgastronomia</span>
+          </a>          <a class="social-link" href="https://wa.me/5511947781922" target="_blank" rel="noreferrer" aria-label="WhatsApp 11 94778 1922">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 21l1.9-4.7a8.5 8.5 0 1 1 15.6-4.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.7 8.9c.2-.5.4-.5.6-.5h.6c.2 0 .4.1.5.3l.8 1.9c.1.2.1.4 0 .5l-.6.7c-.1.1-.1.3 0 .4.6 1 1.5 1.9 2.5 2.5.1.1.3.1.4 0l.7-.6c.1-.1.3-.1.5 0l1.9.8c.2.1.3.3.3.5v.6c0 .2 0 .4-.5.6-.8.4-2 .3-3.5-.5-1.8-1-3.2-2.3-4.2-4.2-.8-1.5-.9-2.7-.5-3.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>(11) 94778-1922</span>
+          </a>
+<span class="footer-address">Rua Cantagalo, 1239 - Tatuapé - São Paulo/SP</span>
+          <span class="footer-address">Unidade I - Tatuapé</span>
+        </nav>
+      </div>
+<div class="footer-bottom">
+        <span>© 2026 Quatro Folhas Escola de Gastronomia. Todos os direitos reservados.</span>
+        <span>Rua Cantagalo, 1239 - Tatuapé - São Paulo/SP · Unidade I - Tatuapé</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

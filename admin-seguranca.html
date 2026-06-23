@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seguran?a e Continuidade | Quatro Folhas</title>
+  <meta name="description" content="Plano demonstrativo de segurança, continuidade, backups e prote??o do site e sistema Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-privacidade.html">Privacidade</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+        <a href="admin-implantacao.html">Implantação</a>
+        <a href="admin-manutencao.html">Manuten??o</a>
+        <a href="sistema-api.html">Sistema/API</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-auditoria.html">Ver auditoria</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Seguran?a</p>
+          <h1>Prote??o do site, portal, dados e operação da escola</h1>
+          <p>Seguran?a precisa nascer junto com o sistema: acesso forte, backups, SSL, monitoramento, auditoria, prote??o contra ataques e plano de recuperação.</p>
+          <div class="info-strip">
+            <span>SSL</span>
+            <span>Backups</span>
+            <span>Acessos</span>
+            <span>Monitoramento</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Prioridade</p>
+          <h2>Critica</h2>
+          <p>Sem segurança, o risco não é só site fora do ar: é perda de dados, acesso indevido e impacto na confiança da escola.</p>
+          <a class="solid-btn" href="#checklist">Ver checklist</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Camadas</p>
+          <h2>Não existe uma ?nica prote??o que resolva tudo</h2>
+          </div>
+          <p>O ideal e trabalhar por camadas: hospedagem boa, c?digo seguro, permissão correta, monitoramento, backup e rotina de resposta a incidente.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Prevenir</h3><p>SSL, firewall, senha forte, 2FA, validação de formul?rios e atualizações.</p></article>
+          <article><span>2</span><h3>Controlar acesso</h3><p>Cada usu?rio acessa somente o que precisa, com permissão por m?dulo.</p></article>
+          <article><span>3</span><h3>Monitorar</h3><p>Logs, alertas, tentativas bloqueadas, erros e picos de tr?fego.</p></article>
+          <article><span>4</span><h3>Recuperar</h3><p>Backups testados e plano para restaurar site, banco e arquivos rapidamente.</p></article>
+        </div>
+      </section>
+
+      <section class="content-band" id="checklist">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Checklist essencial</p>
+            <h2>O que ?u recomendaria como minimo para colocar no ar</h2>
+          </div>
+          <p>Alguns itens podem ter custo mensal ou anual. Vale pagar quando reduzem risco de queda, invasão ou perda de dados.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>?rea</span><span>Prote??o</span><span>Necess?rio pagar?</span><span>Status</span><span>Observação</span></div>
+          <div class="admin-row"><span>SSL</span><span>HTTPS em todo site e portal</span><span>Normalmente incluso</span><span><mark class="status-ok">Obrigat?rio</mark></span><span>Certificado v?lido e renovação autom?tica.</span></div>
+          <div class="admin-row"><span>Hospedagem</span><span>Servidor/cloud gerenciado</span><span>Sim</span><span><mark class="status-ok">Obrigat?rio</mark></span><span>Evitar hospedagem fraca para sistema com login.</span></div>
+          <div class="admin-row"><span>Backup</span><span>Banco, arquivos e boletos</span><span>Sim/possivel incluso</span><span><mark class="status-ok">Obrigat?rio</mark></span><span>Backup autom?tico, criptografado e testado.</span></div>
+          <div class="admin-row"><span>Acesso</span><span>2FA para administradores</span><span>Pode ser incluso</span><span><mark class="status-ok">Obrigat?rio</mark></span><span>Especialmente financeiro e configurações.</span></div>
+          <div class="admin-row"><span>Firewall</span><span>WAF, prote??o DDoS e rate limit</span><span>Provavelmente sim</span><span><mark class="status-review">Recomendado</mark></span><span>Importante para formul?rios e ?rea de login.</span></div>
+          <div class="admin-row"><span>Monitoramento</span><span>Alertas de erro e indisponibilidade</span><span>Sim/possivel gratuito</span><span><mark class="status-review">Recomendado</mark></span><span>Avisar antes do cliente perceber queda.</span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Riscos principais</p>
+            <h2>O que precisamos evitar</h2>
+          </div>
+          <p>Baseado em boas práticas de segurança web, a arquitetura deve dar at?ncao especial a acesso, criptografia, configuração, autenticação e logs.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag accent">Acesso</span><h3>Usu?rio vendo o que não deveria</h3><p>Permiss?es por m?dulo, checagem no servidor e auditoria de alterações.</p><a class="text-btn" href="admin-usuarios.html">Ver permiss?es</a></article>
+      <article><span class="tag accent">Dados</span><h3>Vazamento de informações</h3><p>Criptografia em tr?nsito, cuidado com PDFs, dados de alunos e logs sem informação sens?vel.</p><a class="text-btn" href="admin-auditoria.html">Ver auditoria</a></article>
+          <article><span class="tag accent">LGPD</span><h3>Dados pessoais sem controle</h3><p>Mapear finalidade, reten??o, direitos do titular e documentos públicos.</p><a class="text-btn" href="admin-privacidade.html">Ver privacidade</a></article>
+          <article><span class="tag accent">Ataques</span><h3>Formul?rio ou login explorado</h3><p>Validação, prote??o contra tentativas repetidas, captcha quando necess?rio e WAF.</p><a class="text-btn" href="admin-configuracoes.html">Ver regras</a></article>
+          <article><span class="tag">Queda</span><h3>Site ou portal fora do ar</h3><p>Hospedagem confiavel, monitoramento, CDN e plano de restauração.</p><a class="text-btn" href="#continuidade">Ver plano</a></article>
+          <article><span class="tag">Perda</span><h3>Arquivos apagados</h3><p>Backup versionado para boletos, materiais, certificados e imagens.</p><a class="text-btn" href="admin-midia.html">Ver arquivos</a></article>
+          <article><span class="tag">Atualização</span><h3>Componente vulneravel</h3><p>Depend?ncias atualizadas, revisão periodica e testes antes de publicar mudan?as.</p><a class="text-btn" href="sistema-api.html">Ver API</a></article>
+        </div>
+      </section>
+
+      <section class="content-band" id="continuidade">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Continuidade</p>
+        <h2>Plano para não perder dados e voltar rápido se algo cair</h2>
+          </div>
+          <p>Backup so e confiavel quando foi testado. O plano precisa dizer onde está o backup, quem restaura e em quanto tempo.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Rotina</span><span>Frequencia</span><span>Respons?vel</span><span>Status</span><span>Meta</span></div>
+          <div class="admin-row"><span>Backup do banco</span><span>Diario</span><span>Sistema</span><span><mark class="status-ok">Automatico</mark></span><span>Restaurar em até 4h</span></div>
+          <div class="admin-row"><span>Backup de arquivos</span><span>Diario</span><span>Sistema</span><span><mark class="status-ok">Automatico</mark></span><span>Manter versoes por 30 dias</span></div>
+          <div class="admin-row"><span>Teste de restauração</span><span>Mensal</span><span>Administrador/TI</span><span><mark class="status-review">Agendar</mark></span><span>Confirmar que backup funciona</span></div>
+          <div class="admin-row"><span>Monitoramento de queda</span><span>Continuo</span><span>Sistema/TI</span><span><mark class="status-review">Contratar</mark></span><span>Alerta em até 5 minutos</span></div>
+          <div class="admin-row"><span>Revisão de acessos</span><span>Mensal</span><span>Administrador</span><span><mark class="status-review">Obrigat?rio</mark></span><span>Remover usu?rios antigos</span></div>
+        </div>
+      </section>
+
+      <section class="page-form-section">
+        <div>
+          <p class="eyebrow">Incidente</p>
+          <h2>Registro de problema de segurança</h2>
+          <p>Se houver suspeita de acesso indevido, queda, perda de arquivo ou erro cr?tico, precisa existir uma rotina de registro e resposta.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Incidente registrado. O administrador respons?vel deve avaliar prioridade e acionar suporte técnico.">
+          <label>Tipo<select required><option value="">Selecione</option><option>Site fora do ar</option><option>Acesso indevido</option><option>Arquivo perdido</option><option>Boleto ou dado incorreto</option><option>Falha no login</option><option>Outro</option></select></label>
+          <label>Prioridade<select required><option>Baixa</option><option>Media</option><option>Alta</option><option>Critica</option></select></label>
+          <label>M?dulo afetado<input type="text" placeholder="Ex.: Portal do aluno, boletos, admin, site público"></label>
+          <label>Descri??o<textarea rows="4" required></textarea></label>
+          <button class="solid-btn" type="submit">Registrar incidente</button>
+        </form>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Minha recomendação</p>
+          <h2>Onde vale investir dinheiro</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Hospedagem confiavel</h3><p>Para um sistema com aluno, boleto e portal, eu não usaria hospedagem simples demais. Melhor um provedor com backup, SSL, firewall e suporte.</p></div>
+          <div class="detail-item"><h3>Implantação controlada</h3><p>A troca do site atual pelo novo deve ter backup, ambiente de teste e plano de retorno. Depois da publicação, a manuten??o acompanha sa?de do sistema e backups.</p><a class="text-btn" href="admin-manutencao.html">Ver manuten??o</a></div>
+          <div class="detail-item"><h3>Backups e monitoramento</h3><p>Se precisar pagar por backup externo e alerta de queda, vale muito. E mais barato que perder dados ou ficar horas fora do ar.</p></div>
+          <div class="detail-item"><h3>2FA e controle de acesso</h3><p>Administradores, financeiro e configurações devem ter autenticação reforçada e permiss?es bem separadas.</p></div>
+          <div class="detail-item"><h3>Auditoria desde o início</h3><p>Logs de acesso e alterações precisam estar prontos antes do sistema virar ferramenta oficial da escola.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

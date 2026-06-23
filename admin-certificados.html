@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Certificados | Quatro Folhas</title>
+    <meta name="description" content="Painel demonstrativo para gerar certificados dos alunos presentes na Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-turma.html">Turma</a>
+        <a href="admin-materiais.html">Materiais</a>
+        <a href="admin-certificados-config.html">Regras</a>
+        <a href="admin-usuarios.html">Usuários</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-turma.html">Voltar turma</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Certificados</p>
+          <h1>Geração automática para alunos presentes</h1>
+          <p>Na versão real, a máscara do certificado entra como modelo e o sistema preenche nome, aula, carga horária, data, código de validação e link público de conferência. A validação pública pede sobrenome e mostra nome mascarado.</p>
+          <div class="info-strip">
+            <span>10 presentes</span>
+            <span>10 certificados</span>
+            <span>PDF</span>
+            <span>Portal do aluno</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Turma</p>
+          <h2>Massas Artesanais</h2>
+          <p>20/06 - 19h - 3h de experiência.</p>
+          <a class="solid-btn" href="admin-certificados-config.html">Ver regras</a>
+        </div>
+      </section>
+
+      <section class="content-band light" id="gerar">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">Modelo</p>
+              <h2>Dados para emissão</h2>
+            </div>
+          <p>Por enquanto é uma simulação. Quando você enviar a máscara, podemos desenhar uma prévia mais fiel ao certificado real. As regras de código e validação ficam em configuração própria.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Certificados gerados para os alunos presentes. Na versão real, os PDFs seriam salvos e liberados no portal.">
+          <label>Turma<input type="text" value="Massas Artesanais - 20/06" required></label>
+          <label>Carga horária<input type="text" value="3 horas" required></label>
+          <label>Data de conclusão<input type="text" value="20/06/2026" required></label>
+          <label>Professor / responsável<input type="text" value="Chef Quatro Folhas" required></label>
+          <label class="acceptance"><input type="checkbox" checked>Gerar somente para alunos presentes</label>
+          <label class="acceptance"><input type="checkbox" checked>Liberar no Portal do Aluno após gerar</label>
+          <button class="solid-btn" type="submit">Gerar certificados</button>
+        </form>
+      </section>
+
+      <section class="content-band certificate-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Prévia</p>
+            <h2>Visual base do certificado</h2>
+          </div>
+          <p>Esta prévia é apenas estrutural. A versão final deve seguir a máscara oficial que você enviar.</p>
+        </div>
+        <div class="certificate-preview">
+          <img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia">
+          <p class="eyebrow">Certificado de Participação</p>
+          <h2>Camila Rocha</h2>
+          <p>Participou da aula <strong>Massas Artesanais</strong>, realizada na Quatro Folhas Escola de Gastronomia, com carga horária de 3 horas.</p>
+          <div class="certificate-footer"><span>20/06/2026</span><a class="text-btn" href="validar-certificado.html">Código QF-2048-CAM</a></div>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fila de certificados</p>
+        <h2>Alunos elegíveis</h2>
+          </div>
+          <p>Ausentes ou alunos sem pagamento confirmado ficam bloqueados até regularização.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Aluno</span><span>Presença</span><span>Status</span><span>Portal</span><span>Ação</span></div>
+          <div class="admin-row"><span>Camila Rocha</span><span>Presente</span><span><mark class="status-ok">Elegível</mark></span><span>Liberar</span><span><a class="text-btn" href="validar-certificado.html">Validação</a></span></div>
+          <div class="admin-row"><span>Renato Lima</span><span>Presente</span><span><mark class="status-ok">Elegível</mark></span><span>Liberar</span><span>Gerar PDF</span></div>
+          <div class="admin-row"><span>Paula Mendes</span><span>Ausente</span><span><mark class="status-error">Bloqueado</mark></span><span>Não liberar</span><span>Revisar</span></div>
+          <div class="admin-row"><span>Bruno Carvalho</span><span>Presente</span><span><mark class="status-ok">Elegível</mark></span><span>Liberar</span><span>Gerar PDF</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos Rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas Temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

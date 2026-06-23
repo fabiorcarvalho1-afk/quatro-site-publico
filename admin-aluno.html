@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ficha do Aluno | Quatro Folhas</title>
+    <meta name="description" content="Ficha administrativa demonstrativa de aluno da Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-alunos.html">Alunos</a>
+        <a href="admin-turma.html">Turmas</a>
+        <a href="admin-solicitacoes-alunos.html">Solicitações</a>
+        <a href="admin-boletos.html">Boletos</a>
+        <a href="admin-contratos.html">Contratos</a>
+        <a href="admin-documentos.html">Documentos</a>
+        <a href="admin-certificados.html">Certificados</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-alunos.html">Voltar lista</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Ficha do aluno</p>
+          <h1>Camila Rocha</h1>
+          <p>visão administrativa do cadastro, turmas, boletos, materiais, certificados, solicitações e hist?rico do aluno.</p>
+          <div class="info-strip">
+            <span>Cadastro ativo</span>
+            <span>2 turmas</span>
+            <span>1 boleto</span>
+            <span>1 certificado</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">At?ncao</p>
+          <h2>1 Solicitação aberta</h2>
+          <p>Pedido de ajuste no nome para certificado aguardando decisão da secretaria.</p>
+          <a class="solid-btn" href="admin-solicitacoes-alunos.html#detalhe">Analisar pedido</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Cadastro</p>
+            <h2>Dados principais</h2>
+          </div>
+          <p>Dados sens?veis ou que afetam documentos devem registrar hist?rico de alteração.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Campo</span><span>Informação</span><span>Uso</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Nome completo</span><span>Camila Rocha</span><span>matrícula e certificados</span><span><mark class="status-review">Revisar</mark></span><span><a class="text-btn" href="admin-solicitacoes-alunos.html#detalhe">solicitação</a></span></div>
+          <div class="admin-row"><span>E-mail</span><span>camila@email.com</span><span>Login</span><span><mark class="status-ok">Ativo</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>WhatsApp</span><span>(11) 90000-0000</span><span>Atendimento</span><span><mark class="status-ok">Ativo</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>Sobrenome de validação</span><span>Rocha</span><span>Certificados</span><span><mark class="status-ok">Conferido</mark></span><span>Editar com auditoria</span></div>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Turmas</p>
+        <h2>V?nculos acad?micos</h2>
+          </div>
+        <p>Os v?nculos de turma controlam materiais, certificados, comunicados e acesso no portal.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Turma</span><span>Status</span><span>Portal</span><span>Certificado</span><span>Ação</span></div>
+          <div class="admin-row"><span>Chef Profissional - Turma 2026</span><span><mark class="status-ok">Matriculada</mark></span><span>Ativo</span><span>Em andamento</span><span><a class="text-btn" href="admin-turma.html">Abrir turma</a></span></div>
+          <div class="admin-row"><span>Massas Artesanais - 20/06</span><span><mark class="status-ok">Conclu?da</mark></span><span>Ativo</span><span>Disponível</span><span><a class="text-btn" href="admin-certificados.html">Certificado</a></span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Portal do aluno</p>
+            <h2>O que está liberado para este aluno</h2>
+          </div>
+          <p>Ajuda a secretaria a entender rapidamente o que o aluno consegue acessar.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Materiais</span><h3>6 Arquivos</h3><p>Apostilas, receitas e fichas técnicas liberadas por turma.</p><a class="text-btn" href="portal-materiais.html">Ver portal</a></article>
+          <article><span class="tag">Pagamentos</span><h3>1 Boleto</h3><p>Boleto de junho disponível para download.</p><a class="text-btn" href="portal-pagamentos.html">Ver portal</a></article>
+          <article><span class="tag">Certificados</span><h3>1 Liberado</h3><p>Massas Artesanais com c?digo de validação.</p><a class="text-btn" href="portal-certificados.html">Ver portal</a></article>
+          <article><span class="tag">Comunicados</span><h3>2 Não lidos</h3><p>Avisos de turma e financeiro aguardam leitura.</p><a class="text-btn" href="portal-comunicados.html">Ver portal</a></article>
+          <article><span class="tag">Contratos</span><h3>1 Aguardando assinatura</h3><p>Contrato do curso pronto para envio ou acompanhamento via Clicksign.</p><a class="text-btn" href="admin-contratos.html">Ver contratos</a></article>
+          <article><span class="tag">Documentos</span><h3>4 Arquivos</h3><p>Contratos, comprovantes e hist?rico digitalizado ficam anexados a ficha.</p><a class="text-btn" href="admin-documentos.html">Ver documentos</a></article>
+        </div>
+      </section>
+
+      <section class="page-form-section">
+        <div>
+          <p class="eyebrow">Ação administrativa</p>
+          <h2>Registrar observação interna</h2>
+          <p>Observações internas não aparecem para o aluno, mas ficam no hist?rico administrativo.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Observação registrada na ficha do aluno.">
+          <label>Tipo<select required><option>Atendimento</option><option>Financeiro</option><option>Acad?mico</option><option>Certificado</option><option>Portal</option></select></label>
+          <label>Respons?vel<input type="text" placeholder="Nome de quem registrou" required></label>
+          <label>Observação<textarea rows="4" required></textarea></label>
+          <button class="solid-btn" type="submit">Registrar observação</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Hist?rico</p>
+            <h2>Linha do tempo administrativa</h2>
+          </div>
+          <p>Eventos importantes ficam registrados para atendimento, auditoria e segurança.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Data</span><span>Evento</span><span>M?dulo</span><span>Respons?vel</span><span>Status</span></div>
+          <div class="admin-row"><span>Hoje</span><span>solicitação de nome para certificado</span><span>Perfil</span><span>Aluno</span><span><mark class="status-review">Aberta</mark></span></div>
+          <div class="admin-row"><span>12/05/2026</span><span>WhatsApp atualizado</span><span>Cadastro</span><span>Secretaria</span><span><mark class="status-ok">Conclu?do</mark></span></div>
+          <div class="admin-row"><span>20/06/2026</span><span>Certificado de Massas Artesanais liberado</span><span>Certificados</span><span>Acad?mico</span><span><mark class="status-ok">Conclu?do</mark></span></div>
+          <div class="admin-row"><span>Previsto</span><span>Contrato digital Clicksign</span><span>Contratos</span><span>Secretaria</span><span><mark class="status-review">Aguardando</mark></span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Ficha administrativa do aluno.</p></div>
+      <div><h3>Aluno</h3><nav><a href="portal-perfil.html">Perfil no portal</a><a href="admin-solicitacoes-alunos.html">Solicitações</a><a href="admin-turma.html">Turmas</a><a href="admin-contratos.html">Contratos</a><a href="admin-documentos.html">Documentos</a><a href="admin-certificados.html">Certificados</a><a href="admin-auditoria.html">Auditoria</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Dados administrativos restritos.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

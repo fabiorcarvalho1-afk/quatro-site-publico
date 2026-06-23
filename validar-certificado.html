@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Validar Certificado | Quatro Folhas</title>
+    <meta name="description" content="Página para validar certificados emitidos pela Quatro Folhas Escola de Gastronomia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Home</a>
+                <a href="agenda.html">Agenda</a>
+<a href="portal-do-aluno.html">Portal</a>
+        <a href="perguntas.html">Perguntas</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" aria-label="Idioma">
+          <a class="lang-link is-active" href="index.html" lang="pt-BR">PT</a>
+          <a class="lang-link" href="en/index.html" lang="en">EN</a>
+          <a class="lang-link" href="es/index.html" lang="es">ES</a>
+        </div>
+        <a class="ghost-btn cert-link" data-cert-link href="validar-certificado.html">Validar certificado</a>
+        <a class="ghost-btn" href="portal-certificados.html">Certificados</a>
+        <a class="solid-btn" href="contato.html">Falar com a escola</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Validação</p>
+          <h1>Conferência pública de certificados Quatro Folhas</h1>
+          <p>Empresas, escolas, alunos e parceiros podem consultar um código e o sobrenome do aluno para confirmar se o certificado foi emitido pela escola.</p>
+          <div class="info-strip">
+            <span>Código único</span>
+            <span>Consulta pública</span>
+            <span>Nome mascarado</span>
+            <span>Confirmação online</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Validação</p>
+          <h2>QF-2026-0001</h2>
+          <p>A consulta confirma o sobrenome, mas exibe o nome do aluno com privacidade.</p>
+          <a class="solid-btn" href="#consulta">Validar código</a>
+        </div>
+      </section>
+
+      <section class="signature-strip" aria-label="Diferenciais da validação de certificados">
+        <article><span>Código</span><strong>Identificação única</strong><p>Cada certificado recebe um código próprio para consulta pública.</p></article>
+        <article><span>Sobrenome</span><strong>Conferência extra</strong><p>A validação solicita sobrenome para evitar consulta aberta apenas por código.</p></article>
+        <article><span>Privacidade</span><strong>Confirmação</strong><p>O resultado confirma o aluno sem expor o nome completo. Dados sigilosos conforme a LGPD.</p></article>
+        <article><span>Base única</span><strong>Registro oficial</strong><p>A consulta usa a base de certificados emitidos pela escola.</p></article>
+      </section>
+
+      <section class="page-form-section" id="consulta">
+        <div>
+          <p class="eyebrow">Consulta</p>
+          <h2>Digite o código e o sobrenome</h2>
+        <p>A consulta confere se o sobrenome informado corresponde ao certificado. A resposta usa a mesma base de documentos liberados pela escola.</p>
+        </div>
+        <form class="contact-form" data-certificate-validation>
+          <label>Código do certificado<input type="text" value="QF-2026-0001" required></label>
+          <label>Sobrenome do aluno<input type="text" value="Rocha" required></label>
+          <button class="solid-btn" type="submit">Validar certificado</button>
+          <div class="validation-result" hidden>
+            <span class="tag">Certificado válido</span>
+            <h3>Aluno: C***** R*****</h3>
+            <p>Curso/Aula: Massas Artesanais</p>
+            <p>Data: 20/06/2026 | Carga horária: 3 horas</p>
+            <p>Emitido por: Quatro Folhas Escola de Gastronomia</p>
+            <p>Código: QF-2026-0001</p>
+          </div>
+        </form>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+          <p class="eyebrow">Resultado da consulta</p>
+          <h2>O que a validação exibe</h2>
+          </div>
+          <p>Para proteger dados pessoais, a página pública deve confirmar o certificado sem expor nome completo.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Campo</span><span>Informação</span><span>Exibição</span><span>Status</span><span>Observação</span></div>
+          <div class="admin-row"><span>Código</span><span>QF-2026-0001</span><span>Pública</span><span><mark class="status-ok">Válido</mark></span><span>Código único do certificado.</span></div>
+          <div class="admin-row"><span>Curso/Aula</span><span>Massas Artesanais</span><span>Pública</span><span><mark class="status-ok">Válido</mark></span><span>Confirma a formação.</span></div>
+          <div class="admin-row"><span>Data</span><span>20/06/2026</span><span>Pública</span><span><mark class="status-ok">Válido</mark></span><span>Data de conclusão.</span></div>
+          <div class="admin-row"><span>Aluno</span><span>C***** R*****</span><span>Mascarada</span><span><mark class="status-ok">Privacidade</mark></span><span>Primeira letra + asteriscos.</span></div>
+          <div class="admin-row"><span>Sobrenome</span><span>Usado para conferência</span><span>não exibido</span><span><mark class="status-ok">Controle</mark></span><span>Evita consulta aberta apenas por código.</span></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar.</p>
+        <form class="footer-optin" data-whatsapp-optin>
+                  
+          <div class="footer-optin-row">
+            <label>
+                    Receba agenda e novidades
+                    <input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="Seu WhatsApp" required>
+                  </label>
+            <button class="solid-btn" type="submit">Quero receber</button>
+          </div>
+                  <label class="footer-consent">
+                    <input name="consent" type="checkbox" required>
+                    Autorizo receber comunicações da Quatro Folhas por WhatsApp.
+                  </label>
+                  
+                  <p class="footer-optin-feedback" hidden>Obrigado! Vamos te atender pelo WhatsApp.</p>
+                </form>
+</div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a>
+        <div class="nav-item has-mega">
+          <a href="cursos.html" class="nav-link">Cursos</a>
+          <div class="mega-menu" role="menu">
+            <div class="mega-inner">
+              <div class="mega-lead">
+                <strong>Cursos</strong>
+                <span>Escolha o curso.</span>
+              </div>
+              <div class="mega-grid">
+                <a class="mega-card" href="chef-profissional.html">
+                  <span class="thumb" style="background-image:url('assets/photos/cozinha-bancadas.jpg')"></span>
+                  <span class="title">Chef Profissional</span>
+                </a>
+                <a class="mega-card" href="confeitaria-profissional.html">
+                  <span class="thumb" style="background-image:url('assets/photos/aula-confeitaria.jpg')"></span>
+                  <span class="title">Confeitaria</span>
+                </a>
+                <a class="mega-card" href="cursos-rapidos.html">
+                  <span class="thumb" style="background-image:url('assets/photos/mesa-pratos.jpg')"></span>
+                  <span class="title">Cursos rápidos</span>
+                </a>
+                <a class="mega-card" href="mini-chef.html">
+                  <span class="thumb" style="background-image:url('assets/photos/alunos-turma.jpg')"></span>
+                  <span class="title">Mini Chef</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+<a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a>
+        <a href="politica-de-privacidade.html">Privacidade</a></nav></div>
+      
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <nav>
+          <a class="social-link" href="https://instagram.com/quatrofolhasgastronomia" target="_blank" rel="noreferrer" aria-label="Instagram @quatrofolhasgastronomia">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37a4 4 0 1 1-7.9 1.33A4 4 0 0 1 16 11.37Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17.5 6.5h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+            <span>@quatrofolhasgastronomia</span>
+          </a>          <a class="social-link" href="https://facebook.com/quatrofolhasgastronomia" target="_blank" rel="noreferrer" aria-label="Facebook quatrofolhasgastronomia">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v3H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span>quatrofolhasgastronomia</span>
+          </a>          <a class="social-link" href="https://wa.me/5511947781922" target="_blank" rel="noreferrer" aria-label="WhatsApp 11 94778 1922">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 21l1.9-4.7a8.5 8.5 0 1 1 15.6-4.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.7 8.9c.2-.5.4-.5.6-.5h.6c.2 0 .4.1.5.3l.8 1.9c.1.2.1.4 0 .5l-.6.7c-.1.1-.1.3 0 .4.6 1 1.5 1.9 2.5 2.5.1.1.3.1.4 0l.7-.6c.1-.1.3-.1.5 0l1.9.8c.2.1.3.3.3.5v.6c0 .2 0 .4-.5.6-.8.4-2 .3-3.5-.5-1.8-1-3.2-2.3-4.2-4.2-.8-1.5-.9-2.7-.5-3.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>(11) 94778-1922</span>
+          </a>
+<span class="footer-address">Rua Cantagalo, 1239 - Tatuapé - São Paulo/SP</span>
+          <span class="footer-address">Unidade I - Tatuapé</span>
+        </nav>
+      </div>
+<div class="footer-bottom">
+        <span>© 2026 Quatro Folhas Escola de Gastronomia. Todos os direitos reservados.</span>
+        <span>Rua Cantagalo, 1239 - Tatuapé - São Paulo/SP · Unidade I - Tatuapé</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

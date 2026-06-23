@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contratos e Assinaturas | Quatro Folhas</title>
+    <meta name="description" content="M?dulo demonstrativo de contratos digitais e assinatura Clicksign para a Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-alunos.html">Alunos</a>
+        <a href="admin-aluno.html">Ficha</a>
+        <a href="admin-importar-alunos.html">Importar</a>
+        <a href="admin-contratos-modelos.html">Modelos</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-aluno.html">Ficha do aluno</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Contratos</p>
+          <h1>Contratos digitais gerados pelo sistema e enviados via Clicksign</h1>
+          <p>M?dulo previsto para substituir contratos impressos por documentos preenchidos automaticamente, assinados digitalmente e salvos na ficha do aluno.</p>
+          <div class="info-strip">
+            <span>Modelo</span>
+            <span>Preenchimento autom?tico</span>
+            <span>Clicksign</span>
+            <span>PDF assinado</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Status</p>
+          <h2>Integração prevista</h2>
+          <p>você já usa Clicksign. O sistema futuro pode enviar documentos para assinatura e receber status automaticamente.</p>
+          <a class="solid-btn" href="#gerar">Gerar contrato</a>
+          <a class="text-btn" href="admin-contratos-modelos.html">Administrar modelos</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fluxo ideal</p>
+            <h2>Sem imprimir, sem arquivo solto</h2>
+          </div>
+          <p>O contrato nasce a partir do cadastro e volta assinado para a ficha do aluno.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Cadastrar aluno</h3><p>Nome, CPF, telefone, curso e dados financeiros entram uma vez no sistema.</p></article>
+          <article><span>2</span><h3>Gerar contrato</h3><p>O modelo e preenchido automaticamente com dados do aluno, curso, valores e datas.</p></article>
+          <article><span>3</span><h3>Enviar Clicksign</h3><p>O aluno recebe o documento para assinatura digital pelo fluxo atual da escola.</p></article>
+          <article><span>4</span><h3>Arquivar</h3><p>PDF assinado e comprovante de assinatura ficam salvos na ficha do aluno.</p></article>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="gerar">
+        <div>
+          <p class="eyebrow">Novo contrato</p>
+          <h2>Gerar a partir do cadastro</h2>
+          <p>Na versão real, os campos viriam da ficha do aluno e da turma escolhida.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Contrato gerado como rascunho. Na versão real, ele seria enviado ao Clicksign para assinatura.">
+          <label>Aluno<input type="text" value="Camila Rocha" required></label>
+          <label>CPF<input type="text" value="000.000.000-00" required></label>
+          <label>Curso ou turma<select required><option>Chef Profissional - Turma 2026</option><option>Confeitaria Profissional</option><option>Massas Artesanais - 20/06</option></select></label>
+          <label>Modelo de contrato<select required><option>Contrato de curso profissionalizante</option><option>Contrato de aula avulsa</option><option>Contrato para empresa/escola</option><option>Termo de aceite do portal</option></select></label>
+          <label>Forma de assinatura<select required><option>Clicksign - assinatura digital</option><option>Assinatura interna simples</option><option>Somente arquivo rascunho</option></select></label>
+          <label class="acceptance"><input type="checkbox" checked>Salvar PDF assinado na ficha do aluno</label>
+          <label class="acceptance"><input type="checkbox" checked>Registrar hist?rico em auditoria</label>
+          <button class="solid-btn" type="submit">Gerar contrato</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fila de contratos</p>
+            <h2>Acompanhamento de assinatura</h2>
+          </div>
+          <p>A equipe acompanha quem recebeu, assinou, recusou ou precisa de reenvio.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Aluno</span><span>Documento</span><span>Envio</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span><a href="admin-aluno.html">Camila Rocha</a></span><span>Contrato Chef Profissional</span><span>Clicksign</span><span><mark class="status-review">Aguardando assinatura</mark></span><span>Reenviar link</span></div>
+          <div class="admin-row"><span>Renato Lima</span><span>Contrato Massas Artesanais</span><span>Clicksign</span><span><mark class="status-ok">Assinado</mark></span><span>Baixar PDF</span></div>
+          <div class="admin-row"><span>Paula Mendes</span><span>Contrato Confeitaria</span><span>Rascunho</span><span><mark class="status-error">Pendente</mark></span><span>Conferir dados</span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Modelos</p>
+            <h2>Documentos que podem virar templat?</h2>
+          </div>
+          <p>O texto jur?dico deve ser validado antes. Depois disso, o sistema apenas preenche vari?veis. A edi??o completa fica em uma ?rea separada.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Modelo</span><span>Uso</span><span>Campos autom?ticos</span><span>Status</span><span>Observação</span></div>
+          <div class="admin-row"><span>Curso profissionalizante</span><span>Chef, Confeitaria, Bolos</span><span>Aluno, CPF, curso, valor, datas</span><span><mark class="status-review">Criar</mark></span><span>Prioritario.</span></div>
+          <div class="admin-row"><span>Aula temática</span><span>Aulas avulsas</span><span>Aluno, aula, data, valor</span><span><mark class="status-review">Opcional</mark></span><span>Pode ser termo simples.</span></div>
+          <div class="admin-row"><span>Empresas e escolas</span><span>Projetos corporativos</span><span>Empresa, CNPJ, proposta, data</span><span><mark class="status-review">Criar</mark></span><span>Separar de aluno pessoa f?sica.</span></div>
+          <div class="admin-row"><span>Termo do portal</span><span>Materiais e acesso online</span><span>Aluno, e-mail, data de aceite</span><span><mark class="status-ok">Previsto</mark></span><span>Pode ter aceite interno.</span></div>
+        </div>
+        <div class="section-actions">
+          <a class="solid-btn" href="admin-contratos-modelos.html">Abrir modelos de contrato</a>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Hist?rico e espaço fisico</p>
+          <h2>Menos papel, mais rastreabilidade</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Ficha do aluno</h3><p>Cada contrato assinado fica vinculado ao aluno, curso e turma.</p><a class="text-btn" href="admin-aluno.html">Ver ficha</a></div>
+          <div class="detail-item"><h3>Auditoria</h3><p>O sistema registra quem gerou, enviou, reenviou e baixou o documento.</p><a class="text-btn" href="admin-auditoria.html">Ver auditoria</a></div>
+          <div class="detail-item"><h3>Importação antiga</h3><p>Alunos antigos podem entrar com dados m?nimos e, se houver contrato impresso, ele pode ser digitalizado aos poucos.</p><a class="text-btn" href="admin-importar-alunos.html">Ver importação</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Contratos digitais e assinatura Clicksign.</p></div>
+      <div><h3>Contratos</h3><nav><a href="admin-contratos.html">Contratos</a><a href="admin-contratos-modelos.html">Modelos</a><a href="admin-aluno.html">Ficha do aluno</a><a href="admin-importar-alunos.html">Importar alunos</a><a href="admin-configuracoes.html">Configurações</a><a href="admin-auditoria.html">Auditoria</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>M?dulo previsto para o sistema real.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

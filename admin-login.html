@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Administrativo | Quatro Folhas</title>
+    <meta name="description" content="Login administrativo demonstrativo para equipe interna da Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="admin-login-page">
+      <section class="admin-login-card">
+        <a class="brand login-brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+        <p class="eyebrow">Acesso interno</p>
+        <h1>Painel administrativo</h1>
+        <p>?rea restrita para equipe autorizada da Quatro Folhas.</p>
+        <form data-admin-login>
+          <label>
+            E-mail
+            <input type="email" required placeholder="seuemail@quatrofolhas.com.br">
+          </label>
+          <label>
+            Senha
+            <input type="password" required placeholder="Sua senha">
+          </label>
+          <label>
+            Perfil de demonstração
+            <select required>
+              <option>Administrador</option>
+              <option>Financeiro</option>
+              <option>Materiais / Acad?mico</option>
+              <option>Comercial</option>
+              <option>Carreira</option>
+            </select>
+          </label>
+          <button class="solid-btn" type="submit">Entrar no painel</button>
+        </form>
+        <a class="text-btn" href="contato.html">Preciso recuperar meu acesso</a>
+      </section>
+      <section class="admin-login-aside">
+        <p class="eyebrow">Seguran?a</p>
+        <h2>Permiss?es por perfil</h2>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Administrador</h3><p>Gerencia usu?rios e libera acessos.</p></div>
+          <div class="detail-item"><h3>Financeiro</h3><p>Acessa boletos e pagamentos.</p></div>
+          <div class="detail-item"><h3>Materiais</h3><p>Publica apostilas, receitas e comunicados.</p></div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
+

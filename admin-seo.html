@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SEO e Publicação | Quatro Folhas</title>
+    <meta name="description" content="Tela demonstrativa para revisar SEO, URLs e publicação das p?ginas do site Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-conteudo.html">Conteúdo</a>
+        <a href="admin-midia.html">Mídia</a>
+        <a href="admin-tarefas.html">Tarefas</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+        <a href="index.html">Site</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-conteudo.html">Voltar ao conteúdo</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">SEO e publicação</p>
+          <h1>Revise como cada p?gina aparece no Google e no compartilhamento</h1>
+          <p>Antes de publicar, a equipe confere t?tulo, descri??o, URL, imagem de capa e status da p?gina. E pequeno, mas evita muito retrabalho.</p>
+          <div class="info-strip">
+            <span>T?tulo</span>
+            <span>Descri??o</span>
+            <span>URL</span>
+            <span>Imagem</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Auditoria</p>
+          <h2>5 Ajustes</h2>
+          <p>Descricoes longas, p?ginas sem imagem social e chamadas que precisam de revisão.</p>
+          <a class="solid-btn" href="#editar-seo">Editar SEO</a>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="editar-seo">
+        <div>
+          <p class="eyebrow">Metadados</p>
+          <h2>Cadastro de SEO por p?gina</h2>
+          <p>Esses campos alimentam buscadores, links compartilhados no WhatsApp e a organização interna da API.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="SEO salvo como rascunho. Revise a pr?-visualização antes de publicar.">
+          <label>P?gina<select required><option value="">Selecione</option><option>Home</option><option>Chef Profissional</option><option>aulas temáticas</option><option>Mini Chef</option><option>Festa Infantil gastronômica</option><option>Empresas e Marcas</option></select></label>
+          <label>URL / slug<input type="text" placeholder="Ex.: aulas-temáticas.html" required></label>
+          <label>T?tulo SEO<input type="text" placeholder="Ex.: aulas temáticas de Gastronomia | Quatro Folhas" required></label>
+          <label>Descri??o SEO<textarea rows="4" placeholder="Resumo curto da p?gina para buscadores e compartilhamento." required></textarea></label>
+          <label>Imagem social<select required><option>assets/photos/chef-fogo.jpg</option><option>assets/photos/fachada.png</option><option>assets/photos/cozinha-qf.png</option><option>assets/photos/mesa-pratos.jpg</option></select></label>
+          <label>Indexação<select required><option>Publicar e indexar</option><option>Publicar sem indexar</option><option>Rascunho interno</option></select></label>
+          <button class="solid-btn" type="submit">Salvar SEO</button>
+        </form>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+          <p class="eyebrow">Pr?-visualização</p>
+            <h2>Como a p?gina pode aparecer fora do site</h2>
+          </div>
+          <p>O objetivo não é complicar: e garantir que um link enviado por WhatsApp ou encontrado no Google pareca profissional e claro.</p>
+        </div>
+        <div class="preview-grid">
+          <article class="search-preview">
+            <span>quatrofolhasgastronomia.com.br/aulas-temáticas</span>
+            <h3>Aulas temáticas de Gastronomia | Quatro Folhas</h3>
+            <p>experiências gastronômicas para quem quer cozinhar, aprender e viver uma aula especial em uma escola profissional.</p>
+          </article>
+          <article class="share-preview">
+            <img src="assets/photos/chef-fogo.jpg" alt="Chef em ação na cozinha">
+            <div>
+              <span>quatrofolhasgastronomia.com.br</span>
+              <h3>Aulas temáticas de Gastronomia</h3>
+              <p>Reserve interesse e nossa equipe já entrará em contato pelo WhatsApp.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Auditoria</p>
+            <h2>P?ginas que precisam de ajuste</h2>
+          </div>
+          <p>Uma lista simples ajuda a equipe a revisar antes de publicar ou promover uma p?gina.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>P?gina</span><span>Problema</span><span>Prioridade</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Mini Chef</span><span>Descri??o SEO muito generica</span><span>Media</span><span><mark class="status-review">Revisar</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>Festa Infantil</span><span>Imagem social pendente</span><span>Alta</span><span><mark class="status-error">Pendente</mark></span><span><a class="text-btn" href="admin-midia.html">Escolher</a></span></div>
+          <div class="admin-row"><span>Empresas e Marcas</span><span>T?tulo acima do ideal</span><span>Baixa</span><span><mark class="status-review">Ajustar</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>aulas temáticas</span><span>Pronta para publicar</span><span>Alta</span><span><mark class="status-ok">Aprovada</mark></span><span><a class="text-btn" href="aulas-tematicas.html">Ver</a></span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Checklist</p>
+          <h2>Antes de publicar uma p?gina</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>T?tulo claro</h3><p>Precisa dizer o que a p?gina oferece, sem depender de contexto externo.</p></div>
+          <div class="detail-item"><h3>Descri??o objetiva</h3><p>Uma boa descri??o ajuda o aluno, o Google e o compartilhamento no WhatsApp.</p></div>
+          <div class="detail-item"><h3>Imagem social aprovada</h3><p>Usar foto real da escola, com corte adequado e legenda cadastrada na biblioteca de mídia.</p></div>
+          <div class="detail-item"><h3>URL simples</h3><p>Evitar nomes longos e manter padr?o facil de lembrar, como mini-chef.html ou agenda.html.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

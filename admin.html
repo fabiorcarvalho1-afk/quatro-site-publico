@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Painel Administrativo | Quatro Folhas</title>
+    <meta name="description" content="Painel administrativo demonstrativo para gestáo do site Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-tarefas.html">Tarefas</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-boletos.html">Boletos</a>
+        <a href="admin-propostas.html">Propostas</a>
+        <a href="admin-comunicacoes.html">Comunicações</a>
+        <a href="admin-relatorios.html">Relat?rios</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-seguranca.html">Seguran?a</a>
+        <a href="admin-privacidade.html">Privacidade</a>
+        <a href="admin-implantacao.html">Implantação</a>
+        <a href="admin-manutencao.html">Manuten??o</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+        <a href="sistema-api.html">Sistema/API</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+        <a href="portal-do-aluno.html">Portal do Aluno</a>
+        <a href="index.html">Site</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="portal-do-aluno.html">Ver portal</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Painel administrativo</p>
+        <h1>Gestáo do site e da rotina da escola em um só lugar</h1>
+          <p>Esta é uma demonstração de como o painel poderia organizar boletos, materiais de alunos, vagas, aulas, cursos e contatos recebidos pelo site.</p>
+          <div class="info-strip">
+            <span>Boletos</span>
+            <span>Materiais</span>
+            <span>Vagas</span>
+            <span>Leads</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Resumo de hoje</p>
+          <h2>12 Pend?ncias</h2>
+          <p>3 boletos para revisar, 4 leads novos, 2 vagas pendentes e 3 materiais aguardando publicação.</p>
+          <a class="solid-btn" href="admin-tarefas.html">Ver tarefas</a>
+        </div>
+      </section>
+
+      <section class="content-band light" id="atalhos">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Atalhos</p>
+            <h2>As principais rotinas da equipe</h2>
+          </div>
+          <p>O painel deve priorizar tarefas frequentes e reduzir envio manual por WhatsApp sempre que possivel. Se algu?m tiver duvida, a central de ajuda explica cada rotina.</p>
+        </div>
+        <div class="card-grid">
+          <article class="course-card">
+            <span class="tag">Financeiro</span>
+            <h3>Importar boletos</h3>
+            <p>Suba PDFs em lote, revise associações e publique para os alunos.</p>
+            <a class="text-btn" href="admin-boletos.html">Abrir boletos</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Alunos</span>
+            <h3>Materiais por turma</h3>
+            <p>Publique apostilas, receitas, fichas técnicas e comunicados por curso.</p>
+            <a class="text-btn" href="admin-materiais.html">Abrir materiais</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Carreira</span>
+            <h3>Vagas pendentes</h3>
+              <p>Analise vagas cadastradas por empresas antes de liberar no site.</p>
+            <a class="text-btn" href="cadastrar-vaga.html">Ver cadastro</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Comercial</span>
+            <h3>Leads e propostas</h3>
+            <p>Receba interesses de cursos, aulas, festas, escolas, empresas e marcas.</p>
+            <a class="text-btn" href="admin-propostas.html">Abrir propostas</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Atendimento</span>
+            <h3>Comunicações</h3>
+            <p>Organize modelos de WhatsApp, retornos e follow-up com interessados.</p>
+            <a class="text-btn" href="admin-comunicacoes.html">Abrir comunicações</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Agenda</span>
+            <h3>Aulas e cursos</h3>
+            <p>Atualize próximas turmas, status de vagas e chamadas comerciais.</p>
+            <a class="text-btn" href="admin-agenda.html">Gerenciar agenda</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Conteúdo</span>
+            <h3>Conteúdo do site</h3>
+            <p>Atualize chamadas, p?ginas, fotos, destaques e publicações editoriais.</p>
+            <a class="text-btn" href="admin-conteudo.html">Gerenciar conteúdo</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Mídia</span>
+            <h3>Biblioteca visual</h3>
+            <p>Organize fotos aprovadas, legendas, categorias e uso por p?gina.</p>
+            <a class="text-btn" href="admin-midia.html">Abrir mídia</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">SEO</span>
+            <h3>SEO e publicação</h3>
+            <p>Revise t?tulo, descri??o, URL e imagem social antes de publicar.</p>
+            <a class="text-btn" href="admin-seo.html">Abrir SEO</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Relat?rios</span>
+            <h3>Indicadores e funil</h3>
+            <p>Acompanhe p?ginas, leads, reservas, propostas e acesso ao portal.</p>
+            <a class="text-btn" href="admin-relatorios.html">Abrir relat?rios</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Acessos</span>
+            <h3>Usu?rios e permiss?es</h3>
+            <p>Defina quem pode acessar, ler, editar, publicar ou aprovar cada m?dulo.</p>
+            <a class="text-btn" href="admin-usuarios.html">Gerenciar acessos</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Alunos</span>
+            <h3>Solicitações cadastrais</h3>
+            <p>Revise pedidos de alteração feitos pelo aluno no portal.</p>
+            <a class="text-btn" href="admin-solicitacoes-alunos.html">Abrir solicitações</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Aluno</span>
+            <h3>Ficha do aluno</h3>
+            <p>Consulte cadastro, turmas, boletos, materiais, certificados e hist?rico.</p>
+            <a class="text-btn" href="admin-aluno.html">Abrir ficha</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Base</span>
+            <h3>Lista de alunos</h3>
+            <p>Busque alunos por nome, turma, status, boleto, certificado ou pend?ncia.</p>
+            <a class="text-btn" href="admin-alunos.html">Abrir alunos</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Importação</span>
+            <h3>Importar alunos</h3>
+            <p>Suba planilhas ou listas de reservas para criar alunos em lote com confer?ncia.</p>
+            <a class="text-btn" href="admin-importar-alunos.html">Importar alunos</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Contratos</span>
+            <h3>Contratos digitais</h3>
+            <p>Gere contratos automaticamente e acompanhe assinatura via Clicksign.</p>
+            <a class="text-btn" href="admin-contratos.html">Abrir contratos</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Modelos</span>
+              <h3>Modelos jur?dicos</h3>
+            <p>Controle textos-base, vari?veis autom?ticas, versoes e aprovação dos contratos.</p>
+            <a class="text-btn" href="admin-contratos-modelos.html">Abrir modelos</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Documentos</span>
+            <h3>Arquivo do aluno</h3>
+            <p>Anexe contratos, comprovantes e documentos hist?ricos com permissão e auditoria.</p>
+            <a class="text-btn" href="admin-documentos.html">Abrir documentos</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Sistema</span>
+            <h3>Base ?nica e API</h3>
+            <p>Entenda como site, portal, app e admin compartilham os mesmos dados.</p>
+            <a class="text-btn" href="sistema-api.html">Ver arquitetura</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Config</span>
+            <h3>Configurações gerais</h3>
+            <p>Defina dados da escola, contatos, regras globais e integrações.</p>
+            <a class="text-btn" href="admin-configuracoes.html">Abrir configurações</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Seguran?a</span>
+            <h3>Seguran?a e continuidade</h3>
+            <p>Planeje SSL, backups, monitoramento, acessos e resposta a incidentes.</p>
+            <a class="text-btn" href="admin-seguranca.html">Abrir segurança</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">LGPD</span>
+            <h3>Privacidade e dados</h3>
+            <p>Mapeie dados pessoais, finalidade, reten??o, consentimento e direitos.</p>
+            <a class="text-btn" href="admin-privacidade.html">Abrir privacidade</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Publicação</span>
+            <h3>Implantação do site</h3>
+            <p>Checklist para trocar o site atual pelo novo sem perder dom?nio ou SEO.</p>
+            <a class="text-btn" href="admin-implantacao.html">Abrir implantação</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Continuidade</span>
+              <h3>Manuten??o e backups</h3>
+            <p>Acompanhe saude do sistema, backups, incidentes e rotina pos-publicação.</p>
+              <a class="text-btn" href="admin-manutencao.html">Abrir manuten??o</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Auditoria</span>
+            <h3>Hist?rico e segurança</h3>
+            <p>Consulte acessos, alterações, aprovações e eventos cr?ticos.</p>
+            <a class="text-btn" href="admin-auditoria.html">Abrir auditoria</a>
+          </article>
+          <article class="course-card">
+            <span class="tag">Ajuda</span>
+            <h3>Guia do administrador</h3>
+            <p>Veja passo a passo por perfil, rotina e m?dulo do sistema.</p>
+            <a class="text-btn" href="admin-ajuda.html">Abrir guia</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="detail-section" id="materiais">
+        <div>
+          <p class="eyebrow">Materiais do aluno</p>
+          <h2>Publicação simples por curso e turma</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>1. Escolher turma</h3><p>Ex.: Chef Profissional - Turma 2026 ou Confeitaria Profissional.</p></div>
+          <div class="detail-item"><h3>2. Subir arquivos</h3><p>PDFs, receitas, fichas técnicas, links e comunicados.</p></div>
+          <div class="detail-item"><h3>3. Publicar no portal</h3><p>Somente alunos daquela turma visualizam os materiais.</p></div>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fila de trabalho</p>
+            <h2>O que precisa de ação da equipe</h2>
+          </div>
+          <p>Uma visão de pend?ncias ajuda a escola a operar sem depender de memória ou conversas soltas.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span></span><span>Tarefa</span><span>Origem</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span><input type="checkbox"></span><span>Revisar boleto sem aluno sugerido</span><span>Financeiro</span><span><mark class="status-error">Pendente</mark></span><span><a class="text-btn" href="admin-tarefas.html">Abrir</a></span></div>
+          <div class="admin-row"><span><input type="checkbox"></span><span>Aprovar vaga de auxiliar de confeitaria</span><span>Carreira</span><span><mark class="status-review">Revisar</mark></span><span><a class="text-btn" href="admin-tarefas.html">Abrir</a></span></div>
+          <div class="admin-row"><span><input type="checkbox"></span><span>Responder proposta de festa infantil</span><span>Comercial</span><span><mark class="status-ok">Novo</mark></span><span><a class="text-btn" href="admin-tarefas.html">Responder</a></span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia">
+        <p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p>
+      </div>
+      <div>
+        <h3>Cursos</h3>
+        <nav>
+          <a href="chef-profissional.html">Chef Profissional</a>
+          <a href="confeitaria-profissional.html">Confeitaria Profissional</a>
+          <a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a>
+          <a href="chef-express.html">Chef Express</a>
+          <a href="cursos-rapidos.html">Cursos rápidos</a>
+          <a href="mini-chef.html">Mini Chef</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Experiências</h3>
+        <nav>
+          <a href="aulas-tematicas.html">Aulas temáticas</a>
+          <a href="festa-infantil-gastronomica.html">Festa Infantil</a>
+          <a href="aulas-para-escolas.html">Aulas para Escolas</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="parcerias-com-marcas.html">Parcerias</a>
+          <a href="locacao-da-cozinha.html">Locação da Cozinha</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Institucional</h3>
+        <nav>
+          <a href="a-escola.html">A Escola</a>
+          <a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a>
+          <a href="carreira.html">Carreira</a>
+          <a href="cadastrar-vaga.html">Cadastrar Vaga</a>
+          <a href="contato.html">Contato</a>
+          <a href="portal-do-aluno.html">Portal do Aluno</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Quatro Folhas Escola de Gastronomia</span>
+        <span>Portal do aluno disponível no topo do site.</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+

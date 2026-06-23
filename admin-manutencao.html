@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manuten??o e Continuidade | Quatro Folhas</title>
+  <meta name="description" content="Painel demonstrativo de manuten??o, backups, monitoramento e continuidade do site Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-seguranca.html">Seguran?a</a>
+        <a href="admin-implantacao.html">Implantação</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-seguranca.html">Seguran?a</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Manuten??o</p>
+          <h1>Rotina para manter site, portal e sistema funcionando com segurança</h1>
+        <p>Depois da publicação, a prioridade é evitar perda de dados, queda de formul?rios, acessos indevidos e problemas silenciosos.</p>
+          <div class="info-strip">
+            <span>Backups</span>
+            <span>Monitoramento</span>
+            <span>Atualizações</span>
+            <span>Incidentes</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Status geral</p>
+          <h2>Operação saudavel</h2>
+          <p>Exemplo de painel para acompanhar backups autom?ticos, uptime, formul?rios, logs e tarefas de manuten??o.</p>
+          <a class="solid-btn" href="#backup-autom?tico">Ver backups</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Indicadores</p>
+            <h2>O que precisa ser observado sempre</h2>
+          </div>
+          <p>O ideal e que o sistema avise a equipe quando algo importante falhar, em vez de depender de algu?m perceber manualmente.</p>
+        </div>
+        <div class="metric-grid">
+          <article><span>99.9%</span><p>Disponibilidade esperada</p></article>
+          <article><span>02:00</span><p>Backup diario autom?tico</p></article>
+          <article><span>0</span><p>Falhas de formul?rio hoje</p></article>
+          <article><span>2FA</span><p>Obrigat?rio no admin</p></article>
+        </div>
+      </section>
+
+      <section class="content-band" id="rotina">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Rotina</p>
+            <h2>Confer?ncia simples por frequencia</h2>
+          </div>
+          <p>Essa rotina deixa claro quem olha cada parte e evita que o site fique abandonado depois de entrar no ar.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Frequencia</span><span>Confer?ncia</span><span>Respons?vel</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Diaria</span><span>Formul?rios, reservas, propostas e boletos publicados</span><span>Atendimento/Admin</span><span><mark class="status-ok">Essencial</mark></span><span>Ver painel</span></div>
+          <div class="admin-row"><span>Semanal</span><span>Backup, logs de acesso, erros e atualizações pendentes</span><span>TI/Admin</span><span><mark class="status-ok">Essencial</mark></span><span>Registrar revisão</span></div>
+          <div class="admin-row"><span>Mensal</span><span>Permiss?es de usu?rios, conteúdos vencidos e SEO</span><span>Admin/Marketing</span><span><mark class="status-review">Revisar</mark></span><span>Auditar</span></div>
+          <div class="admin-row"><span>Trimestral</span><span>Teste de restauração de backup e revisão de segurança</span><span>TI/direção</span><span><mark class="status-review">Agendar</mark></span><span>Documentar</span></div>
+        </div>
+      </section>
+
+      <section class="content-band light" id="backup-autom?tico">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Backup autom?tico</p>
+            <h2>Sem depender de ação humana</h2>
+          </div>
+          <p>A equipe não precisa baixar arquivos manualmente. O sistema agenda, executa, confere e avisa se algo falhar.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Origem</span><span>O que salvar</span><span>Frequencia</span><span>Destino</span><span>Alerta</span></div>
+          <div class="admin-row"><span>Banco de dados</span><span>Alunos, turmas, usu?rios, reservas, propostas, pagamentos e logs</span><span>Diaria</span><span>Servidor + externo</span><span><mark class="status-ok">Obrigat?rio</mark></span></div>
+          <div class="admin-row"><span>Arquivos</span><span>Boletos, materiais, certificados, imagens e documentos enviados</span><span>Diaria</span><span>Armazenamento externo</span><span><mark class="status-ok">Obrigat?rio</mark></span></div>
+          <div class="admin-row"><span>C?digo</span><span>Site, portal, admin, app e API</span><span>A cada versão</span><span>Repositorio</span><span><mark class="status-ok">Obrigat?rio</mark></span></div>
+      <div class="admin-row"><span>Configurações</span><span>Chaves, regras, integrações e par?metros do sistema</span><span>Ao alterar</span><span>Cofre seguro</span><span><mark class="status-review">Controlado</mark></span></div>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fluxo técnico</p>
+            <h2>Como o backup autom?tico funcionaria</h2>
+          </div>
+          <p>Este e o desenho ideal para a versão real. Podemos adaptar ao servidor atual quando soubermos quais recursos ele oferece.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Agendar</h3><p>O servidor executa o backup em horário de baixo movimento, por exemplo 02:00.</p></article>
+          <article><span>2</span><h3>Compactar</h3><p>Banco e arquivos são organizados em pacotes separados e datados.</p></article>
+          <article><span>3</span><h3>Enviar copia</h3><p>Uma copia fica na hospedagem e outra vai para destino externo seguro.</p></article>
+          <article><span>4</span><h3>Conferir</h3><p>O sistema valida tamanho, integridade e data do backup gerado.</p></article>
+          <article><span>5</span><h3>Alertar</h3><p>Se falhar, o respons?vel recebe aviso por e-mail, painel ou WhatsApp.</p></article>
+          <article><span>6</span><h3>Restaurar</h3><p>Periodicamente, uma copia e testada em ambiente separado.</p></article>
+        </div>
+      </section>
+
+      <section class="page-form-section">
+        <div>
+          <p class="eyebrow">Configuração</p>
+          <h2>Modelo de pol?tica de backup</h2>
+      <p>No sistema real, apenas administradores com permissão técnica poderiam alterar esta configuração.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Pol?tica de backup salva no prot?tipo. Na versão real, isso acionaria a configuração do servidor.">
+          <label>Frequencia do banco<select required><option>Diaria - madrugada</option><option>A cada 12 horas</option><option>Semanal</option></select></label>
+          <label>Frequencia dos arquivos<select required><option>Diaria - incremental</option><option>Semanal completa</option><option>A cada envio importante</option></select></label>
+          <label>Destino externo<select required><option>Armazenamento externo seguro</option><option>Google Drive corporativo</option><option>Amazon S3 ou equivalente</option><option>Backblaze ou equivalente</option></select></label>
+          <label>Manter backups por<select required><option>30 dias</option><option>60 dias</option><option>90 dias</option><option>180 dias</option></select></label>
+          <label>Notificar falhas para<input type="text" placeholder="E-mail ou respons?vel técnico"></label>
+          <button class="solid-btn" type="submit">Salvar pol?tica</button>
+        </form>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Hist?rico de backups</p>
+            <h2>Confer?ncia autom?tica das ?ltimas execucoes</h2>
+          </div>
+          <p>O respons?vel so precisa agir quando houver alerta. Em operação normal, o painel mostra que tudo foi concluido.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Data</span><span>Pacote</span><span>Tamanho</span><span>Status</span><span>Observação</span></div>
+          <div class="admin-row"><span>Hoje 02:08</span><span>Banco de dados</span><span>128 MB</span><span><mark class="status-ok">Conclu?do</mark></span><span>Copia externa confirmada.</span></div>
+          <div class="admin-row"><span>Hoje 02:16</span><span>Arquivos do portal</span><span>4.8 GB</span><span><mark class="status-ok">Conclu?do</mark></span><span>Materiais e boletos incluidos.</span></div>
+          <div class="admin-row"><span>Ontem 02:09</span><span>Banco de dados</span><span>127 MB</span><span><mark class="status-ok">Conclu?do</mark></span><span>Integridade verificada.</span></div>
+          <div class="admin-row"><span>Teste mensal</span><span>Restauração</span><span>Ambiente teste</span><span><mark class="status-review">Agendado</mark></span><span>Confirmar restauração antes do fechamento do mes.</span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Continuidade</p>
+            <h2>Como reduzir risco de perda ou queda</h2>
+          </div>
+          <p>Esses pontos devem virar requisito quando formos transformar o prot?tipo em sistema real.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Backup autom?tico</h3><p>Arquivos, banco de dados, boletos, materiais e certificados com copia diaria e alerta de falha.</p></article>
+          <article><span>2</span><h3>Restauração testada</h3><p>Backup so e confiavel quando algu?m já testou restaurar.</p></article>
+          <article><span>3</span><h3>Alertas</h3><p>Avisos por e-mail ou WhatsApp se formul?rio, API, login ou servidor falhar.</p></article>
+          <article><span>4</span><h3>Logs</h3><p>Hist?rico de acesso, alterações, aprovações e tentativas de login.</p></article>
+        </div>
+      </section>
+
+      <section class="page-form-section">
+        <div>
+          <p class="eyebrow">Incidente</p>
+          <h2>Registrar problema operacional</h2>
+          <p>No sistema real, incidentes devem ter prioridade, respons?vel, prazo e hist?rico da solu??o.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Incidente registrado no prot?tipo. Encaminhe ao respons?vel técnico.">
+          <label>Tipo de problema<select required><option value="">Selecione</option><option>Site fora do ar</option><option>Formul?rio não envia</option><option>Portal com erro</option><option>Admin sem acesso</option><option>Boleto ou material indisponível</option><option>Suspeita de acesso indevido</option></select></label>
+          <label>Prioridade<select required><option>Baixa</option><option>Media</option><option>Alta</option><option>Critica</option></select></label>
+          <label>M?dulo afetado<input type="text" placeholder="Ex.: Portal do aluno, agenda, boletos"></label>
+          <label>Descri??o<textarea rows="4" required></textarea></label>
+          <button class="solid-btn" type="submit">Registrar incidente</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Contratações possiveis</p>
+            <h2>O que talvez valha pagar, se o servidor atual não oferecer</h2>
+          </div>
+          <p>não precisamos comprar nada agora. Esta lista serve para decidir apenas quando formos para a versão real.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Seguran?a</span><h3>Firewall e prote??o de aplicação</h3><p>Ajuda a bloquear ataques comuns, tentativas de invasão e tr?fego suspeito.</p><a class="text-btn" href="admin-seguranca.html">Ver segurança</a></article>
+          <article><span class="tag">Backup</span><h3>Backup externo</h3><p>Copia fora do servidor principal para reduzir risco em caso de falha da hospedagem.</p><a class="text-btn" href="admin-implantacao.html">Ver implantação</a></article>
+          <article><span class="tag">Monitoramento</span><h3>Alerta de queda</h3><p>Servi?o que avisa se o site, portal ou API ficarem fora do ar.</p><a class="text-btn" href="admin-auditoria.html">Ver auditoria</a></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Regra prática</p>
+          <h2>Nada importante deve existir em um ?nico lugar</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Arquivos dos alunos</h3><p>Materiais, boletos e certificados precisam de copia segura e controle de acesso.</p></div>
+          <div class="detail-item"><h3>Dados do sistema</h3><p>Alunos, turmas, reservas e pagamentos devem estar em banco com backup e hist?rico.</p></div>
+          <div class="detail-item"><h3>Acessos administrativos</h3><p>Usu?rios com permissão critica devem usar senha forte e, idealmente, autenticação em duas etapas.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Gestáo</h3><nav><a href="admin.html">Painel</a><a href="admin-seguranca.html">Seguran?a</a><a href="admin-implantacao.html">Implantação</a><a href="admin-auditoria.html">Auditoria</a><a href="admin-ajuda.html">Ajuda</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Rotina de manuten??o para a versão real.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

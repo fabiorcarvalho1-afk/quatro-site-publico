@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarefas e Aprovações | Quatro Folhas</title>
+    <meta name="description" content="Fila demonstrativa de tarefas e aprovações administrativas do sistema Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-propostas.html">Propostas</a>
+        <a href="admin-comunicacoes.html">Comunicações</a>
+        <a href="admin-relatorios.html">Relat?rios</a>
+        <a href="admin-boletos.html">Boletos</a>
+        <a href="admin-conteudo.html">Conteúdo</a>
+        <a href="admin-midia.html">Mídia</a>
+        <a href="admin-seo.html">SEO</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin.html">Voltar ao painel</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Tarefas e aprovações</p>
+          <h1>O que precisa de ação da equipe</h1>
+          <p>Uma fila ?nica evita que boletos, propostas, vagas, materiais e certificados fiquem perdidos em conversas ou mensagens.</p>
+          <div class="info-strip">
+            <span>Novas</span>
+            <span>Revisar</span>
+            <span>Aprovar</span>
+            <span>Publicar</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Prioridade</p>
+          <h2>12 Pend?ncias</h2>
+          <p>Comece por financeiro e propostas com prazo mais curto.</p>
+          <a class="solid-btn" href="#fila">Abrir fila</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Como funciona</p>
+            <h2>Todo item tem respons?vel, status e próxima ação</h2>
+          </div>
+          <p>Isso torna o sistema mais intuitivo para cada login, porque a pessoa enxerga somente o que precisa resolver ou acompanhar.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Chega uma solicitação</h3><p>Reserva, proposta, boleto importado, vaga cadastrada ou material em rascunho.</p></article>
+          <article><span>2</span><h3>O sistema cria tarefa</h3><p>Ela aparece com m?dulo, respons?vel, prioridade e status.</p></article>
+          <article><span>3</span><h3>Algu?m resolve</h3><p>A pessoa autorizada revisa, aprova, responde, publica ou bloqueia.</p></article>
+      <article><span>4</span><h3>Hist?rico fica salvo</h3><p>A equipe entende o que aconteceu e qual foi a ?ltima ação.</p></article>
+        </div>
+      </section>
+
+      <section class="content-band" id="fila">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fila ?nica</p>
+            <h2>Pend?ncias por m?dulo</h2>
+          </div>
+          <p>Filtros por ?rea, respons?vel e prazo ajudam cada usu?rio a trabalhar sem se perder.</p>
+        </div>
+        <div class="admin-toolbar">
+          <button class="ghost-btn" type="button">Todas</button>
+          <button class="ghost-btn" type="button">Financeiro</button>
+          <button class="ghost-btn" type="button">Comercial</button>
+          <button class="ghost-btn" type="button">Acad?mico</button>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>M?dulo</span><span>Tarefa</span><span>Respons?vel</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Boletos</span><span>Revisar arquivo sem aluno sugerido</span><span>Financeiro</span><span><mark class="status-error">Pendente</mark></span><span><a class="text-btn" href="admin-boletos.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Propostas</span><span>Responder festa infantil</span><span>Comercial</span><span><mark class="status-ok">Novo</mark></span><span><a class="text-btn" href="admin-proposta-detalhe.html">Responder</a></span></div>
+          <div class="admin-row"><span>comunicações</span><span>Follow-up de reserva sem resposta</span><span>Comercial</span><span><mark class="status-error">Hoje</mark></span><span><a class="text-btn" href="admin-comunicacoes.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Alunos</span><span>Revisar alteração de nome para certificado</span><span>Secretaria</span><span><mark class="status-review">Revisar</mark></span><span><a class="text-btn" href="admin-solicitacoes-alunos.html">Analisar</a></span></div>
+          <div class="admin-row"><span>Materiais</span><span>Publicar receitas da aula 02</span><span>Acad?mico</span><span><mark class="status-review">Rascunho</mark></span><span><a class="text-btn" href="admin-materiais.html">Revisar</a></span></div>
+          <div class="admin-row"><span>conteúdo</span><span>Aprovar destaque da agenda p?blica</span><span>Marketing</span><span><mark class="status-review">Revisar</mark></span><span><a class="text-btn" href="admin-conteudo.html">Abrir</a></span></div>
+          <div class="admin-row"><span>mídia</span><span>Completar legenda de turma formada</span><span>Marketing</span><span><mark class="status-error">Pendente</mark></span><span><a class="text-btn" href="admin-midia.html">Abrir</a></span></div>
+          <div class="admin-row"><span>SEO</span><span>Escolher imagem social da festa infantil</span><span>Marketing</span><span><mark class="status-review">Ajustar</mark></span><span><a class="text-btn" href="admin-seo.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Certificados</span><span>Gerar certificados de Massas Artesanais</span><span>Acad?mico</span><span><mark class="status-review">Pronto</mark></span><span><a class="text-btn" href="admin-certificados.html">Gerar</a></span></div>
+          <div class="admin-row"><span>Carreira</span><span>Aprovar vaga de auxiliar de confeitaria</span><span>Carreira</span><span><mark class="status-review">Revisar</mark></span><span><a class="text-btn" href="cadastrar-vaga.html">Abrir</a></span></div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Intuicao do painel</p>
+          <h2>O usu?rio deve saber o que fazer em poucos segundos</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Status claro</h3><p>Novo, revisar, pendente, publicado, confirmado e bloqueado evitam interpretação confusa.</p></div>
+          <div class="detail-item"><h3>Ação direta</h3><p>Cada linha tem um bot?o para abrir a tela certa, sem procurar no menu.</p></div>
+          <div class="detail-item"><h3>Permissão respeitada</h3><p>O usu?rio v? apenas tarefas de áreas permitidas pelo administrador.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

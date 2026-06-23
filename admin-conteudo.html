@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>conteúdo do Site | Quatro Folhas</title>
+    <meta name="description" content="Tela demonstrativa para gerenciar conteúdos, destaques e p?ginas p?blicas do site Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-tarefas.html">Tarefas</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-materiais.html">Materiais</a>
+        <a href="admin-midia.html">Mídia</a>
+        <a href="admin-seo.html">SEO</a>
+        <a href="admin-relatorios.html">Relat?rios</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+        <a href="index.html">Site</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-midia.html">Biblioteca</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Conteúdo do site</p>
+          <h1>Atualize p?ginas, chamadas e destaques sem mexer no c?digo</h1>
+          <p>Uma ?rea simples para manter o site vivo: home, agenda, cursos, experiências, empresas, blog e fotos institucionais.</p>
+          <div class="info-strip">
+            <span>P?ginas</span>
+            <span>Destaques</span>
+            <span>Fotos</span>
+            <span>Aprovação</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Hoje</p>
+          <h2>4 Revisoes</h2>
+          <p>2 chamadas em rascunho, 1 destaque da agenda aguardando aprovação e 1 not?cia programada.</p>
+          <a class="solid-btn" href="#editar">Criar conteúdo</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Como usar</p>
+            <h2>Conteúdo público com fluxo de revisão</h2>
+          </div>
+          <p>A equipe edita textos, imagens e chamadas. Um usu?rio autorizado revisa e publica. Assim a marca mantêm padr?o premium e evita publicações acidentais.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Escolher p?gina</h3><p>Home, cursos, agenda, experiências, empresas, carreira ou blog.</p></article>
+          <article><span>2</span><h3>Editar bloco</h3><p>T?tulo, chamada, CTA, foto, status e observação interna.</p></article>
+          <article><span>3</span><h3>Enviar para revisão</h3><p>O administrador confere tom de voz, imagem e destino do bot?o.</p></article>
+          <article><span>4</span><h3>Publicar</h3><p>O conteúdo entra no site e fica registrado no hist?rico.</p></article>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="editar">
+        <div>
+          <p class="eyebrow">Novo bloco</p>
+      <h2>Cadastro rápido de conteúdo</h2>
+          <p>Este formul?rio simula um CMS leve. No sistema real, cada campo alimentaria a API e atualizaria a p?gina correspondente.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="conteúdo salvo como rascunho. Envie para revisão antes de publicar.">
+          <label>P?gina<select required><option value="">Selecione</option><option>Home</option><option>Agenda</option><option>aulas temáticas</option><option>Mini Chef</option><option>Empresas e Marcas</option><option>Vida na Quatro Folhas</option></select></label>
+          <label>?rea da p?gina<select required><option value="">Selecione</option><option>Hero principal</option><option>Destaque comercial</option><option>Lista de cards</option><option>Galeria de fotos</option><option>Depoimento</option><option>Not?cia / blog</option></select></label>
+          <label>T?tulo<input type="text" placeholder="Ex.: Aulas temáticas para viver a gastronomia" required></label>
+          <label>Chamada<textarea rows="4" placeholder="Texto curto, claro e com percep??o premium." required></textarea></label>
+          <label>Bot?o principal<input type="text" placeholder="Ex.: Reservar interesse"></label>
+          <label>Link do bot?o<input type="text" placeholder="Ex.: aulas-tematicas.html#agenda"></label>
+          <label>Imagem<input type="file" accept="image/*"></label>
+          <label>Status<select required><option>Rascunho</option><option>Enviar para revisão</option><option>Programar publicação</option></select></label>
+          <label>Observação interna<textarea rows="3" placeholder="Ex.: usar foto da cozinha com alunos em ação."></textarea></label>
+          <button class="solid-btn" type="submit">Salvar conteúdo</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Publicações</p>
+            <h2>P?ginas e blocos em andamento</h2>
+          </div>
+          <p>O administrador consegue ver rapidamente o que está publicado, em revisão, em rascunho ou programado.</p>
+        </div>
+        <div class="admin-toolbar">
+          <div>
+            <strong>Controle editorial</strong>
+            <span>8 publicados - 4 revisoes - 2 rascunhos</span>
+          </div>
+          <label>Filtrar ?rea<select><option>Todas</option><option>Home</option><option>Agenda</option><option>Cursos</option><option>Blog</option></select></label>
+          <button class="ghost-btn" type="button">Ver hist?rico</button>
+          <button class="solid-btn" type="button">Publicar aprovados</button>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>P?gina</span><span>Bloco</span><span>Respons?vel</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Home</span><span>Hero principal com foto da fachada</span><span>Marketing</span><span><mark class="status-ok">Publicado</mark></span><span><a class="text-btn" href="index.html">Visualizar</a></span></div>
+          <div class="admin-row"><span>Agenda</span><span>Destaque de aula temática</span><span>Comercial</span><span><mark class="status-review">Revisar</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span>Empresas</span><span>Chamada para parcerias com marcas</span><span>Marketing</span><span><mark class="status-review">Rascunho</mark></span><span>Enviar</span></div>
+          <div class="admin-row"><span>Blog</span><span>Bastidores da turma de confeitaria</span><span>Acad?mico</span><span><mark class="status-ok">Programado</mark></span><span>Revisar</span></div>
+          <div class="admin-row"><span>Mini Chef</span><span>Galeria de fotos</span><span>Acad?mico</span><span><mark class="status-error">Imagem pendente</mark></span><span>Completar</span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Mídia</p>
+            <h2>Banco visual conectado ao conteúdo</h2>
+          </div>
+          <p>A biblioteca ajuda a escolher fotos aprovadas e ver onde cada imagem aparece antes de trocar uma chamada importante.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Fotos</span><h3>Biblioteca de mídia</h3><p>Veja imagens aprovadas, status, legenda e uso recomendado.</p><a class="text-btn" href="admin-midia.html">Abrir biblioteca</a></article>
+          <article><span class="tag">Revisão</span><h3>Imagem antes de publicar</h3><p>Fotos novas entram como rascunho e precisam de legenda, categoria e aprovação.</p><a class="text-btn" href="admin-tarefas.html">Ver tarefas</a></article>
+          <article><span class="tag">Site</span><h3>Uso por p?gina</h3><p>Controle se a foto aparece em home, cursos, agenda, empresas ou blog.</p><a class="text-btn" href="mapa-do-site.html">Ver mapa</a></article>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">SEO</p>
+            <h2>Revisão antes de publicar</h2>
+          </div>
+          <p>T?tulos, descricoes, URLs e imagens sociais ajudam o site a parecer profissional quando algu?m encontra ou compartilha uma p?gina.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Busca</span><h3>T?tulos e descricoes</h3><p>Revise como cada p?gina aparece no Google e em outros buscadores.</p><a class="text-btn" href="admin-seo.html">Abrir SEO</a></article>
+          <article><span class="tag">WhatsApp</span><h3>Compartilhamento</h3><p>Defina imagem e resumo para links enviados pela equipe comercial.</p><a class="text-btn" href="admin-seo.html#editar-seo">Editar metadados</a></article>
+          <article><span class="tag">Publicação</span><h3>Checklist final</h3><p>Confira URL, CTA, imagem, status e indexação antes de liberar.</p><a class="text-btn" href="admin-tarefas.html">Ver fila</a></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Padr?o Quatro Folhas</p>
+          <h2>Regras editoriais para manter percep??o premium</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Usar fotos reais</h3><p>Priorizar cozinha, fachada, alunos, equipe e experiências da própria escola.</p></div>
+          <div class="detail-item"><h3>Texto direto</h3><p>Evitar excesso de promessa. Valorizar técnica, experiência, estrutura e acolhimento.</p></div>
+          <div class="detail-item"><h3>CTA claro</h3><p>Cada p?gina deve ter uma próxima ação: reservar interesse, solicitar proposta, ver agenda ou falar com a equipe.</p></div>
+          <div class="detail-item"><h3>Separar conteúdo de operação</h3><p>Esta ?rea não edita boletos, alunos ou materiais privados. Isso fica nos m?dulos próprios.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

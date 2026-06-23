@@ -1,0 +1,211 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Boletos | Quatro Folhas</title>
+    <meta name="description" content="Tela demonstrativa de importação em lote de boletos para o Portal do Aluno Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="portal-do-aluno.html">Portal do Aluno</a>
+        <a href="carreira.html">Carreira</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="portal-do-aluno.html">Ver portal</a>
+        <a class="solid-btn" href="contato.html">Suporte</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Administrativo</p>
+          <h1>Importação de boletos em lote</h1>
+          <p>Uma tela interna para subir todos os boletos baixados do banco, conferir associações sugeridas e publicar para os alunos.</p>
+          <div class="info-strip">
+            <span>Upload em lote</span>
+            <span>Referência bancária</span>
+            <span>Conferência manual</span>
+            <span>Publicação</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Resumo da importação</p>
+          <h2>27 Boletos</h2>
+          <p>24 encontrados, 2 para revisar, 1 não encontrado.</p>
+          <a class="solid-btn" href="#conferência">Conferir lista</a>
+        </div>
+      </section>
+
+      <section class="page-form-section">
+        <div>
+          <p class="eyebrow">Upload</p>
+          <h2>Enviar boletos do banco</h2>
+          <p>O arquivo pode manter o padrão atual do banco: Nome_Do_Aluno-ReferênciaBancária-Inter_Empresas.pdf.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Arquivos recebidos para conferência. Revise as associações antes de publicar.">
+          <label>Competencia<select required><option value="">Selecione</option><option>Janeiro/2026</option><option>Fevereiro/2026</option><option>Marco/2026</option><option>Abril/2026</option><option>Maio/2026</option><option>Junho/2026</option></select></label>
+          <label>Vencimento<input type="text" placeholder="Ex.: 10/06/2026" required></label>
+          <label>Selecionar PDFs<input type="file" accept="application/pdf" multiple required></label>
+          <label>Observação interna<textarea rows="3" placeholder="Opcional"></textarea></label>
+          <button class="solid-btn" type="submit">Enviar boletos para conferência</button>
+        </form>
+      </section>
+
+      <section class="content-band light" id="conferência">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Conferência</p>
+            <h2>Revise antes de publicar</h2>
+          </div>
+          <p>A publicação deve acontecer apenas depois que a equipe validar os casos encontrados, revisar dúvidas e corrigir arquivos sem associação.</p>
+        </div>
+        <div class="admin-toolbar">
+          <div>
+            <strong>27 Boletos importados</strong>
+            <span>24 encontrados - 2 revisar - 1 não encontrado</span>
+          </div>
+          <label>
+            Filtrar status
+            <select>
+              <option>Todos</option>
+              <option>Encontrado</option>
+              <option>Revisar</option>
+              <option>Não encontrado</option>
+            </select>
+          </label>
+          <button class="ghost-btn" type="button">Salvar rascunho</button>
+          <button class="solid-btn" type="button">Publicar encontrados</button>
+        </div>
+        <div class="admin-table" role="table" aria-label="Boletos importados">
+          <div class="admin-row admin-head" role="row">
+            <span></span>
+            <span>Arquivo</span>
+            <span>Aluno sugerido</span>
+            <span>Status</span>
+            <span>Ação</span>
+          </div>
+          <div class="admin-row" role="row">
+            <span><input type="checkbox" checked aria-label="Selecionar Simone Ferreirá dos Santos"></span>
+            <span>Simone_Ferreira_dos_Santos-90428379443-Inter_Empresas.pdf</span>
+            <span>Simone Ferreirá dos Santos</span>
+            <span><mark class="status-ok">Encontrado</mark></span>
+            <span>Publicar</span>
+          </div>
+          <div class="admin-row" role="row">
+            <span><input type="checkbox" aria-label="Selecionar Maria Silva"></span>
+            <span>Maria_Silva-77881122-Inter_Empresas.pdf</span>
+            <span>Maria Silva / Maria A. Silva</span>
+            <span><mark class="status-review">Revisar</mark></span>
+            <span>Escolher aluno</span>
+          </div>
+          <div class="admin-row" role="row">
+            <span><input type="checkbox" aria-label="Selecionar Jose Costa"></span>
+            <span>Jose_Costa-99110022-Inter_Empresas.pdf</span>
+            <span>Nenhum aluno sugerido</span>
+            <span><mark class="status-error">Não encontrado</mark></span>
+            <span>Associar manualmente</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Regras recomendadas</p>
+          <h2>Segurança operacional</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Não publicar automaticamente</h3><p>Mesmo com sugestão automática, a equipe deve confirmar antes de liberar boletos.</p></div>
+          <div class="detail-item"><h3>Referência bancária no cadastro</h3><p>Se a referência for fixa por aluno, pode ser cadastrada uma vez para melhorar a associação.</p></div>
+          <div class="detail-item"><h3>Histórico por competencia</h3><p>O aluno ve boletos por mes, com vencimento e arquivo disponível para download.</p></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Casos pendentes</p>
+            <h2>O que fazer quando o sistema não tiver certeza</h2>
+          </div>
+          <p>Os boletos encontrados podem ser publicados em lote. Os pendentes ficam separados para correção, sem atrapalhar o restante.</p>
+        </div>
+        <div class="card-grid compact">
+          <article>
+            <h3>Nome parecido</h3>
+            <p>A equipe escolhe manualmente o aluno correto e pode salvar essa relação para próximas importações.</p>
+          </article>
+          <article>
+            <h3>Referência nova</h3>
+        <p>Se a referência bancária for fixa, ela pode ser cadastrada no perfil do aluno após a primeira conferência.</p>
+          </article>
+          <article>
+            <h3>Arquivo sem aluno</h3>
+            <p>O boleto fica como pendente até a equipe localizar ou cadastrar o aluno correspondente.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia">
+        <p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p>
+      </div>
+      <div>
+        <h3>Cursos</h3>
+        <nav>
+          <a href="chef-profissional.html">Chef Profissional</a>
+          <a href="confeitaria-profissional.html">Confeitaria Profissional</a>
+          <a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a>
+          <a href="chef-express.html">Chef Express</a>
+          <a href="cursos-rapidos.html">Cursos Rápidos</a>
+          <a href="mini-chef.html">Mini Chef</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Experiências</h3>
+        <nav>
+          <a href="aulas-tematicas.html">Aulas Temáticas</a>
+          <a href="festa-infantil-gastronomica.html">Festa Infantil</a>
+          <a href="aulas-para-escolas.html">Aulas para Escolas</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="parcerias-com-marcas.html">Parcerias</a>
+          <a href="locacao-da-cozinha.html">Locação da Cozinha</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Institucional</h3>
+        <nav>
+          <a href="a-escola.html">A Escola</a>
+          <a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a>
+          <a href="carreira.html">Carreira</a>
+          <a href="cadastrar-vaga.html">Cadastrar Vaga</a>
+          <a href="contato.html">Contato</a>
+          <a href="portal-do-aluno.html">Portal do Aluno</a>
+          
+          <a href="mapa-do-site.html">Mapa do site</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Quatro Folhas Escola de Gastronomia</span>
+        <span>Portal do aluno disponível no topo do site.</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+

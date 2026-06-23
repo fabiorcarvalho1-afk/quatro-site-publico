@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configuração de Certificados | Quatro Folhas</title>
+    <meta name="description" content="Regras demonstrativas para c?digo, QR Code e validação p?blica de certificados Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-certificados.html">Certificados</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-privacidade.html">Privacidade</a>
+        <a href="validar-certificado.html">Validar</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin-certificados.html">Voltar certificados</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Certificados</p>
+          <h1>Regras de emissão, c?digo e validação p?blica</h1>
+          <p>Esta ?rea define como o certificado será numerado, validado, mascarado publicamente e vinculado ao portal do aluno.</p>
+          <div class="info-strip">
+            <span>C?digo ?nico</span>
+            <span>QR Code</span>
+            <span>Sobrenome</span>
+            <span>Nome mascarado</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Padr?o sugerido</p>
+          <h2>QF-ANO-CURSO-NUMERO</h2>
+          <p>Exemplo: QF-2026-MAS-0001. O QR Code aponta para a p?gina de validação.</p>
+          <a class="solid-btn" href="#regras">Ver regras</a>
+        </div>
+      </section>
+
+      <section class="content-band light" id="regras">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Regras principais</p>
+            <h2>O que aparece no certificado e na consulta p?blica</h2>
+          </div>
+          <p>Essas regras protegem o aluno e ainda permitem que terceiros confirmem a autenticidade do documento.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Regra</span><span>Valor sugerido</span><span>Onde aparece</span><span>Status</span><span>Observação</span></div>
+          <div class="admin-row"><span>C?digo ?nico</span><span>QF-2026-MAS-0001</span><span>Certificado e validação</span><span><mark class="status-ok">Ativo</mark></span><span>Um c?digo por certificado.</span></div>
+          <div class="admin-row"><span>Sobrenome</span><span>Obrigat?rio na consulta</span><span>P?gina p?blica</span><span><mark class="status-ok">Ativo</mark></span><span>Confere o certificado sem expor dados.</span></div>
+          <div class="admin-row"><span>Nome público</span><span>C***** R*****</span><span>Resultado da validação</span><span><mark class="status-ok">Ativo</mark></span><span>Primeira letra + asteriscos.</span></div>
+          <div class="admin-row"><span>QR Code</span><span>Link de validação</span><span>Certificado PDF</span><span><mark class="status-review">Planejado</mark></span><span>Aponta para validar-certificado.html.</span></div>
+          <div class="admin-row"><span>Expiração</span><span>Sem expiração</span><span>Sistema</span><span><mark class="status-review">Revisar</mark></span><span>Certificados normalmente permanecem v?lidos.</span></div>
+        </div>
+      </section>
+
+      <section class="page-form-section">
+        <div>
+          <p class="eyebrow">Padr?o de c?digo</p>
+          <h2>Configurar numeração</h2>
+          <p>No sistema real, esta regra gera automaticamente c?digos sem repeti??o.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Regras de certificado salvas no prot?tipo.">
+          <label>Prefixo institucional<input type="text" value="QF" required></label>
+          <label>Formato do curso<select required><option>Sigla de 3 letras</option><option>C?digo interno do curso</option><option>Nome abreviado</option></select></label>
+          <label>Sequencial<select required><option>Por curso e ano</option><option>Global por ano</option><option>Global permanente</option></select></label>
+          <label>Dados exigidos na validação<select required><option>C?digo + sobrenome</option><option>C?digo + data de nascimento</option><option>C?digo apenas</option></select></label>
+          <label class="acceptance"><input type="checkbox" checked>Exibir nome mascarado na consulta p?blica</label>
+          <label class="acceptance"><input type="checkbox" checked>Incluir QR Code no PDF do certificado</label>
+          <button class="solid-btn" type="submit">Salvar regras</button>
+        </form>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Prévia de validação</p>
+            <h2>Como terceiros enxergam o resultado</h2>
+          </div>
+          <p>O nome completo continua restrito ao admin e ao portal do aluno.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Consulta</span><h3>Campos obrigat?rios</h3><p>C?digo do certificado + sobrenome do aluno.</p><a class="text-btn" href="validar-certificado.html">Abrir validação</a></article>
+          <article><span class="tag">Resultado</span><h3>Aluno mascarado</h3><p>Exemplo: C***** R*****. Confirma sem expor nome completo.</p></article>
+          <article><span class="tag">Privacidade</span><h3>Dados limitados</h3><p>Curso, data, carga hor?ria, c?digo e instituição emissora.</p><a class="text-btn" href="admin-privacidade.html">Ver LGPD</a></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Operação</p>
+          <h2>Da geração ao QR Code</h2>
+        </div>
+        <div class="detail-list">
+        <div class="detail-item"><h3>1. Presença confirmada</h3><p>Somente alunos eleg?veis entram na fila de certificados.</p></div>
+          <div class="detail-item"><h3>2. C?digo gerado</h3><p>O sistema cria c?digo ?nico e salva no hist?rico do aluno.</p></div>
+          <div class="detail-item"><h3>3. PDF emitido</h3><p>O certificado recebe c?digo, link e QR Code de validação.</p></div>
+          <div class="detail-item"><h3>4. Consulta p?blica</h3><p>C?digo + sobrenome validam o documento e exibem nome mascarado.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Configuração de certificados e validação p?blica.</p></div>
+      <div><h3>Certificados</h3><nav><a href="admin-certificados.html">Gerar certificados</a><a href="admin-certificados-config.html">Regras</a><a href="portal-certificados.html">Portal</a><a href="validar-certificado.html">Validar certificado</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Regras demonstrativas para a versão real.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

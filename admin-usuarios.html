@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Usu?rios e Permiss?es | Quatro Folhas</title>
+    <meta name="description" content="Tela demonstrativa de usu?rios e permiss?es administrativas do site Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+        <a href="admin-solicitacoes-alunos.html">Solicitações</a>
+        <a href="admin-conteudo.html">Conteúdo</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+        <a href="admin-boletos.html">Boletos</a>
+        <a href="admin-materiais.html">Materiais</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+        <a href="index.html">Site</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="admin.html">Voltar ao painel</a>
+        <a class="solid-btn" href="portal-do-aluno.html">Ver portal</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Usu?rios e Permiss?es</p>
+          <h1>Controle quem pode acessar, ler, editar e publicar</h1>
+          <p>O administrador cria logins internos e define quais m?dulos cada pessoa pode ver ou operar dentro do painel.</p>
+          <p class="security-note">Recomendação: boletos e dados financeiros devem ficar separados dos acessos pedagógicos e comerciais.</p>
+          <div class="info-strip">
+            <span>Administrador</span>
+            <span>Financeiro</span>
+            <span>Materiais</span>
+            <span>conteúdo</span>
+            <span>Comercial</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Seguran?a</p>
+          <h2>Permiss?es por m?dulo</h2>
+          <p>Cada usu?rio pode ter acesso de leitura, edi??o, publicação ou nenhum acesso. Em caso de duvida sobre perfis, consulte a central de ajuda antes de liberar m?dulos sens?veis.</p>
+          <a class="solid-btn" href="#novo-usuario">Criar usu?rio</a>
+        </div>
+      </section>
+
+      <section class="page-form-section" id="novo-usuario">
+        <div>
+          <p class="eyebrow">Novo login interno</p>
+          <h2>Crie um acesso para algu?m da equipe</h2>
+          <p>Depois de criar o usu?rio, o administrador seleciona os m?dulos permitidos e o nivel de acesso.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Usu?rio criado como rascunho. Revise as permiss?es antes de ativar o acesso.">
+          <label>Nome<input type="text" required></label>
+          <label>E-mail de login<input type="email" required></label>
+          <label>Perfil sugerido<select required><option value="">Selecione</option><option>Administrador</option><option>Financeiro</option><option>Materiais / Acad?mico</option><option>conteúdo / Marketing</option><option>Comercial</option><option>Carreira</option><option>Personalizado</option></select></label>
+          <label>Status<select required><option>Ativo</option><option>Pendente</option><option>Bloqueado</option></select></label>
+          <button class="solid-btn" type="submit">Criar usu?rio</button>
+        </form>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Equipe</p>
+            <h2>Usu?rios internos</h2>
+          </div>
+          <p>A tabela mostra quais pessoas acessam o painel e qual perfil principal foi atribuido.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span></span><span>Usu?rio</span><span>Perfil</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span><input type="checkbox" checked></span><span>Fabio</span><span>Administrador</span><span><mark class="status-ok">Ativo</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span><input type="checkbox"></span><span>Respons?vel financeiro</span><span>Financeiro</span><span><mark class="status-ok">Ativo</mark></span><span>Editar</span></div>
+          <div class="admin-row"><span><input type="checkbox"></span><span>Coordenação pedagógica</span><span>Materiais</span><span><mark class="status-review">Pendente</mark></span><span>Ativar</span></div>
+        </div>
+      </section>
+
+      <section class="content-band" id="permissoes">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Matriz de permiss?es</p>
+            <h2>Selecione o que cada login pode acessar</h2>
+          </div>
+          <p>O ideal e permitir leitura, edi??o e publicação separadamente. Assim uma pessoa pode conferir informações sem conseguir alterar dados sens?veis.</p>
+        </div>
+        <div class="permission-grid">
+          <div class="permission-head">M?dulo</div>
+          <div class="permission-head">Ler</div>
+          <div class="permission-head">Editar</div>
+          <div class="permission-head">Publicar / Aprovar</div>
+          <div class="permission-head">Sem acesso</div>
+
+          <div>Boletos e pagamentos</div>
+          <label><input type="checkbox" checked> Ler</label>
+          <label><input type="checkbox" checked> Editar</label>
+          <label><input type="checkbox" checked> Publicar</label>
+          <label><input type="checkbox"> Bloquear</label>
+
+          <div>Materiais do aluno</div>
+          <label><input type="checkbox" checked> Ler</label>
+          <label><input type="checkbox"> Editar</label>
+          <label><input type="checkbox"> Publicar</label>
+          <label><input type="checkbox"> Bloquear</label>
+
+          <div>conteúdo do site</div>
+          <label><input type="checkbox" checked> Ler</label>
+          <label><input type="checkbox"> Editar</label>
+          <label><input type="checkbox"> Publicar</label>
+          <label><input type="checkbox"> Bloquear</label>
+
+          <div>Vagas de carreira</div>
+          <label><input type="checkbox" checked> Ler</label>
+          <label><input type="checkbox"> Editar</label>
+          <label><input type="checkbox"> Aprovar</label>
+          <label><input type="checkbox"> Bloquear</label>
+
+          <div>Leads comerciais</div>
+          <label><input type="checkbox" checked> Ler</label>
+          <label><input type="checkbox"> Editar</label>
+          <label><input type="checkbox"> Encaminhar</label>
+          <label><input type="checkbox"> Bloquear</label>
+
+          <div>Usu?rios e permiss?es</div>
+          <label><input type="checkbox" checked> Ler</label>
+          <label><input type="checkbox" checked> Editar</label>
+          <label><input type="checkbox" checked> Aprovar</label>
+          <label><input type="checkbox"> Bloquear</label>
+
+          <div>Solicitações de alunos</div>
+          <label><input type="checkbox" checked> Ler</label>
+          <label><input type="checkbox" checked> Editar</label>
+          <label><input type="checkbox" checked> Aprovar</label>
+          <label><input type="checkbox"> Bloquear</label>
+
+          <div>Configurações gerais</div>
+          <label><input type="checkbox" checked> Ler</label>
+          <label><input type="checkbox"> Editar</label>
+          <label><input type="checkbox"> Aprovar</label>
+          <label><input type="checkbox"> Bloquear</label>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Perfis padr?o</p>
+            <h2>Comece por um perfil e personalize depois</h2>
+          </div>
+          <p>O administrador pode aplicar um perfil pronto e, se necess?rio, ajustar permiss?es especificas para aquele login.</p>
+        </div>
+        <div class="profile-grid">
+          <article>
+            <span class="tag">Total</span>
+            <h3>Administrador</h3>
+            <p>Acessa tudo, cria usu?rios, altera permiss?es e aprova publicações.</p>
+            <ul>
+              <li>Boletos: ler, editar e publicar</li>
+              <li>Materiais: ler, editar e publicar</li>
+              <li>Usu?rios: ler, editar e aprovar</li>
+            </ul>
+          </article>
+          <article>
+            <span class="tag">Restrito</span>
+            <h3>Financeiro</h3>
+            <p>Acessa boletos e pagamentos, sem acesso a materiais ou conteúdo pedagógico.</p>
+            <ul>
+              <li>Boletos: ler, editar e publicar</li>
+              <li>Alunos: leitura basica</li>
+              <li>Materiais: sem acesso</li>
+            </ul>
+          </article>
+          <article>
+            <span class="tag">Acad?mico</span>
+            <h3>Materiais</h3>
+            <p>Gerencia apostilas, receitas, fichas técnicas e comunicados por turma.</p>
+            <ul>
+              <li>Materiais: ler, editar e publicar</li>
+              <li>Turmas: leitura</li>
+              <li>Boletos: sem acesso</li>
+            </ul>
+          </article>
+          <article>
+            <span class="tag">Marketing</span>
+            <h3>Conteúdo</h3>
+            <p>Atualiza p?ginas, chamadas, fotos, destaques e publicações editoriais do site.</p>
+            <ul>
+              <li>conteúdo: ler e editar</li>
+              <li>Publicação: somente com aprovação</li>
+              <li>Financeiro: sem acesso</li>
+            </ul>
+          </article>
+          <article>
+            <span class="tag">Atendimento</span>
+            <h3>Comercial</h3>
+            <p>Acompanha contatos, propostas e interessados em cursos, eventos e empresas.</p>
+            <ul>
+              <li>Leads: ler e editar</li>
+              <li>Agenda: leitura</li>
+              <li>Boletos: sem acesso</li>
+            </ul>
+          </article>
+          <article>
+            <span class="tag">Mercado</span>
+            <h3>Carreira</h3>
+            <p>Analisa vagas cadastradas por empresas e p?blica oportunidades aprovadas.</p>
+            <ul>
+              <li>Vagas: ler, editar e aprovar</li>
+              <li>Empresas: leitura</li>
+              <li>Financeiro: sem acesso</li>
+            </ul>
+          </article>
+          <article>
+            <span class="tag accent">Sob medida</span>
+            <h3>Personalizado</h3>
+            <p>Permiss?es escolhidas uma a uma para fun??es especificas da equipe.</p>
+            <ul>
+              <li>Selecionar m?dulo</li>
+              <li>Definir ler, editar ou publicar</li>
+              <li>Bloquear o que não for necess?rio</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Perfis recomendados</p>
+          <h2>Comece simples e expanda se precisar</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Administrador</h3><p>Acesso total, cria usu?rios, libera permiss?es e ve todos os m?dulos.</p></div>
+          <div class="detail-item"><h3>Financeiro</h3><p>Acessa boletos e pagamentos, mas não edita materiais, cursos ou conteúdo.</p></div>
+          <div class="detail-item"><h3>Materiais / Acad?mico</h3><p>Publica apostilas, receitas, comunicados e materiais por turma.</p></div>
+          <div class="detail-item"><h3>Comercial e carreira</h3><p>Acessa leads, propostas, vagas e oportunidades, conforme permissão definida.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia">
+        <p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p>
+      </div>
+      <div>
+        <h3>Cursos</h3>
+        <nav>
+          <a href="chef-profissional.html">Chef Profissional</a>
+          <a href="confeitaria-profissional.html">Confeitaria Profissional</a>
+          <a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a>
+          <a href="chef-express.html">Chef Express</a>
+          <a href="cursos-rapidos.html">Cursos rápidos</a>
+          <a href="mini-chef.html">Mini Chef</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Experiências</h3>
+        <nav>
+          <a href="aulas-tematicas.html">Aulas temáticas</a>
+          <a href="festa-infantil-gastronomica.html">Festa Infantil</a>
+          <a href="aulas-para-escolas.html">Aulas para Escolas</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="parcerias-com-marcas.html">Parcerias</a>
+          <a href="locacao-da-cozinha.html">Locação da Cozinha</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Institucional</h3>
+        <nav>
+          <a href="a-escola.html">A Escola</a>
+          <a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a>
+          <a href="carreira.html">Carreira</a>
+          <a href="cadastrar-vaga.html">Cadastrar Vaga</a>
+          <a href="contato.html">Contato</a>
+          <a href="portal-do-aluno.html">Portal do Aluno</a>
+          
+          <a href="mapa-do-site.html">Mapa do site</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Quatro Folhas Escola de Gastronomia</span>
+        <span>Portal do aluno disponível no topo do site.</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+

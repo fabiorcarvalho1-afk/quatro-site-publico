@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reservas da Agenda | Quatro Folhas</title>
+    <meta name="description" content="Painel demonstrativo para acompanhar reservas de aulas da agenda Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-propostas.html">Propostas</a>
+        <a href="admin-boletos.html">Boletos</a>
+        <a href="admin-usuarios.html">Usu?rios</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="agenda.html">Ver agenda p?blica</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Reservas</p>
+          <h1>Pedidos de vaga recebidos pela agenda</h1>
+          <p>Quando algu?m clica em reservar vaga, o pedido entra aqui para contato via WhatsApp, envio do link de pagamento e confirmação da matrícula.</p>
+          <div class="info-strip">
+            <span>Novas</span>
+            <span>Em contato</span>
+            <span>Link enviado</span>
+            <span>Confirmadas</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Massas Artesanais</p>
+          <h2>6 Novas</h2>
+          <p>Prioridade para as aulas com ?ltimas vagas e datas mais próximas.</p>
+          <a class="solid-btn" href="#fila">Abrir fila</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Atendimento</p>
+            <h2>Reserva assistida sem carrinho pesado</h2>
+          </div>
+          <p>O aluno demonstra interesse, a equipe confirma vaga e envia o link de pagamento pelo WhatsApp.</p>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>1. Pedido recebido</h3><p>Nome, WhatsApp, e-mail, aula, data e n?mero de participantes.</p></div>
+          <div class="detail-item"><h3>2. Link de pagamento</h3><p>O vendedor envia link do banco, maquininha ou plataforma escolhida.</p></div>
+          <div class="detail-item"><h3>3. Matrícula</h3><p>Depois do pagamento, a reserva muda para confirmada e pode aparecer no portal.</p></div>
+        </div>
+      </section>
+
+      <section class="content-band" id="fila">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fila</p>
+            <h2>Reservas para acompanhar</h2>
+          </div>
+          <p>A equipe pode filtrar por aula, status e respons?vel pelo atendimento.</p>
+        </div>
+        <div class="admin-toolbar">
+          <button class="ghost-btn" type="button">Todas</button>
+          <button class="ghost-btn" type="button">Novas</button>
+          <button class="ghost-btn" type="button">Link enviado</button>
+          <button class="ghost-btn" type="button">Confirmadas</button>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Aula</span><span>Aluno</span><span>Participantes</span><span>Status</span><span>Ação</span></div>
+          <div class="admin-row"><span>Massas Artesanais</span><span>Camila Rocha</span><span>1 pessoa</span><span><mark class="status-ok">Nova</mark></span><span><a class="text-btn" href="admin-reserva-detalhe.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Massas Artesanais</span><span>Renato Lima</span><span>2 pessoas</span><span><mark class="status-review">Em contato</mark></span><span><a class="text-btn" href="admin-reserva-detalhe.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Confeitaria para Receber</span><span>Paula Mendes</span><span>1 pessoa</span><span><mark class="status-review">Link enviado</mark></span><span><a class="text-btn" href="admin-reserva-detalhe.html">Abrir</a></span></div>
+          <div class="admin-row"><span>Noite Italiana</span><span>Bruno e Ana</span><span>2 pessoas</span><span><mark class="status-ok">Confirmada</mark></span><span><a class="text-btn" href="admin-reserva-detalhe.html">Abrir</a></span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p></div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav><a href="agenda.html">Agenda</a><a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a><a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Portal do aluno disponível no topo do site.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

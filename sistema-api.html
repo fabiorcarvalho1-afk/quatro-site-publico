@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema e API | Quatro Folhas</title>
+    <meta name="description" content="visão demonstrativa da base ?nica que conecta site, portal, app e sistema Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-agenda.html">Agenda</a>
+        <a href="admin-turma.html">Turmas</a>
+        <a href="admin-configuracoes.html">Configurações</a>
+        <a href="admin-seguranca.html">Seguran?a</a>
+        <a href="admin-privacidade.html">Privacidade</a>
+        <a href="admin-implantacao.html">Implantação</a>
+        <a href="admin-auditoria.html">Auditoria</a>
+        <a href="escopo-site-sistema.html">Escopo</a>
+        <a href="portal-do-aluno.html">Portal</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+        <a href="index.html">Site</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" aria-label="Idioma">
+          <a class="lang-link is-active" href="index.html" lang="pt-BR">PT</a>
+          <a class="lang-link" href="en/index.html" lang="en">EN</a>
+          <a class="lang-link" href="es/index.html" lang="es">ES</a>
+        </div>
+        <a class="ghost-btn cert-link" data-cert-link href="validar-certificado.html">Validar certificado</a>
+        <a class="ghost-btn" href="mapa-do-site.html">Mapa</a>
+        <a class="solid-btn" href="admin-login.html">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Sistema e API</p>
+          <h1>Uma base ?nica, com responsabilidades separadas</h1>
+          <p>O site deve continuar leve e comercial. A API conecta site, portal, app e sistema, mas as fun??es pesadas ficam no sistema interno.</p>
+          <div class="info-strip">
+            <span>Site</span>
+            <span>Portal</span>
+            <span>App</span>
+            <span>Admin</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Regra principal</p>
+          <h2>Sem duplicar cadastro</h2>
+          <p>Aluno, turma, material, boleto e certificado devem existir uma vez na API e ser exibidos em v?rios canais.</p>
+          <a class="solid-btn" href="#modulos">Ver m?dulos</a>
+          <a class="text-btn" href="escopo-site-sistema.html">Ver escopo</a>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Escopo por canal</p>
+            <h2>O site vende. O sistema opera. Portal e app at?ndem o aluno</h2>
+          </div>
+          <p>Essa separação evita um site pesado e deixa as fun??es internas crescerem com segurança.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Canal</span><span>Responsabilidade</span><span>O que aparece</span><span>O que não deve carregar</span><span>Status</span></div>
+          <div class="admin-row"><span>Site público</span><span>Posicionamento e captação</span><span>Cursos, agenda, experiências, propostas, vagas e contato</span><span>Gestáo financeira, contratos, documentos e relat?rios</span><span><mark class="status-review">Prioridade</mark></span></div>
+          <div class="admin-row"><span>Portal do aluno</span><span>Autosservi?o simples</span><span>Materiais, boletos, comunicados, certificados e perfil</span><span>Operações internas e aprovações</span><span><mark class="status-review">Leve</mark></span></div>
+          <div class="admin-row"><span>App</span><span>Acesso movel</span><span>Mesmos dados do portal, consumindo a mesma API</span><span>Cadastro administrativo e rotinas complexas</span><span><mark class="status-ok">Depois</mark></span></div>
+          <div class="admin-row"><span>Sistema</span><span>Operação interna</span><span>Alunos, turmas, boletos em lote, contratos, documentos, certificados e auditoria</span><span>conteúdo público excessivo</span><span><mark class="status-ok">Separado</mark></span></div>
+        </div>
+      </section>
+
+      <section class="content-band light" id="modulos">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">M?dulos centrais</p>
+            <h2>O que vir? banco de dados</h2>
+          </div>
+          <p>Essas entidades formam o coração do sistema e devem ser pensadas antes do app entrar em produção.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><h3>Alunos</h3><p>Cadastro, login, turmas, pagamentos, materiais, certificados e hist?rico.</p></article>
+          <article><h3>Cursos e turmas</h3><p>Aulas, datas, vagas, professores, status comercial, presença e certificados.</p></article>
+          <article><h3>Financeiro</h3><p>Boletos, links de pagamento, refer?ncias banc?rias, comprovantes e status.</p></article>
+          <article><h3>Contratos</h3><p>Modelos, vari?veis autom?ticas, dados preenchidos, envio Clicksign, status de assinatura e PDFs assinados.</p></article>
+          <article><h3>Materiais</h3><p>Apostilas, receitas, comunicados, links e arquivos por turma ou curso.</p></article>
+          <article><h3>Comercial</h3><p>Reservas, propostas, festas, escolas, empresas, marcas e follow-up.</p></article>
+          <article><h3>Comunicações</h3><p>Modelos de mensagem, hist?rico de contato, retornos, canais e notificações.</p></article>
+          <article><h3>Conteúdo, mídia e SEO</h3><p>P?ginas, destaques, fotos, chamadas, blog, metadados, hist?rico e fluxo de aprovação.</p></article>
+          <article><h3>Relat?rios</h3><p>Indicadores de p?ginas, leads, reservas, propostas, portal, tarefas e conversão.</p></article>
+          <article><h3>Configurações</h3><p>Dados da escola, contatos, regras globais, integrações, segurança e auditoria.</p></article>
+          <article><h3>Seguran?a</h3><p>SSL, backups, 2FA, firewall, monitoramento, logs, continuidade e resposta a incidentes.</p></article>
+          <article><h3>Privacidade e LGPD</h3><p>Invent?rio de dados, finalidades, consentimentos, reten??o e direitos dos titulares.</p></article>
+          <article><h3>Auditoria</h3><p>Registro de acessos, edicoes, aprovações, bloqueios, exportações e eventos cr?ticos.</p></article>
+          <article><h3>Acessos</h3><p>Perfis, permiss?es, leitura, edi??o, publicação e aprovação por m?dulo.</p></article>
+        </div>
+      </section>
+
+      <section class="content-band system-flow">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Fluxo dos dados</p>
+            <h2>Como os canais se conectam</h2>
+          </div>
+          <p>O admin alimenta a API. Site, portal e app apenas exibem ou coletam dados conforme permissão.</p>
+        </div>
+        <div class="flow-grid">
+          <article><span>1</span><h3>Sistema</h3><p>Equipe cadastra cursos, turmas, alunos, boletos, materiais e certificados.</p></article>
+          <article><span>2</span><h3>API</h3><p>Guarda dados, regras de permissão, status e arquivos em uma estrutura ?nica.</p></article>
+          <article><span>3</span><h3>Site</h3><p>Mostra agenda, cursos, propostas, vagas e captura interessados.</p></article>
+          <article><span>4</span><h3>Portal e app</h3><p>Aluno acessa materiais, boletos, comunicados, aulas e certificados.</p></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Exemplo prático</p>
+          <h2>Uma aula cadastrada aparece em v?rios lugares</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Agenda p?blica</h3><p>A aula aparece para interessados reservarem vaga.</p></div>
+          <div class="detail-item"><h3>Admin</h3><p>A equipe ve reservas, confirma pagamento, monta turma e marca presença.</p></div>
+          <div class="detail-item"><h3>Portal/app</h3><p>O aluno confirmado v? a aula, comunicados, materiais e certificado quando liberado.</p></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Ordem recomendada</p>
+            <h2>Do prot?tipo ao sistema real</h2>
+          </div>
+          <p>Minha sugestáo e construir por fases para não virar um sistema grande demais antes da hora. A central de ajuda traduz essa arquitetura em rotinas práticas para a equipe.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Fase</span><span>Entrega</span><span>Prioridade</span><span>Canal</span><span>Status</span></div>
+          <div class="admin-row"><span>1</span><span>Site público e captação</span><span>Alta</span><span>Site</span><span><mark class="status-review">Em desenho</mark></span></div>
+          <div class="admin-row"><span>2</span><span>Portal do aluno enxuto com materiais, boletos e certificados</span><span>Alta</span><span>Portal</span><span><mark class="status-review">Leve</mark></span></div>
+          <div class="admin-row"><span>3</span><span>Sistema interno de agenda, alunos, boletos e reservas</span><span>Alta</span><span>Sistema</span><span><mark class="status-ok">Separado</mark></span></div>
+          <div class="admin-row"><span>4</span><span>Contratos digitais Clicksign e modelos</span><span>Media</span><span>Sistema</span><span><mark class="status-ok">Planejado</mark></span></div>
+          <div class="admin-row"><span>5</span><span>Certificados e presença</span><span>Media</span><span>Sistema/Portal</span><span><mark class="status-ok">Planejado</mark></span></div>
+          <div class="admin-row"><span>6</span><span>App consumindo a mesma API do portal</span><span>Depois</span><span>App</span><span><mark class="status-ok">Planejado</mark></span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.</p>
+        <form class="footer-optin" data-whatsapp-optin>
+                  
+          <div class="footer-optin-row">
+            <label>
+                    Receba agenda e novidades
+                    <input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="Seu WhatsApp" required>
+                  </label>
+            <button class="solid-btn" type="submit">Quero receber</button>
+          </div>
+                  <label class="footer-consent">
+                    <input name="consent" type="checkbox" required>
+                    Autorizo receber comunicações da Quatro Folhas por WhatsApp.
+                  </label>
+                  
+                  <p class="footer-optin-feedback" hidden>Obrigado! Vamos te atender pelo WhatsApp.</p>
+                </form>
+</div>
+      <div><h3>Cursos</h3><nav><a href="chef-profissional.html">Chef Profissional</a><a href="confeitaria-profissional.html">Confeitaria Profissional</a><a href="bolos-e-doces-finos.html">Bolos e Doces Finos</a><a href="chef-express.html">Chef Express</a><a href="cursos-rapidos.html">Cursos rápidos</a><a href="mini-chef.html">Mini Chef</a></nav></div>
+      <div><h3>Experiências</h3><nav>        <a href="agenda.html">Agenda</a>
+<a href="aulas-tematicas.html">Aulas temáticas</a><a href="festa-infantil-gastronomica.html">Festa Infantil</a><a href="aulas-para-escolas.html">Aulas para Escolas</a><a href="team-building.html">Team Building</a><a href="parcerias-com-marcas.html">Parcerias</a><a href="locacao-da-cozinha.html">Locação da Cozinha</a><a href="solicitar-proposta.html">Solicitar Proposta</a></nav></div>
+      <div><h3>Institucional</h3><nav><a href="a-escola.html">A Escola</a>
+        <div class="nav-item has-mega">
+          <a href="cursos.html" class="nav-link">Cursos</a>
+          <div class="mega-menu" role="menu">
+            <div class="mega-inner">
+              <div class="mega-lead">
+                <strong>Cursos</strong>
+                <span>Escolha o curso.</span>
+              </div>
+              <div class="mega-grid">
+                <a class="mega-card" href="chef-profissional.html">
+                  <span class="thumb" style="background-image:url('assets/photos/cozinha-bancadas.jpg')"></span>
+                  <span class="title">Chef Profissional</span>
+                </a>
+                <a class="mega-card" href="confeitaria-profissional.html">
+                  <span class="thumb" style="background-image:url('assets/photos/aula-confeitaria.jpg')"></span>
+                  <span class="title">Confeitaria</span>
+                </a>
+                <a class="mega-card" href="cursos-rapidos.html">
+                  <span class="thumb" style="background-image:url('assets/photos/mesa-pratos.jpg')"></span>
+                  <span class="title">Cursos rápidos</span>
+                </a>
+                <a class="mega-card" href="mini-chef.html">
+                  <span class="thumb" style="background-image:url('assets/photos/alunos-turma.jpg')"></span>
+                  <span class="title">Mini Chef</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+<a href="vida-na-quatro-folhas.html">Vida na Quatro Folhas</a><a href="carreira.html">Carreira</a><a href="cadastrar-vaga.html">Cadastrar Vaga</a><a href="perguntas.html">Perguntas</a>
+        <a href="contato.html">Contato</a><a href="portal-do-aluno.html">Portal do Aluno</a><a href="mapa-do-site.html">Mapa do site</a></nav></div>
+      
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <nav>
+          <a class="social-link" href="https://instagram.com/quatrofolhasgastronomia" target="_blank" rel="noreferrer" aria-label="Instagram @quatrofolhasgastronomia">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37a4 4 0 1 1-7.9 1.33A4 4 0 0 1 16 11.37Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17.5 6.5h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+            <span>@quatrofolhasgastronomia</span>
+          </a>          <a class="social-link" href="https://facebook.com/quatrofolhasgastronomia" target="_blank" rel="noreferrer" aria-label="Facebook quatrofolhasgastronomia">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v3H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span>quatrofolhasgastronomia</span>
+          </a>          <a class="social-link" href="https://wa.me/5511947781922" target="_blank" rel="noreferrer" aria-label="WhatsApp 11 94778 1922">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 21l1.9-4.7a8.5 8.5 0 1 1 15.6-4.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.7 8.9c.2-.5.4-.5.6-.5h.6c.2 0 .4.1.5.3l.8 1.9c.1.2.1.4 0 .5l-.6.7c-.1.1-.1.3 0 .4.6 1 1.5 1.9 2.5 2.5.1.1.3.1.4 0l.7-.6c.1-.1.3-.1.5 0l1.9.8c.2.1.3.3.3.5v.6c0 .2 0 .4-.5.6-.8.4-2 .3-3.5-.5-1.8-1-3.2-2.3-4.2-4.2-.8-1.5-.9-2.7-.5-3.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>(11) 94778-1922</span>
+          </a>
+<span class="footer-address">Rua Cantagalo, 1239 - Tatuapé - São Paulo/SP</span>
+          <span class="footer-address">Unidade I - Tatuapé</span>
+        </nav>
+      </div>
+<div class="footer-bottom">
+        <span>© 2026 Quatro Folhas Escola de Gastronomia. Todos os direitos reservados.</span>
+        <span>Rua Cantagalo, 1239 - Tatuapé - São Paulo/SP · Unidade I - Tatuapé</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

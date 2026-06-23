@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alunos | Quatro Folhas</title>
+    <meta name="description" content="Listagem administrativa demonstrativa de alunos da Quatro Folhas.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="admin.html">Painel</a>
+        <a href="admin-alunos.html">Alunos</a>
+        <a href="admin-turma.html">Turmas</a>
+        <a href="admin-solicitacoes-alunos.html">Solicitações</a>
+        <a href="admin-boletos.html">Boletos</a>
+        <a href="admin-certificados.html">Certificados</a>
+        <a href="admin-ajuda.html">Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost-btn" href="portal-do-aluno.html">Ver portal</a>
+        <a class="solid-btn" href="admin-importar-alunos.html">Importar alunos</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero portal-hero">
+        <div>
+          <p class="eyebrow">Alunos</p>
+          <h1>Busca central de alunos, turmas e status</h1>
+          <p>Encontre rapidamente um aluno para conferir cadastro, boletos, materiais, certificados, portal e solicitações abertas.</p>
+          <div class="info-strip">
+            <span>Cadastro</span>
+            <span>Turmas</span>
+            <span>Financeiro</span>
+            <span>Portal</span>
+          </div>
+        </div>
+        <div class="portal-summary">
+          <p class="eyebrow">Base demonstrativa</p>
+          <h2>248 Alunos</h2>
+          <p>12 com solicitações abertas, 31 ativos em cursos longos e 86 em aulas avulsas recentes.</p>
+          <a class="solid-btn" href="#lista">Ver lista</a>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Filtros</p>
+            <h2>Pesquisar antes de abrir a ficha</h2>
+          </div>
+          <p>Na versão real, esta busca pode localizar aluno por nome, e-mail, WhatsApp, turma, status ou refer?ncia banc?ria.</p>
+        </div>
+        <form class="contact-form" data-demo-form data-success-text="Filtro aplicado no prot?tipo.">
+          <label>Buscar aluno<input type="search" value="Camila Rocha" placeholder="Nome, e-mail ou WhatsApp"></label>
+          <label>Turma<select><option>Todas</option><option>Chef Profissional - Turma 2026</option><option>Confeitaria Profissional</option><option>Massas Artesanais - 20/06</option></select></label>
+          <label>Status<select><option>Todos</option><option>Ativo</option><option>Aguardando pagamento</option><option>Com solicitação aberta</option><option>Inativo</option></select></label>
+          <button class="solid-btn" type="submit">Filtrar alunos</button>
+        </form>
+      </section>
+
+      <section class="content-band" id="lista">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Lista</p>
+            <h2>Alunos encontrados</h2>
+          </div>
+          <p>ações rapidas levam para ficha, turma, boletos, certificados ou portal.</p>
+        </div>
+        <div class="admin-table">
+          <div class="admin-row admin-head"><span>Aluno</span><span>Turma principal</span><span>Status</span><span>Pend?ncia</span><span>Ação</span></div>
+          <div class="admin-row"><span><a href="admin-aluno.html">Camila Rocha</a></span><span>Chef Profissional 2026</span><span><mark class="status-ok">Ativa</mark></span><span><mark class="status-review">solicitação</mark></span><span><a class="text-btn" href="admin-aluno.html">Abrir ficha</a></span></div>
+          <div class="admin-row"><span>Renato Lima</span><span>Massas Artesanais</span><span><mark class="status-ok">Conclu?do</mark></span><span>Nenhuma</span><span><a class="text-btn" href="admin-turma.html">Abrir turma</a></span></div>
+          <div class="admin-row"><span>Paula Mendes</span><span>Confeitaria Profissional</span><span><mark class="status-review">Aguardando</mark></span><span>E-mail de login</span><span><a class="text-btn" href="admin-solicitacoes-alunos.html">Analisar</a></span></div>
+          <div class="admin-row"><span>Bruno Carvalho</span><span>Massas Artesanais</span><span><mark class="status-ok">Ativo</mark></span><span>Certificado pronto</span><span><a class="text-btn" href="admin-certificados.html">Ver certificado</a></span></div>
+        </div>
+      </section>
+
+      <section class="content-band light">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Ações em lote</p>
+            <h2>Rotinas que ?conomizam tempo</h2>
+          </div>
+          <p>Para tarefas repetitivas, a equipe pode selecionar alunos e aplicar a mesma ação com cuidado e permissão.</p>
+        </div>
+        <div class="card-grid compact">
+          <article><span class="tag">Portal</span><h3>Liberar acesso</h3><p>Enviar convite de acesso ou redefinicao de senha para alunos selecionados.</p></article>
+          <article><span class="tag">Comunicação</span><h3>Enviar aviso</h3><p>Disparar comunicado para uma turma ou grupo específico.</p><a class="text-btn" href="admin-comunicacoes.html">Ver comunicações</a></article>
+          <article><span class="tag">Acad?mico</span><h3>Vincular turma</h3><p>Adicionar alunos confirmados a uma turma ou aula temática.</p><a class="text-btn" href="admin-turma.html">Ver turma</a></article>
+          <article><span class="tag">Importação</span><h3>Importar planilha</h3><p>Criar alunos em lote com revisão de duplicados e dados incompletos.</p><a class="text-btn" href="admin-importar-alunos.html">Importar alunos</a></article>
+          <article><span class="tag">Financeiro</span><h3>Conferir boletos</h3><p>Filtrar alunos com boleto disponível, pendente ou sem associação.</p><a class="text-btn" href="admin-boletos.html">Ver boletos</a></article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div>
+          <p class="eyebrow">Governan?a</p>
+          <h2>Busca ampla, acesso controlado</h2>
+        </div>
+        <div class="detail-list">
+          <div class="detail-item"><h3>Quem pode ver</h3><p>Administrador e secretaria veem cadastro completo; financeiro v? apenas dados necess?rios a boletos.</p></div>
+          <div class="detail-item"><h3>O que fica restrito</h3><p>Hist?rico financeiro, solicitações sens?veis e dados de acesso dependem de permissão.</p></div>
+          <div class="detail-item"><h3>Auditoria</h3><p>Consultas e alterações importantes podem ser registradas para segurança.</p><a class="text-btn" href="admin-auditoria.html">Ver auditoria</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia"><p>Busca administrativa de alunos.</p></div>
+      <div><h3>Alunos</h3><nav><a href="admin-alunos.html">Lista de alunos</a><a href="admin-importar-alunos.html">Importar alunos</a><a href="admin-aluno.html">Ficha do aluno</a><a href="admin-solicitacoes-alunos.html">Solicitações</a><a href="admin-turma.html">Turmas</a><a href="portal-do-aluno.html">Portal</a></nav></div>
+      <div class="footer-bottom"><span>Quatro Folhas Escola de Gastronomia</span><span>Dados administrativos restritos.</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
