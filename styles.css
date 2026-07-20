@@ -970,25 +970,25 @@ textarea:focus-visible {
 .info-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 9px;
+  gap: 12px;
   margin-top: 26px;
 }
 
 .info-strip span {
   display: grid;
-  min-height: 66px;
+  min-height: 54px;
   align-content: center;
   justify-content: center;
   text-align: center;
-  border: 1px solid rgba(116, 96, 68, 0.16);
+  border: 2px solid rgba(120, 33, 36, 0.72);
   border-radius: 6px;
-  padding: 14px;
-  background: linear-gradient(180deg, rgba(255, 253, 250, 0.92), rgba(247, 241, 232, 0.62));
-  color: var(--gold);
+  padding: 10px 12px;
+  background: rgba(255, 253, 250, 0.98);
+  color: var(--wine);
   font-weight: 900;
   font-size: 12.5px;
   line-height: 1.25;
-  box-shadow: 0 7px 18px rgba(23, 23, 20, 0.04);
+  box-shadow: 0 10px 24px rgba(23, 23, 20, 0.045);
 }
 
 .page-form-section {
@@ -1536,7 +1536,7 @@ main > .content-band .admin-row:not(.admin-head):hover {
 .signature-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
+  gap: 14px;
   padding: 0 clamp(20px, 6vw, 76px) clamp(20px, 3vw, 34px);
   background: linear-gradient(180deg, #fffdfa, #f7f1e8);
 }
@@ -1547,20 +1547,17 @@ main > .content-band .admin-row:not(.admin-head):hover {
   gap: 7px;
   min-height: 136px;
   padding: clamp(20px, 2.6vw, 30px);
-  background: rgba(255, 253, 250, 0.94);
-  border-top: 1px solid rgba(116, 96, 68, 0.16);
-  border-bottom: 1px solid rgba(116, 96, 68, 0.16);
-  border-left: 1px solid rgba(116, 96, 68, 0.14);
-  transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
-}
-
-.signature-strip article:last-child {
-  border-right: 1px solid rgba(116, 96, 68, 0.14);
+  background: rgba(255, 253, 250, 0.96);
+  border: 2px solid rgba(120, 33, 36, 0.66);
+  border-radius: 6px;
+  box-shadow: 0 12px 28px rgba(23, 23, 20, 0.05);
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .signature-strip article:hover {
   background: var(--paper);
-  box-shadow: 0 18px 42px rgba(23, 23, 20, 0.08);
+  border-color: rgba(120, 33, 36, 0.9);
+  box-shadow: 0 20px 42px rgba(23, 23, 20, 0.09);
   transform: translateY(-2px);
 }
 
@@ -1592,8 +1589,7 @@ main > .content-band .admin-row:not(.admin-head):hover {
 
 .signature-strip.six-up article {
   min-height: 178px;
-  border: 1px solid rgba(116, 96, 68, 0.16);
-  border-radius: 6px;
+  border-width: 2px;
   text-align: center;
   justify-items: center;
 }
@@ -2238,11 +2234,11 @@ section {
 .outline-card {
   min-height: 210px;
   padding: clamp(22px, 2.6vw, 28px);
-  border: 1px solid var(--line);
+  border: 2px solid rgba(120, 33, 36, 0.66);
   border-radius: 6px;
-  background: var(--paper);
-  box-shadow: 0 14px 36px rgba(24, 33, 28, 0.055);
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  background: rgba(255, 253, 250, 0.97);
+  box-shadow: 0 14px 34px rgba(24, 33, 28, 0.05);
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 /* Smaller cards + company logo placeholder for the career grid. */
@@ -2284,9 +2280,7 @@ section {
 .card-grid.compact article,
 .job-card {
   align-content: start;
-  background:
-    linear-gradient(180deg, rgba(255, 253, 250, 0.99), rgba(251, 247, 239, 0.76)),
-    var(--paper);
+  background: rgba(255, 253, 250, 0.97);
 }
 
 .intent-card:hover,
@@ -2295,8 +2289,8 @@ section {
 .card-grid.compact article:hover,
 .job-card:hover,
 .outline-card:hover {
-  border-color: rgba(116, 96, 68, 0.34);
-  box-shadow: 0 22px 52px rgba(24, 33, 28, 0.1);
+  border-color: rgba(120, 33, 36, 0.88);
+  box-shadow: 0 22px 52px rgba(24, 33, 28, 0.09);
   transform: translateY(-2px);
 }
 
