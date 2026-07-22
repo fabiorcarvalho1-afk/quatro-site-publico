@@ -295,42 +295,62 @@
         </div>
       </section>
 
-      <section class="feature-section" id="aulas">
-        <div class="feature-copy">
-          <p class="eyebrow">Aulas temáticas</p>
-          <h2>Aulas para viver a gastronomia sem precisar ser profissional</h2>
-          <p>Encontros para sair da rotina, aprender algo novo e compartilhar bons momentos em torno da mesa.</p>
-          <a class="text-btn" href="experiencias-gastronomicas.html">Ver todas as experiências</a>
+      <section class="feature-section thematic-showcase" id="aulas">
+        <div class="thematic-heading">
+          <div>
+            <p class="eyebrow">Aulas temáticas</p>
+            <h2>Escolha sua próxima experiência</h2>
+            <p>Aulas práticas para aprender novos preparos, viver bons momentos e aproveitar a gastronomia sem precisar ser profissional.</p>
+          </div>
+          <div class="thematic-filters" aria-label="Filtrar aulas temáticas">
+            <button class="is-active" type="button" data-thematic-filter="all">Todas</button>
+            <button type="button" data-thematic-filter="cozinha">Cozinha</button>
+            <button type="button" data-thematic-filter="confeitaria">Confeitaria</button>
+            <button type="button" data-thematic-filter="massas">Massas</button>
+          </div>
         </div>
-        <div class="agenda-list">
-          <article class="agenda-card">
-            <div>
-              <span class="tag">Inscrições abertas</span>
+        <div class="thematic-grid" data-thematic-grid>
+          <article class="thematic-card" data-category="massas">
+            <figure class="thematic-card-image"><img src="assets/photos/mesa-pratos.jpg" alt="Massas Artesanais" loading="lazy"><span class="thematic-status">Inscrições abertas</span></figure>
+            <div class="thematic-card-body">
               <h3>Massas Artesanais</h3>
-              <p>20/06 - 19h - 3h de experiência</p>
-              <small class="class-price">R$ 280</small>
+              <p>Uma experiência prática para aprender técnicas de massas frescas e seus acompanhamentos.</p>
+              <div class="thematic-meta"><span>20/06</span><span>19h</span><span>3h</span></div>
+              <div class="thematic-preparations"><strong>Nesta aula você prepara</strong><span>Fettuccine · Ravioli · Molho pomodoro</span></div>
+              <div class="thematic-card-footer">
+                <span class="thematic-price"><small>por pessoa</small>R$ 280</span>
+                <button class="solid-btn" data-open="class-form" data-interest="Massas Artesanais" data-date="20/06">Reservar e comprar</button>
+              </div>
             </div>
-            <button class="solid-btn" data-open="class-form" data-interest="Massas Artesanais" data-date="20/06">Reservar vaga</button>
           </article>
-          <article class="agenda-card">
-            <div>
-              <span class="tag accent">Últimas vagas</span>
+          <article class="thematic-card" data-category="confeitaria">
+            <figure class="thematic-card-image"><img src="assets/photos/aula-confeitaria.jpg" alt="Confeitaria para Receber" loading="lazy"><span class="thematic-status is-urgent">Últimas vagas</span></figure>
+            <div class="thematic-card-body">
               <h3>Confeitaria para Receber</h3>
-              <p>27/06 - 19h - aula prática e degustação</p>
-              <small class="class-price">R$ 320</small>
+              <p>Preparos elegantes para servir, compartilhar e surpreender em ocasiões especiais.</p>
+              <div class="thematic-meta"><span>27/06</span><span>19h</span><span>3h</span></div>
+              <div class="thematic-preparations"><strong>Nesta aula você prepara</strong><span>Tartelete · Entremet · Finalização</span></div>
+              <div class="thematic-card-footer">
+                <span class="thematic-price"><small>por pessoa</small>R$ 320</span>
+                <button class="solid-btn" data-open="class-form" data-interest="Confeitaria para Receber" data-date="27/06">Reservar e comprar</button>
+              </div>
             </div>
-            <button class="solid-btn" data-open="class-form" data-interest="Confeitaria para Receber" data-date="27/06">Reservar vaga</button>
           </article>
-          <article class="agenda-card">
-            <div>
-              <span class="tag">Inscrições abertas</span>
+          <article class="thematic-card" data-category="cozinha">
+            <figure class="thematic-card-image"><img src="assets/photos/cozinha-bancadas.jpg" alt="Noite Italiana" loading="lazy"><span class="thematic-status">Inscrições abertas</span></figure>
+            <div class="thematic-card-body">
               <h3>Noite Italiana</h3>
-              <p>04/07 - 19h - cozinha, encontro e mesa</p>
-              <small class="class-price">R$ 300</small>
+              <p>Uma noite de cozinha, encontro e mesa com sabores clássicos da gastronomia italiana.</p>
+              <div class="thematic-meta"><span>04/07</span><span>19h</span><span>3h</span></div>
+              <div class="thematic-preparations"><strong>Nesta aula você prepara</strong><span>Focaccia · Risoto · Tiramisù</span></div>
+              <div class="thematic-card-footer">
+                <span class="thematic-price"><small>por pessoa</small>R$ 300</span>
+                <button class="solid-btn" data-open="class-form" data-interest="Noite Italiana" data-date="04/07">Reservar e comprar</button>
+              </div>
             </div>
-            <button class="solid-btn" data-open="class-form" data-interest="Noite Italiana" data-date="04/07">Reservar vaga</button>
           </article>
         </div>
+        <a class="thematic-all-link" href="experiencias-gastronomicas.html">Ver todas as aulas</a>
       </section>
 
       <section class="content-band light" id="criancas">
