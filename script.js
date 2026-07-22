@@ -1113,6 +1113,20 @@ async function loadAgendaPage() {
   }
 }
 
+async function loadThematicClassesPage() {
+  if (currentPage !== "aulas-tematicas.html") return;
+  try {
+    const agendaItems = await apiRequest("/site/agenda");
+    const grid = document.querySelector("[data-thematic-grid]");
+    if (!grid || !Array.isArray(agendaItems) || !agendaItems.length) return;
+    grid.innerHTML = agendaItems.map(renderThematicCard).join("");
+    enhanceDynamicTriggers(grid);
+    bindThematicFilters();
+  } catch (error) {
+    // Mantém o conteúdo estático se a API não responder.
+  }
+}
+
 async function loadCoursesPage() {
   if (currentPage !== "cursos.html") return;
   try {
@@ -1131,6 +1145,7 @@ enhanceDynamicTriggers(document);
 bindThematicFilters();
 loadSiteHome();
 loadAgendaPage();
+loadThematicClassesPage();
 loadCoursesPage();
 
 // Valores preliminares do simulador de festa infantil.
