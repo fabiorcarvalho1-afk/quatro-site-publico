@@ -966,6 +966,8 @@ function bindThematicFilters() {
   const grid = document.querySelector("[data-thematic-grid]");
   if (!grid || !buttons.length) return;
   buttons.forEach((button) => {
+    if (button.dataset.thematicBound === "true") return;
+    button.dataset.thematicBound = "true";
     button.addEventListener("click", () => {
       const filter = button.dataset.thematicFilter || "all";
       buttons.forEach((item) => item.classList.toggle("is-active", item === button));
@@ -1098,7 +1100,7 @@ async function loadAgendaPage() {
     }
 
     if (agendaList && Array.isArray(agendaItems) && agendaItems.length) {
-      agendaList.innerHTML = agendaItems.slice(0, 6).map(renderAgendaCard).join("");
+      agendaList.innerHTML = agendaItems.map(renderAgendaCard).join("");
       enhanceDynamicTriggers(agendaList);
     }
 
