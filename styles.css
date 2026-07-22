@@ -6035,3 +6035,80 @@ main .page-form-section.visit-section .eyebrow::before {
     width: 100%;
   }
 }
+
+
+/* Ajuste compacto da faixa de carreira (2026-07-22) */
+.home-page .career-media {
+  margin: 0;
+}
+
+.home-page .career-content {
+  padding: clamp(34px, 3.2vw, 54px) clamp(40px, 4.5vw, 78px);
+}
+
+.home-page .career-content h2 {
+  margin-bottom: 14px;
+  font-size: clamp(2.45rem, 3.25vw, 3.75rem);
+  line-height: 1;
+}
+
+.home-page .career-kicker {
+  margin-bottom: 16px;
+}
+
+.home-page .career-content > p:not(.career-kicker):not(.career-note) {
+  font-size: clamp(0.98rem, 1.05vw, 1.12rem);
+  line-height: 1.5;
+}
+
+.home-page .career-actions {
+  margin-top: 22px;
+}
+
+.home-page .career-note {
+  margin-top: 17px;
+}
+
+@media (min-width: 901px) {
+  .home-page .career-showcase {
+    height: clamp(360px, 24vw, 440px);
+    min-height: 0;
+  }
+
+  .home-page .career-media {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .home-page .career-media img {
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page .career-showcase {
+    height: auto;
+    min-height: 0;
+  }
+
+  .home-page .career-media {
+    height: 300px;
+    min-height: 0;
+  }
+
+  .home-page .career-media img {
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page .career-media {
+    height: 240px;
+  }
+
+  .home-page .career-content {
+    padding: 38px 6vw 44px;
+  }
+}
