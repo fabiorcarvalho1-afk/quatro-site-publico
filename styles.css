@@ -5685,3 +5685,52 @@ main .page-form-section.visit-section .eyebrow::before {
     width: 100%;
   }
 }
+
+
+/* Criancas e escolas: corrige altura dos paineis no desktop */
+@media (min-width: 1181px) {
+  .kids-editorial-grid,
+  .kids-editorial-stack {
+    height: 560px;
+    min-height: 0;
+  }
+
+  .kids-editorial-card,
+  .kids-editorial-card-featured,
+  .kids-editorial-stack .kids-editorial-card {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .kids-editorial-card figure,
+  .kids-editorial-card img,
+  .kids-editorial-card-featured img,
+  .kids-editorial-stack .kids-editorial-card img {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .kids-editorial-stack .kids-editorial-body {
+    padding: 18px 24px;
+  }
+
+  .kids-editorial-stack .kids-editorial-card h3 {
+    margin-top: 12px;
+    font-size: clamp(21px, 1.45vw, 25px);
+  }
+
+  .kids-editorial-stack .kids-editorial-card p {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .kids-editorial-stack .kids-editorial-card .solid-btn {
+    min-height: 38px;
+    margin-top: 13px;
+  }
+
+  .kids-editorial-stack .kids-editorial-category::after {
+    margin-top: 8px;
+  }
+}
