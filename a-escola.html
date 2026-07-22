@@ -181,18 +181,26 @@
         </div>
       </section>
 
-      <section class="page-form-section" id="visita">
-        <div>
+      <section class="page-form-section visit-section" id="visita">
+        <div class="visit-intro">
           <p class="eyebrow">Visita</p>
           <h2>Venha conhecer a Quatro Folhas</h2>
           <p>Fale com a equipe para agendar uma visita, tirar dúvidas sobre cursos ou entender qual experiência combina com seu momento.</p>
+          <figure class="visit-photo">
+            <img src="assets/photos/fachada.png" alt="Fachada da Quatro Folhas Escola de Gastronomia" loading="lazy">
+          </figure>
+          <div class="visit-facts" aria-label="Informações para visita">
+            <span>Visitas com agendamento</span>
+            <span>Tatuapé · São Paulo</span>
+            <span>Atendimento pelo WhatsApp</span>
+          </div>
         </div>
-        <form class="contact-form" data-demo-form data-success-text="Recebemos sua mensagem. Nossa equipe entrará em contato para orientar sua visita ou atendimento.">
+        <form class="contact-form visit-contact-form" data-demo-form data-success-text="Recebemos sua mensagem. Nossa equipe entrará em contato para orientar sua visita ou atendimento.">
           <label>Nome<input type="text" required></label>
           <label>WhatsApp<input type="tel" required></label>
           <label>E-mail<input type="email" required></label>
           <label>Interesse<select required><option value="">Selecione</option><option>Cursos</option><option>aulas temáticas</option><option>crianças e Escolas</option><option>Empresas e Marcas</option><option>Visita a escola</option></select></label>
-          <label>Mensagem<textarea rows="4" placeholder="Conte se deseja visitar a escola, conhecer um curso ou falar sobre uma proposta."></textarea></label>
+          <label>Mensagem<textarea rows="3" placeholder="Conte se deseja visitar a escola, conhecer um curso ou falar sobre uma proposta."></textarea></label>
           <button class="solid-btn" type="submit">Falar com a escola</button>
         </form>
       </section>
