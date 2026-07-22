@@ -5819,3 +5819,219 @@ main .page-form-section.visit-section .eyebrow::before {
     font-size: 11.5px;
   }
 }
+
+
+/* Home: empresas com fotos e carreira editorial vinho (2026-07-22) */
+.home-page #empresas.enterprise-showcase .enterprise-photo-grid {
+  align-items: stretch;
+}
+
+.home-page #empresas.enterprise-showcase .enterprise-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.home-page #empresas.enterprise-showcase .enterprise-card figure {
+  height: clamp(150px, 14vw, 220px);
+  margin: 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.home-page #empresas.enterprise-showcase .enterprise-card figure img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.home-page #empresas.enterprise-showcase .enterprise-card:hover figure img {
+  transform: scale(1.025);
+}
+
+.home-page #empresas.enterprise-showcase .enterprise-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(22px, 2vw, 32px);
+}
+
+.home-page #empresas.enterprise-showcase .enterprise-card-body h3 {
+  margin-top: 0;
+}
+
+.home-page #empresas.enterprise-showcase .enterprise-card-body .text-btn {
+  margin-top: auto;
+}
+
+.home-page .career-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+  min-height: clamp(390px, 34vw, 520px);
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(112deg, #651019 0%, #500b13 68%, #3f080e 100%);
+  color: #fffaf2;
+  border-top: 10px solid #f7f0e5;
+}
+
+.home-page .career-media {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  border-radius: 0 52% 52% 0 / 0 100% 100% 0;
+}
+
+.home-page .career-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(18, 15, 10, 0.08), rgba(18, 15, 10, 0));
+  pointer-events: none;
+}
+
+.home-page .career-media img {
+  width: 100%;
+  height: 100%;
+  min-height: clamp(390px, 34vw, 520px);
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-page .career-content {
+  align-self: center;
+  max-width: 760px;
+  padding: clamp(48px, 5vw, 88px) clamp(44px, 6vw, 108px);
+}
+
+.home-page .career-kicker {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 24px;
+  color: #d6af66;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.home-page .career-kicker::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(214, 175, 102, 0.75);
+}
+
+.home-page .career-content h2 {
+  max-width: 680px;
+  margin: 0 0 20px;
+  color: #fffaf2;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.7rem, 4vw, 4.7rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.home-page .career-content > p:not(.career-kicker):not(.career-note) {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255, 250, 242, 0.82);
+  font-size: clamp(1rem, 1.25vw, 1.22rem);
+  line-height: 1.65;
+}
+
+.home-page .career-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.home-page .career-actions .career-primary,
+.home-page .career-actions .career-secondary {
+  min-width: 210px;
+  justify-content: center;
+}
+
+.home-page .career-actions .career-primary {
+  background: #f7f0e5;
+  color: #5d0d16;
+  border-color: #f7f0e5;
+}
+
+.home-page .career-actions .career-primary:hover {
+  background: #fffaf2;
+}
+
+.home-page .career-actions .career-secondary {
+  border-color: rgba(247, 240, 229, 0.8);
+  color: #fffaf2;
+  background: transparent;
+}
+
+.home-page .career-actions .career-secondary:hover {
+  border-color: #fffaf2;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.home-page .career-note {
+  margin: 24px 0 0;
+  color: #d6af66;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .home-page .career-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .career-media {
+    min-height: 330px;
+    border-radius: 0 0 50% 50% / 0 0 18% 18%;
+  }
+
+  .home-page .career-media img {
+    min-height: 330px;
+  }
+
+  .home-page .career-content {
+    max-width: none;
+    padding: 48px 6vw 58px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page #empresas.enterprise-showcase .enterprise-card figure {
+    height: 210px;
+  }
+
+  .home-page .career-media,
+  .home-page .career-media img {
+    min-height: 270px;
+  }
+
+  .home-page .career-content h2 {
+    font-size: clamp(2.35rem, 12vw, 3.35rem);
+  }
+
+  .home-page .career-actions {
+    flex-direction: column;
+  }
+
+  .home-page .career-actions .career-primary,
+  .home-page .career-actions .career-secondary {
+    width: 100%;
+  }
+}
