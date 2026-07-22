@@ -883,6 +883,99 @@ function renderAgendaCard(item) {
   `;
 }
 
+function thematicCategory(item) {
+  const text = `${item?.name || ""} ${item?.course?.title || ""} ${item?.course?.description || ""}`.toLowerCase();
+  if (/confeit|bolo|doce|sobremesa|chocolate|torta/.test(text)) return "confeitaria";
+  if (/massa|italian|pizza|focaccia|ravioli|nhoque/.test(text)) return "massas";
+  return "cozinha";
+}
+
+function thematicImage(item, index = 0) {
+  const category = thematicCategory(item);
+  if (category === "confeitaria") return "assets/photos/aula-confeitaria.jpg";
+  if (category === "massas") return "assets/photos/mesa-pratos.jpg";
+  const fallbacks = [
+    "assets/photos/cozinha-bancadas.jpg",
+    "assets/photos/cozinha-qf.jpg",
+    "assets/photos/equipamentos.jpg"
+  ];
+  return fallbacks[index % fallbacks.length];
+}
+
+function thematicPreparations(item) {
+  const titles = [
+    ...(Array.isArray(item?.lessons) ? item.lessons : []),
+    ...(Array.isArray(item?.course?.lessons) ? item.course.lessons : [])
+  ]
+    .map((lesson) => String(lesson?.title || "").trim())
+    .filter(Boolean);
+  const unique = [...new Set(titles)].slice(0, 3);
+  return unique.length ? unique : ["Conteúdo e preparos descritos pela equipe"];
+}
+
+function thematicDuration(item) {
+  const start = item?.startsAt ? new Date(item.startsAt) : null;
+  const end = item?.endsAt ? new Date(item.endsAt) : null;
+  if (start && end && Number.isFinite(start.getTime()) && Number.isFinite(end.getTime()) && end > start) {
+    const totalMinutes = Math.round((end.getTime() - start.getTime()) / 60000);
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return [hours ? `${hours}h` : "", minutes ? `${minutes}min` : ""].filter(Boolean).join(" ");
+  }
+  return item?.course?.workloadHours ? `${item.course.workloadHours}h` : "Consulte";
+}
+
+function renderThematicCard(item, index = 0) {
+  const title = item.name || item.course?.title || "Aula Quatro Folhas";
+  const description = item.course?.description || "Uma experiência prática para aprender novos preparos e viver a gastronomia.";
+  const date = formatDateOnly(item.startsAt) || "Data a confirmar";
+  const time = formatDateTime(item.startsAt).split(" ").slice(-1)[0] || "Horário a confirmar";
+  const preparations = thematicPreparations(item);
+  const price = item.course?.priceCents ? formatCurrencyCents(item.course.priceCents) : "Consulte";
+  const status = classStatusLabel(item.status);
+  const category = thematicCategory(item);
+  return `
+    <article class="thematic-card" data-category="${escapeHtml(category)}">
+      <figure class="thematic-card-image">
+        <img src="${thematicImage(item, index)}" alt="${escapeHtml(title)}" loading="lazy">
+        <span class="thematic-status">${escapeHtml(status)}</span>
+      </figure>
+      <div class="thematic-card-body">
+        <h3>${escapeHtml(title)}</h3>
+        <p>${escapeHtml(description)}</p>
+        <div class="thematic-meta">
+          <span>${escapeHtml(date)}</span>
+          <span>${escapeHtml(time)}</span>
+          <span>${escapeHtml(thematicDuration(item))}</span>
+        </div>
+        <div class="thematic-preparations">
+          <strong>Nesta aula você prepara</strong>
+          <span>${preparations.map(escapeHtml).join(" · ")}</span>
+        </div>
+        <div class="thematic-card-footer">
+          <span class="thematic-price"><small>por pessoa</small>${escapeHtml(price)}</span>
+          <button class="solid-btn" data-open="class-form" data-interest="${escapeHtml(title)}" data-date="${escapeHtml(date)}" data-content="${escapeHtml(description)}" data-includes="${escapeHtml(preparations.join(", "))}">Reservar e comprar</button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function bindThematicFilters() {
+  const buttons = [...document.querySelectorAll("[data-thematic-filter]")];
+  const grid = document.querySelector("[data-thematic-grid]");
+  if (!grid || !buttons.length) return;
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.thematicFilter || "all";
+      buttons.forEach((item) => item.classList.toggle("is-active", item === button));
+      grid.querySelectorAll(".thematic-card").forEach((card) => {
+        card.hidden = filter !== "all" && card.dataset.category !== filter;
+      });
+    });
+  });
+}
+
 function renderCourseCard(course) {
   const nextClassText = course.nextClass?.startsAt
     ? `Proxima turma: ${formatDateTime(course.nextClass.startsAt)}`
@@ -936,14 +1029,18 @@ function enhanceDynamicTriggers(root = document) {
 async function loadSiteHome() {
   if (!document.body.classList.contains("home-page")) return;
   try {
-    const home = await apiRequest("/site/home");
-    const agendaList = document.querySelector(".feature-section .agenda-list");
+    const [home, agendaItems] = await Promise.all([
+      apiRequest("/site/home"),
+      apiRequest("/site/agenda")
+    ]);
+    const agendaList = document.querySelector("[data-thematic-grid]");
     const coursesGrid = document.querySelector("#cursos .card-grid");
     const proofStrip = document.querySelector(".proof-strip");
 
-    if (agendaList && Array.isArray(home.upcomingClasses) && home.upcomingClasses.length) {
-      agendaList.innerHTML = home.upcomingClasses.slice(0, 3).map(renderAgendaCard).join("");
+    if (agendaList && Array.isArray(agendaItems) && agendaItems.length) {
+      agendaList.innerHTML = agendaItems.map(renderThematicCard).join("");
       enhanceDynamicTriggers(agendaList);
+      bindThematicFilters();
     }
 
     if (coursesGrid && Array.isArray(home.featuredCourses) && home.featuredCourses.length) {
@@ -1029,6 +1126,7 @@ async function loadCoursesPage() {
 
 normalizePortalLoginFields();
 enhanceDynamicTriggers(document);
+bindThematicFilters();
 loadSiteHome();
 loadAgendaPage();
 loadCoursesPage();
