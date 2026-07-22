@@ -997,20 +997,47 @@ textarea:focus-visible {
 }
 
 .info-strip span {
+  position: relative;
   display: grid;
-  min-height: 54px;
+  min-height: 78px;
   align-content: center;
   justify-content: center;
   text-align: center;
-  border: 2px solid rgba(120, 33, 36, 0.72);
-  border-radius: 6px;
-  padding: 10px 12px;
-  background: rgba(255, 253, 250, 0.98);
-  color: var(--wine);
-  font-weight: 900;
-  font-size: 12.5px;
-  line-height: 1.25;
-  box-shadow: 0 10px 24px rgba(23, 23, 20, 0.045);
+  border: 2px solid rgba(127, 5, 8, 0.78);
+  border-radius: 14px;
+  padding: 27px 14px 13px;
+  background: linear-gradient(180deg, rgba(255, 253, 250, 0.99), rgba(247, 241, 232, 0.94));
+  color: var(--charcoal);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 15.5px;
+  line-height: 1.2;
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 253, 250, 0.94),
+    inset 0 0 0 4px rgba(127, 5, 8, 0.28),
+    0 12px 28px rgba(23, 23, 20, 0.07);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.info-strip span::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  width: 34px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--wine);
+  transform: translateX(-50%);
+}
+
+.info-strip span:hover {
+  transform: translateY(-2px);
+  border-color: var(--wine);
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 253, 250, 0.96),
+    inset 0 0 0 4px rgba(127, 5, 8, 0.36),
+    0 17px 34px rgba(23, 23, 20, 0.11);
 }
 
 .page-form-section {
@@ -4192,9 +4219,14 @@ textarea {
   }
 
   .page-hero .info-strip span {
-    min-height: 38px;
-    padding: 10px 12px;
-    font-size: 12px;
+    min-height: 64px;
+    padding: 23px 12px 11px;
+    font-size: 14px;
+  }
+
+  .page-hero .info-strip span::before {
+    top: 14px;
+    width: 28px;
   }
 
   .page-nav.stacked-nav {
@@ -4496,6 +4528,19 @@ body.theme-enterprise .page-hero .page-nav a {
 }
 
 body.theme-enterprise .page-hero .page-nav a::after {
+  background: rgba(255, 248, 238, 0.82);
+}
+
+body.theme-enterprise .page-hero .info-strip span {
+  border-color: rgba(255, 248, 238, 0.42);
+  background: rgba(255, 248, 238, 0.1);
+  box-shadow:
+    inset 0 0 0 3px rgba(60, 25, 21, 0.62),
+    inset 0 0 0 4px rgba(255, 248, 238, 0.18),
+    0 16px 34px rgba(19, 12, 9, 0.18);
+}
+
+body.theme-enterprise .page-hero .info-strip span::before {
   background: rgba(255, 248, 238, 0.82);
 }
 
