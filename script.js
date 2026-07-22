@@ -470,6 +470,28 @@ document.addEventListener("click", (event) => {
   }
 });
 
+document.addEventListener("click", (event) => {
+  const target = event.target instanceof Element ? event.target : null;
+  const closeButton = target?.closest(".modal-close");
+  if (!closeButton) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+  const dialog = closeButton.closest("dialog");
+  if (dialog?.open) dialog.close("cancel");
+});
+
+modal?.addEventListener("click", (event) => {
+  if (event.target === modal && modal.open) {
+    modal.close("cancel");
+  }
+});
+
+modal?.addEventListener("close", () => {
+  leadForm?.reset();
+  if (leadForm) resetTurnstile(leadForm);
+});
+
 document.querySelectorAll("[data-open]").forEach((trigger) => {
   trigger.dataset.bound = "true";
   trigger.addEventListener("click", () => {
