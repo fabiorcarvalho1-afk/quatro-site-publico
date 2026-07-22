@@ -4931,3 +4931,191 @@ main .portal-hero .eyebrow::before {
     width: 30px;
   }
 }
+
+
+/* Visita: composicao hibrida com foto e formulario compacto */
+.page-form-section.visit-section {
+  grid-template-columns: minmax(0, 1.08fr) minmax(520px, 0.92fr);
+  gap: clamp(36px, 4.5vw, 68px);
+  align-items: stretch;
+}
+
+.visit-section .visit-intro {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+main .page-form-section.visit-section .eyebrow {
+  color: #ffffff;
+}
+
+main .page-form-section.visit-section .eyebrow::before {
+  background: var(--wine);
+}
+
+.visit-section h2 {
+  max-width: 720px;
+  color: var(--cream);
+}
+
+.visit-section .visit-intro > p:not(.eyebrow) {
+  max-width: 720px;
+  margin-top: 16px;
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.65;
+  text-align: left;
+  hyphens: none;
+}
+
+.visit-photo {
+  position: relative;
+  margin: 28px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 248, 238, 0.28);
+  border-radius: 10px;
+  background: rgba(255, 253, 250, 0.06);
+  box-shadow: 0 22px 54px rgba(10, 13, 10, 0.28);
+}
+
+.visit-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 8px rgba(255, 253, 250, 0.08);
+}
+
+.visit-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7.4;
+  object-fit: cover;
+  object-position: center;
+}
+
+.visit-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 17px;
+  color: rgba(255, 248, 238, 0.84);
+}
+
+.visit-facts span {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 16px;
+  border-right: 1px solid rgba(167, 7, 10, 0.7);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.visit-facts span:first-child {
+  padding-left: 0;
+}
+
+.visit-facts span:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.visit-contact-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  gap: 14px 16px;
+  padding: clamp(24px, 2.4vw, 30px);
+  border-radius: 10px;
+}
+
+.visit-contact-form label {
+  min-width: 0;
+  gap: 7px;
+}
+
+.visit-contact-form label:nth-of-type(5) {
+  grid-column: 1 / -1;
+}
+
+.visit-contact-form input,
+.visit-contact-form select {
+  min-height: 46px;
+}
+
+.visit-contact-form textarea {
+  min-height: 108px;
+}
+
+.visit-contact-form .turnstile-check {
+  grid-column: 1 / 2;
+  align-self: center;
+  margin: 0;
+}
+
+.visit-contact-form > .solid-btn {
+  grid-column: 2 / 3;
+  min-height: 54px;
+  align-self: center;
+}
+
+.visit-contact-form .form-feedback {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+@media (max-width: 1050px) {
+  .page-form-section.visit-section {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-photo img {
+    aspect-ratio: 16 / 7;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-form-section.visit-section {
+    gap: 30px;
+  }
+
+  .visit-photo {
+    margin-top: 22px;
+  }
+
+  .visit-photo img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .visit-facts {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .visit-facts span,
+  .visit-facts span:first-child,
+  .visit-facts span:last-child {
+    min-height: 38px;
+    padding: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(167, 7, 10, 0.5);
+  }
+
+  .visit-facts span:last-child {
+    border-bottom: 0;
+  }
+
+  .visit-contact-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .visit-contact-form label:nth-of-type(5),
+  .visit-contact-form .turnstile-check,
+  .visit-contact-form > .solid-btn,
+  .visit-contact-form .form-feedback {
+    grid-column: 1;
+  }
+}
