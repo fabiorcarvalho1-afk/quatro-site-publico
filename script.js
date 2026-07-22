@@ -13,6 +13,7 @@ const runtimeHostname = window.location.hostname || "127.0.0.1";
 const SITE_API_URL = window.QF_API_URL || `${runtimeProtocol}//${runtimeHostname}:3001`;
 const PORTAL_WEB_URL = window.QF_PORTAL_URL || `${runtimeProtocol}//${runtimeHostname}:3000`;
 const PORTAL_LOGIN_URL = `${PORTAL_WEB_URL}/login`;
+const TURNSTILE_SITE_KEY = "0x4AAAAAAD64c541osMVHz3x";
 const AUTH_ACCESS_TOKEN_KEY = "qf_admin_access_token";
 const AUTH_REFRESH_TOKEN_KEY = "qf_admin_refresh_token";
 const AUTH_CURRENT_USER_KEY = "qf_current_user";
@@ -154,6 +155,12 @@ function buildPortalHandoffUrl(tokens) {
 }
 
 async function submitLead(payload) {
+  if (!payload?.payload?.turnstileToken) {
+    const error = new Error("Conclua a verificação de segurança antes de enviar.");
+    error.code = "TURNSTILE_REQUIRED";
+    throw error;
+  }
+
   return apiRequest("/site/leads", {
     method: "POST",
     body: JSON.stringify(payload)
@@ -162,6 +169,8 @@ async function submitLead(payload) {
 
 function buildLeadPayload(form, source, extraPayload = {}) {
   const data = formToObject(form);
+  const turnstileToken = getTurnstileToken(form);
+  delete data["cf-turnstile-response"];
   const allTextInputs = [...form.querySelectorAll("input[type='text'], input:not([type]), textarea")];
   const fallbackName = allTextInputs[0]?.value?.trim() || "Lead site Quatro Folhas";
   const fallbackMessage = form.querySelector("textarea")?.value?.trim() || "";
@@ -181,6 +190,7 @@ function buildLeadPayload(form, source, extraPayload = {}) {
     message: message || undefined,
     payload: {
       page: window.location.href,
+      turnstileToken,
       ...data,
       ...extraPayload
     }
@@ -497,6 +507,11 @@ document.querySelectorAll("[data-open]").forEach((trigger) => {
 leadForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const button = leadForm.querySelector("button[type='submit']");
+  const feedback = ensureFeedback(leadForm);
+  if (!getTurnstileToken(leadForm)) {
+    feedback.textContent = "Conclua a verificação de segurança antes de enviar.";
+    return;
+  }
   const stopLoading = setButtonLoading(button, "Enviando");
   const payload = buildLeadPayload(leadForm, leadForm.dataset.leadSource || "site_modal", {
     interest: leadForm.dataset.leadInterest || "",
@@ -507,11 +522,19 @@ leadForm?.addEventListener("submit", (event) => {
   submitLead(payload)
     .then(() => {
       successMessage.hidden = false;
+      leadForm.reset();
+      resetTurnstile(leadForm);
     })
-    .catch(() => {
+    .catch((error) => {
+      if (isTurnstileError(error)) {
+        feedback.textContent = error.message || "Não foi possível validar a verificação de segurança.";
+        resetTurnstile(leadForm);
+        return;
+      }
       whatsappLeadFallback(payload);
       successMessage.hidden = false;
       successMessage.textContent = "Recebemos seu interesse. Vamos continuar pelo WhatsApp.";
+      resetTurnstile(leadForm);
     })
     .finally(() => {
       stopLoading();
@@ -519,22 +542,99 @@ leadForm?.addEventListener("submit", (event) => {
 });
 
 const isBackofficePage = /\/(admin|portal)-/.test(window.location.pathname);
-const humanCheckMarkup = `
-  <label class="human-check">
-    <input type="checkbox" name="human_confirmation" required>
-    <span>não sou robo</span>
-  </label>
+const turnstileWidgets = new WeakMap();
+
+const securityCheckMarkup = `
+  <div class="turnstile-check" data-turnstile-container aria-label="Verificação de segurança"></div>
   <label class="spam-trap" aria-hidden="true">
     Site
     <input type="text" name="website" tabindex="-1" autocomplete="off">
   </label>
 `;
 
+function getTurnstileToken(form) {
+  return String(form?.querySelector("[name='cf-turnstile-response']")?.value || "").trim();
+}
+
+function isTurnstileError(error) {
+  return error?.code === "TURNSTILE_REQUIRED"
+    || /captcha|turnstile|verifica[cç][aã]o de seguran[cç]a/i.test(String(error?.message || ""));
+}
+
+function resetTurnstile(form) {
+  const widgetId = turnstileWidgets.get(form);
+  if (widgetId !== undefined && window.turnstile) {
+    window.turnstile.reset(widgetId);
+  }
+}
+
+function loadTurnstile() {
+  if (window.turnstile) return Promise.resolve(window.turnstile);
+
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector("script[data-turnstile-script]");
+    if (existing) {
+      existing.addEventListener("load", () => resolve(window.turnstile), { once: true });
+      existing.addEventListener("error", () => reject(new Error("Falha ao carregar a verificação de segurança.")), { once: true });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+    script.async = true;
+    script.defer = true;
+    script.dataset.turnstileScript = "true";
+    script.addEventListener("load", () => resolve(window.turnstile), { once: true });
+    script.addEventListener("error", () => reject(new Error("Falha ao carregar a verificação de segurança.")), { once: true });
+    document.head.appendChild(script);
+  });
+}
+
+function renderTurnstileWidgets() {
+  return loadTurnstile().then((turnstile) => {
+    document.querySelectorAll("[data-turnstile-container]").forEach((container) => {
+      const form = container.closest("form");
+      if (!form || turnstileWidgets.has(form)) return;
+
+      const widgetId = turnstile.render(container, {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: "light",
+        language: "pt-BR",
+        size: window.matchMedia("(max-width: 380px)").matches ? "compact" : "flexible",
+        appearance: "always",
+        "error-callback": () => {
+          const feedback = ensureFeedback(form);
+          feedback.textContent = "Não foi possível carregar a verificação de segurança. Atualize a página e tente novamente.";
+          feedback.hidden = false;
+        },
+        "expired-callback": () => resetTurnstile(form),
+        "timeout-callback": () => resetTurnstile(form)
+      });
+
+      turnstileWidgets.set(form, widgetId);
+    });
+  });
+}
+
 if (!isBackofficePage) {
-  document.querySelectorAll("[data-demo-form], [data-whatsapp-optin]").forEach((form) => {
-    if (form.querySelector("[name='human_confirmation']")) return;
+  document.querySelectorAll("[data-demo-form], [data-whatsapp-optin], #lead-form").forEach((form) => {
+    if (form.querySelector("[data-turnstile-container]")) return;
     const button = form.querySelector("button[type='submit']");
-    if (button) button.insertAdjacentHTML("beforebegin", humanCheckMarkup);
+    const footerConsent = form.matches("[data-whatsapp-optin]")
+      ? form.querySelector(".footer-consent")
+      : null;
+    const insertionPoint = footerConsent || button;
+    if (insertionPoint) insertionPoint.insertAdjacentHTML("beforebegin", securityCheckMarkup);
+  });
+
+  renderTurnstileWidgets().catch(() => {
+    document.querySelectorAll("[data-turnstile-container]").forEach((container) => {
+      const form = container.closest("form");
+      if (!form) return;
+      const feedback = ensureFeedback(form);
+      feedback.textContent = "Não foi possível carregar a verificação de segurança. Atualize a página e tente novamente.";
+      feedback.hidden = false;
+    });
   });
 }
 
@@ -547,8 +647,8 @@ document.querySelectorAll("[data-demo-form]").forEach((form) => {
       feedback.textContent = "Nao foi possivel enviar a mensagem. Tente novamente.";
       return;
     }
-    if (form.querySelector("[name='human_confirmation']") && !form.querySelector("[name='human_confirmation']").checked) {
-      feedback.textContent = "Confirme que voce nao esta enviando spam.";
+    if (!getTurnstileToken(form)) {
+      feedback.textContent = "Conclua a verificação de segurança antes de enviar.";
       return;
     }
     const stopLoading = setButtonLoading(button, "Enviando");
@@ -559,9 +659,16 @@ document.querySelectorAll("[data-demo-form]").forEach((form) => {
       await submitLead(payload);
       feedback.textContent = form.dataset.successText || "Recebemos sua mensagem. Nossa equipe entrara em contato pelo WhatsApp.";
       form.reset();
+      resetTurnstile(form);
     } catch (error) {
+      if (isTurnstileError(error)) {
+        feedback.textContent = error.message || "Não foi possível validar a verificação de segurança.";
+        resetTurnstile(form);
+        return;
+      }
       whatsappLeadFallback(payload);
       feedback.textContent = "Recebemos seu interesse. Vamos continuar o atendimento pelo WhatsApp.";
+      resetTurnstile(form);
     } finally {
       stopLoading();
     }
@@ -694,7 +801,13 @@ document.querySelectorAll("[data-whatsapp-optin]").forEach((form) => {
     const tel = form.querySelector("input[name='whatsapp']");
     const feedback = form.querySelector(".footer-optin-feedback");
     if (form.querySelector("[name='website']")?.value) return;
-    if (form.querySelector("[name='human_confirmation']") && !form.querySelector("[name='human_confirmation']").checked) return;
+    if (!getTurnstileToken(form)) {
+      if (feedback) {
+        feedback.textContent = "Conclua a verificação de segurança antes de enviar.";
+        feedback.hidden = false;
+      }
+      return;
+    }
     if (!tel) return;
 
     const valueRaw = String(tel.value || "").trim();
@@ -711,7 +824,8 @@ document.querySelectorAll("[data-whatsapp-optin]").forEach((form) => {
         consent: true,
         ts: new Date().toISOString(),
         page: window.location.href,
-        userAgent: navigator.userAgent
+        userAgent: navigator.userAgent,
+        turnstileToken: getTurnstileToken(form)
       }
     };
 
@@ -730,6 +844,7 @@ document.querySelectorAll("[data-whatsapp-optin]").forEach((form) => {
       setTimeout(() => {
         if (feedback) feedback.hidden = true;
         form.reset();
+        resetTurnstile(form);
       }, 2400);
     };
 
@@ -737,6 +852,14 @@ document.querySelectorAll("[data-whatsapp-optin]").forEach((form) => {
       await submitLead(payload);
       done(true);
     } catch (error) {
+      if (isTurnstileError(error)) {
+        if (feedback) {
+          feedback.textContent = error.message || "Não foi possível validar a verificação de segurança.";
+          feedback.hidden = false;
+        }
+        resetTurnstile(form);
+        return;
+      }
       fallbackToWhatsApp();
       done(false);
     }
