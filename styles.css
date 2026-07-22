@@ -4830,3 +4830,46 @@ body.theme-enterprise .section-cta .solid-btn {
     font-size: 25px;
   }
 }
+
+
+/* Cloudflare Turnstile: verificacao real dos formularios */
+.turnstile-check {
+  width: 100%;
+  min-width: 0;
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.turnstile-check > div {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+.turnstile-check iframe {
+  max-width: 100%;
+}
+
+.footer-optin .turnstile-check {
+  margin: 4px 0 2px;
+}
+
+.contact-form .turnstile-check,
+.modal-card .turnstile-check,
+.quote-actions .turnstile-check {
+  margin-top: 2px;
+}
+
+@media (max-width: 520px) {
+  .footer-optin-row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .footer-optin-row .solid-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
