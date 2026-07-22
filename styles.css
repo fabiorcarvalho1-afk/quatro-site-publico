@@ -5050,13 +5050,16 @@ main .page-form-section.visit-section .eyebrow::before {
 }
 
 .visit-contact-form .turnstile-check {
-  grid-column: 1 / 2;
+  grid-column: 1 / -1;
+  width: 100%;
   align-self: center;
   margin: 0;
+  overflow: visible;
 }
 
 .visit-contact-form > .solid-btn {
-  grid-column: 2 / 3;
+  grid-column: 1 / -1;
+  width: 100%;
   min-height: 54px;
   align-self: center;
 }
