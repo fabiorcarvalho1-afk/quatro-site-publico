@@ -4628,6 +4628,11 @@ body.theme-enterprise .section-cta .solid-btn {
 }
 
 
+/* Historia: alinha a foto ao primeiro card lateral */
+#historia .detail-image {
+  margin-top: 0;
+}
+
 /* Historia: cards editoriais com tarja lateral */
 #historia .detail-list {
   gap: 14px;
