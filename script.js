@@ -599,7 +599,7 @@ function renderTurnstileWidgets() {
       const widgetId = turnstile.render(container, {
         sitekey: TURNSTILE_SITE_KEY,
         theme: "light",
-        language: "pt-BR",
+        language: document.documentElement.lang || "pt-BR",
         size: window.matchMedia("(max-width: 380px)").matches ? "compact" : "flexible",
         appearance: "always",
         "error-callback": () => {
