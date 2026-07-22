@@ -4881,3 +4881,53 @@ body.theme-enterprise .section-cta .solid-btn {
     justify-content: center;
   }
 }
+
+
+/* Titulos de secao: linha editorial global */
+main section:not(.hero):not(.page-hero) .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: fit-content;
+  margin-bottom: 16px;
+  color: var(--wine-dark);
+  font-size: clamp(15px, 1.05vw, 17px);
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+main section:not(.hero):not(.page-hero) .eyebrow::before {
+  content: "";
+  width: clamp(38px, 3.4vw, 54px);
+  height: 2px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--wine-dark);
+}
+
+main .content-band.dark .eyebrow,
+main .page-form-section .eyebrow,
+main .portal-hero .eyebrow {
+  color: rgba(255, 248, 238, 0.96);
+}
+
+main .content-band.dark .eyebrow::before,
+main .page-form-section .eyebrow::before,
+main .portal-hero .eyebrow::before {
+  background: rgba(255, 248, 238, 0.82);
+}
+
+@media (max-width: 720px) {
+  main section:not(.hero):not(.page-hero) .eyebrow {
+    gap: 10px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    letter-spacing: 0.09em;
+  }
+
+  main section:not(.hero):not(.page-hero) .eyebrow::before {
+    width: 30px;
+  }
+}
