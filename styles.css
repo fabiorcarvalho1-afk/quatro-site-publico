@@ -6112,3 +6112,21 @@ main .page-form-section.visit-section .eyebrow::before {
     padding: 38px 6vw 44px;
   }
 }
+
+
+/* Exibir vídeo principal também no celular (2026-07-22) */
+@media (max-width: 720px) {
+  body.home-page .hero-video {
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  body.home-page .hero-demo-reel {
+    display: block !important;
+  }
+
+  html.hero-video-ready body.home-page .hero-demo-reel {
+    display: none !important;
+  }
+}
