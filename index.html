@@ -664,12 +664,24 @@
         var markReady = function () {
           document.documentElement.classList.add("hero-video-ready");
         };
+        var tryPlay = function () {
+          v.muted = true;
+          v.defaultMuted = true;
+          v.setAttribute("muted", "");
+          v.setAttribute("playsinline", "");
+          try {
+            var p = v.play && v.play();
+            if (p && typeof p.catch === "function") p.catch(function () {});
+          } catch (e) {}
+        };
         v.addEventListener("loadeddata", markReady, { once: true });
         v.addEventListener("canplay", markReady, { once: true });
-        try {
-          var p = v.play && v.play();
-          if (p && typeof p.catch === "function") p.catch(function () {});
-        } catch (e) {}
+        window.addEventListener("pageshow", tryPlay);
+        document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden) tryPlay();
+        });
+        tryPlay();
       })();
     </script>
     <script src="script.js"></script>
