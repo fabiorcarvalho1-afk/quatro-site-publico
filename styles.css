@@ -6188,3 +6188,110 @@ main .page-form-section.visit-section .eyebrow::before {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Menu Crianças e Escolas */
+.kids-nav-item .kids-mega-menu {
+  width: min(470px, calc(100vw - 48px));
+  padding: 18px;
+}
+
+.kids-menu-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 2px 2px 13px;
+  border-bottom: 1px solid rgba(116, 96, 68, 0.16);
+}
+
+.kids-menu-heading strong {
+  color: var(--wine);
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.kids-menu-heading span {
+  color: rgba(52, 53, 47, 0.62);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.kids-menu-links {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.kids-menu-links > a {
+  display: grid;
+  gap: 3px;
+  padding: 12px 14px;
+  border: 1px solid rgba(116, 96, 68, 0.14);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fffdfa, #f9f3eb);
+  color: var(--ink) !important;
+  text-shadow: none !important;
+  transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+.kids-menu-links > a::after {
+  display: none;
+}
+
+.kids-menu-links > a:hover {
+  transform: translateX(3px);
+  border-color: rgba(167, 7, 10, 0.34);
+  background: #ffffff;
+}
+
+.kids-menu-links strong {
+  color: var(--wine);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.kids-menu-links span {
+  color: rgba(52, 53, 47, 0.7);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+@media (max-width: 1060px) {
+  .site-header.is-open .kids-nav-item {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .kids-nav-item > .nav-link {
+    width: fit-content;
+  }
+
+  .kids-nav-item .kids-mega-menu {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    box-shadow: none;
+  }
+
+  .kids-nav-item.is-open .kids-mega-menu {
+    display: block !important;
+  }
+
+  .kids-menu-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .kids-nav-item.is-open .kids-mega-menu {
+    display: block !important;
+  }
+}
