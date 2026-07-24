@@ -6387,10 +6387,10 @@ main .page-form-section.visit-section .eyebrow::before {
 /* Festa infantil: composição editorial aprovada */
 .party-video-hero {
   min-height: 0;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.44fr);
-  gap: clamp(44px, 5vw, 84px);
-  padding-top: clamp(52px, 5vw, 76px);
-  padding-bottom: clamp(52px, 5vw, 76px);
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.38fr);
+  gap: clamp(34px, 4vw, 64px);
+  padding-top: clamp(34px, 3.5vw, 52px);
+  padding-bottom: clamp(34px, 3.5vw, 52px);
 }
 
 .party-hero-copy {
@@ -6399,31 +6399,31 @@ main .page-form-section.visit-section .eyebrow::before {
 }
 
 .party-video-hero h1 {
-  max-width: 850px;
-  font-size: clamp(42px, 4.8vw, 74px);
-  line-height: 1.08;
+  max-width: 780px;
+  font-size: clamp(36px, 3.45vw, 56px);
+  line-height: 1.1;
 }
 
 .party-video-hero .party-hero-copy > p:not(.eyebrow) {
-  max-width: 800px;
-  font-size: clamp(17px, 1.45vw, 21px);
-  line-height: 1.65;
+  max-width: 720px;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.58;
 }
 
 .party-section-nav {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  margin-top: clamp(30px, 3vw, 42px);
+  margin-top: clamp(22px, 2.2vw, 30px);
   border-bottom: 1px solid rgba(90, 72, 58, 0.18);
 }
 
 .party-section-nav a {
   position: relative;
   display: flex;
-  min-height: 54px;
+  min-height: 46px;
   align-items: center;
   justify-content: center;
-  padding: 12px 10px 16px;
+  padding: 10px 8px 13px;
   color: #302b27;
   font-size: 15px;
   font-weight: 650;
@@ -6463,7 +6463,7 @@ main .page-form-section.visit-section .eyebrow::before {
 .party-experience-panel {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 28px;
+  margin-top: 20px;
   overflow: hidden;
   border: 1px solid rgba(138, 100, 56, 0.24);
   border-top: 4px solid var(--wine);
@@ -6476,11 +6476,11 @@ main .page-form-section.visit-section .eyebrow::before {
 .party-experience-panel > a {
   display: grid;
   min-width: 0;
-  min-height: 142px;
+  min-height: 104px;
   align-content: center;
   justify-items: center;
-  gap: 18px;
-  padding: 24px 14px;
+  gap: 13px;
+  padding: 16px 12px;
   color: var(--ink);
   text-align: center;
 }
@@ -6493,14 +6493,14 @@ main .page-form-section.visit-section .eyebrow::before {
   position: relative;
   color: #b1833e;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .party-experience-panel small::after {
   content: "";
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   left: 50%;
   width: 34px;
   height: 1px;
@@ -6510,7 +6510,7 @@ main .page-form-section.visit-section .eyebrow::before {
 
 .party-experience-panel strong {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(17px, 1.35vw, 21px);
+  font-size: clamp(16px, 1.15vw, 19px);
   line-height: 1.2;
 }
 
@@ -6531,10 +6531,10 @@ main .page-form-section.visit-section .eyebrow::before {
 }
 
 .party-vertical-video-shell {
-  width: min(100%, 350px);
-  max-height: 570px;
+  width: min(100%, 294px);
+  max-height: 478px;
   border: 1px solid rgba(176, 124, 49, 0.5);
-  border-radius: 26px;
+  border-radius: 22px;
   outline: 0;
 }
 
@@ -6565,8 +6565,8 @@ main .page-form-section.visit-section .eyebrow::before {
   }
 
   .party-vertical-video-shell {
-    width: min(100%, 300px);
-    max-height: 520px;
+    width: min(100%, 270px);
+    max-height: 450px;
   }
 
   .party-section-nav a {
@@ -6575,7 +6575,7 @@ main .page-form-section.visit-section .eyebrow::before {
 
   .party-experience-panel > span,
   .party-experience-panel > a {
-    min-height: 126px;
+    min-height: 100px;
     padding-inline: 10px;
   }
 }
@@ -6587,7 +6587,7 @@ main .page-form-section.visit-section .eyebrow::before {
   }
 
   .party-video-hero h1 {
-    font-size: clamp(38px, 11vw, 54px);
+    font-size: clamp(34px, 9.5vw, 48px);
   }
 
   .party-section-nav {
