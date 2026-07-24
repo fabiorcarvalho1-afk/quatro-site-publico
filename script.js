@@ -19,6 +19,63 @@ const AUTH_REFRESH_TOKEN_KEY = "qf_admin_refresh_token";
 const AUTH_CURRENT_USER_KEY = "qf_current_user";
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
+
+function installKidsSchoolsMenu() {
+  const kidsLink = document.querySelector('.main-nav > a[href$="criancas-e-escolas.html"]');
+  if (!kidsLink || kidsLink.closest('.kids-nav-item')) return;
+
+  const item = document.createElement('div');
+  item.className = 'nav-item has-mega kids-nav-item';
+  kidsLink.parentNode.insertBefore(item, kidsLink);
+  item.appendChild(kidsLink);
+  kidsLink.classList.add('nav-link');
+  kidsLink.setAttribute('aria-haspopup', 'true');
+  kidsLink.setAttribute('aria-expanded', 'false');
+
+  const menu = document.createElement('div');
+  menu.className = 'mega-menu kids-mega-menu';
+  menu.setAttribute('role', 'menu');
+  menu.innerHTML = `
+    <div class="kids-menu-heading">
+      <strong>Crianças e Escolas</strong>
+      <span>Escolha uma experiência</span>
+    </div>
+    <div class="kids-menu-links">
+      <a href="mini-chef.html" role="menuitem">
+        <strong>Mini Chef</strong>
+        <span>Curso de gastronomia para crianças</span>
+      </a>
+      <a href="festa-infantil-gastronomica.html" role="menuitem">
+        <strong>Festa Infantil</strong>
+        <span>Comemoração com experiência gastronômica</span>
+      </a>
+      <a href="aulas-para-escolas.html" role="menuitem">
+        <strong>Aulas para Escolas</strong>
+        <span>Projetos gastronômicos para instituições</span>
+      </a>
+    </div>
+  `;
+  item.appendChild(menu);
+
+  kidsLink.addEventListener('click', (event) => {
+    const touchLayout = window.matchMedia('(max-width: 1060px), (hover: none) and (pointer: coarse)').matches;
+    if (!touchLayout) return;
+    if (!item.classList.contains('is-open')) {
+      event.preventDefault();
+      item.classList.add('is-open');
+      kidsLink.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (item.contains(event.target)) return;
+    item.classList.remove('is-open');
+    kidsLink.setAttribute('aria-expanded', 'false');
+  });
+}
+
+installKidsSchoolsMenu();
+
 const portalStatusLabels = {
   open: "Inscricoes abertas",
   in_progress: "Em andamento",
