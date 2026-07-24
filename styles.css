@@ -6295,3 +6295,91 @@ main .page-form-section.visit-section .eyebrow::before {
     display: block !important;
   }
 }
+
+
+/* Festa infantil: vídeo vertical no hero */
+.party-video-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+}
+
+.party-vertical-video-shell {
+  position: relative;
+  width: min(100%, 340px);
+  aspect-ratio: 9 / 16;
+  max-height: 540px;
+  justify-self: center;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #171714 url("assets/photos/cozinha-aula.jpg") center/cover no-repeat;
+  box-shadow: 0 28px 70px rgba(23, 23, 20, 0.2);
+  outline: 1px solid rgba(255, 253, 250, 0.72);
+  outline-offset: -10px;
+}
+
+.party-vertical-video-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 58%, rgba(24, 20, 17, 0.64) 100%);
+}
+
+.party-vertical-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.party-video-caption {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  gap: 3px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 253, 250, 0.24);
+  border-radius: 12px;
+  background: rgba(24, 33, 28, 0.72);
+  color: var(--cream);
+  backdrop-filter: blur(8px);
+}
+
+.party-video-caption strong {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.party-video-caption small {
+  color: rgba(251, 247, 239, 0.76);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 1060px) {
+  .party-video-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(270px, 0.62fr);
+  }
+
+  .party-vertical-video-shell {
+    width: min(100%, 310px);
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 720px) {
+  .party-video-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .party-vertical-video-shell {
+    width: min(86vw, 340px);
+    max-height: none;
+    margin-top: 12px;
+  }
+}
