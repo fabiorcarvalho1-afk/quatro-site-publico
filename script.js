@@ -76,6 +76,64 @@ function installKidsSchoolsMenu() {
 
 installKidsSchoolsMenu();
 
+
+function simplifyCoursesMenu() {
+  const coursesLink = document.querySelector('.nav-item.has-mega > a[href$="cursos.html"]');
+  const item = coursesLink && coursesLink.closest('.nav-item.has-mega');
+  const menu = item && item.querySelector('.mega-menu');
+  if (!coursesLink || !item || !menu || item.classList.contains('courses-nav-item')) return;
+
+  item.classList.add('kids-nav-item', 'courses-nav-item');
+  coursesLink.setAttribute('aria-haspopup', 'true');
+  coursesLink.setAttribute('aria-expanded', 'false');
+  menu.classList.add('kids-mega-menu');
+  menu.innerHTML = `
+    <div class="kids-menu-heading">
+      <strong>Cursos</strong>
+      <span>Escolha sua formação</span>
+    </div>
+    <div class="kids-menu-links">
+      <a href="chef-profissional.html" role="menuitem">
+        <strong>Chef Profissional</strong>
+        <span>Formação prática em cozinha profissional</span>
+      </a>
+      <a href="confeitaria-profissional.html" role="menuitem">
+        <strong>Confeitaria Profissional</strong>
+        <span>Técnicas, produção e rotina de confeitaria</span>
+      </a>
+      <a href="cursos-rapidos.html" role="menuitem">
+        <strong>Cursos Rápidos</strong>
+        <span>Aprendizados específicos em formatos compactos</span>
+      </a>
+      <a href="mini-chef.html" role="menuitem">
+        <strong>Mini Chef</strong>
+        <span>Experiência gastronômica para crianças</span>
+      </a>
+    </div>
+  `;
+
+  coursesLink.addEventListener('click', (event) => {
+    const touchLayout = window.matchMedia('(max-width: 1060px), (hover: none) and (pointer: coarse)').matches;
+    if (!touchLayout) return;
+    if (!item.classList.contains('is-open')) {
+      event.preventDefault();
+      document.querySelectorAll('.nav-item.has-mega.is-open').forEach((openItem) => {
+        if (openItem !== item) openItem.classList.remove('is-open');
+      });
+      item.classList.add('is-open');
+      coursesLink.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (item.contains(event.target)) return;
+    item.classList.remove('is-open');
+    coursesLink.setAttribute('aria-expanded', 'false');
+  });
+}
+
+simplifyCoursesMenu();
+
 const portalStatusLabels = {
   open: "Inscricoes abertas",
   in_progress: "Em andamento",
