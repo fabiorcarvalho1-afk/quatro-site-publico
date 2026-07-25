@@ -10,365 +10,90 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-      /* Direção editorial exclusiva da página de cursos */
-      body.courses-premium-page {
-        --courses-wine: #681526;
-        --courses-wine-dark: #3f0c18;
-        --courses-cream: #f7f0e5;
-        --courses-paper: #fffdf8;
-        --courses-gold: #b98a43;
-        --courses-ink: #2d2522;
-        background: var(--courses-cream);
-        color: var(--courses-ink);
+      /* Modelo 1 aprovado: catálogo moderno, visual e orientado ao clique */
+      body.courses-catalog-page { background: #f8f4ee; }
+      .courses-catalog-page .professional-catalog {
+        padding-top: clamp(72px, 8vw, 118px);
+        background: radial-gradient(circle at 92% 0%, rgba(117,19,36,.055), transparent 27rem), #f8f4ee;
       }
-
-      .courses-premium-page main {
-        overflow: hidden;
-        background:
-          radial-gradient(circle at 88% 8%, rgba(185, 138, 67, 0.12), transparent 25rem),
-          var(--courses-cream);
+      .courses-catalog-page .professional-catalog .section-heading {
+        align-items: end; padding-bottom: 30px; border-bottom: 1px solid rgba(104,21,38,.14);
       }
-
-      .courses-premium-page .page-hero {
-        position: relative;
-        min-height: 680px;
-        padding: clamp(72px, 8vw, 124px) clamp(24px, 6vw, 92px);
-        gap: clamp(40px, 7vw, 112px);
-        background: var(--courses-cream);
+      .courses-catalog-page .professional-catalog .section-heading h2 {
+        max-width: 700px; color: #251c19; font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(42px,4vw,66px); font-weight: 600; line-height: 1.02; letter-spacing: -.035em;
       }
-
-      .courses-premium-page .page-hero::before {
-        content: "QUATRO FOLHAS · ESCOLA DE GASTRONOMIA";
-        position: absolute;
-        top: 34px;
-        left: clamp(24px, 6vw, 92px);
-        color: rgba(63, 12, 24, 0.62);
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.22em;
+      .courses-catalog-page .professional-catalog .section-heading > p {
+        max-width: 610px; color: #695952; font-size: clamp(16px,1.25vw,19px); line-height: 1.65;
       }
-
-      .courses-premium-page .page-hero > div:first-child {
-        position: relative;
-        z-index: 1;
-        max-width: 720px;
+      .courses-catalog-page .course-catalog-grid {
+        display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin-top: 38px;
       }
-
-      .courses-premium-page .page-hero .eyebrow,
-      .courses-premium-page .content-band .eyebrow,
-      .courses-premium-page .detail-section .eyebrow {
-        color: var(--courses-wine);
-        letter-spacing: 0.2em;
+      .courses-catalog-page .catalog-course-card {
+        display: flex; min-width: 0; min-height: 510px; overflow: hidden; flex-direction: column;
+        border: 1px solid rgba(104,21,38,.24); border-radius: 18px; background: #fffdf9;
+        box-shadow: 0 14px 38px rgba(58,29,25,.075);
+        transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
       }
-
-      .courses-premium-page .page-hero h1 {
-        max-width: 690px;
-        margin: 14px 0 24px;
-        color: var(--courses-wine-dark);
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(48px, 6vw, 88px);
-        font-weight: 600;
-        line-height: 0.98;
-        letter-spacing: -0.035em;
+      .courses-catalog-page .catalog-course-card:hover {
+        border-color: rgba(104,21,38,.58); box-shadow: 0 24px 55px rgba(76,22,31,.15); transform: translateY(-7px);
       }
-
-      .courses-premium-page .page-hero h1 em {
-        display: block;
-        color: var(--courses-wine);
-        font-weight: 600;
+      .courses-catalog-page .course-card-media {
+        position: relative; display: block; height: 178px; flex: 0 0 auto; overflow: hidden;
+        background-color: #4b171f; background-position: center; background-size: cover;
       }
-
-      .courses-premium-page .page-hero > div:first-child > p:not(.eyebrow) {
-        max-width: 610px;
-        color: #5f514a;
-        font-size: clamp(16px, 1.25vw, 19px);
-        line-height: 1.72;
+      .courses-catalog-page .course-card-media::after {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(90deg, rgba(45,9,17,.1), rgba(104,21,38,.38));
       }
-
-      .courses-premium-page .page-hero-image {
-        min-height: 560px;
-        border-radius: 220px 220px 18px 18px;
-        box-shadow: 22px 24px 0 rgba(104, 21, 38, 0.11);
-        filter: saturate(0.88) contrast(1.03);
+      .courses-catalog-page .course-card-body {
+        display: flex; min-height: 0; flex: 1; flex-direction: column; padding: 22px 24px 24px;
       }
-
-      .courses-premium-page .page-hero-image::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border: 1px solid rgba(255, 253, 248, 0.55);
-        border-radius: inherit;
-        box-shadow: inset 0 0 0 12px rgba(255, 253, 248, 0.08);
+      .courses-catalog-page .course-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+      .courses-catalog-page .course-card-tags .tag {
+        display: inline-flex; min-height: 30px; align-items: center; padding: 7px 13px;
+        border: 1px solid #e1d7ca; border-radius: 999px; background: #f4efe7; color: #745d42;
+        font-size: 10px; font-weight: 800; letter-spacing: .075em; line-height: 1; text-transform: uppercase;
       }
-
-      .courses-premium-page .stacked-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 32px;
+      .courses-catalog-page .course-card-tags .professional-tag {
+        border-color: #741326; background: #741326; color: #fffaf2; font-size: 11px;
       }
-
-      .courses-premium-page .stacked-nav a {
-        min-height: 40px;
-        padding: 10px 15px;
-        border: 1px solid rgba(104, 21, 38, 0.2);
-        border-radius: 999px;
-        background: rgba(255, 253, 248, 0.62);
-        color: var(--courses-wine-dark);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.055em;
-        text-transform: uppercase;
+      .courses-catalog-page .course-card-tags .demand-tag {
+        border-color: #d8b36f; background: #ead2a3; color: #5b3718;
       }
-
-      .courses-premium-page .stacked-nav a[href="cursos-profissionalizantes.html"] {
-        border-color: var(--courses-wine);
-        background: var(--courses-wine);
-        color: #fffaf1;
+      .courses-catalog-page .catalog-course-card h3 {
+        margin: 0 0 12px; color: #251c19; font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(27px,2vw,34px); font-weight: 600; line-height: 1.08; letter-spacing: -.02em;
       }
-
-      .courses-premium-page .info-strip {
-        margin-top: 24px;
-        border-top: 1px solid rgba(104, 21, 38, 0.18);
-        border-bottom: 1px solid rgba(104, 21, 38, 0.18);
-        background: transparent;
+      .courses-catalog-page .course-description { margin: 0; color: #665751; font-size: 15px; line-height: 1.56; }
+      .courses-catalog-page .catalog-course-card .course-start {
+        margin: 18px 0 20px; color: #741326; font-size: 11px; font-weight: 800;
+        letter-spacing: .12em; text-transform: uppercase;
       }
-
-      .courses-premium-page .info-strip span {
-        color: #6d5b52;
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 14px;
+      .courses-catalog-page .course-card-cta {
+        display: flex; min-height: 48px; align-items: center; justify-content: center; margin-top: auto;
+        padding: 12px 18px; border: 1px solid #741326; border-radius: 8px; background: #741326;
+        color: #fffaf2; font-size: 12px; font-weight: 800; letter-spacing: .075em;
+        text-align: center; text-transform: uppercase; transition: background 160ms ease, transform 160ms ease;
       }
-
-      .courses-premium-page .signature-strip {
-        position: relative;
-        z-index: 2;
-        background: var(--courses-wine-dark);
+      .courses-catalog-page .course-card-cta:hover,
+      .courses-catalog-page .course-card-cta:focus-visible { background: #4d0c19; color: #fff; transform: translateY(-2px); }
+      .courses-catalog-page .course-card-cta:focus-visible { outline: 3px solid rgba(185,138,67,.4); outline-offset: 3px; }
+      @media (max-width: 1080px) {
+        .courses-catalog-page .course-catalog-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
       }
-
-      .courses-premium-page .signature-strip article {
-        border-color: rgba(255, 248, 235, 0.15);
+      @media (max-width: 680px) {
+        .courses-catalog-page .professional-catalog .section-heading h2 { font-size: clamp(38px,11vw,52px); }
+        .courses-catalog-page .course-catalog-grid { grid-template-columns: 1fr; gap: 18px; }
+        .courses-catalog-page .catalog-course-card { min-height: 490px; }
+        .courses-catalog-page .course-card-media { height: 190px; }
       }
-
-      .courses-premium-page .signature-strip span {
-        color: #d8b477;
-      }
-
-      .courses-premium-page .signature-strip strong,
-      .courses-premium-page .signature-strip p {
-        color: #fff8ec;
-      }
-
-      .courses-premium-page .professional-catalog {
-        padding-top: clamp(76px, 9vw, 132px);
-        background:
-          linear-gradient(135deg, rgba(255,255,255,0.58), transparent 48%),
-          var(--courses-cream);
-      }
-
-      .courses-premium-page .professional-catalog .section-heading {
-        padding-bottom: 30px;
-        border-bottom: 1px solid rgba(104, 21, 38, 0.2);
-      }
-
-      .courses-premium-page .professional-catalog h2,
-      .courses-premium-page .content-band h2,
-      .courses-premium-page .detail-section h2 {
-        color: var(--courses-wine-dark);
-        font-family: "Playfair Display", Georgia, serif;
-        font-weight: 600;
-        letter-spacing: -0.025em;
-      }
-
-      .courses-premium-page .professional-catalog .card-grid {
-        counter-reset: premium-course;
-        gap: 18px;
-        margin-top: 34px;
-      }
-
-      .courses-premium-page .course-card {
-        position: relative;
-        counter-increment: premium-course;
-        min-height: 330px;
-        padding: 34px 30px 28px;
-        overflow: hidden;
-        border: 1px solid rgba(90, 66, 52, 0.14);
-        border-radius: 2px;
-        background: rgba(255, 253, 248, 0.86);
-        box-shadow: 0 16px 38px rgba(62, 22, 26, 0.055);
-        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-      }
-
-      .courses-premium-page .course-card::before {
-        content: counter(premium-course, decimal-leading-zero);
-        position: absolute;
-        top: 24px;
-        right: 25px;
-        color: rgba(104, 21, 38, 0.34);
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 13px;
-        font-style: italic;
-      }
-
-      .courses-premium-page .course-card:hover {
-        z-index: 1;
-        border-color: rgba(104, 21, 38, 0.38);
-        box-shadow: 0 22px 48px rgba(62, 22, 26, 0.12);
-        transform: translateY(-5px);
-      }
-
-      .courses-premium-page .course-card h3 {
-        max-width: 86%;
-        margin-top: 30px;
-        color: var(--courses-wine-dark);
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(25px, 2vw, 32px);
-        font-weight: 600;
-        line-height: 1.08;
-      }
-
-      .courses-premium-page .course-card p {
-        color: #665850;
-        line-height: 1.62;
-      }
-
-      .courses-premium-page .course-card .course-start {
-        color: var(--courses-wine);
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-
-      .courses-premium-page .course-card .text-btn {
-        color: var(--courses-wine);
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-      }
-
-      .courses-premium-page .professional-card {
-        border-color: rgba(104, 21, 38, 0.52);
-        background:
-          linear-gradient(155deg, rgba(255,255,255,0.12), transparent 55%),
-          var(--courses-wine);
-        box-shadow: 0 22px 46px rgba(63, 12, 24, 0.17);
-      }
-
-      .courses-premium-page .professional-card::after {
-        content: "FORMAÇÃO PROFISSIONAL";
-        position: absolute;
-        right: -42px;
-        bottom: 58px;
-        color: rgba(255, 248, 236, 0.09);
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 0.28em;
-        transform: rotate(-90deg);
-      }
-
-      .courses-premium-page .professional-card::before,
-      .courses-premium-page .professional-card h3,
-      .courses-premium-page .professional-card p,
-      .courses-premium-page .professional-card .course-start,
-      .courses-premium-page .professional-card .text-btn {
-        color: #fff8ec;
-      }
-
-      .courses-premium-page .professional-card .tag {
-        border-color: rgba(255, 248, 236, 0.32);
-        background: rgba(255, 248, 236, 0.1);
-        color: #fff8ec;
-      }
-
-      .courses-premium-page .professional-card .tag.hot {
-        border-color: #d7ad68;
-        background: #d7ad68;
-        color: var(--courses-wine-dark);
-      }
-
-      .courses-premium-page .tag {
-        border-radius: 999px;
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-
-      .courses-premium-page .content-band.light {
-        background: #efe3d2;
-      }
-
-      .courses-premium-page .comparison-table {
-        border-top: 3px solid var(--courses-wine);
-        background: var(--courses-paper);
-        box-shadow: 0 18px 42px rgba(63, 12, 24, 0.08);
-      }
-
-      .courses-premium-page .method-section {
-        background: var(--courses-wine-dark);
-      }
-
-      .courses-premium-page .method-section h2,
-      .courses-premium-page .method-section h3,
-      .courses-premium-page .method-section p {
-        color: #fff8ec;
-      }
-
-      .courses-premium-page .method-section .eyebrow {
-        color: #d7ad68;
-      }
-
-      .courses-premium-page .page-form-section {
-        background:
-          linear-gradient(120deg, rgba(255,255,255,0.08), transparent 48%),
-          var(--courses-wine);
-        color: #fff8ec;
-      }
-
-      .courses-premium-page .page-form-section h2,
-      .courses-premium-page .page-form-section p {
-        color: #fff8ec;
-      }
-
-      @media (max-width: 900px) {
-        .courses-premium-page .page-hero {
-          min-height: auto;
-          padding-top: 82px;
-        }
-
-        .courses-premium-page .page-hero-image {
-          min-height: 470px;
-          border-radius: 180px 180px 12px 12px;
-          box-shadow: 12px 14px 0 rgba(104, 21, 38, 0.1);
-        }
-
-        .courses-premium-page .professional-catalog .card-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 620px) {
-        .courses-premium-page .page-hero h1 {
-          font-size: clamp(43px, 13vw, 62px);
-        }
-
-        .courses-premium-page .page-hero-image {
-          min-height: 390px;
-        }
-
-        .courses-premium-page .professional-catalog .card-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .courses-premium-page .course-card {
-          min-height: 300px;
-        }
+      @media (prefers-reduced-motion: reduce) {
+        .courses-catalog-page .catalog-course-card, .courses-catalog-page .course-card-cta { transition: none; }
       }
     </style>
   </head>
-  <body class="courses-premium-page">
+  <body class="courses-catalog-page">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Quatro Folhas"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
@@ -436,10 +161,10 @@
     </header>
 
     <main>
-      <section class="page-hero courses-editorial-hero">
+      <section class="page-hero">
         <div>
           <p class="eyebrow">Cursos</p>
-          <h1 class="balanced-title">Aprenda gastronomia.<em>Construa sua assinatura.</em></h1>
+          <h1 class="balanced-title">Aprenda gastronomia com prática e direção</h1>
           <p>Da formação profissional aos cursos de curta duração, a Quatro Folhas oferece aulas práticas para desenvolver técnica, repertório e confiança em uma cozinha profissional.</p>
           <div class="page-nav stacked-nav">
             <a href="#profissionais">Especialização</a>
@@ -471,26 +196,132 @@
       <section class="content-band professional-catalog" id="profissionais">
   <div class="section-heading split">
     <div>
-      <p class="eyebrow">Profissionalizante em destaque</p>
-      <h2>Formação para transformar técnica em profissão</h2>
+      <p class="eyebrow">Formação</p>
+      <h2>Escolha o melhor caminho para a sua jornada</h2>
     </div>
     <p>Cada curso combina prática, acompanhamento próximo e uma estrutura pensada para o aluno evoluir com segurança.</p>
   </div>
-  <div class="card-grid">
-    <article class="course-card professional-card"><div class="tag-row"><span class="tag">Profissionalizante</span><span class="tag hot">Alta demanda</span></div><h3>Chef Profissional</h3><p>Para quem deseja atuar na cozinha, empreender ou construir uma base sólida em gastronomia.</p><p class="course-start">32 aulas</p><a class="text-btn" href="chef-profissional.html">Conhecer curso</a></article>
-    <article class="course-card professional-card"><div class="tag-row"><span class="tag">Profissionalizante</span><span class="tag hot">Alta demanda</span></div><h3>Confeitaria Profissional</h3><p>Para dominar técnicas de confeitaria e transformar conhecimento em profissão ou negócio.</p><p class="course-start">20 aulas</p><a class="text-btn" href="confeitaria-profissional.html">Conhecer curso</a></article>
-    <article class="course-card professional-card"><div class="tag-row"><span class="tag">Profissionalizante</span><span class="tag hot">Alta demanda</span></div><h3>Especialização em Bolos e Doces Finos</h3><p>Para produzir doces, bolos e sobremesas com acabamento, sabor e valor de venda.</p><p class="course-start">18 aulas</p><a class="text-btn" href="bolos-e-doces-finos.html">Conhecer curso</a></article>
-
-    <article class="course-card" id="express"><span class="tag">Curta duração</span><h3>Chef Express</h3><p>Para aprender fundamentos da cozinha em um formato direto, prático e objetivo.</p><p class="course-start">10 aulas</p><a class="text-btn" href="chef-express.html">Conhecer curso</a></article>
-    <article class="course-card"><span class="tag">Curta duração</span><h3>Chef Express Fit</h3><p>Preparos mais leves e práticos para uma rotina equilibrada, com técnica e direção.</p><p class="course-start">10 aulas</p><a class="text-btn" href="chef-express.html">Conhecer formato</a></article>
-    <article class="course-card"><span class="tag">Curta duração</span><h3>Auxiliar de Cozinha</h3><p>Curso curto para ganhar ritmo, boas práticas e segurança nos preparos do dia a dia.</p><p class="course-start">5 aulas</p><a class="text-btn" href="auxiliar-de-cozinha.html">Conhecer curso</a></article>
-    <article class="course-card is-premium"><span class="tag premium">Avançado</span><h3>Gastronomia Avançada - Práticas Gastronômicas</h3><p>Aulas práticas para aprofundar técnica, repertório e execução em cozinha profissional.</p><p class="course-start">12 aulas</p><a class="text-btn" href="contato.html">Consultar turma</a></article>
-    <article class="course-card is-premium"><span class="tag premium">Avançado</span><h3>Confeitaria Avançada</h3><p>Especialização para evoluir em técnica, precisão, montagem e finalização em confeitaria.</p><p class="course-start">Agenda exclusiva</p><a class="text-btn" href="contato.html">Consultar turma</a></article>
-    <article class="course-card is-premium"><span class="tag premium">Especialização</span><h3>Masterclass de Bolos</h3><p>Aprofundamento em bolos, acabamento, montagem e apresentação com alto valor percebido.</p><p class="course-start">Turmas sob curadoria</p><a class="text-btn" href="contato.html">Consultar turma</a></article>
-
-    <article class="course-card"><span class="tag">Curta duração</span><h3>Cursos Curtos</h3><p>Temas específicos e técnicas para aprender em encontros de menor duração.</p><p class="course-start">1 a 6 aulas</p><a class="text-btn" href="cursos-rapidos.html">Ver temas</a></article>
-    <article class="course-card"><span class="tag accent">Internacional</span><h3>Intercâmbio Gastronômico</h3><p>Vivência internacional em Buenos Aires para alunos dos cursos profissionalizantes, com a EAG como escola parceira.</p><p class="course-start">Aula especial</p><a class="text-btn" href="intercambio.html">Ver intercâmbio</a></article>
-    <article class="course-card" id="mini-chef"><span class="tag">Infantil</span><h3>Mini Chef</h3><p>Curso infantil para crianças aprenderem gastronomia com segurança, criatividade e diversão.</p><p class="course-start">1 a 10 aulas</p><a class="text-btn" href="mini-chef.html">Conhecer Mini Chef</a></article>
+  <div class="course-catalog-grid">
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/cozinha-bancadas.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag professional-tag">Profissionalizante</span><span class="tag demand-tag">Alta demanda</span></div>
+        <h3>Chef Profissional</h3>
+        <p class="course-description">Para quem deseja atuar na cozinha, empreender ou construir uma base sólida em gastronomia.</p>
+        <p class="course-start">32 aulas</p>
+        <a class="course-card-cta" href="chef-profissional.html">Conhecer curso</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/aula-confeitaria.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag professional-tag">Profissionalizante</span><span class="tag demand-tag">Alta demanda</span></div>
+        <h3>Confeitaria Profissional</h3>
+        <p class="course-description">Para dominar técnicas de confeitaria e transformar conhecimento em profissão ou negócio.</p>
+        <p class="course-start">20 aulas</p>
+        <a class="course-card-cta" href="confeitaria-profissional.html">Conhecer curso</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/mesa-pratos.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag professional-tag">Profissionalizante</span><span class="tag demand-tag">Alta demanda</span></div>
+        <h3>Especialização em Bolos e Doces Finos</h3>
+        <p class="course-description">Para produzir doces, bolos e sobremesas com acabamento, sabor e valor de venda.</p>
+        <p class="course-start">18 aulas</p>
+        <a class="course-card-cta" href="bolos-e-doces-finos.html">Conhecer curso</a>
+      </div>
+    </article>
+    <article class="catalog-course-card" id="express">
+      <span class="course-card-media" style="background-image:url('assets/photos/chef-fogo.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Curta duração</span></div>
+        <h3>Chef Express</h3>
+        <p class="course-description">Para aprender fundamentos da cozinha em um formato direto, prático e objetivo.</p>
+        <p class="course-start">10 aulas</p>
+        <a class="course-card-cta" href="chef-express.html">Conhecer curso</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/mesa-pratos.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Curta duração</span></div>
+        <h3>Chef Express Fit</h3>
+        <p class="course-description">Preparos mais leves e práticos para uma rotina equilibrada, com técnica e direção.</p>
+        <p class="course-start">10 aulas</p>
+        <a class="course-card-cta" href="chef-express.html">Conhecer formato</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/cozinha-aula.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Curta duração</span></div>
+        <h3>Auxiliar de Cozinha</h3>
+        <p class="course-description">Curso curto para ganhar ritmo, boas práticas e segurança nos preparos do dia a dia.</p>
+        <p class="course-start">5 aulas</p>
+        <a class="course-card-cta" href="auxiliar-de-cozinha.html">Conhecer curso</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/chef-fogo.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Avançado</span></div>
+        <h3>Gastronomia Avançada - Práticas Gastronômicas</h3>
+        <p class="course-description">Aulas práticas para aprofundar técnica, repertório e execução em cozinha profissional.</p>
+        <p class="course-start">12 aulas</p>
+        <a class="course-card-cta" href="contato.html">Consultar turma</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/aula-confeitaria.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Avançado</span></div>
+        <h3>Confeitaria Avançada</h3>
+        <p class="course-description">Especialização para evoluir em técnica, precisão, montagem e finalização em confeitaria.</p>
+        <p class="course-start">Agenda exclusiva</p>
+        <a class="course-card-cta" href="contato.html">Consultar turma</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/mesa-pratos.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Especialização</span></div>
+        <h3>Masterclass de Bolos</h3>
+        <p class="course-description">Aprofundamento em bolos, acabamento, montagem e apresentação com alto valor percebido.</p>
+        <p class="course-start">Turmas sob curadoria</p>
+        <a class="course-card-cta" href="contato.html">Consultar turma</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/cozinha-aula.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Curta duração</span></div>
+        <h3>Cursos Curtos</h3>
+        <p class="course-description">Temas específicos e técnicas para aprender em encontros de menor duração.</p>
+        <p class="course-start">1 a 6 aulas</p>
+        <a class="course-card-cta" href="cursos-rapidos.html">Ver temas</a>
+      </div>
+    </article>
+    <article class="catalog-course-card">
+      <span class="course-card-media" style="background-image:url('assets/photos/alunos-turma.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Internacional</span></div>
+        <h3>Intercâmbio Gastronômico</h3>
+        <p class="course-description">Vivência internacional em Buenos Aires para alunos dos cursos profissionalizantes, com a EAG como escola parceira.</p>
+        <p class="course-start">Aula especial</p>
+        <a class="course-card-cta" href="intercambio.html">Ver intercâmbio</a>
+      </div>
+    </article>
+    <article class="catalog-course-card" id="mini-chef">
+      <span class="course-card-media" style="background-image:url('assets/photos/alunos-turma.jpg')" aria-hidden="true"></span>
+      <div class="course-card-body">
+        <div class="course-card-tags"><span class="tag">Infantil</span></div>
+        <h3>Mini Chef</h3>
+        <p class="course-description">Curso infantil para crianças aprenderem gastronomia com segurança, criatividade e diversão.</p>
+        <p class="course-start">1 a 10 aulas</p>
+        <a class="course-card-cta" href="mini-chef.html">Conhecer Mini Chef</a>
+      </div>
+    </article>
   </div>
 </section>
 
