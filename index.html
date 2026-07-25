@@ -9,6 +9,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Caminhos da home: resumo por intenção, sem duplicar o catálogo */
+      .home-pathways-section{padding:clamp(74px,8vw,118px) clamp(22px,4vw,72px);background:#f8f4ee}
+      .home-pathways-inner{width:min(100%,1680px);margin:0 auto}
+      .home-pathways-heading{max-width:940px;margin:0 auto 38px;text-align:center}
+      .home-pathways-heading .eyebrow{justify-content:center;color:#741326}
+      .home-pathways-heading h2{margin:14px auto 16px;color:#251c19;font-family:"Playfair Display",Georgia,serif;font-size:clamp(45px,4.6vw,72px);font-weight:600;line-height:1.02;letter-spacing:-.04em}
+      .home-pathways-heading>p:last-child{max-width:780px;margin:0 auto;color:#695952;font-size:clamp(16px,1.2vw,19px);line-height:1.62}
+      .home-pathways-layout{display:grid;grid-template-columns:minmax(0,.93fr) minmax(0,1.17fr);gap:22px;align-items:stretch}
+      .home-path-card{min-width:0;overflow:hidden;border:1px solid rgba(116,19,38,.25);border-radius:16px;background:#fffdf9;box-shadow:0 13px 34px rgba(66,34,27,.07);color:#251c19;transition:border-color 180ms ease,box-shadow 180ms ease,transform 180ms ease}
+      .home-path-card:hover,.home-path-card:focus-visible{border-color:rgba(116,19,38,.62);box-shadow:0 23px 50px rgba(74,18,29,.14);transform:translateY(-6px)}
+      .home-path-card:focus-visible{outline:3px solid rgba(190,145,73,.42);outline-offset:4px}
+      .home-path-featured{display:grid;min-height:570px;grid-template-columns:minmax(285px,.46fr) minmax(0,.54fr)}
+      .home-path-featured .home-path-content{order:1;padding:clamp(34px,4vw,64px)}
+      .home-path-featured .home-path-photo{order:2}
+      .home-pathways-secondary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+      .home-path-small{display:grid;min-height:274px;grid-template-columns:minmax(145px,.43fr) minmax(0,.57fr)}
+      .home-path-photo{display:block;min-height:100%;background-color:#6f1728;background-position:center;background-size:cover}
+      .home-path-content{display:flex;min-width:0;flex-direction:column;align-items:flex-start;padding:clamp(24px,2.3vw,38px)}
+      .home-path-label{display:block;margin-bottom:17px;color:#741326;font-size:10px;font-weight:800;letter-spacing:.09em;line-height:1.2;text-transform:uppercase}
+      .home-path-label::after{content:"";display:block;width:36px;height:2px;margin-top:10px;background:#a70816}
+      .home-path-card h3{margin:0 0 13px;color:#5d1020;font-family:"Playfair Display",Georgia,serif;font-weight:600;line-height:1.06;letter-spacing:-.025em}
+      .home-path-featured h3{max-width:390px;margin-top:auto;font-size:clamp(42px,3.7vw,64px)}
+      .home-path-small h3{font-size:clamp(23px,1.65vw,30px)}
+      .home-path-card p{margin:0 0 20px;color:#665751;font-size:14px;line-height:1.52}
+      .home-path-featured p{max-width:430px;font-size:16px;line-height:1.62}
+      .home-path-cta{display:flex;width:100%;min-height:45px;align-items:center;justify-content:center;margin-top:auto;padding:11px 15px;border-radius:7px;background:#741326;color:#fffaf2;font-size:11px;font-weight:800;letter-spacing:.055em;text-align:center;text-transform:uppercase}
+      .home-path-featured .home-path-cta{min-height:52px;font-size:12px}
+      .home-pathways-all{display:flex;width:max-content;margin:30px auto 0;padding:10px 2px 8px;border-bottom:1px solid #741326;color:#741326;font-size:13px;font-weight:800;letter-spacing:.055em;text-transform:uppercase}
+      @media(max-width:1240px){.home-pathways-layout{grid-template-columns:1fr}.home-path-featured{min-height:430px;grid-template-columns:minmax(330px,.42fr) minmax(0,.58fr)}.home-path-featured h3{margin-top:20px}.home-path-small{min-height:265px}}
+      @media(max-width:820px){.home-pathways-secondary{grid-template-columns:1fr}.home-path-small{min-height:250px;grid-template-columns:minmax(210px,.4fr) minmax(0,.6fr)}}
+      @media(max-width:650px){.home-pathways-heading{text-align:left}.home-pathways-heading .eyebrow{justify-content:flex-start}.home-pathways-heading h2{font-size:clamp(40px,12vw,56px)}.home-path-featured,.home-path-small{display:flex;min-height:0;flex-direction:column}.home-path-featured .home-path-photo,.home-path-small .home-path-photo{order:1;min-height:230px}.home-path-featured .home-path-content,.home-path-small .home-path-content{order:2;padding:28px 24px 24px}.home-path-featured h3{margin-top:14px;font-size:39px}}
+      @media(prefers-reduced-motion:reduce){.home-path-card{transition:none}}
+    </style>
   </head>
   <body class="home-page">
     <header class="site-header">
@@ -214,90 +248,63 @@
         </div>
       </section>
 
-      <section class="content-band" id="cursos">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Cursos</p>
-            <h2>Formação prática para diferentes momentos da sua jornada</h2>
+      <section class="home-pathways-section" id="cursos">
+        <div class="home-pathways-inner">
+          <header class="home-pathways-heading">
+            <p class="eyebrow">Cursos e experiências</p>
+            <h2>Escolha o caminho que combina com o seu momento</h2>
+            <p>Formação profissional, cursos rápidos, aulas temáticas, experiências para crianças e uma forma especial de presentear.</p>
+          </header>
+          <div class="home-pathways-layout">
+              <a class="home-path-card home-path-featured" href="cursos-profissionalizantes.html">
+                <span class="home-path-photo" style="background-image:url('assets/photos/cozinha-bancadas.jpg')" role="img" aria-label="Alunos em formação profissional na cozinha"></span>
+                <span class="home-path-content">
+                  <span class="home-path-label">Formação profissional</span>
+                  <h3>Quero me profissionalizar</h3>
+                  <p>Formações completas para desenvolver técnica, confiança e novas possibilidades profissionais.</p>
+                  <span class="home-path-cta">Conhecer formações</span>
+                </span>
+              </a>
+            <div class="home-pathways-secondary">
+              <a class="home-path-card home-path-small" href="cursos-rapidos.html">
+                <span class="home-path-photo" style="background-image:url('assets/photos/mesa-pratos.jpg')" role="img" aria-label="Aula prática de curta duração"></span>
+                <span class="home-path-content">
+                  <span class="home-path-label">Curta duração</span>
+                  <h3>Quero aprender em menos tempo</h3>
+                  <p>Cursos diretos para ampliar repertório e aprender novas técnicas.</p>
+                  <span class="home-path-cta">Ver cursos rápidos</span>
+                </span>
+              </a>
+              <a class="home-path-card home-path-small" href="aulas-tematicas.html#agenda">
+                <span class="home-path-photo" style="background-image:url('assets/photos/aula-confeitaria.jpg')" role="img" aria-label="Participantes em uma aula temática"></span>
+                <span class="home-path-content">
+                  <span class="home-path-label">Aula temática</span>
+                  <h3>Quero viver uma experiência em um dia</h3>
+                  <p>Uma aula prática, com data marcada e um tema gastronômico específico.</p>
+                  <span class="home-path-cta">Ver próximas aulas</span>
+                </span>
+              </a>
+              <a class="home-path-card home-path-small" href="mini-chef.html">
+                <span class="home-path-photo" style="background-image:url('assets/photos/alunos-turma.jpg')" role="img" aria-label="Crianças em experiência gastronômica"></span>
+                <span class="home-path-content">
+                  <span class="home-path-label">Mini Chef</span>
+                  <h3>Quero uma experiência para crianças</h3>
+                  <p>Gastronomia, criatividade e diversão para aprender cozinhando.</p>
+                  <span class="home-path-cta">Conhecer Mini Chef</span>
+                </span>
+              </a>
+              <a class="home-path-card home-path-small" href="voucher.html">
+                <span class="home-path-photo" style="background-image:url('assets/photos/lounge-chef.jpg')" role="img" aria-label="Experiência gastronômica para presentear"></span>
+                <span class="home-path-content">
+                  <span class="home-path-label">Cartão presente</span>
+                  <h3>Quero presentear alguém</h3>
+                  <p>Um presente diferente para quem ama gastronomia e novas experiências.</p>
+                  <span class="home-path-cta">Escolher cartão presente</span>
+                </span>
+              </a>
+            </div>
           </div>
-          <p>Da primeira aula é formação profissional, cada curso combina técnica, prática e acompanhamento em uma cozinha escola estruturada.</p>
-        </div>
-        <div class="card-grid">
-          <article class="course-card">
-            <div class="course-tags"><span class="tag">Profissionalizante</span><strong class="course-demand">Alta demanda</strong></div>
-            <h3>Chef Profissional</h3>
-            <p>formação para desenvolver técnica, repertório e segurança para atuar na cozinha.</p>
-            <a class="text-btn" href="chef-profissional.html">Conhecer curso</a>
-          </article>
-          <article class="course-card">
-            <div class="course-tags"><span class="tag">Profissionalizante</span><strong class="course-demand">Alta demanda</strong></div>
-            <h3>Confeitaria Profissional</h3>
-            <p>Precisão, criatividade e prática para transformar confeitaria em profissão ou negócio.</p>
-            <a class="text-btn" href="confeitaria-profissional.html">Conhecer curso</a>
-          </article>
-          <article class="course-card">
-            <span class="tag">Profissionalizante</span>
-            <h3>Especialização em Bolos e Doces Finos</h3>
-            <p>Especialização em bolos e doces finos, com técnicas de montagem, acabamento e venda.</p>
-            <a class="text-btn" href="bolos-e-doces-finos.html">Conhecer curso</a>
-          </article>
-          <article class="course-card">
-            <span class="tag">Curta duração</span>
-            <h3>Chef Express</h3>
-            <p>Um curso direto para ganhar confiança, repertório e autonomia na cozinha.</p>
-            <a class="text-btn" href="chef-express.html">Conhecer curso</a>
-          </article>
-          <article class="course-card">
-            <span class="tag">Curta duração</span>
-            <h3>Chef Express Fit</h3>
-            <p>Curso rápido com preparos mais leves, práticos e alinhados a uma rotina equilibrada.</p>
-            <a class="text-btn" href="chef-express.html">Conhecer formato</a>
-          </article>
-          <article class="course-card">
-            <span class="tag">Curta duração</span>
-            <h3>Auxiliar de Cozinha</h3>
-            <p>Curso para quem quer começar na cozinha e também para empresas que precisam treinar equipes e funcionários.</p>
-            <a class="text-btn" href="auxiliar-de-cozinha.html">Conhecer curso</a>
-          </article>
-          <article class="course-card is-premium">
-            <span class="tag premium">Avançado</span>
-            <h3>Gastronomia Avançada - práticas gastronômicas</h3>
-            <strong class="course-highlight">Aprofundamento para quem já cozinha</strong>
-            <p>Aulas práticas para aprofundar técnica, repertório e execução em cozinha profissional.</p>
-            <a class="text-btn" href="contato.html">Consultar turma</a>
-          </article>
-          <article class="course-card is-premium">
-            <span class="tag premium">Avançado</span>
-            <h3>Confeitaria Avançada</h3>
-            <strong class="course-highlight">Técnica, precisão e acabamento superior</strong>
-            <p>Especialização para evoluir em técnica, precisão, montagem e finalização em confeitaria.</p>
-            <a class="text-btn" href="contato.html">Consultar turma</a>
-          </article>
-          <article class="course-card is-premium">
-            <span class="tag premium">MasterClass</span>
-            <h3>MasterClass de Bolos</h3>
-            <strong class="course-highlight">Aula especial com foco em alto valor percebido</strong>
-            <p>Aprofundamento em bolos, acabamento, montagem e apresentação com alto valor percebido.</p>
-            <a class="text-btn" href="contato.html">Consultar turma</a>
-          </article>
-          <article class="course-card">
-            <span class="tag accent">Internacional</span>
-            <h3>Intercâmbio em Buenos Aires</h3>
-            <p>Aula gastronômica em Buenos Aires para alunos dos cursos profissionalizantes, em parceria com a EAG.</p>
-            <a class="text-btn" href="intercambio.html">Ver vivência</a>
-          </article>
-          <article class="course-card">
-            <span class="tag">Infantil</span>
-            <h3>Mini Chef</h3>
-            <p>Curso infantil para crianças aprenderem gastronomia de forma segura e divertida.</p>
-            <a class="text-btn" href="mini-chef.html">Conhecer Mini Chef</a>
-          </article>
-          <article class="course-card">
-            <span class="tag">Presente</span>
-            <h3>Cartão presente</h3>
-            <p>Um voucher para presentear com aula temática ou contribuir com um curso.</p>
-            <a class="text-btn" href="voucher.html">Comprar voucher</a>
-          </article>
+          <a class="home-pathways-all" href="cursos.html">Ver todos os cursos</a>
         </div>
       </section>
 
