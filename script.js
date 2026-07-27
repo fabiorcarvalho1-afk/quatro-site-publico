@@ -10,8 +10,13 @@ const studentPortal = document.querySelector(".student-portal");
 const portalToggle = document.querySelector(".portal-toggle");
 const runtimeProtocol = window.location.protocol === "file:" ? "http:" : window.location.protocol;
 const runtimeHostname = window.location.hostname || "127.0.0.1";
-const SITE_API_URL = window.QF_API_URL || `${runtimeProtocol}//${runtimeHostname}:3001`;
-const PORTAL_WEB_URL = window.QF_PORTAL_URL || `${runtimeProtocol}//${runtimeHostname}:3000`;
+const isLocalRuntime = runtimeHostname === "127.0.0.1" || runtimeHostname === "localhost";
+const SITE_API_URL = window.QF_API_URL || (isLocalRuntime
+  ? `${runtimeProtocol}//${runtimeHostname}:3001`
+  : "https://quatro-folhas-backend-api.onrender.com");
+const PORTAL_WEB_URL = window.QF_PORTAL_URL || (isLocalRuntime
+  ? `${runtimeProtocol}//${runtimeHostname}:3000`
+  : "https://sistema.quatrofolhasgastronomia.com.br");
 const PORTAL_LOGIN_URL = `${PORTAL_WEB_URL}/login`;
 const TURNSTILE_SITE_KEY = "0x4AAAAAAD64c541osMVHz3x";
 const AUTH_ACCESS_TOKEN_KEY = "qf_admin_access_token";
