@@ -1021,6 +1021,7 @@ function renderAgendaCard(item) {
 }
 
 function thematicCategory(item) {
+  if (item?.thematic?.publicCategory) return item.thematic.publicCategory;
   const text = `${item?.name || ""} ${item?.course?.title || ""} ${item?.course?.description || ""}`.toLowerCase();
   if (/confeit|bolo|doce|sobremesa|chocolate|torta/.test(text)) return "confeitaria";
   if (/massa|italian|pizza|focaccia|ravioli|nhoque/.test(text)) return "massas";
@@ -1028,6 +1029,7 @@ function thematicCategory(item) {
 }
 
 function thematicImage(item, index = 0) {
+  if (item?.thematic?.imageUrl) return item.thematic.imageUrl;
   const category = thematicCategory(item);
   if (category === "confeitaria") return "assets/photos/aula-confeitaria.jpg";
   if (category === "massas") return "assets/photos/mesa-pratos.jpg";
@@ -1040,6 +1042,12 @@ function thematicImage(item, index = 0) {
 }
 
 function thematicPreparations(item) {
+  const describedPreparations = String(item?.thematic?.preparations || "")
+    .split(/[\n,;]+/)
+    .map((title) => title.trim())
+    .filter(Boolean)
+    .slice(0, 4);
+  if (describedPreparations.length) return describedPreparations;
   const titles = [
     ...(Array.isArray(item?.lessons) ? item.lessons : []),
     ...(Array.isArray(item?.course?.lessons) ? item.course.lessons : [])
@@ -1064,18 +1072,25 @@ function thematicDuration(item) {
 
 function renderThematicCard(item, index = 0) {
   const title = item.name || item.course?.title || "Aula Quatro Folhas";
-  const description = item.course?.description || "Uma experiência prática para aprender novos preparos e viver a gastronomia.";
+  const description = item.thematic?.shortDescription || item.thematic?.fullDescription || item.course?.description || "Uma experiência prática para aprender novos preparos e viver a gastronomia.";
   const date = formatDateOnly(item.startsAt) || "Data a confirmar";
   const time = formatDateTime(item.startsAt).split(" ").slice(-1)[0] || "Horário a confirmar";
   const preparations = thematicPreparations(item);
-  const price = item.course?.priceCents ? formatCurrencyCents(item.course.priceCents) : "Consulte";
-  const status = classStatusLabel(item.status);
+  const priceCents = item.thematic?.priceCents ?? item.course?.priceCents;
+  const price = priceCents ? formatCurrencyCents(priceCents) : "Consulte";
+  const available = Number.isFinite(Number(item.seatsAvailable)) ? Number(item.seatsAvailable) : null;
+  const status = item.status === "sold_out"
+    ? "Esgotada"
+    : available !== null && available <= 3
+      ? "Últimas vagas"
+      : classStatusLabel(item.status);
   const category = thematicCategory(item);
+  const soldOut = item.status === "sold_out" || available === 0;
   return `
     <article class="thematic-card" data-category="${escapeHtml(category)}">
       <figure class="thematic-card-image">
         <img src="${thematicImage(item, index)}" alt="${escapeHtml(title)}" loading="lazy">
-        <span class="thematic-status">${escapeHtml(status)}</span>
+        <span class="thematic-status${status === "Últimas vagas" ? " is-urgent" : ""}">${escapeHtml(status)}</span>
       </figure>
       <div class="thematic-card-body">
         <h3>${escapeHtml(title)}</h3>
@@ -1091,7 +1106,7 @@ function renderThematicCard(item, index = 0) {
         </div>
         <div class="thematic-card-footer">
           <span class="thematic-price"><small>por pessoa</small>${escapeHtml(price)}</span>
-          <button class="solid-btn" data-open="class-form" data-interest="${escapeHtml(title)}" data-date="${escapeHtml(date)}" data-content="${escapeHtml(description)}" data-includes="${escapeHtml(preparations.join(", "))}">Reservar e comprar</button>
+          <button class="solid-btn" ${soldOut ? "disabled" : `data-open="class-form"`} data-interest="${escapeHtml(title)}" data-date="${escapeHtml(date)}" data-content="${escapeHtml(description)}" data-includes="${escapeHtml(item.thematic?.includes || preparations.join(", "))}">${soldOut ? "Vagas esgotadas" : "Reservar e comprar"}</button>
         </div>
       </div>
     </article>
@@ -1168,16 +1183,17 @@ function enhanceDynamicTriggers(root = document) {
 async function loadSiteHome() {
   if (!document.body.classList.contains("home-page")) return;
   try {
-    const [home, agendaItems] = await Promise.all([
+    const [home, thematicItems] = await Promise.all([
       apiRequest("/site/home"),
-      apiRequest("/site/agenda")
+      apiRequest("/thematic-registrations/public/classes")
     ]);
     const agendaList = document.querySelector("[data-thematic-grid]");
     const coursesGrid = document.querySelector("#cursos .card-grid");
     const proofStrip = document.querySelector(".proof-strip");
 
-    if (agendaList && Array.isArray(agendaItems) && agendaItems.length) {
-      agendaList.innerHTML = agendaItems.map(renderThematicCard).join("");
+    if (agendaList && Array.isArray(thematicItems) && thematicItems.length) {
+      const featured = thematicItems.filter((item) => item.thematic?.featured);
+      agendaList.innerHTML = (featured.length ? featured : thematicItems).slice(0, 3).map(renderThematicCard).join("");
       enhanceDynamicTriggers(agendaList);
       bindThematicFilters();
     }
@@ -1253,7 +1269,7 @@ async function loadAgendaPage() {
 async function loadThematicClassesPage() {
   if (currentPage !== "aulas-tematicas.html") return;
   try {
-    const agendaItems = await apiRequest("/site/agenda");
+    const agendaItems = await apiRequest("/thematic-registrations/public/classes");
     const grid = document.querySelector("[data-thematic-grid]");
     if (!grid || !Array.isArray(agendaItems) || !agendaItems.length) return;
     grid.innerHTML = agendaItems.map(renderThematicCard).join("");
