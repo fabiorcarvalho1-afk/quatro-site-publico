@@ -27,6 +27,7 @@
       .home-pathways-secondary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
       .home-path-small{display:grid;min-height:274px;grid-template-columns:minmax(145px,.43fr) minmax(0,.57fr)}
       .home-path-photo{display:block;min-height:100%;background-color:#6f1728;background-position:center;background-size:cover}
+      .home-path-photo video{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
       .home-path-content{display:flex;min-width:0;flex-direction:column;align-items:flex-start;padding:clamp(24px,2.3vw,38px)}
       .home-path-label{display:block;margin-bottom:17px;color:#741326;font-size:10px;font-weight:800;letter-spacing:.09em;line-height:1.2;text-transform:uppercase}
       .home-path-label::after{content:"";display:block;width:36px;height:2px;margin-top:10px;background:#a70816}
@@ -369,63 +370,63 @@
         </div>
       </section>
 
-      <section class="home-pathways-section" id="cursos">
+      <section class="home-pathways-section" id="cursos" data-cms-home-pathways>
         <div class="home-pathways-inner">
           <header class="home-pathways-heading">
-            <p class="eyebrow">Cursos e experiências</p>
-            <h2>Escolha o caminho que combina com o seu momento</h2>
-            <p>Formação profissional, cursos rápidos, aulas temáticas, experiências para crianças e uma forma especial de presentear.</p>
+            <p class="eyebrow" data-cms-pathways-eyebrow>Cursos e experiências</p>
+            <h2 data-cms-pathways-title>Escolha o caminho que combina com o seu momento</h2>
+            <p data-cms-pathways-description>Formação profissional, cursos rápidos, aulas temáticas, experiências para crianças e uma forma especial de presentear.</p>
           </header>
           <div class="home-pathways-layout">
-              <a class="home-path-card home-path-featured" href="cursos-profissionalizantes.html">
-                <span class="home-path-photo" style="background-image:url('assets/photos/cozinha-bancadas.jpg')" role="img" aria-label="Alunos em formação profissional na cozinha"></span>
+              <a class="home-path-card home-path-featured" href="cursos-profissionalizantes.html" data-cms-card="professional">
+                <span class="home-path-photo" style="background-image:url('assets/photos/cozinha-bancadas.jpg')" role="img" aria-label="Alunos em formação profissional na cozinha" data-cms-card-media></span>
                 <span class="home-path-content">
-                  <span class="home-path-label">Formação profissional</span>
-                  <h3><span>Quero me</span><span class="home-path-title-line">profissionalizar</span></h3>
-                  <p>Formações completas para desenvolver técnica, confiança e novas possibilidades profissionais.</p>
-                  <span class="home-path-cta">Conhecer formações</span>
+                  <span class="home-path-label" data-cms-card-label>Formação profissional</span>
+                  <h3 data-cms-card-title><span>Quero me</span><span class="home-path-title-line">profissionalizar</span></h3>
+                  <p data-cms-card-description>Formações completas para desenvolver técnica, confiança e novas possibilidades profissionais.</p>
+                  <span class="home-path-cta" data-cms-card-cta>Conhecer formações</span>
                 </span>
               </a>
             <div class="home-pathways-secondary">
-              <a class="home-path-card home-path-small" href="cursos-rapidos.html">
-                <span class="home-path-photo" style="background-image:url('assets/photos/curta-duracao-turma.jpeg')" role="img" aria-label="Turma de curso de curta duração na Quatro Folhas"></span>
+              <a class="home-path-card home-path-small" href="cursos-rapidos.html" data-cms-card="short">
+                <span class="home-path-photo" style="background-image:url('assets/photos/curta-duracao-turma.jpeg')" role="img" aria-label="Turma de curso de curta duração na Quatro Folhas" data-cms-card-media></span>
                 <span class="home-path-content">
-                  <span class="home-path-label">Curta duração</span>
-                  <h3>Quero aprender em menos tempo</h3>
-                  <p>Cursos diretos para ampliar repertório e aprender novas técnicas.</p>
-                  <span class="home-path-cta">Ver cursos rápidos</span>
+                  <span class="home-path-label" data-cms-card-label>Curta duração</span>
+                  <h3 data-cms-card-title>Quero aprender em menos tempo</h3>
+                  <p data-cms-card-description>Cursos diretos para ampliar repertório e aprender novas técnicas.</p>
+                  <span class="home-path-cta" data-cms-card-cta>Ver cursos rápidos</span>
                 </span>
               </a>
-              <a class="home-path-card home-path-small" href="aulas-tematicas.html#agenda">
-                <span class="home-path-photo" style="background-image:url('assets/photos/aula-confeitaria.jpg')" role="img" aria-label="Participantes em uma aula temática"></span>
+              <a class="home-path-card home-path-small" href="aulas-tematicas.html#agenda" data-cms-card="thematic">
+                <span class="home-path-photo" style="background-image:url('assets/photos/aula-confeitaria.jpg')" role="img" aria-label="Participantes em uma aula temática" data-cms-card-media></span>
                 <span class="home-path-content">
-                  <span class="home-path-label">Aula temática</span>
-                  <h3>Quero viver uma experiência em um dia</h3>
-                  <p>Uma aula prática, com data marcada e um tema gastronômico específico.</p>
-                  <span class="home-path-cta">Ver próximas aulas</span>
+                  <span class="home-path-label" data-cms-card-label>Aula temática</span>
+                  <h3 data-cms-card-title>Quero viver uma experiência em um dia</h3>
+                  <p data-cms-card-description>Uma aula prática, com data marcada e um tema gastronômico específico.</p>
+                  <span class="home-path-cta" data-cms-card-cta>Ver próximas aulas</span>
                 </span>
               </a>
-              <a class="home-path-card home-path-small" href="mini-chef.html">
-                <span class="home-path-photo" style="background-image:url('assets/photos/alunos-turma.jpg')" role="img" aria-label="Crianças em experiência gastronômica"></span>
+              <a class="home-path-card home-path-small" href="mini-chef.html" data-cms-card="kids">
+                <span class="home-path-photo" style="background-image:url('assets/photos/alunos-turma.jpg')" role="img" aria-label="Crianças em experiência gastronômica" data-cms-card-media></span>
                 <span class="home-path-content">
-                  <span class="home-path-label">Mini Chef</span>
-                  <h3>Quero uma experiência para crianças</h3>
-                  <p>Gastronomia, criatividade e diversão para aprender cozinhando.</p>
-                  <span class="home-path-cta">Conhecer Mini Chef</span>
+                  <span class="home-path-label" data-cms-card-label>Mini Chef</span>
+                  <h3 data-cms-card-title>Quero uma experiência para crianças</h3>
+                  <p data-cms-card-description>Gastronomia, criatividade e diversão para aprender cozinhando.</p>
+                  <span class="home-path-cta" data-cms-card-cta>Conhecer Mini Chef</span>
                 </span>
               </a>
-              <a class="home-path-card home-path-small" href="voucher.html">
-                <span class="home-path-photo" style="background-image:url('assets/photos/lounge-chef.jpg')" role="img" aria-label="Experiência gastronômica para presentear"></span>
+              <a class="home-path-card home-path-small" href="voucher.html" data-cms-card="gift">
+                <span class="home-path-photo" style="background-image:url('assets/photos/lounge-chef.jpg')" role="img" aria-label="Experiência gastronômica para presentear" data-cms-card-media></span>
                 <span class="home-path-content">
-                  <span class="home-path-label">Cartão presente</span>
-                  <h3>Quero presentear alguém</h3>
-                  <p>Um presente diferente para quem ama gastronomia e novas experiências.</p>
-                  <span class="home-path-cta">Escolher cartão presente</span>
+                  <span class="home-path-label" data-cms-card-label>Cartão presente</span>
+                  <h3 data-cms-card-title>Quero presentear alguém</h3>
+                  <p data-cms-card-description>Um presente diferente para quem ama gastronomia e novas experiências.</p>
+                  <span class="home-path-cta" data-cms-card-cta>Escolher cartão presente</span>
                 </span>
               </a>
             </div>
           </div>
-          <a class="home-pathways-all" href="cursos.html">Ver todos os cursos</a>
+          <a class="home-pathways-all" href="cursos.html" data-cms-pathways-all>Ver todos os cursos</a>
         </div>
       </section>
 
@@ -818,6 +819,7 @@
       })();
     </script>
     <script src="script.js"></script>
+    <script src="content-loader.js"></script>
   </body>
 </html>
 

@@ -1,0 +1,140 @@
+media:
+  - name: images
+    label: Imagens
+    input: assets/photos
+    output: /assets/photos
+    categories: [image]
+  - name: videos
+    label: Vídeos
+    input: assets/videos
+    output: /assets/videos
+    categories: [video]
+
+content:
+  - name: home
+    label: Página inicial
+    type: file
+    path: content/home.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: pathways
+        label: Escolha o seu caminho
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: all_courses_label
+            label: Texto do botão final
+            type: string
+            required: true
+          - name: all_courses_href
+            label: Link do botão final
+            type: string
+            required: true
+          - name: cards
+            label: Cartões
+            type: object
+            list:
+              min: 5
+              max: 5
+              collapsible:
+                collapsed: true
+                summary: "{label} — {title}"
+            fields:
+              - name: id
+                label: Identificador
+                type: select
+                required: true
+                options:
+                  values:
+                    - name: professional
+                      label: Formação profissional
+                    - name: short
+                      label: Curta duração
+                    - name: thematic
+                      label: Aula temática
+                    - name: kids
+                      label: Mini Chef
+                    - name: gift
+                      label: Cartão presente
+              - name: label
+                label: Categoria
+                type: string
+                required: true
+              - name: title
+                label: Título
+                type: string
+                required: true
+              - name: title_line_1
+                label: Primeira linha do título em destaque
+                type: string
+                description: Usada somente no cartão maior de formação profissional.
+              - name: title_line_2
+                label: Segunda linha do título em destaque
+                type: string
+                description: Usada somente no cartão maior de formação profissional.
+              - name: description
+                label: Descrição
+                type: text
+                required: true
+              - name: cta
+                label: Texto do botão
+                type: string
+                required: true
+              - name: href
+                label: Destino do cartão
+                type: string
+                required: true
+              - name: media_type
+                label: Tipo de mídia
+                type: select
+                required: true
+                options:
+                  values:
+                    - name: image
+                      label: Imagem
+                    - name: video
+                      label: Vídeo
+              - name: image
+                label: Imagem
+                type: image
+                options:
+                  media: images
+              - name: video
+                label: Arquivo de vídeo
+                type: file
+                options:
+                  media: videos
+                  extensions: [mp4, webm]
+              - name: poster
+                label: Capa do vídeo
+                type: image
+                options:
+                  media: images
+              - name: alt
+                label: Descrição acessível da mídia
+                type: string
+                required: true
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: app
+    templates:
+      update: "Atualiza conteúdo da Home pelo painel"
+      create: "Adiciona conteúdo pelo painel"
+      delete: "Remove conteúdo pelo painel"
+      rename: "Renomeia conteúdo pelo painel"
