@@ -15,13 +15,13 @@
     "words": [
       "Gastronomia",
       "Confeitaria",
-      "paixão"
+      "Paixão"
     ],
     "statement": "Aprenda, viva e transforme a gastronomia em experiência.",
     "hashtags": [
       "#Gastronomia",
       "#Confeitaria",
-      "#paixão"
+      "#Paixão"
     ],
     "buttons": [
       {
@@ -57,21 +57,18 @@
         "number": "02",
         "title": "Quero uma aula gastronômica",
         "description": "Aulas temáticas para aprender receitas, descobrir sabores e viver uma experiência diferente.",
-        "note": "",
         "href": "experiencias-gastronomicas.html"
       },
       {
         "number": "03",
         "title": "Quero uma experiência infantil",
         "description": "Mini Chef, festas infantis gastronômicas e projetos educativos para escolas particulares.",
-        "note": "",
         "href": "#criancas"
       },
       {
         "number": "04",
         "title": "Sou empresa ou marca",
         "description": "Team building, parcerias, ativações, locação de cozinha, gravações e workshops.",
-        "note": "",
         "href": "#empresas"
       }
     ]
@@ -135,7 +132,7 @@
   },
   "media_highlights": {
     "eyebrow": "Mídia e gravações",
-    "title": "Uma escola reconhecida também pelo que acontece dentro dela",
+    "title": "Uma escola reconhecida também pelo que acontece extra-aula",
     "description": "A cozinha da Quatro Folhas já recebeu TV, streaming, realities, marcas e produções gastronômicas que reforçam a força do espaço.",
     "cards": [
       {
@@ -179,68 +176,50 @@
         "href": "cursos-profissionalizantes.html",
         "media_type": "image",
         "image": "/assets/photos/cozinha-bancadas.jpg",
-        "video": "",
-        "poster": "",
         "alt": "Alunos em formação profissional na cozinha"
       },
       {
         "id": "short",
         "label": "Curta duração",
         "title": "Quero aprender em menos tempo",
-        "title_line_1": "",
-        "title_line_2": "",
         "description": "Cursos diretos para ampliar repertório e aprender novas técnicas.",
         "cta": "Ver cursos rápidos",
         "href": "cursos-rapidos.html",
         "media_type": "image",
         "image": "/assets/photos/curta-duracao-turma.jpeg",
-        "video": "",
-        "poster": "",
         "alt": "Turma de curso de curta duração na Quatro Folhas"
       },
       {
         "id": "thematic",
         "label": "Aula temática",
         "title": "Quero viver uma experiência em um dia",
-        "title_line_1": "",
-        "title_line_2": "",
         "description": "Uma aula prática, com data marcada e um tema gastronômico específico.",
         "cta": "Ver próximas aulas",
         "href": "aulas-tematicas.html#agenda",
         "media_type": "image",
         "image": "/assets/photos/aula-confeitaria.jpg",
-        "video": "",
-        "poster": "",
         "alt": "Participantes em uma aula temática"
       },
       {
         "id": "kids",
         "label": "Mini Chef",
         "title": "Quero uma experiência para crianças",
-        "title_line_1": "",
-        "title_line_2": "",
         "description": "Gastronomia, criatividade e diversão para aprender cozinhando.",
         "cta": "Conhecer Mini Chef",
         "href": "mini-chef.html",
         "media_type": "image",
         "image": "/assets/photos/alunos-turma.jpg",
-        "video": "",
-        "poster": "",
         "alt": "Crianças em experiência gastronômica"
       },
       {
         "id": "gift",
         "label": "Cartão presente",
         "title": "Quero presentear alguém",
-        "title_line_1": "",
-        "title_line_2": "",
         "description": "Um presente diferente para quem ama gastronomia e novas experiências.",
         "cta": "Escolher cartão presente",
         "href": "voucher.html",
         "media_type": "image",
         "image": "/assets/photos/lounge-chef.jpg",
-        "video": "",
-        "poster": "",
         "alt": "Experiência gastronômica para presentear"
       }
     ]
