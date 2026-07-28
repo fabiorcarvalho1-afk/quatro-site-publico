@@ -4,11 +4,258 @@ media:
     input: assets/photos
     output: /assets/photos
     categories: [image]
+    rename: safe
   - name: videos
     label: Vídeos
-    input: assets/videos
-    output: /assets/videos
+    input: assets/video
+    output: /assets/video
     categories: [video]
+    rename: safe
+
+components:
+  button:
+    type: object
+    fields:
+      - name: label
+        label: Texto
+        type: string
+        required: true
+      - name: href
+        label: Link
+        type: string
+        required: true
+
+  text_card:
+    type: object
+    fields:
+      - name: label
+        label: Categoria
+        type: string
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: description
+        label: Descrição
+        type: text
+        required: true
+
+  linked_card:
+    type: object
+    fields:
+      - name: label
+        label: Categoria
+        type: string
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: description
+        label: Descrição
+        type: text
+        required: true
+      - name: cta
+        label: Texto do botão
+        type: string
+        required: true
+      - name: href
+        label: Link
+        type: string
+        required: true
+
+  image_linked_card:
+    type: object
+    fields:
+      - name: category
+        label: Categoria
+        type: string
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: description
+        label: Descrição
+        type: text
+        required: true
+      - name: cta
+        label: Texto do botão
+        type: string
+        required: true
+      - name: href
+        label: Link
+        type: string
+        required: true
+      - name: image
+        label: Imagem
+        type: image
+        required: true
+        options:
+          media: images
+      - name: alt
+        label: Descrição acessível da imagem
+        type: string
+        required: true
+
+  pathway_card:
+    type: object
+    fields:
+      - name: id
+        label: Identificador
+        type: select
+        required: true
+        options:
+          values:
+            - name: professional
+              label: Formação profissional
+            - name: short
+              label: Curta duração
+            - name: thematic
+              label: Aula temática
+            - name: kids
+              label: Mini Chef
+            - name: gift
+              label: Cartão presente
+      - name: label
+        label: Categoria
+        type: string
+        required: true
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: title_line_1
+        label: Primeira linha do título em destaque
+        type: string
+        description: Usada somente no cartão maior de formação profissional.
+      - name: title_line_2
+        label: Segunda linha do título em destaque
+        type: string
+        description: Usada somente no cartão maior de formação profissional.
+      - name: description
+        label: Descrição
+        type: text
+        required: true
+      - name: cta
+        label: Texto do botão
+        type: string
+        required: true
+      - name: href
+        label: Link
+        type: string
+        required: true
+      - name: media_type
+        label: Tipo de mídia
+        type: select
+        required: true
+        options:
+          values:
+            - name: image
+              label: Imagem
+            - name: video
+              label: Vídeo
+      - name: image
+        label: Imagem
+        type: image
+        options:
+          media: images
+      - name: video
+        label: Arquivo de vídeo
+        type: file
+        options:
+          media: videos
+          extensions: [mp4, webm]
+      - name: poster
+        label: Capa do vídeo
+        type: image
+        options:
+          media: images
+      - name: alt
+        label: Descrição acessível da mídia
+        type: string
+        required: true
+
+  thematic_card:
+    type: object
+    fields:
+      - name: category
+        label: Categoria
+        type: select
+        required: true
+        options:
+          values:
+            - name: cozinha
+              label: Cozinha
+            - name: confeitaria
+              label: Confeitaria
+            - name: massas
+              label: Massas
+      - name: status
+        label: Situação das inscrições
+        type: string
+        required: true
+      - name: urgent
+        label: Destacar como últimas vagas
+        type: boolean
+      - name: image
+        label: Imagem
+        type: image
+        required: true
+        options:
+          media: images
+      - name: alt
+        label: Descrição acessível da imagem
+        type: string
+        required: true
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: description
+        label: Descrição
+        type: text
+        required: true
+      - name: date
+        label: Data
+        type: string
+        required: true
+      - name: time
+        label: Horário
+        type: string
+        required: true
+      - name: duration
+        label: Duração
+        type: string
+        required: true
+      - name: preparations
+        label: Preparos da aula
+        type: string
+        required: true
+      - name: price
+        label: Valor
+        type: string
+        required: true
+      - name: button
+        label: Texto do botão
+        type: string
+        required: true
+
+  gallery_item:
+    type: object
+    fields:
+      - name: image
+        label: Imagem
+        type: image
+        required: true
+        options:
+          media: images
+      - name: alt
+        label: Descrição acessível da imagem
+        type: string
+        required: true
+      - name: caption
+        label: Legenda
+        type: string
+        required: true
 
 content:
   - name: home
@@ -19,6 +266,193 @@ content:
     operations:
       delete: false
     fields:
+      - name: hero
+        label: Abertura — vídeo e chamada principal
+        type: object
+        fields:
+          - name: aria_label
+            label: Descrição acessível da mídia
+            type: string
+            required: true
+          - name: media_type
+            label: Tipo de mídia principal
+            type: select
+            required: true
+            options:
+              values:
+                - name: video
+                  label: Vídeo
+                - name: image
+                  label: Imagem
+          - name: poster
+            label: Imagem ou capa do vídeo
+            type: image
+            required: true
+            options:
+              media: images
+          - name: video
+            label: Vídeo principal
+            type: file
+            options:
+              media: videos
+              extensions: [mp4, webm]
+          - name: fallback_video
+            label: Vídeo alternativo
+            type: file
+            options:
+              media: videos
+              extensions: [mp4, webm]
+          - name: fallback_images
+            label: Imagens de segurança
+            type: image
+            list:
+              min: 1
+              max: 5
+            options:
+              media: images
+          - name: words
+            label: Palavras em destaque
+            type: string
+            list:
+              min: 3
+              max: 3
+          - name: statement
+            label: Frase principal
+            type: string
+            required: true
+          - name: hashtags
+            label: Hashtags
+            type: string
+            list:
+              min: 3
+              max: 3
+          - name: buttons
+            label: Botões
+            component: button
+            list:
+              min: 4
+              max: 4
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+
+      - name: intent
+        label: Escolha seu caminho
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: cards
+            label: Cartões
+            type: object
+            list:
+              min: 4
+              max: 4
+              collapsible:
+                collapsed: true
+                summary: "{number} — {title}"
+            fields:
+              - name: number
+                label: Número
+                type: string
+                required: true
+              - name: title
+                label: Título
+                type: string
+                required: true
+              - name: description
+                label: Descrição
+                type: text
+                required: true
+              - name: note
+                label: Observação
+                type: string
+              - name: href
+                label: Link
+                type: string
+                required: true
+
+      - name: proof
+        label: Faixa de diferenciais
+        type: object
+        fields:
+          - name: items
+            label: Itens
+            type: object
+            list:
+              min: 4
+              max: 4
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Destaque
+                type: string
+                required: true
+              - name: description
+                label: Descrição
+                type: text
+                required: true
+
+      - name: differentials
+        label: Diferenciais da formação
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: cards
+            label: Diferenciais
+            component: text_card
+            list:
+              min: 6
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: "{label} — {title}"
+
+      - name: media_highlights
+        label: Mídia e gravações
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: cards
+            label: Destaques
+            component: linked_card
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{label} — {title}"
+
       - name: pathways
         label: Escolha o seu caminho
         type: object
@@ -45,88 +479,258 @@ content:
             required: true
           - name: cards
             label: Cartões
-            type: object
+            component: pathway_card
             list:
               min: 5
               max: 5
               collapsible:
                 collapsed: true
                 summary: "{label} — {title}"
-            fields:
-              - name: id
-                label: Identificador
-                type: select
-                required: true
-                options:
-                  values:
-                    - name: professional
-                      label: Formação profissional
-                    - name: short
-                      label: Curta duração
-                    - name: thematic
-                      label: Aula temática
-                    - name: kids
-                      label: Mini Chef
-                    - name: gift
-                      label: Cartão presente
-              - name: label
-                label: Categoria
-                type: string
-                required: true
-              - name: title
-                label: Título
-                type: string
-                required: true
-              - name: title_line_1
-                label: Primeira linha do título em destaque
-                type: string
-                description: Usada somente no cartão maior de formação profissional.
-              - name: title_line_2
-                label: Segunda linha do título em destaque
-                type: string
-                description: Usada somente no cartão maior de formação profissional.
-              - name: description
-                label: Descrição
-                type: text
-                required: true
-              - name: cta
-                label: Texto do botão
-                type: string
-                required: true
-              - name: href
-                label: Destino do cartão
-                type: string
-                required: true
-              - name: media_type
-                label: Tipo de mídia
-                type: select
-                required: true
-                options:
-                  values:
-                    - name: image
-                      label: Imagem
-                    - name: video
-                      label: Vídeo
-              - name: image
-                label: Imagem
-                type: image
-                options:
-                  media: images
-              - name: video
-                label: Arquivo de vídeo
-                type: file
-                options:
-                  media: videos
-                  extensions: [mp4, webm]
-              - name: poster
-                label: Capa do vídeo
-                type: image
-                options:
-                  media: images
-              - name: alt
-                label: Descrição acessível da mídia
-                type: string
-                required: true
+
+      - name: thematic
+        label: Aulas temáticas em destaque
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: all_label
+            label: Texto do botão final
+            type: string
+            required: true
+          - name: all_href
+            label: Link do botão final
+            type: string
+            required: true
+          - name: cards
+            label: Aulas
+            component: thematic_card
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{title} — {date}"
+
+      - name: kids
+        label: Crianças e escolas
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: cards
+            label: Experiências
+            component: image_linked_card
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{category} — {title}"
+
+      - name: enterprise
+        label: Empresas e marcas
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: proposal_label
+            label: Texto do botão de proposta
+            type: string
+            required: true
+          - name: proposal_href
+            label: Link do botão de proposta
+            type: string
+            required: true
+          - name: cards
+            label: Soluções
+            component: image_linked_card
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+
+      - name: career
+        label: Carreira
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: note
+            label: Nota final
+            type: string
+            required: true
+          - name: primary_label
+            label: Botão principal
+            type: string
+            required: true
+          - name: primary_href
+            label: Link do botão principal
+            type: string
+            required: true
+          - name: secondary_label
+            label: Botão secundário
+            type: string
+            required: true
+          - name: secondary_href
+            label: Link do botão secundário
+            type: string
+            required: true
+          - name: image
+            label: Imagem
+            type: image
+            required: true
+            options:
+              media: images
+          - name: alt
+            label: Descrição acessível da imagem
+            type: string
+            required: true
+
+      - name: school
+        label: A Escola
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: image
+            label: Imagem
+            type: image
+            required: true
+            options:
+              media: images
+          - name: alt
+            label: Descrição acessível da imagem
+            type: string
+            required: true
+          - name: items
+            label: Diferenciais
+            type: string
+            list:
+              min: 4
+              max: 4
+          - name: primary_label
+            label: Botão principal
+            type: string
+            required: true
+          - name: primary_href
+            label: Link do botão principal
+            type: string
+            required: true
+          - name: secondary_label
+            label: Botão secundário
+            type: string
+            required: true
+          - name: secondary_href
+            label: Link do botão secundário
+            type: string
+            required: true
+
+      - name: gallery
+        label: Galeria
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: items
+            label: Fotos
+            component: gallery_item
+            list:
+              min: 5
+              max: 5
+              collapsible:
+                collapsed: true
+                summary: "{caption}"
+
+      - name: contact
+        label: Contato
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: message_placeholder
+            label: Orientação do campo de mensagem
+            type: string
+            required: true
+          - name: button
+            label: Texto do botão
+            type: string
+            required: true
+          - name: success
+            label: Mensagem após o envio
+            type: text
+            required: true
 
 settings:
   content:

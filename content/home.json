@@ -1,4 +1,166 @@
 {
+  "hero": {
+    "aria_label": "Aula de gastronomia em cozinha escola",
+    "media_type": "video",
+    "poster": "/assets/photos/cozinha-qf.png",
+    "video": "/assets/video/hero-principal-2026-v6.mp4",
+    "fallback_video": "/assets/video/hero-principal-2026-v5.mp4",
+    "fallback_images": [
+      "/assets/photos/chef-fogo.jpg",
+      "/assets/photos/cozinha-bancadas.jpg",
+      "/assets/photos/alunos-turma.jpg",
+      "/assets/photos/mesa-pratos.jpg",
+      "/assets/photos/fachada.png"
+    ],
+    "words": [
+      "Gastronomia",
+      "Confeitaria",
+      "paixão"
+    ],
+    "statement": "Aprenda, viva e transforme a gastronomia em experiência.",
+    "hashtags": [
+      "#Gastronomia",
+      "#Confeitaria",
+      "#paixão"
+    ],
+    "buttons": [
+      {
+        "label": "Conhecer cursos",
+        "href": "#cursos"
+      },
+      {
+        "label": "Agenda",
+        "href": "agenda.html"
+      },
+      {
+        "label": "Ver experiências",
+        "href": "experiencias-gastronomicas.html"
+      },
+      {
+        "label": "3 variações visuais",
+        "href": "variacoes-visuais.html"
+      }
+    ]
+  },
+  "intent": {
+    "eyebrow": "Escolha seu caminho",
+    "title": "O que você quer viver na Quatro Folhas?",
+    "cards": [
+      {
+        "number": "01",
+        "title": "Quero me profissionalizar",
+        "description": "Cursos práticos para atuar, empreender ou se aprofundar em gastronomia e confeitaria.",
+        "note": "Cursos profissionalizantes",
+        "href": "#cursos"
+      },
+      {
+        "number": "02",
+        "title": "Quero uma aula gastronômica",
+        "description": "Aulas temáticas para aprender receitas, descobrir sabores e viver uma experiência diferente.",
+        "note": "",
+        "href": "experiencias-gastronomicas.html"
+      },
+      {
+        "number": "03",
+        "title": "Quero uma experiência infantil",
+        "description": "Mini Chef, festas infantis gastronômicas e projetos educativos para escolas particulares.",
+        "note": "",
+        "href": "#criancas"
+      },
+      {
+        "number": "04",
+        "title": "Sou empresa ou marca",
+        "description": "Team building, parcerias, ativações, locação de cozinha, gravações e workshops.",
+        "note": "",
+        "href": "#empresas"
+      }
+    ]
+  },
+  "proof": {
+    "items": [
+      {
+        "title": "16 Alunos",
+        "description": "turmas reduzidas para acompanhamento mais próximo"
+      },
+      {
+        "title": "Professores",
+        "description": "pós-graduados e com ampla experiência de mercado"
+      },
+      {
+        "title": "Cozinha profissional",
+        "description": "estrutura altamente equipada para prática real"
+      },
+      {
+        "title": "Mídia",
+        "description": "cenário escolhido por TV, streaming, realities e produções gastronômicas"
+      }
+    ]
+  },
+  "differentials": {
+    "eyebrow": "Diferenciais",
+    "title": "Formação técnica com estrutura profissional e visão de futuro",
+    "description": "Professores pós-graduados, cozinha altamente equipada, turmas de até 16 alunos, portal do aluno, app e vivência internacional ampliam a jornada de formação.",
+    "cards": [
+      {
+        "label": "Corpo docente",
+        "title": "Professores pós-graduados",
+        "description": "Docentes com formação acadêmica e vasta experiência no mercado de trabalho."
+      },
+      {
+        "label": "Estrutura",
+        "title": "Cozinha altamente equipada",
+        "description": "Ambiente profissional para aprender técnica, rotina de bancada e prática com mais segurança."
+      },
+      {
+        "label": "Turmas reduzidas",
+        "title": "Apenas 16 alunos por turma",
+        "description": "Mais proximidade, acompanhamento e espaço para evoluir durante as aulas."
+      },
+      {
+        "label": "Prática",
+        "title": "Práticas em todas as aulas",
+        "description": "Vivência mão na massa para desenvolver técnica, segurança e rotina profissional desde o início."
+      },
+      {
+        "label": "Internacional",
+        "title": "Intercâmbio gastronômico",
+        "description": "Vivência internacional em Buenos Aires para ampliar repertório, cultura e visão de mercado."
+      },
+      {
+        "label": "Tecnologia",
+        "title": "App e portal do aluno",
+        "description": "Materiais, comunicados, pagamentos e certificados organizados para apoiar a jornada."
+      }
+    ]
+  },
+  "media_highlights": {
+    "eyebrow": "Mídia e gravações",
+    "title": "Uma escola reconhecida também pelo que acontece dentro dela",
+    "description": "A cozinha da Quatro Folhas já recebeu TV, streaming, realities, marcas e produções gastronômicas que reforçam a força do espaço.",
+    "cards": [
+      {
+        "label": "Confeitaria",
+        "title": "Batalha dos Confeiteiros",
+        "description": "Um marco de reconhecimento especialmente forte para quem busca confeitaria profissional.",
+        "cta": "Ver histórico",
+        "href": "midia-e-gravacoes.html"
+      },
+      {
+        "label": "Streaming",
+        "title": "Realities e conteúdos digitais",
+        "description": "A escola já recebeu produções que conectam gastronomia, entretenimento e marcas.",
+        "cta": "Conhecer produções",
+        "href": "midia-e-gravacoes.html#historico"
+      },
+      {
+        "label": "Produtoras",
+        "title": "Cozinha pronta para gravar",
+        "description": "Estrutura profissional para campanhas, realities, conteúdos, fotos e experiências.",
+        "cta": "Ver locação",
+        "href": "locacao-da-cozinha.html"
+      }
+    ]
+  },
   "pathways": {
     "eyebrow": "Cursos e experiências",
     "title": "Escolha o caminho que combina com o seu momento",
@@ -82,6 +244,195 @@
         "alt": "Experiência gastronômica para presentear"
       }
     ]
+  },
+  "thematic": {
+    "eyebrow": "Aulas temáticas",
+    "title": "Escolha sua próxima experiência",
+    "description": "Aulas práticas para aprender novos preparos, viver bons momentos e aproveitar a gastronomia sem precisar ser profissional.",
+    "all_label": "Ver todas as aulas",
+    "all_href": "aulas-tematicas.html#agenda",
+    "cards": [
+      {
+        "category": "massas",
+        "status": "Inscrições abertas",
+        "urgent": false,
+        "image": "/assets/photos/mesa-pratos.jpg",
+        "alt": "Massas Artesanais",
+        "title": "Massas Artesanais",
+        "description": "Uma experiência prática para aprender técnicas de massas frescas e seus acompanhamentos.",
+        "date": "20/06",
+        "time": "19h",
+        "duration": "3h",
+        "preparations": "Fettuccine · Ravioli · Molho pomodoro",
+        "price": "R$ 280",
+        "button": "Reservar e comprar"
+      },
+      {
+        "category": "confeitaria",
+        "status": "Últimas vagas",
+        "urgent": true,
+        "image": "/assets/photos/aula-confeitaria.jpg",
+        "alt": "Confeitaria para Receber",
+        "title": "Confeitaria para Receber",
+        "description": "Preparos elegantes para servir, compartilhar e surpreender em ocasiões especiais.",
+        "date": "27/06",
+        "time": "19h",
+        "duration": "3h",
+        "preparations": "Tartelete · Entremet · Finalização",
+        "price": "R$ 320",
+        "button": "Reservar e comprar"
+      },
+      {
+        "category": "cozinha",
+        "status": "Inscrições abertas",
+        "urgent": false,
+        "image": "/assets/photos/cozinha-bancadas.jpg",
+        "alt": "Noite Italiana",
+        "title": "Noite Italiana",
+        "description": "Uma noite de cozinha, encontro e mesa com sabores clássicos da gastronomia italiana.",
+        "date": "04/07",
+        "time": "19h",
+        "duration": "3h",
+        "preparations": "Focaccia · Risoto · Tiramisù",
+        "price": "R$ 300",
+        "button": "Reservar e comprar"
+      }
+    ]
+  },
+  "kids": {
+    "eyebrow": "Crianças e Escolas",
+    "title": "Experiências que ensinam, aproximam e ficam na memória",
+    "description": "Atividades gastronômicas que despertam autonomia, criatividade e confiança, em um ambiente seguro e acolhedor.",
+    "cards": [
+      {
+        "category": "Curso infantil",
+        "title": "Mini Chef",
+        "description": "Crianças colocam a mão na massa e descobrem o prazer de cozinhar de forma prática, divertida e cheia de significado.",
+        "cta": "Consultar turmas",
+        "href": "mini-chef.html",
+        "image": "/assets/photos/turma-formada.jpg",
+        "alt": "Crianças vivendo uma experiência gastronômica na Quatro Folhas"
+      },
+      {
+        "category": "Festa infantil",
+        "title": "Festa Infantil gastronômica",
+        "description": "Uma comemoração saborosa e criativa, com atividades culinárias que encantam crianças e adultos.",
+        "cta": "Conhecer festa",
+        "href": "festa-infantil-gastronomica.html",
+        "image": "/assets/photos/aula-confeitaria.jpg",
+        "alt": "Festa infantil gastronômica na Quatro Folhas"
+      },
+      {
+        "category": "Aulas para escolas particulares",
+        "title": "Aulas para Escolas Particulares",
+        "description": "Projetos personalizados que levam a gastronomia para o dia a dia escolar, de forma educativa e inspiradora.",
+        "cta": "Montar projeto",
+        "href": "aulas-para-escolas.html",
+        "image": "/assets/photos/alunos-turma.jpg",
+        "alt": "Aula prática para escolas na Quatro Folhas"
+      }
+    ]
+  },
+  "enterprise": {
+    "eyebrow": "Empresas e Marcas",
+    "title": "Experiências gastronômicas para equipes, marcas e projetos especiais",
+    "description": "A Quatro Folhas recebe empresas e parceiros para ações que unem cozinha, relacionamento, conteúdo e experiência.",
+    "proposal_label": "Solicitar proposta",
+    "proposal_href": "solicitar-proposta.html",
+    "cards": [
+      {
+        "title": "Team Building",
+        "description": "Dinâmicas gastronômicas para aproximar equipes e criar momentos de colaboração.",
+        "cta": "Ver formato",
+        "href": "team-building.html",
+        "image": "/assets/photos/alunos-turma.jpg",
+        "alt": "Equipe participando de uma experiência gastronômica"
+      },
+      {
+        "title": "Parcerias com Marcas",
+        "description": "Aulas, ativações, eventos e conteúdos que conectam marcas ao universo da gastronomia.",
+        "cta": "Ver parcerias",
+        "href": "parcerias-com-marcas.html",
+        "image": "/assets/photos/mesa-pratos.jpg",
+        "alt": "Experiência gastronômica criada em parceria com marcas"
+      },
+      {
+        "title": "Locação da Cozinha",
+        "description": "Espaço equipado para gravações, workshops, fotos, eventos e produções gastronômicas.",
+        "cta": "Ver locação",
+        "href": "locacao-da-cozinha.html",
+        "image": "/assets/photos/cozinha-qf.png",
+        "alt": "Cozinha profissional equipada da Quatro Folhas"
+      }
+    ]
+  },
+  "career": {
+    "eyebrow": "Carreira",
+    "title": "Seu próximo passo na gastronomia",
+    "description": "Conectamos alunos e ex-alunos a oportunidades no mercado gastronômico e ajudamos empresas a encontrar profissionais preparados.",
+    "note": "Banco de oportunidades",
+    "primary_label": "Encontrar oportunidades",
+    "primary_href": "carreira.html",
+    "secondary_label": "Divulgar uma vaga",
+    "secondary_href": "cadastrar-vaga.html",
+    "image": "/assets/photos/aula-confeitaria.jpg",
+    "alt": "Profissionais desenvolvendo suas habilidades na cozinha da Quatro Folhas"
+  },
+  "school": {
+    "eyebrow": "A Escola",
+    "title": "Uma cozinha escola para formar, receber e inspirar",
+    "description": "Desde 2015, a Quatro Folhas forma pessoas por meio da gastronomia com prática, técnica e acolhimento.",
+    "image": "/assets/photos/cozinha-qf.png",
+    "alt": "Estrutura da escola de gastronomia",
+    "items": [
+      "Cozinha equipada",
+      "Aulas práticas",
+      "Professores experientes",
+      "Experiências para alunos, crianças, escolas e empresas"
+    ],
+    "primary_label": "Conhecer a escola",
+    "primary_href": "a-escola.html",
+    "secondary_label": "Ver vida na escola",
+    "secondary_href": "vida-na-quatro-folhas.html"
+  },
+  "gallery": {
+    "eyebrow": "Vida na Quatro Folhas",
+    "title": "Estrutura real, aulas acontecendo e uma escola com presença",
+    "description": "A unidade mostra a força da marca: cozinha equipada, alunos uniformizados, equipe em aula e ambientes preparados para receber.",
+    "items": [
+      {
+        "image": "/assets/photos/fachada.png",
+        "alt": "Fachada iluminada da Quatro Folhas Escola de Gastronomia",
+        "caption": "Fachada da escola"
+      },
+      {
+        "image": "/assets/photos/cozinha-qf.png",
+        "alt": "Cozinha profissional equipada da Quatro Folhas",
+        "caption": "Cozinha equipada"
+      },
+      {
+        "image": "/assets/photos/alunos-turma.jpg",
+        "alt": "Turma de alunos em aula na Quatro Folhas",
+        "caption": "Turmas práticas"
+      },
+      {
+        "image": "/assets/photos/aula-confeitaria.jpg",
+        "alt": "Alunos em aula de confeitaria na cozinha da escola",
+        "caption": "Confeitaria em aula"
+      },
+      {
+        "image": "/assets/photos/lounge-chef.jpg",
+        "alt": "Lounge interno com letreiro The Chef is Here",
+        "caption": "Ambiente de recepção"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contato",
+    "title": "Encontre sua próxima experiência gastronômica",
+    "description": "Fale com a Quatro Folhas para estudar, celebrar, reunir sua equipe, criar uma parceria ou acessar materiais de aluno.",
+    "message_placeholder": "Conte rapidamente o que você procura e o melhor horário para retorno.",
+    "button": "Enviar mensagem",
+    "success": "Recebemos sua mensagem. Nossa equipe entrará em contato pelo WhatsApp para orientar o melhor caminho."
   }
 }
-

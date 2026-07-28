@@ -1,76 +1,296 @@
 (function () {
-  const section = document.querySelector("[data-cms-home-pathways]");
-  if (!section) return;
+  const page = document.querySelector("main#home");
+  if (!page) return;
 
-  const setText = (selector, value) => {
-    const element = section.querySelector(selector);
-    if (element && typeof value === "string" && value.trim()) {
-      element.textContent = value.trim();
-    }
+  const text = (element, value) => {
+    if (!element || value === undefined || value === null) return;
+    element.textContent = String(value);
   };
 
-  const setHref = (element, value) => {
+  const href = (element, value) => {
     if (!element || typeof value !== "string") return;
-    const href = value.trim();
-    if (!href || /^javascript:/i.test(href)) return;
-    element.setAttribute("href", href);
+    const nextHref = value.trim();
+    if (!nextHref || /^javascript:/i.test(nextHref)) return;
+    element.setAttribute("href", nextHref);
   };
 
-  const renderMedia = (container, card) => {
-    if (!container || !card) return;
-
-    const alt = typeof card.alt === "string" ? card.alt.trim() : "";
-    container.setAttribute("aria-label", alt);
-
-    if (card.media_type === "video" && card.video) {
-      const video = document.createElement("video");
-      video.src = card.video;
-      video.muted = true;
-      video.loop = true;
-      video.autoplay = true;
-      video.playsInline = true;
-      video.preload = "metadata";
-      video.setAttribute("aria-label", alt);
-      if (card.poster) video.poster = card.poster;
-      container.style.backgroundImage = card.poster ? `url("${card.poster}")` : "";
-      container.replaceChildren(video);
-      return;
-    }
-
-    container.replaceChildren();
-    if (card.image) {
-      container.style.backgroundImage = `url("${card.image}")`;
-    }
-  };
-
-  const renderCard = (card) => {
-    if (!card || !card.id) return;
-    const element = section.querySelector(`[data-cms-card="${card.id}"]`);
+  const image = (element, source, alt) => {
     if (!element) return;
+    if (typeof source === "string" && source.trim()) {
+      element.setAttribute("src", source.trim());
+    }
+    if (typeof alt === "string") element.setAttribute("alt", alt);
+  };
 
-    setHref(element, card.href);
+  const background = (element, source, alt) => {
+    if (!element) return;
+    if (typeof source === "string" && source.trim()) {
+      element.style.backgroundImage = `url("${source.trim()}")`;
+    }
+    if (typeof alt === "string") element.setAttribute("aria-label", alt);
+  };
 
-    const label = element.querySelector("[data-cms-card-label]");
-    const title = element.querySelector("[data-cms-card-title]");
-    const description = element.querySelector("[data-cms-card-description]");
-    const cta = element.querySelector("[data-cms-card-cta]");
+  const section = (name) => page.querySelector(`[data-cms-section="${name}"]`);
 
-    if (label && card.label) label.textContent = card.label;
-    if (description && card.description) description.textContent = card.description;
-    if (cta && card.cta) cta.textContent = card.cta;
+  const renderHeading = (root, data) => {
+    if (!root || !data) return;
+    root.querySelectorAll("[data-cms-field]").forEach((element) => {
+      text(element, data[element.dataset.cmsField]);
+    });
+  };
 
-    if (title && card.id === "professional" && card.title_line_1 && card.title_line_2) {
-      const firstLine = document.createElement("span");
-      const secondLine = document.createElement("span");
-      firstLine.textContent = card.title_line_1;
-      secondLine.textContent = card.title_line_2;
-      secondLine.className = "home-path-title-line";
-      title.replaceChildren(firstLine, secondLine);
-    } else if (title && card.title) {
-      title.textContent = card.title;
+  const renderItems = (root, items, options) => {
+    if (!root || !Array.isArray(items)) return;
+
+    items.forEach((item, index) => {
+      const element = root.querySelector(`[data-cms-item="${index}"]`);
+      if (!element || !item) return;
+
+      element.querySelectorAll("[data-cms-item-field]").forEach((field) => {
+        text(field, item[field.dataset.cmsItemField]);
+      });
+
+      const itemLink = element.querySelector("[data-cms-item-link]");
+      if (itemLink) {
+        text(itemLink, item.cta);
+        href(itemLink, item.href);
+      }
+
+      const itemButton = element.querySelector("[data-cms-item-button]");
+      if (itemButton) {
+        text(itemButton, item.button || item.cta);
+        if (item.title) itemButton.dataset.interest = item.title;
+        if (item.date) itemButton.dataset.date = item.date;
+      }
+
+      image(element.querySelector("[data-cms-item-image]"), item.image, item.alt);
+
+      if (item.category) element.dataset.category = item.category;
+
+      const status = element.querySelector(".thematic-status");
+      if (status && typeof item.urgent === "boolean") {
+        status.classList.toggle("is-urgent", item.urgent);
+      }
+
+      if (options && typeof options.afterItem === "function") {
+        options.afterItem(element, item, index);
+      }
+    });
+  };
+
+  const renderHero = (data) => {
+    const root = section("hero");
+    if (!root || !data) return;
+
+    const media = root.querySelector("[data-cms-hero-media]");
+    const video = root.querySelector("#heroVideo");
+    const reel = root.querySelector(".hero-demo-reel");
+
+    if (media && data.aria_label) media.setAttribute("aria-label", data.aria_label);
+
+    if (video) {
+      if (data.poster) video.poster = data.poster;
+      const sources = [data.video, data.fallback_video];
+      sources.forEach((source, index) => {
+        const element = video.querySelector(`[data-cms-hero-video="${index}"]`);
+        if (element && source) element.src = source;
+      });
+
+      const showVideo = data.media_type !== "image" && Boolean(data.video);
+      video.hidden = !showVideo;
+      if (reel) reel.hidden = data.media_type === "image";
+
+      if (data.media_type === "image") {
+        background(media, data.poster, data.aria_label);
+        document.documentElement.classList.remove("hero-video-ready");
+      } else {
+        media.style.backgroundImage = data.poster ? `url("${data.poster}")` : "";
+        video.load();
+        const playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.catch === "function") {
+          playAttempt.catch(function () {});
+        }
+      }
     }
 
-    renderMedia(element.querySelector("[data-cms-card-media]"), card);
+    if (Array.isArray(data.fallback_images)) {
+      data.fallback_images.forEach((source, index) => {
+        background(root.querySelector(`[data-cms-hero-fallback="${index}"]`), source);
+      });
+    }
+
+    if (Array.isArray(data.words)) {
+      data.words.forEach((value, index) => {
+        text(root.querySelector(`[data-cms-hero-word="${index}"]`), value);
+      });
+    }
+
+    text(root.querySelector("[data-cms-hero-statement]"), data.statement);
+
+    if (Array.isArray(data.hashtags)) {
+      data.hashtags.forEach((value, index) => {
+        text(root.querySelector(`[data-cms-hero-hashtag="${index}"]`), value);
+      });
+    }
+
+    if (Array.isArray(data.buttons)) {
+      data.buttons.forEach((button, index) => {
+        const desktop = root.querySelector(`[data-cms-hero-button="${index}"]`);
+        const mobile = document.querySelector(`[data-cms-hero-mobile-button="${index}"]`);
+        text(desktop, button.label);
+        href(desktop, button.href);
+        text(mobile, button.label);
+        href(mobile, button.href);
+      });
+    }
+  };
+
+  const renderSimpleSection = (name, data) => {
+    const root = section(name);
+    if (!root || !data) return;
+    renderHeading(root, data);
+    renderItems(root, data.cards || data.items);
+  };
+
+  const renderPathways = (data) => {
+    const root = document.querySelector("[data-cms-home-pathways]");
+    if (!root || !data) return;
+
+    text(root.querySelector("[data-cms-pathways-eyebrow]"), data.eyebrow);
+    text(root.querySelector("[data-cms-pathways-title]"), data.title);
+    text(root.querySelector("[data-cms-pathways-description]"), data.description);
+
+    const allCourses = root.querySelector("[data-cms-pathways-all]");
+    text(allCourses, data.all_courses_label);
+    href(allCourses, data.all_courses_href);
+
+    if (!Array.isArray(data.cards)) return;
+    data.cards.forEach((card) => {
+      if (!card || !card.id) return;
+      const element = root.querySelector(`[data-cms-card="${card.id}"]`);
+      if (!element) return;
+
+      href(element, card.href);
+      text(element.querySelector("[data-cms-card-label]"), card.label);
+      text(element.querySelector("[data-cms-card-description]"), card.description);
+      text(element.querySelector("[data-cms-card-cta]"), card.cta);
+
+      const title = element.querySelector("[data-cms-card-title]");
+      if (title && card.id === "professional" && card.title_line_1 && card.title_line_2) {
+        const firstLine = document.createElement("span");
+        const secondLine = document.createElement("span");
+        firstLine.textContent = card.title_line_1;
+        secondLine.textContent = card.title_line_2;
+        secondLine.className = "home-path-title-line";
+        title.replaceChildren(firstLine, secondLine);
+      } else {
+        text(title, card.title);
+      }
+
+      const media = element.querySelector("[data-cms-card-media]");
+      if (!media) return;
+      if (typeof card.alt === "string") media.setAttribute("aria-label", card.alt);
+
+      if (card.media_type === "video" && card.video) {
+        const video = document.createElement("video");
+        video.src = card.video;
+        video.muted = true;
+        video.loop = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        video.setAttribute("aria-hidden", "true");
+        if (card.poster) video.poster = card.poster;
+        media.style.backgroundImage = card.poster ? `url("${card.poster}")` : "";
+        media.replaceChildren(video);
+      } else {
+        media.replaceChildren();
+        background(media, card.image, card.alt);
+      }
+    });
+  };
+
+  const renderThematic = (data) => {
+    const root = section("thematic");
+    if (!root || !data) return;
+    renderHeading(root, data);
+    renderItems(root, data.cards);
+
+    const all = root.querySelector('[data-cms-link="all"]');
+    text(all, data.all_label);
+    href(all, data.all_href);
+  };
+
+  const renderKids = (data) => {
+    const root = section("kids");
+    if (!root || !data) return;
+    renderHeading(root, data);
+    renderItems(root, data.cards);
+  };
+
+  const renderEnterprise = (data) => {
+    const root = section("enterprise");
+    if (!root || !data) return;
+    renderHeading(root, data);
+    renderItems(root, data.cards);
+
+    const proposal = root.querySelector('[data-cms-link="proposal"]');
+    text(proposal, data.proposal_label);
+    href(proposal, data.proposal_href);
+  };
+
+  const renderCareer = (data) => {
+    const root = section("career");
+    if (!root || !data) return;
+    renderHeading(root, data);
+    image(root.querySelector("[data-cms-image]"), data.image, data.alt);
+
+    const primary = root.querySelector('[data-cms-link="primary"]');
+    const secondary = root.querySelector('[data-cms-link="secondary"]');
+    text(primary, data.primary_label);
+    href(primary, data.primary_href);
+    text(secondary, data.secondary_label);
+    href(secondary, data.secondary_href);
+  };
+
+  const renderSchool = (data) => {
+    const root = section("school");
+    if (!root || !data) return;
+    renderHeading(root, data);
+    background(root.querySelector("[data-cms-background-image]"), data.image, data.alt);
+
+    if (Array.isArray(data.items)) {
+      data.items.forEach((value, index) => {
+        text(root.querySelector(`[data-cms-school-item="${index}"]`), value);
+      });
+    }
+
+    const primary = root.querySelector('[data-cms-link="primary"]');
+    const secondary = root.querySelector('[data-cms-link="secondary"]');
+    text(primary, data.primary_label);
+    href(primary, data.primary_href);
+    text(secondary, data.secondary_label);
+    href(secondary, data.secondary_href);
+  };
+
+  const renderGallery = (data) => {
+    const root = section("gallery");
+    if (!root || !data) return;
+    renderHeading(root, data);
+    renderItems(root, data.items);
+  };
+
+  const renderContact = (data) => {
+    const root = section("contact");
+    if (!root || !data) return;
+    renderHeading(root, data);
+
+    const form = root.querySelector("[data-cms-contact-form]");
+    const message = root.querySelector("[data-cms-message]");
+    const button = root.querySelector("[data-cms-contact-button]");
+    if (form && data.success) form.dataset.successText = data.success;
+    if (message && data.message_placeholder) message.placeholder = data.message_placeholder;
+    text(button, data.button);
   };
 
   fetch("content/home.json", { cache: "no-cache" })
@@ -79,25 +299,29 @@
       return response.json();
     })
     .then((content) => {
-      const pathways = content && content.pathways;
-      if (!pathways) return;
+      renderHero(content.hero);
 
-      setText("[data-cms-pathways-eyebrow]", pathways.eyebrow);
-      setText("[data-cms-pathways-title]", pathways.title);
-      setText("[data-cms-pathways-description]", pathways.description);
-
-      const allCourses = section.querySelector("[data-cms-pathways-all]");
-      if (allCourses && pathways.all_courses_label) {
-        allCourses.textContent = pathways.all_courses_label;
+      const intent = section("intent");
+      if (intent && content.intent) {
+        renderHeading(intent, content.intent);
+        renderItems(intent, content.intent.cards, {
+          afterItem: (element, item) => href(element, item.href)
+        });
       }
-      setHref(allCourses, pathways.all_courses_href);
 
-      if (Array.isArray(pathways.cards)) {
-        pathways.cards.forEach(renderCard);
-      }
+      renderSimpleSection("proof", content.proof);
+      renderSimpleSection("differentials", content.differentials);
+      renderSimpleSection("media_highlights", content.media_highlights);
+      renderPathways(content.pathways);
+      renderThematic(content.thematic);
+      renderKids(content.kids);
+      renderEnterprise(content.enterprise);
+      renderCareer(content.career);
+      renderSchool(content.school);
+      renderGallery(content.gallery);
+      renderContact(content.contact);
     })
     .catch((error) => {
       console.warn("[Quatro Folhas] Conteúdo local da Home preservado.", error);
     });
 })();
-
