@@ -1028,6 +1028,17 @@ content:
                 collapsed: true
                 summary: "{order} — {title}"
 
+actions:
+  - name: publish-approved-site
+    label: Publicar alterações aprovadas
+    workflow: pages-cms-publish.yml
+    ref: current
+    cancelable: false
+    confirm:
+      title: Publicar no site?
+      message: Esta ação enviará todo o conteúdo aprovado para a versão pública e iniciará um único deploy no Render.
+      button: Publicar agora
+
 settings:
   content:
     merge: true
