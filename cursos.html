@@ -193,15 +193,15 @@
         <article><span>Atendimento</span><strong>Matrícula assistida</strong><p>A equipe confirma turma, disponibilidade e todas as informações pertinentes com clareza.</p></article>
       </section>
 
-      <section class="content-band professional-catalog" id="profissionais">
+      <section class="content-band professional-catalog" id="profissionais" data-cms-course-catalog>
   <div class="section-heading split">
     <div>
-      <p class="eyebrow">Formação</p>
-      <h2>Escolha o melhor caminho para a sua jornada</h2>
+      <p class="eyebrow" data-cms-catalog-eyebrow>Formação</p>
+      <h2 data-cms-catalog-title>Escolha o melhor caminho para a sua jornada</h2>
     </div>
-    <p>Cada curso combina prática, acompanhamento próximo e uma estrutura pensada para o aluno evoluir com segurança.</p>
+    <p data-cms-catalog-description>Cada curso combina prática, acompanhamento próximo e uma estrutura pensada para o aluno evoluir com segurança.</p>
   </div>
-  <div class="course-catalog-grid">
+  <div class="course-catalog-grid" data-cms-course-grid>
     <article class="catalog-course-card">
       <span class="course-card-media" style="background-image:url('assets/photos/cozinha-bancadas.jpg')" aria-hidden="true"></span>
       <div class="course-card-body">
@@ -225,7 +225,7 @@
     <article class="catalog-course-card">
       <span class="course-card-media" style="background-image:url('assets/photos/mesa-pratos.jpg')" aria-hidden="true"></span>
       <div class="course-card-body">
-        <div class="course-card-tags"><span class="tag professional-tag">Profissionalizante</span><span class="tag demand-tag">Alta demanda</span></div>
+        <div class="course-card-tags"><span class="tag professional-tag">Profissionalizante</span></div>
         <h3>Especialização em Bolos e Doces Finos</h3>
         <p class="course-description">Para produzir doces, bolos e sobremesas com acabamento, sabor e valor de venda.</p>
         <p class="course-start">18 aulas</p>
@@ -473,6 +473,7 @@
     </footer>
     <dialog class="modal" id="lead-modal"><form method="dialog" class="modal-card" id="lead-form"><button class="modal-close" value="cancel" aria-label="Fechar">x</button><p class="eyebrow" id="modal-eyebrow">Curso</p><h2 id="modal-title">Quero me matricular</h2><div class="dynamic-fields" id="dynamic-fields"></div><label>Nome completo<input name="nome" type="text" required></label><label>WhatsApp<input name="whatsapp" type="tel" required></label><label>E-mail<input name="email" type="email" required></label><label class="acceptance"><input name="aceite" type="checkbox" required>Aceito receber contato da equipe Quatro Folhas.</label><button class="solid-btn" type="submit">Enviar solicitação</button><p class="success-message" hidden>Obrigado pelo seu interesse! Recebemos sua solicitação de reserva. Nossa equipe já entrará em contato pelo WhatsApp para confirmar a vaga e enviar o link de pagamento.</p></form></dialog>
     <script src="script.js"></script>
+    <script src="courses-loader.js"></script>
   </body>
 </html>
 

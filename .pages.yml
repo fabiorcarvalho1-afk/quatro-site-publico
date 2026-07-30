@@ -257,6 +257,72 @@ components:
         type: string
         required: true
 
+  course_card:
+    type: object
+    fields:
+      - name: order
+        label: Ordem
+        type: number
+        required: true
+      - name: visible
+        label: Exibir no site
+        type: boolean
+        required: true
+      - name: type
+        label: Tipo do curso
+        type: select
+        required: true
+        options:
+          values:
+            - Profissionalizante
+            - Curta duração
+            - Avançado
+            - Especialização
+            - Internacional
+            - Infantil
+      - name: professional
+        label: Destacar como Profissionalizante
+        type: boolean
+        required: true
+      - name: high_demand
+        label: Exibir Alta demanda
+        type: boolean
+        required: true
+      - name: title
+        label: Nome do curso
+        type: string
+        required: true
+      - name: description
+        label: Descrição
+        type: text
+        required: true
+      - name: duration
+        label: Quantidade de aulas ou disponibilidade
+        type: string
+        required: true
+      - name: image
+        label: Imagem
+        type: image
+        required: true
+        options:
+          media: images
+      - name: alt
+        label: Descrição acessível da imagem
+        type: string
+        required: true
+      - name: cta
+        label: Texto do botão
+        type: string
+        required: true
+      - name: href
+        label: Link do curso
+        type: string
+        required: true
+      - name: anchor
+        label: Identificador interno
+        type: string
+        description: Use apenas quando o curso precisar ser destino de um link interno.
+
 content:
   - name: home
     label: Página inicial
@@ -732,13 +798,46 @@ content:
             type: text
             required: true
 
+  - name: courses
+    label: Cursos
+    type: file
+    path: content/courses.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: catalog
+        label: Catálogo de cursos
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: courses
+            label: Cursos
+            component: course_card
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{order} — {title}"
+
 settings:
   content:
     merge: true
   commit:
     identity: app
     templates:
-      update: "Atualiza conteúdo da Home pelo painel"
+      update: "Atualiza conteúdo do site pelo painel"
       create: "Adiciona conteúdo pelo painel"
       delete: "Remove conteúdo pelo painel"
       rename: "Renomeia conteúdo pelo painel"
