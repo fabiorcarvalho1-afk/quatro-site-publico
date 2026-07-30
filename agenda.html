@@ -105,8 +105,8 @@
         <article><span>Atendimento</span><strong>Contato orientado</strong><p>Cada interessado recebe retorno da equipe para confirmar turma, vaga e próximos passos.</p></article>
       </section>
 
-      <section class="content-band agenda-feature">
-        <div class="agenda-feature-card">
+      <section class="content-band agenda-feature" data-cms-thematic-agenda>
+        <div class="agenda-feature-card" data-cms-agenda-feature>
           <span class="tag accent">Destaque da semana</span>
           <h2>Massas Artesanais</h2>
           <p>Uma aula prática para preparar massa fresca, molho e montagem, com degustação ao final.</p>
@@ -118,7 +118,7 @@
           </div>
           <button class="solid-btn" data-open="class-form" data-interest="Massas Artesanais" data-date="20/06">Reservar vaga</button>
         </div>
-        <div class="agenda-calendar" aria-label="calendário de junho e julho">
+        <div class="agenda-calendar" aria-label="Calendário de aulas temáticas" data-cms-agenda-calendar>
           <div><strong>20</strong><span>Jun</span><small>Massas Artesanais</small></div>
           <div><strong>27</strong><span>Jun</span><small>Confeitaria para Receber</small></div>
           <div><strong>04</strong><span>Jul</span><small>Noite Italiana</small></div>
@@ -126,7 +126,7 @@
         </div>
       </section>
 
-      <section class="content-band light" id="aulas">
+      <section class="content-band light" id="aulas" data-cms-agenda-list-section>
         <div class="section-heading split">
           <div>
             <p class="eyebrow">Aulas temáticas</p>
@@ -141,7 +141,7 @@
           <span>crianças</span>
           <span>Empresas</span>
         </div>
-        <div class="agenda-list">
+        <div class="agenda-list" data-cms-agenda-list>
           <article class="agenda-card"><div><span class="tag">Inscrições abertas</span><h3>Massas Artesanais</h3><p>20/06 - 19h - 3h de experiência</p><small>Aula prática com preparo, finalização e degustação.</small><small class="class-price">R$ 280</small></div><button class="solid-btn" data-open="class-form" data-interest="Massas Artesanais" data-date="20/06" data-content="Preparo da massa fresca, abertura, cortes, molho, montagem, finalização e degustação." data-includes="Aula prática, receitas, insumos e degustação.">Reservar vaga</button></article>
           <article class="agenda-card"><div><span class="tag accent">?Ltimas vagas</span><h3>Confeitaria para Receber</h3><p>27/06 - 19h - aula prática e degustação</p><small>Receitas elegantes para encontros, mesas e eventos.</small><small class="class-price">R$ 320</small></div><button class="solid-btn" data-open="class-form" data-interest="Confeitaria para Receber" data-date="27/06" data-content="Receitas de confeitaria para receber, montagem de mesa, finalização e apresentação dos preparos." data-includes="Aula prática, ficha de receitas, insumos e degustação.">Reservar vaga</button></article>
           <article class="agenda-card"><div><span class="tag">Inscrições abertas</span><h3>Noite Italiana</h3><p>04/07 - 19h - cozinha, encontro e mesa</p><small>experiência temática para aprender e viver a gastronomia.</small><small class="class-price">R$ 300</small></div><button class="solid-btn" data-open="class-form" data-interest="Noite Italiana" data-date="04/07" data-content="Preparo de receitas italianas, organização da bancada, montagem dos pratos e experiência de mesa." data-includes="Aula prática, receitas, insumos e degustação.">Reservar vaga</button></article>
@@ -238,6 +238,7 @@
     </footer>
     <dialog class="modal" id="lead-modal"><form method="dialog" class="modal-card" id="lead-form"><button class="modal-close" value="cancel" aria-label="Fechar">x</button><p class="eyebrow" id="modal-eyebrow">Reserva</p><h2 id="modal-title">Reservar vaga</h2><div class="dynamic-fields" id="dynamic-fields"></div><label>Nome completo<input name="nome" type="text" required></label><label>WhatsApp<input name="whatsapp" type="tel" required></label><label>E-mail<input name="email" type="email" required></label><label class="acceptance"><input name="aceite" type="checkbox" required>Aceito receber contato da equipe Quatro Folhas.</label><button class="solid-btn" type="submit">Enviar solicitação</button><p class="success-message" hidden>Obrigado pelo seu interesse! Recebemos sua solicitação de reserva. Nossa equipe já entrará em contato pelo WhatsApp para confirmar a vaga e enviar o link de pagamento.</p></form></dialog>
     <script src="script.js"></script>
+    <script src="thematic-loader.js"></script>
   </body>
 </html>
 

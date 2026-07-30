@@ -177,6 +177,22 @@ components:
   thematic_card:
     type: object
     fields:
+      - name: order
+        label: Ordem
+        type: number
+        required: true
+      - name: visible
+        label: Exibir no site
+        type: boolean
+        required: true
+      - name: show_home
+        label: Exibir também na página inicial
+        type: boolean
+        required: true
+      - name: featured
+        label: Usar como destaque da agenda
+        type: boolean
+        required: true
       - name: category
         label: Categoria
         type: select
@@ -191,8 +207,15 @@ components:
               label: Massas
       - name: status
         label: Situação das inscrições
-        type: string
+        type: select
         required: true
+        options:
+          values:
+            - Inscrições abertas
+            - Últimas vagas
+            - Esgotada
+            - Em breve
+            - Encerrada
       - name: urgent
         label: Destacar como últimas vagas
         type: boolean
@@ -216,7 +239,7 @@ components:
         required: true
       - name: date
         label: Data
-        type: string
+        type: date
         required: true
       - name: time
         label: Horário
@@ -232,7 +255,19 @@ components:
         required: true
       - name: price
         label: Valor
-        type: string
+        type: number
+        required: true
+      - name: vacancies
+        label: Vagas disponíveis
+        type: number
+        required: true
+      - name: details
+        label: Conteúdo detalhado
+        type: text
+        required: true
+      - name: includes
+        label: O que está incluso
+        type: text
         required: true
       - name: button
         label: Texto do botão
@@ -553,40 +588,6 @@ content:
                 collapsed: true
                 summary: "{label} — {title}"
 
-      - name: thematic
-        label: Aulas temáticas em destaque
-        type: object
-        fields:
-          - name: eyebrow
-            label: Identificação da seção
-            type: string
-            required: true
-          - name: title
-            label: Título
-            type: string
-            required: true
-          - name: description
-            label: Texto de apoio
-            type: text
-            required: true
-          - name: all_label
-            label: Texto do botão final
-            type: string
-            required: true
-          - name: all_href
-            label: Link do botão final
-            type: string
-            required: true
-          - name: cards
-            label: Aulas
-            component: thematic_card
-            list:
-              min: 3
-              max: 3
-              collapsible:
-                collapsed: true
-                summary: "{title} — {date}"
-
       - name: kids
         label: Crianças e escolas
         type: object
@@ -797,6 +798,91 @@ content:
             label: Mensagem após o envio
             type: text
             required: true
+
+  - name: thematic_classes
+    label: Aulas temáticas e agenda
+    type: file
+    path: content/thematic-classes.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: home
+        label: Chamada na página inicial
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: all_label
+            label: Texto do botão final
+            type: string
+            required: true
+          - name: all_href
+            label: Link do botão final
+            type: string
+            required: true
+      - name: page
+        label: Cabeçalho da página de aulas
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+      - name: agenda
+        label: Apresentação na agenda
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+            required: true
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: description
+            label: Texto de apoio
+            type: text
+            required: true
+          - name: feature_label
+            label: Rótulo do destaque
+            type: string
+            required: true
+          - name: reserve_label
+            label: Texto do botão de reserva
+            type: string
+            required: true
+          - name: feature_note
+            label: Nota exibida no destaque
+            type: string
+            required: true
+      - name: classes
+        label: Aulas cadastradas
+        component: thematic_card
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{order} — {title} — {date}"
 
   - name: courses
     label: Cursos

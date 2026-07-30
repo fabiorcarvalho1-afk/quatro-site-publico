@@ -1187,6 +1187,7 @@ function enhanceDynamicTriggers(root = document) {
 
 async function loadSiteHome() {
   if (!document.body.classList.contains("home-page")) return;
+  if (document.querySelector("[data-cms-home-pathways]")) return;
   try {
     const [home, thematicItems] = await Promise.all([
       apiRequest("/site/home"),
@@ -1223,6 +1224,7 @@ async function loadSiteHome() {
 
 async function loadAgendaPage() {
   if (currentPage !== "agenda.html") return;
+  if (document.querySelector("[data-cms-thematic-agenda]")) return;
   try {
     const [agendaItems, courses] = await Promise.all([
       apiRequest("/site/agenda"),
@@ -1273,6 +1275,7 @@ async function loadAgendaPage() {
 
 async function loadThematicClassesPage() {
   if (currentPage !== "aulas-tematicas.html") return;
+  if (document.querySelector("[data-cms-thematic-source]")) return;
   try {
     const agendaItems = await apiRequest("/thematic-registrations/public/classes");
     const grid = document.querySelector("[data-thematic-grid]");
@@ -1287,6 +1290,7 @@ async function loadThematicClassesPage() {
 
 async function loadCoursesPage() {
   if (currentPage !== "cursos.html") return;
+  if (document.querySelector("[data-cms-course-catalog]")) return;
   try {
     const response = await apiRequest("/site/courses");
     const grid = document.querySelector("#profissionais .card-grid");

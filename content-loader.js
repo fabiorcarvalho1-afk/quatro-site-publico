@@ -313,7 +313,6 @@
       renderSimpleSection("differentials", content.differentials);
       renderSimpleSection("media_highlights", content.media_highlights);
       renderPathways(content.pathways);
-      renderThematic(content.thematic);
       renderKids(content.kids);
       renderEnterprise(content.enterprise);
       renderCareer(content.career);
