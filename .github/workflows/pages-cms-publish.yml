@@ -59,13 +59,20 @@ jobs:
           }
           NODE
 
-      - name: Confirmar que a publicação é segura
+      - name: Sincronizar com a versão publicada
+        env:
+          SOURCE_BRANCH: ${{ steps.context.outputs.source_branch }}
         shell: bash
         run: |
           git fetch origin main
           if ! git merge-base --is-ancestor origin/main HEAD; then
-            echo "::error::A versão de revisão precisa ser atualizada antes da publicação."
-            exit 1
+            git config user.name "Quatro Folhas CMS"
+            git config user.email "cms@quatrofolhasgastronomia.com.br"
+            if ! git merge --no-edit origin/main; then
+              echo "::error::As versões possuem alterações conflitantes e precisam de revisão."
+              exit 1
+            fi
+            git push origin "HEAD:${SOURCE_BRANCH}"
           fi
 
       - name: Publicar na branch principal
