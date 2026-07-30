@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "Quatro Folhas Escola de Gastronomia",
+    "header_logo": "/assets/logo-quatrofolhas-horizontal.png",
+    "footer_logo": "/assets/logo-quatrofolhas-horizontal-negativo.png",
+    "logo_alt": "Quatro Folhas Escola de Gastronomia",
+    "footer_description": "Gastronomia para aprender, viver e transformar. Cursos, aulas temáticas, crianças, escolas, empresas, marcas e carreira.",
+    "copyright": "© 2026 Quatro Folhas Escola de Gastronomia. Todos os direitos reservados."
+  },
+  "contact": {
+    "whatsapp_number": "5511947781922",
+    "whatsapp_display": "(11) 94778-1922",
+    "email": "",
+    "address": "Rua Cantagalo, 1239 - Tatuapé - São Paulo/SP",
+    "unit": "Unidade I - Tatuapé"
+  },
+  "social": {
+    "instagram_url": "https://instagram.com/quatrofolhasgastronomia",
+    "instagram_label": "@quatrofolhasgastronomia",
+    "facebook_url": "https://facebook.com/quatrofolhasgastronomia",
+    "facebook_label": "quatrofolhasgastronomia"
+  }
+}

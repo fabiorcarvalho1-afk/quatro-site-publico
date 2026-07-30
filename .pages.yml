@@ -386,6 +386,90 @@ components:
         description: Use apenas quando o curso precisar ser destino de um link interno.
 
 content:
+  - name: site_settings
+    label: Configurações gerais do site
+    type: file
+    path: content/site-settings.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: brand
+        label: Marca e rodapé
+        type: object
+        fields:
+          - name: name
+            label: Nome da escola
+            type: string
+            required: true
+          - name: header_logo
+            label: Logotipo do cabeçalho
+            type: image
+            required: true
+            options:
+              media: logos
+          - name: footer_logo
+            label: Logotipo do rodapé
+            type: image
+            required: true
+            options:
+              media: logos
+          - name: logo_alt
+            label: Descrição acessível do logotipo
+            type: string
+            required: true
+          - name: footer_description
+            label: Apresentação do rodapé
+            type: text
+            required: true
+          - name: copyright
+            label: Direitos autorais
+            type: string
+            required: true
+      - name: contact
+        label: Contato e endereço
+        type: object
+        fields:
+          - name: whatsapp_number
+            label: WhatsApp com DDI e DDD, somente números
+            type: string
+            required: true
+          - name: whatsapp_display
+            label: WhatsApp exibido no site
+            type: string
+            required: true
+          - name: email
+            label: E-mail público
+            type: string
+          - name: address
+            label: Endereço
+            type: string
+            required: true
+          - name: unit
+            label: Nome da unidade
+            type: string
+            required: true
+      - name: social
+        label: Redes sociais
+        type: object
+        fields:
+          - name: instagram_url
+            label: Link do Instagram
+            type: string
+            required: true
+          - name: instagram_label
+            label: Nome exibido do Instagram
+            type: string
+            required: true
+          - name: facebook_url
+            label: Link do Facebook
+            type: string
+            required: true
+          - name: facebook_label
+            label: Nome exibido do Facebook
+            type: string
+            required: true
+
   - name: home
     label: Página inicial
     type: file

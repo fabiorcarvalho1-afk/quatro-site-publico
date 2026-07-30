@@ -23,6 +23,92 @@ const AUTH_ACCESS_TOKEN_KEY = "qf_admin_access_token";
 const AUTH_REFRESH_TOKEN_KEY = "qf_admin_refresh_token";
 const AUTH_CURRENT_USER_KEY = "qf_current_user";
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const DEFAULT_WHATSAPP_NUMBER = "5511947781922";
+let publicSiteSettings = {
+  contact: {
+    whatsapp_number: DEFAULT_WHATSAPP_NUMBER
+  }
+};
+
+function buildWhatsAppUrl(encodedText = "") {
+  const number = String(publicSiteSettings.contact?.whatsapp_number || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, "");
+  return `https://wa.me/${number}${encodedText ? `?text=${encodedText}` : ""}`;
+}
+
+async function loadPublicSiteSettings() {
+  if (currentPage.startsWith("admin-")) return;
+  if (!document.querySelector(".site-header, .site-footer")) return;
+
+  try {
+    const response = await fetch("content/site-settings.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error("Configurações gerais indisponíveis.");
+    const settings = await response.json();
+    publicSiteSettings = settings;
+
+    const brand = settings.brand || {};
+    const contact = settings.contact || {};
+    const social = settings.social || {};
+
+    document.querySelectorAll(".brand img").forEach((image) => {
+      if (brand.header_logo) image.src = brand.header_logo;
+      if (brand.logo_alt) image.alt = brand.logo_alt;
+    });
+    document.querySelectorAll(".footer-brand img").forEach((image) => {
+      if (brand.footer_logo) image.src = brand.footer_logo;
+      if (brand.logo_alt) image.alt = brand.logo_alt;
+    });
+    document.querySelectorAll(".footer-brand > p").forEach((paragraph) => {
+      if (brand.footer_description) paragraph.textContent = brand.footer_description;
+    });
+
+    document.querySelectorAll('a[href*="instagram.com"]').forEach((link) => {
+      if (social.instagram_url) link.href = social.instagram_url;
+      if (social.instagram_label) {
+        link.setAttribute("aria-label", `Instagram ${social.instagram_label}`);
+        const label = link.querySelector("span");
+        if (label) label.textContent = social.instagram_label;
+      }
+    });
+    document.querySelectorAll('a[href*="facebook.com"]').forEach((link) => {
+      if (social.facebook_url) link.href = social.facebook_url;
+      if (social.facebook_label) {
+        link.setAttribute("aria-label", `Facebook ${social.facebook_label}`);
+        const label = link.querySelector("span");
+        if (label) label.textContent = social.facebook_label;
+      }
+    });
+
+    document.querySelectorAll('a[href*="wa.me/"]').forEach((link) => {
+      const currentUrl = new URL(link.href, window.location.href);
+      const message = currentUrl.searchParams.get("text");
+      link.href = buildWhatsAppUrl(message ? encodeURIComponent(message) : "");
+      const label = link.matches(".social-link") ? link.querySelector("span") : null;
+      if (label && contact.whatsapp_display) label.textContent = contact.whatsapp_display;
+      if (contact.whatsapp_display) link.setAttribute("aria-label", `WhatsApp ${contact.whatsapp_display}`);
+    });
+
+    if (contact.email) {
+      document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+        link.href = `mailto:${contact.email}`;
+        if (link.textContent.includes("@")) link.textContent = contact.email;
+      });
+    }
+
+    document.querySelectorAll(".site-footer").forEach((footer) => {
+      const addresses = footer.querySelectorAll(".footer-address");
+      if (addresses[0] && contact.address) addresses[0].textContent = contact.address;
+      if (addresses[1] && contact.unit) addresses[1].textContent = contact.unit;
+
+      const bottom = footer.querySelectorAll(".footer-bottom span");
+      if (bottom[0] && brand.copyright) bottom[0].textContent = brand.copyright;
+      if (bottom[1]) {
+        bottom[1].textContent = [contact.address, contact.unit].filter(Boolean).join(" · ");
+      }
+    });
+  } catch (error) {
+    console.warn("[Quatro Folhas] Configurações gerais atuais preservadas.", error);
+  }
+}
 
 
 function installKidsSchoolsMenu() {
@@ -328,7 +414,7 @@ function whatsappLeadFallback(payload) {
       payload.source ? `Origem: ${payload.source}` : ""
     ].filter(Boolean).join("\n")
   );
-  window.open(`https://wa.me/5511947781922?text=${text}`, "_blank", "noreferrer");
+  window.open(buildWhatsAppUrl(text), "_blank", "noreferrer");
 }
 
 function classStatusLabel(status) {
@@ -385,7 +471,7 @@ function mountWhatsappFab() {
 
   const a = document.createElement("a");
   a.className = "wa-fab";
-  a.href = "https://wa.me/5511947781922";
+  a.href = buildWhatsAppUrl();
   a.target = "_blank";
   a.rel = "noreferrer";
   a.setAttribute("aria-label", "WhatsApp");
@@ -975,7 +1061,7 @@ document.querySelectorAll("[data-whatsapp-optin]").forEach((form) => {
       const text = encodeURIComponent(
         `Olá! Quero receber a agenda de aulas e novidades da Quatro Folhas. Meu WhatsApp é: ${valueRaw}. Autorizo receber comunicações por WhatsApp (LGPD).`
       );
-      window.open(`https://wa.me/5511947781922?text=${text}`, "_blank", "noreferrer");
+      window.open(buildWhatsAppUrl(text), "_blank", "noreferrer");
     };
 
     const done = (ok) => {
@@ -1309,6 +1395,7 @@ loadSiteHome();
 loadAgendaPage();
 loadThematicClassesPage();
 loadCoursesPage();
+loadPublicSiteSettings();
 
 // Valores preliminares do simulador de festa infantil.
 // Quando a administracao definir os valores reais, altere apenas estes campos.
@@ -1484,7 +1571,7 @@ document.querySelectorAll("[data-party-quote]").forEach((form) => {
     ].filter((line) => line !== null && line !== "");
 
     const whatsappText = encodeURIComponent(messageLines.join("\n"));
-    window.open(`https://wa.me/5511947781922?text=${whatsappText}`, "_blank", "noreferrer");
+    window.open(buildWhatsAppUrl(whatsappText), "_blank", "noreferrer");
 
     if (feedbackEl) {
       feedbackEl.hidden = false;
