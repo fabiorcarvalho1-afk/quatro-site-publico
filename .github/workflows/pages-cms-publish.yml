@@ -1,0 +1,73 @@
+name: Publicar conteúdo aprovado
+
+run-name: Publicar conteúdo aprovado no site
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Contexto enviado pelo Pages CMS
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar-site-quatro-folhas
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Validar e publicar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir origem da publicação
+        id: context
+        env:
+          PAGES_CMS_PAYLOAD: ${{ inputs.payload }}
+        shell: bash
+        run: |
+          source_branch="$(jq -r '.repository.ref // empty' <<< "$PAGES_CMS_PAYLOAD")"
+          if [[ "$source_branch" != "conteudo-revisao" ]]; then
+            echo "::error::A publicação só pode ser feita pela branch conteudo-revisao."
+            exit 1
+          fi
+          echo "source_branch=$source_branch" >> "$GITHUB_OUTPUT"
+
+      - name: Baixar conteúdo aprovado
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.context.outputs.source_branch }}
+          fetch-depth: 0
+
+      - name: Validar arquivos do site
+        shell: bash
+        run: |
+          node --check script.js
+          node --check content-loader.js
+          node --check courses-loader.js
+          node --check thematic-loader.js
+          node <<'NODE'
+          const fs = require("fs");
+          const path = require("path");
+          for (const filename of fs.readdirSync("content")) {
+            if (!filename.endsWith(".json")) continue;
+            const filepath = path.join("content", filename);
+            JSON.parse(fs.readFileSync(filepath, "utf8"));
+            console.log(`JSON válido: ${filepath}`);
+          }
+          NODE
+
+      - name: Confirmar que a publicação é segura
+        shell: bash
+        run: |
+          git fetch origin main
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            echo "::error::A versão de revisão precisa ser atualizada antes da publicação."
+            exit 1
+          fi
+
+      - name: Publicar na branch principal
+        shell: bash
+        run: git push origin HEAD:main
