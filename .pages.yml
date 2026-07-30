@@ -1,16 +1,43 @@
 media:
   - name: images
-    label: Imagens
+    label: Fotos do site
     input: assets/photos
     output: /assets/photos
     categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif]
     rename: safe
+    commit:
+      templates:
+        create: "Adiciona imagem ao site pelo painel"
+        update: "Atualiza imagem do site pelo painel"
+        delete: "Remove imagem do site pelo painel"
+        rename: "Renomeia imagem do site pelo painel"
   - name: videos
-    label: Vídeos
+    label: Vídeos do site
     input: assets/video
     output: /assets/video
     categories: [video]
+    extensions: [mp4, webm]
     rename: safe
+    commit:
+      templates:
+        create: "Adiciona vídeo ao site pelo painel"
+        update: "Atualiza vídeo do site pelo painel"
+        delete: "Remove vídeo do site pelo painel"
+        rename: "Renomeia vídeo do site pelo painel"
+  - name: logos
+    label: Logotipos (uso avançado)
+    input: assets
+    output: /assets
+    categories: [image]
+    extensions: [png]
+    rename: false
+    commit:
+      templates:
+        create: "Adiciona logotipo pelo painel"
+        update: "Atualiza logotipo pelo painel"
+        delete: "Remove logotipo pelo painel"
+        rename: "Renomeia logotipo pelo painel"
 
 components:
   button:
