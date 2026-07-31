@@ -74,24 +74,10 @@
     ]
   },
   "proof": {
-    "items": [
-      {
-        "title": "16 Alunos",
-        "description": "turmas reduzidas para acompanhamento mais próximo"
-      },
-      {
-        "title": "Professores",
-        "description": "pós-graduados e com ampla experiência de mercado"
-      },
-      {
-        "title": "Cozinha profissional",
-        "description": "estrutura altamente equipada para prática real"
-      },
-      {
-        "title": "Mídia",
-        "description": "cenário escolhido por TV, streaming, realities e produções gastronômicas"
-      }
-    ]
+    "title": "Cozinhar é transformar técnica em confiança, ingredientes em memória e aprendizado em novas possibilidades.",
+    "description": "Na Quatro Folhas, cada experiência une prática, orientação próxima e o prazer de aprender fazendo.",
+    "image": "/assets/photos/chef-fogo.jpg",
+    "alt": "Chef da Quatro Folhas preparando um prato na cozinha"
   },
   "differentials": {
     "eyebrow": "Diferenciais",

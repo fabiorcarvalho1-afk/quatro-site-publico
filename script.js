@@ -1281,7 +1281,6 @@ async function loadSiteHome() {
     ]);
     const agendaList = document.querySelector("[data-thematic-grid]");
     const coursesGrid = document.querySelector("#cursos .card-grid");
-    const proofStrip = document.querySelector(".proof-strip");
 
     if (agendaList && Array.isArray(thematicItems) && thematicItems.length) {
       const featured = thematicItems.filter((item) => item.thematic?.featured);
@@ -1295,14 +1294,6 @@ async function loadSiteHome() {
       enhanceDynamicTriggers(coursesGrid);
     }
 
-    if (proofStrip && home.stats) {
-      proofStrip.innerHTML = `
-        <div><strong>${escapeHtml(String(home.stats.activeCourses || 0))} cursos</strong><span>ativos hoje na Quatro Folhas</span></div>
-        <div><strong>${escapeHtml(String(home.stats.upcomingClasses || 0))} turmas</strong><span>com agenda aberta e programacao em andamento</span></div>
-        <div><strong>Backend unico</strong><span>site, portal e app falando a mesma lingua</span></div>
-        <div><strong>Portal do aluno</strong><span>dados sincronizados com financeiro, materiais e agenda</span></div>
-      `;
-    }
   } catch (error) {
     // Mantem o conteudo estatico se a API nao responder.
   }
