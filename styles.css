@@ -6150,6 +6150,43 @@ main .page-form-section.visit-section .eyebrow::before {
   }
 }
 
+/* Home: ritmo vertical mais compacto entre os blocos */
+.home-page main#home > section:not(.hero):not(.career-showcase) {
+  padding-top: clamp(36px, 4.5vw, 58px);
+  padding-bottom: clamp(36px, 4.5vw, 58px);
+}
+
+.home-page .section-heading,
+.home-page .thematic-heading,
+.home-page .kids-showcase-heading,
+.home-page .home-pathways-heading {
+  margin-bottom: clamp(20px, 2vw, 26px);
+}
+
+.home-page .section-cta,
+.home-page .thematic-all-link,
+.home-page .home-pathways-all {
+  margin-top: 22px;
+}
+
+.home-page .photo-gallery {
+  margin-top: 26px;
+}
+
+@media (max-width: 720px) {
+  .home-page main#home > section:not(.hero):not(.career-showcase) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .home-page .section-heading,
+  .home-page .thematic-heading,
+  .home-page .kids-showcase-heading,
+  .home-page .home-pathways-heading {
+    margin-bottom: 20px;
+  }
+}
+
 
 /* Menu Crianças e Escolas */
 .kids-nav-item .kids-mega-menu {
