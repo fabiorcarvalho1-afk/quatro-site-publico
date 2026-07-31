@@ -570,30 +570,6 @@ content:
                 type: string
                 required: true
 
-      - name: proof
-        label: Faixa editorial de gastronomia
-        type: object
-        fields:
-          - name: title
-            label: Frase principal
-            type: text
-            required: true
-          - name: description
-            label: Texto de apoio
-            type: text
-            required: true
-          - name: image
-            label: Imagem
-            type: image
-            required: true
-            options:
-              path: assets/photos
-              extensions: [jpg, jpeg, png, webp]
-          - name: alt
-            label: Descrição acessível da imagem
-            type: string
-            required: true
-
       - name: differentials
         label: Diferenciais da formação
         type: object

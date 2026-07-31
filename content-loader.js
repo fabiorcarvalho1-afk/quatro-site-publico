@@ -266,13 +266,6 @@
     renderItems(root, data.items);
   };
 
-  const renderProof = (data) => {
-    const root = section("proof");
-    if (!root || !data) return;
-    renderHeading(root, data);
-    image(root.querySelector("[data-cms-image]"), data.image, data.alt);
-  };
-
   const renderContact = (data) => {
     const root = section("contact");
     if (!root || !data) return;
@@ -302,7 +295,6 @@
         });
       }
 
-      renderProof(content.proof);
       renderSimpleSection("differentials", content.differentials);
       renderSimpleSection("media_highlights", content.media_highlights);
       renderPathways(content.pathways);
