@@ -199,60 +199,6 @@
       }
     ]
   },
-  "thematic": {
-    "eyebrow": "Aulas temáticas",
-    "title": "Escolha sua próxima experiência",
-    "description": "Aulas práticas para aprender novos preparos, viver bons momentos e aproveitar a gastronomia sem precisar ser profissional.",
-    "all_label": "Ver todas as aulas",
-    "all_href": "aulas-tematicas.html#agenda",
-    "cards": [
-      {
-        "category": "massas",
-        "status": "Inscrições abertas",
-        "urgent": false,
-        "image": "/assets/photos/mesa-pratos.jpg",
-        "alt": "Massas Artesanais",
-        "title": "Massas Artesanais",
-        "description": "Uma experiência prática para aprender técnicas de massas frescas e seus acompanhamentos.",
-        "date": "20/06",
-        "time": "19h",
-        "duration": "3h",
-        "preparations": "Fettuccine · Ravioli · Molho pomodoro",
-        "price": "R$ 280",
-        "button": "Reservar e comprar"
-      },
-      {
-        "category": "confeitaria",
-        "status": "Últimas vagas",
-        "urgent": true,
-        "image": "/assets/photos/aula-confeitaria.jpg",
-        "alt": "Confeitaria para Receber",
-        "title": "Confeitaria para Receber",
-        "description": "Preparos elegantes para servir, compartilhar e surpreender em ocasiões especiais.",
-        "date": "27/06",
-        "time": "19h",
-        "duration": "3h",
-        "preparations": "Tartelete · Entremet · Finalização",
-        "price": "R$ 320",
-        "button": "Reservar e comprar"
-      },
-      {
-        "category": "cozinha",
-        "status": "Inscrições abertas",
-        "urgent": false,
-        "image": "/assets/photos/cozinha-bancadas.jpg",
-        "alt": "Noite Italiana",
-        "title": "Noite Italiana",
-        "description": "Uma noite de cozinha, encontro e mesa com sabores clássicos da gastronomia italiana.",
-        "date": "04/07",
-        "time": "19h",
-        "duration": "3h",
-        "preparations": "Focaccia · Risoto · Tiramisù",
-        "price": "R$ 300",
-        "button": "Reservar e comprar"
-      }
-    ]
-  },
   "kids": {
     "eyebrow": "Crianças e Escolas",
     "title": "Experiências que ensinam, aproximam e ficam na memória",

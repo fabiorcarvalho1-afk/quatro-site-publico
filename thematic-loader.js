@@ -24,6 +24,43 @@
     maximumFractionDigits: 0
   }).format(Number(value) || 0);
 
+  const emptyMessage = "Nenhuma aula temática cadastrada no momento.";
+
+  const renderEmpty = (container, message = emptyMessage) => {
+    if (!container) return;
+    container.replaceChildren(create("p", "thematic-empty", message));
+  };
+
+  const categoryLabel = (value) => String(value || "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/(^|\s)\S/g, (letter) => letter.toUpperCase());
+
+  const renderFilters = (root, items) => {
+    const filters = root?.querySelector(".thematic-filters");
+    if (!filters) return;
+
+    const categories = [...new Set(items.map((item) => String(item.category || "").trim()).filter(Boolean))];
+    if (!categories.length) {
+      filters.replaceChildren();
+      filters.hidden = true;
+      return;
+    }
+
+    filters.hidden = false;
+    const all = create("button", "is-active", "Todas");
+    all.type = "button";
+    all.dataset.thematicFilter = "all";
+    const buttons = categories.map((category) => {
+      const button = create("button", "", categoryLabel(category));
+      button.type = "button";
+      button.dataset.thematicFilter = category;
+      return button;
+    });
+    filters.replaceChildren(all, ...buttons);
+  };
+
   const isUnavailable = (item) => {
     const status = String(item.status || "").toLowerCase();
     return item.vacancies === 0 || status === "esgotada" || status === "encerrada";
@@ -104,9 +141,15 @@
 
     const grid = root.querySelector("[data-thematic-grid]");
     if (grid) {
-      grid.replaceChildren(...items.slice(0, limit || items.length).map(renderThematicCard));
-      if (typeof window.enhanceDynamicTriggers === "function") window.enhanceDynamicTriggers(grid);
+      const displayedItems = items.slice(0, limit || items.length);
+      if (displayedItems.length) {
+        grid.replaceChildren(...displayedItems.map(renderThematicCard));
+        if (typeof window.enhanceDynamicTriggers === "function") window.enhanceDynamicTriggers(grid);
+      } else {
+        renderEmpty(grid);
+      }
     }
+    renderFilters(root, items);
 
     const allLink = root.querySelector(".thematic-all-link");
     if (allLink && copy.all_label) allLink.textContent = copy.all_label;
@@ -130,34 +173,46 @@
       if (description) description.textContent = copy.description || "";
     }
 
-    if (featureRoot && featured) {
-      const meta = create("div", "agenda-meta");
-      [formatDate(featured.date), formatTime(featured.time), featured.duration || "", copy.feature_note || ""]
-        .forEach((value) => meta.append(create("span", "", value)));
-      const button = create("button");
-      configureButton(button, featured, copy.reserve_label || "Reservar vaga");
-      featureRoot.replaceChildren(
-        create("span", "tag accent", copy.feature_label || "Destaque da semana"),
-        create("h2", "", featured.title || ""),
-        create("p", "", featured.description || ""),
-        meta,
-        button
-      );
-      if (typeof window.enhanceDynamicTriggers === "function") window.enhanceDynamicTriggers(featureRoot);
+    if (featureRoot) {
+      if (featured) {
+        const meta = create("div", "agenda-meta");
+        [formatDate(featured.date), formatTime(featured.time), featured.duration || "", copy.feature_note || ""]
+          .forEach((value) => meta.append(create("span", "", value)));
+        const button = create("button");
+        configureButton(button, featured, copy.reserve_label || "Reservar vaga");
+        featureRoot.replaceChildren(
+          create("span", "tag accent", copy.feature_label || "Destaque da semana"),
+          create("h2", "", featured.title || ""),
+          create("p", "", featured.description || ""),
+          meta,
+          button
+        );
+        if (typeof window.enhanceDynamicTriggers === "function") window.enhanceDynamicTriggers(featureRoot);
+      } else {
+        renderEmpty(featureRoot);
+      }
     }
 
     if (calendar) {
-      calendar.replaceChildren(...items.slice(0, 4).map((item) => {
-        const day = String(item.date || "").split("-")[2] || "--";
-        const cell = create("div");
-        cell.append(create("strong", "", day), create("span", "", formatMonth(item.date)), create("small", "", item.title || ""));
-        return cell;
-      }));
+      if (items.length) {
+        calendar.replaceChildren(...items.slice(0, 4).map((item) => {
+          const day = String(item.date || "").split("-")[2] || "--";
+          const cell = create("div");
+          cell.append(create("strong", "", day), create("span", "", formatMonth(item.date)), create("small", "", item.title || ""));
+          return cell;
+        }));
+      } else {
+        renderEmpty(calendar);
+      }
     }
 
     if (listRoot) {
-      listRoot.replaceChildren(...items.map((item) => renderAgendaCard(item, copy.reserve_label || "Reservar vaga")));
-      if (typeof window.enhanceDynamicTriggers === "function") window.enhanceDynamicTriggers(listRoot);
+      if (items.length) {
+        listRoot.replaceChildren(...items.map((item) => renderAgendaCard(item, copy.reserve_label || "Reservar vaga")));
+        if (typeof window.enhanceDynamicTriggers === "function") window.enhanceDynamicTriggers(listRoot);
+      } else {
+        renderEmpty(listRoot);
+      }
     }
   };
 

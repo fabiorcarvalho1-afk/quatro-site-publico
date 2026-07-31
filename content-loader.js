@@ -196,17 +196,6 @@
     });
   };
 
-  const renderThematic = (data) => {
-    const root = section("thematic");
-    if (!root || !data) return;
-    renderHeading(root, data);
-    renderItems(root, data.cards);
-
-    const all = root.querySelector('[data-cms-link="all"]');
-    text(all, data.all_label);
-    href(all, data.all_href);
-  };
-
   const renderKids = (data) => {
     const root = section("kids");
     if (!root || !data) return;

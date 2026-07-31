@@ -872,7 +872,7 @@ content:
             required: true
 
   - name: thematic_classes
-    label: Aulas temáticas e agenda
+    label: Aulas temáticas — cadastro único
     type: file
     path: content/thematic-classes.json
     format: json
@@ -948,10 +948,10 @@ content:
             type: string
             required: true
       - name: classes
-        label: Aulas cadastradas
+        label: AULAS PUBLICADAS — cadastre aqui
+        description: Esta é a única lista usada na página inicial, na página de aulas temáticas e na agenda. Se não houver itens, nenhuma aula será exibida.
         component: thematic_card
         list:
-          min: 1
           collapsible:
             collapsed: true
             summary: "{order} — {title} — {date}"

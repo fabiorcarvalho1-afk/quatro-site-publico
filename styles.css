@@ -5151,6 +5151,25 @@ main .page-form-section.visit-section .eyebrow::before {
   align-items: stretch;
 }
 
+.thematic-empty {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid rgba(127, 5, 8, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 253, 250, 0.74);
+  color: var(--muted);
+  text-align: center;
+}
+
+.agenda-feature-card > .thematic-empty {
+  align-self: center;
+  border-color: rgba(251, 247, 239, 0.22);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(251, 247, 239, 0.82);
+}
+
 .thematic-card {
   display: flex;
   min-width: 0;
