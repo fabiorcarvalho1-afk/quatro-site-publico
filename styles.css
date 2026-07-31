@@ -5335,6 +5335,20 @@ main .page-form-section.visit-section .eyebrow::before {
   text-transform: uppercase;
 }
 
+.thematic-price:has(.thematic-installments) {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.thematic-price .thematic-installments {
+  max-width: 190px;
+  color: #8b1b20;
+  font-size: 11px;
+  line-height: 1.35;
+  text-transform: none;
+}
+
 .thematic-card-footer .solid-btn {
   width: 100%;
   min-height: 46px;

@@ -1169,6 +1169,10 @@ function renderThematicCard(item, index = 0) {
   const preparations = thematicPreparations(item);
   const priceCents = item.thematic?.priceCents ?? item.course?.priceCents;
   const price = priceCents ? formatCurrencyCents(priceCents) : "Consulte";
+  const maxCreditInstallments = Math.max(1, Number(item.thematic?.maxCreditInstallments) || 1);
+  const installmentLabel = priceCents && maxCreditInstallments > 1
+    ? `até ${maxCreditInstallments}x de ${formatCurrencyCents(Math.round(priceCents / maxCreditInstallments))} no cartão`
+    : "";
   const available = Number.isFinite(Number(item.seatsAvailable)) ? Number(item.seatsAvailable) : null;
   const status = item.status === "sold_out"
     ? "Esgotada"
@@ -1196,7 +1200,7 @@ function renderThematicCard(item, index = 0) {
           <span>${preparations.map(escapeHtml).join(" · ")}</span>
         </div>
         <div class="thematic-card-footer">
-          <span class="thematic-price"><small>por pessoa</small>${escapeHtml(price)}</span>
+          <span class="thematic-price"><small>por pessoa</small>${escapeHtml(price)}${installmentLabel ? `<small class="thematic-installments">${escapeHtml(installmentLabel)}</small>` : ""}</span>
           <button class="solid-btn" ${soldOut ? "disabled" : `data-open="class-form"`} data-interest="${escapeHtml(title)}" data-date="${escapeHtml(date)}" data-content="${escapeHtml(description)}" data-includes="${escapeHtml(item.thematic?.includes || preparations.join(", "))}">${soldOut ? "Vagas esgotadas" : "Reservar e comprar"}</button>
         </div>
       </div>
