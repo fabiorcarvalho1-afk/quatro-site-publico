@@ -147,55 +147,55 @@
     "cards": [
       {
         "id": "professional",
+        "image": "/assets/photos/whatsapp-image-2026-07-24-at-230529.jpeg",
+        "alt": "Alunos em formação profissional na cozinha",
         "label": "Formação profissional",
         "title": "Quero me profissionalizar",
         "title_line_1": "Quero me",
         "title_line_2": "profissionalizar",
         "description": "Formações completas para desenvolver técnica, confiança e novas possibilidades profissionais.",
         "cta": "Conhecer formações",
-        "href": "cursos-profissionalizantes.html",
-        "image": "/assets/photos/cozinha-bancadas.jpg",
-        "alt": "Alunos em formação profissional na cozinha"
+        "href": "cursos-profissionalizantes.html"
       },
       {
         "id": "short",
+        "image": "/assets/photos/whatsapp-image-2026-07-24-at-235457.jpeg",
+        "alt": "Turma de curso de curta duração na Quatro Folhas",
         "label": "Curta duração",
         "title": "Quero aprender em menos tempo",
         "description": "Cursos diretos para ampliar repertório e aprender novas técnicas.",
         "cta": "Ver cursos rápidos",
-        "href": "cursos-rapidos.html",
-        "image": "/assets/photos/whatsapp-image-2026-07-24-at-230953.jpeg",
-        "alt": "Turma de curso de curta duração na Quatro Folhas"
+        "href": "cursos-rapidos.html"
       },
       {
         "id": "thematic",
+        "image": "/assets/photos/timthumb.jpg",
+        "alt": "Participantes em uma aula temática",
         "label": "Aula temática",
         "title": "Quero viver uma experiência em um dia",
         "description": "Uma aula prática, com data marcada e um tema gastronômico específico.",
         "cta": "Ver próximas aulas",
-        "href": "aulas-tematicas.html#agenda",
-        "image": "/assets/photos/aula-confeitaria.jpg",
-        "alt": "Participantes em uma aula temática"
+        "href": "aulas-tematicas.html#agenda"
       },
       {
         "id": "kids",
+        "image": "/assets/photos/whatsapp-image-2026-07-24-at-235119.jpeg",
+        "alt": "Crianças em experiência gastronômica",
         "label": "Mini Chef",
         "title": "Quero uma experiência para crianças",
         "description": "Gastronomia, criatividade e diversão para aprender cozinhando.",
         "cta": "Conhecer Mini Chef",
-        "href": "mini-chef.html",
-        "image": "/assets/photos/alunos-turma.jpg",
-        "alt": "Crianças em experiência gastronômica"
+        "href": "mini-chef.html"
       },
       {
         "id": "gift",
+        "image": "/assets/photos/lounge-chef.jpg",
+        "alt": "Experiência gastronômica para presentear",
         "label": "Cartão presente",
         "title": "Quero presentear alguém",
         "description": "Um presente diferente para quem ama gastronomia e novas experiências.",
         "cta": "Escolher cartão presente",
-        "href": "voucher.html",
-        "image": "/assets/photos/lounge-chef.jpg",
-        "alt": "Experiência gastronômica para presentear"
+        "href": "voucher.html"
       }
     ]
   },
