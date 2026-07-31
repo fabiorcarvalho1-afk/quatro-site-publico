@@ -174,7 +174,6 @@
         "description": "Formações completas para desenvolver técnica, confiança e novas possibilidades profissionais.",
         "cta": "Conhecer formações",
         "href": "cursos-profissionalizantes.html",
-        "media_type": "image",
         "image": "/assets/photos/cozinha-bancadas.jpg",
         "alt": "Alunos em formação profissional na cozinha"
       },
@@ -185,9 +184,7 @@
         "description": "Cursos diretos para ampliar repertório e aprender novas técnicas.",
         "cta": "Ver cursos rápidos",
         "href": "cursos-rapidos.html",
-        "media_type": "image",
-        "image": "/assets/photos/curta-duracao-turma.jpeg",
-        "poster": "/assets/photos/whatsapp-image-2026-07-24-at-230953.jpeg",
+        "image": "/assets/photos/whatsapp-image-2026-07-24-at-230953.jpeg",
         "alt": "Turma de curso de curta duração na Quatro Folhas"
       },
       {
@@ -197,7 +194,6 @@
         "description": "Uma aula prática, com data marcada e um tema gastronômico específico.",
         "cta": "Ver próximas aulas",
         "href": "aulas-tematicas.html#agenda",
-        "media_type": "image",
         "image": "/assets/photos/aula-confeitaria.jpg",
         "alt": "Participantes em uma aula temática"
       },
@@ -208,7 +204,6 @@
         "description": "Gastronomia, criatividade e diversão para aprender cozinhando.",
         "cta": "Conhecer Mini Chef",
         "href": "mini-chef.html",
-        "media_type": "image",
         "image": "/assets/photos/alunos-turma.jpg",
         "alt": "Crianças em experiência gastronômica"
       },
@@ -219,7 +214,6 @@
         "description": "Um presente diferente para quem ama gastronomia e novas experiências.",
         "cta": "Escolher cartão presente",
         "href": "voucher.html",
-        "media_type": "image",
         "image": "/assets/photos/lounge-chef.jpg",
         "alt": "Experiência gastronômica para presentear"
       }

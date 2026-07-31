@@ -170,34 +170,14 @@ components:
         label: Link
         type: string
         required: true
-      - name: media_type
-        label: Tipo de mídia
-        type: select
-        required: true
-        options:
-          values:
-            - name: image
-              label: Imagem
-            - name: video
-              label: Vídeo
       - name: image
         label: Imagem
         type: image
-        options:
-          media: images
-      - name: video
-        label: Arquivo de vídeo
-        type: file
-        options:
-          media: videos
-          extensions: [mp4, webm]
-      - name: poster
-        label: Capa do vídeo
-        type: image
+        required: true
         options:
           media: images
       - name: alt
-        label: Descrição acessível da mídia
+        label: Descrição acessível da imagem
         type: string
         required: true
 

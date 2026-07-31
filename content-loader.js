@@ -191,22 +191,8 @@
       if (!media) return;
       if (typeof card.alt === "string") media.setAttribute("aria-label", card.alt);
 
-      if (card.media_type === "video" && card.video) {
-        const video = document.createElement("video");
-        video.src = card.video;
-        video.muted = true;
-        video.loop = true;
-        video.autoplay = true;
-        video.playsInline = true;
-        video.preload = "metadata";
-        video.setAttribute("aria-hidden", "true");
-        if (card.poster) video.poster = card.poster;
-        media.style.backgroundImage = card.poster ? `url("${card.poster}")` : "";
-        media.replaceChildren(video);
-      } else {
-        media.replaceChildren();
-        background(media, card.image, card.alt);
-      }
+      media.replaceChildren();
+      background(media, card.image, card.alt);
     });
   };
 
