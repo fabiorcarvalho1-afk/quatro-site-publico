@@ -1,6 +1,6 @@
 media:
   - name: images
-    label: Fotos do site
+    label: Biblioteca de fotos — enviar arquivos
     input: assets/photos
     output: /assets/photos
     categories: [image]
@@ -130,6 +130,7 @@ components:
         label: Identificador
         type: select
         required: true
+        hidden: true
         options:
           values:
             - name: professional
@@ -142,8 +143,20 @@ components:
               label: Mini Chef
             - name: gift
               label: Cartão presente
+      - name: image
+        label: FOTO DO CARTÃO — TROCAR AQUI
+        type: image
+        required: true
+        description: "Para trocar: clique na lixeira da miniatura atual. Depois escolha Carregar para enviar uma foto nova ou Selecionar para usar uma foto da biblioteca."
+        options:
+          media: images
+      - name: alt
+        label: O que aparece na foto?
+        type: string
+        required: true
+        description: Escreva uma frase curta descrevendo a nova foto.
       - name: label
-        label: Categoria
+        label: Tipo de experiência
         type: string
         required: true
       - name: title
@@ -168,16 +181,6 @@ components:
         required: true
       - name: href
         label: Link
-        type: string
-        required: true
-      - name: image
-        label: Imagem
-        type: image
-        required: true
-        options:
-          media: images
-      - name: alt
-        label: Descrição acessível da imagem
         type: string
         required: true
 
@@ -451,7 +454,7 @@ content:
             required: true
 
   - name: home
-    label: Página inicial
+    label: Página inicial — fotos e textos
     type: file
     path: content/home.json
     format: json
@@ -647,8 +650,9 @@ content:
             type: string
             required: true
           - name: cards
-            label: Cartões
+            label: Fotos e textos dos cartões
             component: pathway_card
+            description: Abra o cartão desejado. A opção para trocar a foto aparece primeiro.
             list:
               min: 5
               max: 5
