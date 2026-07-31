@@ -6173,6 +6173,14 @@ main .page-form-section.visit-section .eyebrow::before {
   margin-top: 26px;
 }
 
+.home-page main#home .content-band.dark .eyebrow {
+  color: rgba(255, 250, 242, 0.96);
+}
+
+.home-page main#home .content-band.dark .eyebrow::before {
+  background: rgba(255, 250, 242, 0.82);
+}
+
 @media (max-width: 720px) {
   .home-page main#home > section:not(.hero):not(.career-showcase) {
     padding-top: 30px;
