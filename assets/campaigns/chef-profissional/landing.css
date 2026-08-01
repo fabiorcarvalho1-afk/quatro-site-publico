@@ -109,6 +109,22 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   text-transform: uppercase;
 }
 .campaign-label::before { width: 44px; height: 2px; background: var(--wine-700); content: ""; }
+.last-spots-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: -2px 0 16px;
+  padding: 8px 13px;
+  border: 1px solid rgba(116, 19, 38, .24);
+  border-radius: 999px;
+  background: #f8e8e6;
+  color: var(--wine-800);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.last-spots-badge::before { width: 7px; height: 7px; border-radius: 50%; background: #b20d24; box-shadow: 0 0 0 4px rgba(178, 13, 36, .1); content: ""; }
 .hero-copy h1,
 .section-title,
 .offer-card h2,

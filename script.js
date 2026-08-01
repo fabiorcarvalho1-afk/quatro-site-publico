@@ -774,10 +774,6 @@ const turnstileWidgets = new WeakMap();
 
 const securityCheckMarkup = `
   <div class="turnstile-check" data-turnstile-container aria-label="Verificação de segurança"></div>
-  <label class="spam-trap" aria-hidden="true">
-    Site
-    <input type="text" name="website" tabindex="-1" autocomplete="off">
-  </label>
 `;
 
 function getTurnstileToken(form) {
