@@ -118,7 +118,7 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   font-weight: 600;
   letter-spacing: -.035em;
 }
-.hero-copy h1 { max-width: 730px; font-size: clamp(40px, 3.8vw, 55px); line-height: 1.02; }
+.hero-copy h1 { max-width: 700px; font-size: clamp(34px, 3.2vw, 46px); line-height: 1.08; letter-spacing: -.025em; }
 .hero-result-line { display: block; margin-top: 8px; color: var(--wine-800); font-size: .82em; line-height: 1.06; }
 .hero-lead { max-width: 700px; margin: 18px 0 0; color: var(--muted); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.52; }
 .hero-lead strong { color: var(--ink); }
@@ -333,7 +333,7 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .header-cta { min-height: 42px; padding: 9px 14px; font-size: 11px; }
   .campaign-hero { padding-top: 38px; }
   .hero-grid { gap: 34px; }
-  .hero-copy h1 { font-size: clamp(34px, 9.7vw, 44px); }
+  .hero-copy h1 { font-size: clamp(31px, 8.5vw, 38px); }
   .hero-result-line { font-size: .78em; }
   .hero-lead { font-size: 16px; }
   .hero-benefits { gap: 9px; }
