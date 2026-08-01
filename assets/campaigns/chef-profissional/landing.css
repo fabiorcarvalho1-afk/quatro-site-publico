@@ -119,8 +119,7 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   letter-spacing: -.035em;
 }
 .hero-copy h1 { max-width: 720px; font-size: clamp(40px, 4vw, 58px); line-height: 1.03; }
-.hero-practical-line { display: block; margin-top: 8px; color: var(--wine-800); font-size: .7em; line-height: 1.08; white-space: nowrap; }
-.hero-result-line { display: block; margin-top: 8px; color: var(--ink); font-size: .82em; line-height: 1.06; }
+.hero-result-line { display: block; margin-top: 8px; color: var(--wine-800); font-size: .82em; line-height: 1.06; }
 .hero-lead { max-width: 680px; margin: 24px 0 0; color: var(--muted); font-size: clamp(17px, 1.6vw, 21px); line-height: 1.55; }
 .hero-lead strong { color: var(--ink); }
 .hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 30px 0; }
@@ -326,7 +325,6 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .campaign-hero { padding-top: 38px; }
   .hero-grid { gap: 34px; }
   .hero-copy h1 { font-size: clamp(34px, 9.7vw, 44px); }
-  .hero-practical-line { font-size: .61em; letter-spacing: -.035em; }
   .hero-result-line { font-size: .78em; }
   .hero-lead { font-size: 16px; }
   .hero-facts { grid-template-columns: 1fr; gap: 9px; }
@@ -401,8 +399,4 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .header-cta,
   .primary-cta,
   .secondary-cta { transition: none; }
-}
-
-@media (max-width: 380px) {
-  .hero-practical-line { font-size: .54em; }
 }
