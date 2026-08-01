@@ -217,8 +217,8 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
 .value-mosaic { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .value-feature,
 .value-card { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; }
-.value-feature { grid-column: span 2; min-height: 280px; background: var(--wine-950); color: #fff; }
-.value-feature img { width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
+.value-feature { grid-column: span 2; height: 260px; min-height: 0; background: var(--wine-950); color: #fff; }
+.value-feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
 .value-feature::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 31%, rgba(50, 5, 15, .9) 100%); content: ""; }
 .value-feature-copy { position: absolute; z-index: 2; right: 0; bottom: 0; left: 0; padding: 24px 26px; }
 .value-feature-copy span,
@@ -230,8 +230,10 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
 .value-card p { margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
 .value-card a { display: inline-flex; margin-top: 20px; color: var(--wine-800); font-size: 12px; font-weight: 800; }
 .value-card a::after { margin-left: 9px; content: "→"; }
-.value-card-international { background: linear-gradient(145deg, #6f1124, #430713); color: #fff; }
-.value-partner-logo { width: 72px; height: 72px; margin: 0 0 14px auto; border-radius: 10px; object-fit: cover; }
+.value-card-international { height: 260px; min-height: 0; padding: 17px 20px; background: linear-gradient(145deg, #6f1124, #430713); color: #fff; }
+.value-card-international > span { margin-bottom: 7px; }
+.value-card-international p { margin-top: 7px; font-size: 11px; line-height: 1.42; }
+.value-partner-logo { width: 54px; height: 54px; margin: 0 0 8px auto; border-radius: 8px; object-fit: cover; }
 .value-card-international h3 { color: #fff; }
 .value-card-international p { color: rgba(255,255,255,.76); }
 .value-card-international a { color: #f0d18c; }
@@ -317,7 +319,7 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .section-heading { grid-template-columns: 1fr; gap: 18px; }
   .value-heading { grid-template-columns: 1fr; gap: 18px; }
   .value-mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .value-feature { grid-column: 1 / -1; min-height: 300px; }
+  .value-feature { grid-column: 1 / -1; height: 260px; min-height: 0; }
   .value-card,
   .value-card-digital,
   .value-card-equipment { grid-column: span 1; }
@@ -377,7 +379,8 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .value-card,
   .value-card-digital,
   .value-card-equipment { grid-column: 1; min-height: auto; }
-  .value-feature { min-height: 270px; }
+  .value-feature { height: 230px; min-height: 0; }
+  .value-card-international { height: auto; min-height: 225px; }
   .value-feature-copy { padding: 20px; }
   .value-feature-copy h3 { font-size: 24px; }
   .value-closing { grid-template-columns: 1fr; gap: 8px; padding: 18px 20px; }
