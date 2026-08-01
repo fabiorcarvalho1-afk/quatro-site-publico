@@ -460,6 +460,8 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
     text-transform: uppercase;
   }
   .hero-mobile-highlights span::before { position: absolute; left: 16px; width: 2px; height: 40px; background: var(--gold); box-shadow: 5px 0 0 var(--gold), 10px 0 0 var(--gold); content: ""; }
+  .hero-mobile-highlights span:last-child { padding-right: 6px; padding-left: 36px; font-size: 14px; letter-spacing: -.015em; }
+  .hero-mobile-highlights span:last-child::before { left: 12px; }
   .hero-included { margin-top: 30px; background: #fffaf2; }
   .hero-included > strong { font-size: 12px; line-height: 1.35; }
   .hero-benefits { gap: 9px; }
