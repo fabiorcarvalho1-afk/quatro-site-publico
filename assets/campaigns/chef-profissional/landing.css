@@ -275,7 +275,9 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
 .value-closing-result { padding-right: 0; padding-left: clamp(24px, 3.5vw, 50px); border-left: 1px solid rgba(231, 196, 126, .6); }
 .value-closing-step span { display: block; margin-bottom: 8px; color: #e7c47e; font-size: 10px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
 .value-closing-step strong { display: block; font-family: "Playfair Display", Georgia, serif; font-size: clamp(19px, 2vw, 25px); font-weight: 600; line-height: 1.18; }
-.value-closing > p { grid-column: 1 / -1; margin: 18px 0 0; padding-top: 13px; border-top: 1px solid rgba(231, 196, 126, .6); color: #e7c47e; font-size: 10px; font-weight: 800; letter-spacing: .15em; text-align: center; text-transform: uppercase; }
+.value-closing-footer { display: flex; grid-column: 1 / -1; align-items: center; justify-content: center; gap: 16px; margin-top: 18px; padding-top: 13px; border-top: 1px solid rgba(231, 196, 126, .6); color: #e7c47e; }
+.value-closing-footer strong { font-family: "Playfair Display", Georgia, serif; font-size: clamp(42px, 4vw, 58px); font-weight: 500; line-height: .8; }
+.value-closing-footer span { font-size: clamp(11px, 1.15vw, 14px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 
 .schedule-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .schedule-card { padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 10px 28px rgba(61, 7, 18, .05); }
@@ -416,7 +418,9 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .value-closing { grid-template-columns: 1fr; padding: 20px; }
   .value-closing-step { padding: 0; }
   .value-closing-result { margin-top: 17px; padding-top: 17px; border-top: 1px solid rgba(231, 196, 126, .45); border-left: 0; }
-  .value-closing > p { grid-column: 1; line-height: 1.45; }
+  .value-closing-footer { grid-column: 1; justify-content: flex-start; gap: 12px; }
+  .value-closing-footer strong { font-size: 44px; }
+  .value-closing-footer span { font-size: 10px; line-height: 1.4; }
   .schedule-grid { grid-template-columns: 1fr; }
   .schedule-card { padding: 20px; }
   .offer-layout { grid-template-columns: 1fr; }
