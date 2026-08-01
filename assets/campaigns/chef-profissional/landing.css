@@ -274,10 +274,10 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
 .offer-deadline { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); color: var(--wine-800); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .offer-price-old { margin: 28px 0 0; color: #8a7b73; font-size: 13px; }
 .offer-price-old del { margin-left: 7px; }
-.offer-card h2 { margin-top: 12px; color: var(--wine-800); font-size: clamp(40px, 4vw, 56px); line-height: .98; }
-.offer-card h2 small { display: block; margin-top: 10px; color: var(--muted); font-family: "Inter", Arial, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0; }
+.offer-card h2 { margin: 12px 0 0; color: var(--wine-800); font-size: clamp(40px, 4vw, 56px); line-height: .98; }
+.offer-card h2 small { display: block; margin-top: 12px; color: var(--muted); font-family: "Inter", Arial, sans-serif; font-size: 13px; font-weight: 500; line-height: 1.4; letter-spacing: 0; }
 .offer-total { margin: 17px 0 0; color: var(--muted); font-size: 13px; }
-.offer-payment-note { margin: -8px 0 15px; color: var(--wine-800); font-size: 13px; font-weight: 800; }
+.offer-payment-note { margin: 10px 0 0; color: var(--wine-800); font-size: 13px; font-weight: 800; line-height: 1.4; }
 .offer-saving { margin: 20px 0 25px; padding: 14px 16px; border-radius: 12px; background: #edf2dc; color: #4d6516; font-size: 13px; font-weight: 800; }
 .offer-card .primary-cta { width: 100%; }
 .offer-fineprint { margin: 13px 0 0; color: #85756d; font-size: 11px; line-height: 1.45; text-align: center; }
