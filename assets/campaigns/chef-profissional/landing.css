@@ -138,7 +138,9 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
 .hero-result-line { display: block; margin-top: 8px; color: var(--wine-800); font-size: .82em; line-height: 1.06; }
 .hero-lead { max-width: 700px; margin: 18px 0 0; color: var(--muted); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.52; }
 .hero-lead strong { color: var(--ink); }
-.hero-benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; margin-top: 18px; }
+.hero-included { margin-top: 18px; padding: 13px 15px 14px; border: 1px solid rgba(116, 19, 38, .16); border-left: 4px solid var(--wine-800); border-radius: 12px; background: rgba(255, 253, 249, .82); }
+.hero-included > strong { display: block; color: var(--wine-800); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.hero-benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; margin-top: 10px; }
 .hero-benefits span { position: relative; padding-left: 22px; color: #4d403a; font-size: 12px; font-weight: 750; line-height: 1.35; }
 .hero-benefits span::before { position: absolute; left: 0; color: var(--green); font-size: 14px; font-weight: 900; content: "✓"; }
 .hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin: 20px 0; }
