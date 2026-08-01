@@ -135,6 +135,7 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   letter-spacing: -.035em;
 }
 .hero-copy h1 { max-width: 700px; font-size: clamp(34px, 3.2vw, 46px); line-height: 1.08; letter-spacing: -.025em; }
+.hero-title-highlight { color: var(--wine-800); }
 .hero-result-line { display: block; margin-top: 8px; color: var(--wine-800); font-size: .82em; line-height: 1.06; }
 .hero-lead { max-width: 700px; margin: 18px 0 0; color: var(--muted); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.52; }
 .hero-lead strong { color: var(--ink); }
@@ -373,10 +374,12 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .campaign-hero { padding-top: 38px; }
   .hero-grid { gap: 34px; }
   .hero-copy h1 { font-size: clamp(31px, 8.5vw, 38px); }
+  .hero-title-highlight { display: block; margin-bottom: 4px; }
   .hero-result-line { font-size: .78em; }
   .hero-lead { font-size: 16px; }
+  .hero-included > strong { font-size: 12px; line-height: 1.35; }
   .hero-benefits { gap: 9px; }
-  .hero-benefits span { font-size: 11px; }
+  .hero-benefits span { font-size: 13px; line-height: 1.4; }
   .hero-facts { grid-template-columns: 1fr; gap: 9px; }
   .hero-fact { min-height: 0; padding: 13px 15px; }
   .hero-fact strong { font-size: 14px; }
@@ -387,6 +390,8 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .hero-social > div:first-child { grid-column: 1 / -1; padding-left: 0; }
   .hero-social > div:nth-child(2) { padding-left: 0; border-right: 1px solid var(--line); border-bottom: 0; }
   .hero-social > div:last-child { border-bottom: 0; }
+  .hero-social strong { font-size: 13px; }
+  .hero-social div > span { font-size: 12px; }
   .hero-visual { min-height: 470px; }
   .hero-photo-main { border-radius: 26px 76px 26px 26px; }
   .offer-float { right: 12px; bottom: 18px; padding: 18px; }
@@ -401,11 +406,13 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .section-intro { font-size: 15px; }
   .module-grid { grid-template-columns: 1fr; }
   .module-card { min-height: 0; padding: 19px 20px; }
-  .module-card h3 { margin-top: 13px; }
+  .module-card h3 { margin-top: 13px; font-size: 22px; }
+  .module-card p { font-size: 14px; line-height: 1.5; }
   .module-cta-row { align-items: stretch; flex-direction: column; gap: 12px; padding: 17px; }
   .module-cta-row .primary-cta { width: 100%; }
   .practice-feature { min-height: 390px; padding: 28px 22px; }
   .practice-number { font-size: 68px; }
+  .practice-feature p { font-size: 15px; line-height: 1.55; }
   .practice-gallery { grid-template-rows: none; grid-template-columns: 1fr; }
   .practice-photo { min-height: 230px; }
   .value-mosaic { grid-template-columns: 1fr; }
@@ -416,7 +423,10 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .value-feature { height: 230px; min-height: 0; }
   .value-card-international { height: auto; min-height: 225px; }
   .value-feature-copy { padding: 20px; }
-  .value-feature-copy h3 { font-size: 24px; }
+  .value-feature-copy h3 { font-size: 25px; }
+  .value-feature-copy p { font-size: 14px; line-height: 1.5; }
+  .value-card h3 { font-size: 23px; }
+  .value-card p { font-size: 14px; line-height: 1.55; }
   .value-closing { grid-template-columns: 1fr; padding: 20px; }
   .value-closing-step { padding: 0; }
   .value-closing-result { margin-top: 17px; padding-top: 17px; border-top: 1px solid rgba(231, 196, 126, .45); border-left: 0; }
