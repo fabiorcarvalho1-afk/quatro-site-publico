@@ -380,9 +380,10 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .hero-included > strong { font-size: 12px; line-height: 1.35; }
   .hero-benefits { gap: 9px; }
   .hero-benefits span { font-size: 13px; line-height: 1.4; }
-  .hero-facts { grid-template-columns: 1fr; gap: 9px; }
-  .hero-fact { min-height: 0; padding: 13px 15px; }
-  .hero-fact strong { font-size: 14px; }
+  .hero-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .hero-fact:first-child { grid-column: 1 / -1; }
+  .hero-fact { min-height: 0; padding: 12px 13px; }
+  .hero-fact strong { font-size: 13px; line-height: 1.35; }
   .hero-actions .primary-cta { width: 100%; }
   .hero-actions .secondary-cta { width: 100%; }
   .hero-social { grid-template-columns: repeat(2, minmax(0, 1fr)); }
