@@ -24,6 +24,19 @@
     maximumFractionDigits: 0
   }).format(Number(value) || 0);
 
+  const formatInstallmentPrice = (value) => new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(Number(value) || 0);
+
+  const installmentText = (item) => {
+    const installments = Math.max(1, Number(item.maxCreditInstallments) || 1);
+    if (installments <= 1 || !Number(item.price)) return "";
+    return `Em até ${installments}x de ${formatInstallmentPrice(Number(item.price) / installments)} no cartão`;
+  };
+
   const emptyMessage = "Nenhuma aula temática cadastrada no momento.";
 
   const renderEmpty = (container, message = emptyMessage) => {
@@ -105,6 +118,8 @@
     const footer = create("div", "thematic-card-footer");
     const price = create("span", "thematic-price");
     price.append(create("small", "", "por pessoa"), document.createTextNode(formatPrice(item.price)));
+    const installmentLabel = installmentText(item);
+    if (installmentLabel) price.append(create("small", "thematic-installments", installmentLabel));
     const button = create("button");
     configureButton(button, item, item.button || "Reservar e comprar");
     footer.append(price, button);
@@ -122,7 +137,7 @@
       create("h3", "", item.title || ""),
       create("p", "", `${formatDate(item.date)} - ${formatTime(item.time)} - ${item.duration || ""} de experiência`),
       create("small", "", item.description || ""),
-      create("small", "class-price", formatPrice(item.price))
+      create("small", "class-price", [formatPrice(item.price), installmentText(item)].filter(Boolean).join(" · "))
     );
     const button = create("button");
     configureButton(button, item, reserveLabel);
@@ -260,6 +275,7 @@
       time: timeParts(item.startsAt),
       duration: durationLabel(item.startsAt, item.endsAt, course.workloadHours),
       price: Number(thematic.priceCents ?? course.priceCents ?? 0) / 100,
+      maxCreditInstallments: Math.max(1, Number(thematic.maxCreditInstallments) || 1),
       preparations: thematic.preparations || (course.lessons || []).map((lesson) => lesson.title).join(" · "),
       includes: thematic.includes || "",
       status: unavailable ? "Esgotada" : vacancies <= 3 ? "Últimas vagas" : "Inscrições abertas",
