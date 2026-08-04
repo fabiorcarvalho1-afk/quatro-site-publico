@@ -110,7 +110,22 @@
     body.append(create("h3", "", item.title || ""), create("p", "", item.description || ""));
 
     const meta = create("div", "thematic-meta");
-    [formatDate(item.date), formatTime(item.time), item.duration || ""].forEach((value) => meta.append(create("span", "", value)));
+    const metaItems = [
+      ["calendar", formatDate(item.date)],
+      ["clock", formatTime(item.time)],
+      ["duration", item.duration || ""]
+    ];
+    const iconPaths = {
+      calendar: '<rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path>',
+      clock: '<circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path>',
+      duration: '<path d="M7 3h10M7 21h10M8 3c0 4 1 6 4 9-3 3-4 5-4 9M16 3c0 4-1 6-4 9 3 3 4 5 4 9"></path>'
+    };
+    metaItems.forEach(([kind, value]) => {
+      const metaItem = create("span", "thematic-meta-item");
+      metaItem.innerHTML = `<svg aria-hidden="true" viewBox="0 0 24 24">${iconPaths[kind]}</svg>`;
+      metaItem.append(document.createTextNode(value));
+      meta.append(metaItem);
+    });
 
     const preparations = create("div", "thematic-preparations");
     preparations.append(create("strong", "", "Nesta aula você prepara"), create("span", "", item.preparations || ""));
