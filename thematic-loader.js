@@ -216,11 +216,80 @@
     }
   };
 
-  fetch("content/thematic-classes.json", { cache: "no-cache" })
-    .then((response) => {
-      if (!response.ok) throw new Error("Conteúdo de aulas temáticas indisponível.");
-      return response.json();
-    })
+  const apiUrl = "https://quatro-folhas-backend-api.onrender.com/thematic-registrations/public/classes";
+
+  const dateParts = (value) => {
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Sao_Paulo",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(new Date(value));
+    const read = (type) => parts.find((part) => part.type === type)?.value || "";
+    return `${read("year")}-${read("month")}-${read("day")}`;
+  };
+
+  const timeParts = (value) => new Intl.DateTimeFormat("pt-BR", {
+    timeZone: "America/Sao_Paulo",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).format(new Date(value));
+
+  const durationLabel = (startsAt, endsAt, workloadHours) => {
+    const milliseconds = new Date(endsAt).getTime() - new Date(startsAt).getTime();
+    const hours = milliseconds > 0 ? milliseconds / 3600000 : Number(workloadHours || 0);
+    if (!hours) return "";
+    return `${Number.isInteger(hours) ? hours : hours.toFixed(1).replace(".", ",")}h`;
+  };
+
+  const apiClassToItem = (item, index) => {
+    const thematic = item.thematic || {};
+    const course = item.course || {};
+    const vacancies = Number(item.seatsAvailable ?? Math.max(0, Number(item.seats || 0) - Number(item.registrations || 0)));
+    const unavailable = vacancies <= 0 || ["closed", "cancelled", "canceled"].includes(String(item.status || "").toLowerCase());
+    return {
+      id: item.id,
+      title: item.name || course.title || "Aula temática",
+      description: thematic.shortDescription || course.description || "",
+      details: course.description || thematic.shortDescription || "",
+      image: thematic.imageUrl || "assets/photos/cozinha-aula.jpg",
+      alt: `Aula temática ${item.name || "Quatro Folhas"}`,
+      category: thematic.publicCategory || "cozinha",
+      date: dateParts(item.startsAt),
+      time: timeParts(item.startsAt),
+      duration: durationLabel(item.startsAt, item.endsAt, course.workloadHours),
+      price: Number(thematic.priceCents ?? course.priceCents ?? 0) / 100,
+      preparations: thematic.preparations || (course.lessons || []).map((lesson) => lesson.title).join(" · "),
+      includes: thematic.includes || "",
+      status: unavailable ? "Esgotada" : vacancies <= 3 ? "Últimas vagas" : "Inscrições abertas",
+      urgent: !unavailable && vacancies <= 3,
+      vacancies,
+      featured: thematic.featured === true,
+      visible: thematic.publicationStatus === "published",
+      show_home: true,
+      order: thematic.featured === true ? -1 : index
+    };
+  };
+
+  const loadContent = async () => {
+    const contentResponse = await fetch("content/thematic-classes.json", { cache: "no-cache" });
+    if (!contentResponse.ok) throw new Error("Conteúdo de aulas temáticas indisponível.");
+    const content = await contentResponse.json();
+
+    try {
+      const apiResponse = await fetch(apiUrl, { cache: "no-store" });
+      if (!apiResponse.ok) throw new Error(`API respondeu ${apiResponse.status}`);
+      const apiClasses = await apiResponse.json();
+      if (Array.isArray(apiClasses)) content.classes = apiClasses.map(apiClassToItem);
+    } catch (error) {
+      console.warn("[Quatro Folhas] API indisponível; usando agenda local.", error);
+    }
+
+    return content;
+  };
+
+  loadContent()
     .then((content) => {
       const items = (content.classes || [])
         .filter((item) => item.visible !== false)
