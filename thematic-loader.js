@@ -80,7 +80,7 @@
 
   const isUnavailable = (item) => {
     const status = String(item.status || "").toLowerCase();
-    return item.vacancies === 0 || status === "esgotada" || status === "encerrada";
+    return item.vacancies === 0 || status === "esgotada" || status === "esgotado" || status === "encerrada";
   };
 
   const configureButton = (button, item, label) => {
@@ -134,6 +134,12 @@
     const preparations = create("div", "thematic-preparations");
     preparations.append(create("strong", "", "Nesta aula você prepara"), create("span", "", item.preparations || ""));
 
+    const included = create("div", "thematic-includes");
+    included.append(
+      create("strong", "", "O que está incluso:"),
+      create("span", "", item.includes || "Todos os ingredientes e certificado")
+    );
+
     const footer = create("div", "thematic-card-footer");
     const price = create("span", "thematic-price");
     price.append(create("small", "", "por pessoa"), document.createTextNode(formatPrice(item.price)));
@@ -145,7 +151,7 @@
     configureButton(button, item, item.button || "Reservar e comprar");
     footer.append(price, button);
 
-    body.append(meta, preparations, footer);
+    body.append(meta, preparations, included, footer);
     article.append(figure, body);
     return article;
   };
@@ -283,7 +289,19 @@
     const thematic = item.thematic || {};
     const course = item.course || {};
     const vacancies = Number(item.seatsAvailable ?? Math.max(0, Number(item.seats || 0) - Number(item.registrations || 0)));
-    const unavailable = vacancies <= 0 || ["closed", "cancelled", "canceled"].includes(String(item.status || "").toLowerCase());
+    const highlightLabels = {
+      alta_demanda: "Alta demanda",
+      aula_nova: "Aula nova",
+      esgotado: "Esgotado",
+      ultimas_vagas: "Últimas vagas"
+    };
+    const configuredHighlight = highlightLabels[thematic.publicHighlight] || "";
+    const unavailable = vacancies <= 0
+      || thematic.publicHighlight === "esgotado"
+      || ["closed", "cancelled", "canceled"].includes(String(item.status || "").toLowerCase());
+    const publicStatus = unavailable
+      ? "Esgotado"
+      : configuredHighlight || (vacancies <= 3 ? "Últimas vagas" : "Inscrições abertas");
     return {
       id: item.id,
       title: item.name || course.title || "Aula temática",
@@ -299,14 +317,14 @@
       pixPrice: thematic.pixPriceCents == null ? 0 : Number(thematic.pixPriceCents) / 100,
       maxCreditInstallments: Math.max(1, Number(thematic.maxCreditInstallments) || 1),
       preparations: thematic.preparations || (course.lessons || []).map((lesson) => lesson.title).join(" · "),
-      includes: thematic.includes || "",
-      status: unavailable ? "Esgotada" : vacancies <= 3 ? "Últimas vagas" : "Inscrições abertas",
-      urgent: !unavailable && vacancies <= 3,
+      includes: thematic.includes || "Todos os ingredientes e certificado",
+      status: publicStatus,
+      urgent: !unavailable && ["Alta demanda", "Últimas vagas"].includes(publicStatus),
       vacancies,
       featured: thematic.featured === true,
       visible: thematic.publicationStatus === "published",
       show_home: true,
-      order: thematic.featured === true ? -1 : index
+      order: Number(thematic.displayOrder) || index + 1
     };
   };
 

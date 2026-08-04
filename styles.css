@@ -5322,6 +5322,26 @@ main .page-form-section.visit-section .eyebrow::before {
   line-height: 1.5;
 }
 
+.thematic-includes {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(104, 125, 32, 0.24);
+  border-radius: 10px;
+  background: #f5f8e9;
+  color: #4d5f19;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.thematic-includes strong,
+.thematic-includes span {
+  font-family: inherit;
+}
+
 .thematic-card-footer {
   display: grid;
   grid-template-columns: minmax(88px, auto) minmax(150px, 1fr);
