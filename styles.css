@@ -5317,7 +5317,7 @@ main .page-form-section.visit-section .eyebrow::before {
 
 .thematic-preparations span {
   color: #51473f;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: inherit;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -5362,6 +5362,14 @@ main .page-form-section.visit-section .eyebrow::before {
   font-size: 11px;
   line-height: 1.35;
   text-transform: none;
+}
+
+.thematic-price .thematic-pix-price {
+  color: #176b45;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.3;
 }
 
 .thematic-card-footer .solid-btn {

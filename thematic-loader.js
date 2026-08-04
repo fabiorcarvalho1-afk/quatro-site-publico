@@ -37,6 +37,10 @@
     return `Em até ${installments}x de ${formatInstallmentPrice(Number(item.price) / installments)} no cartão`;
   };
 
+  const pixText = (item) => Number(item.pixPrice) > 0
+    ? `No PIX: ${formatInstallmentPrice(item.pixPrice)}`
+    : "";
+
   const emptyMessage = "Nenhuma aula temática cadastrada no momento.";
 
   const renderEmpty = (container, message = emptyMessage) => {
@@ -135,6 +139,8 @@
     price.append(create("small", "", "por pessoa"), document.createTextNode(formatPrice(item.price)));
     const installmentLabel = installmentText(item);
     if (installmentLabel) price.append(create("small", "thematic-installments", installmentLabel));
+    const pixLabel = pixText(item);
+    if (pixLabel) price.append(create("small", "thematic-pix-price", pixLabel));
     const button = create("button");
     configureButton(button, item, item.button || "Reservar e comprar");
     footer.append(price, button);
@@ -152,7 +158,7 @@
       create("h3", "", item.title || ""),
       create("p", "", `${formatDate(item.date)} - ${formatTime(item.time)} - ${item.duration || ""} de experiência`),
       create("small", "", item.description || ""),
-      create("small", "class-price", [formatPrice(item.price), installmentText(item)].filter(Boolean).join(" · "))
+      create("small", "class-price", [formatPrice(item.price), installmentText(item), pixText(item)].filter(Boolean).join(" · "))
     );
     const button = create("button");
     configureButton(button, item, reserveLabel);
@@ -290,6 +296,7 @@
       time: timeParts(item.startsAt),
       duration: durationLabel(item.startsAt, item.endsAt, course.workloadHours),
       price: Number(thematic.priceCents ?? course.priceCents ?? 0) / 100,
+      pixPrice: thematic.pixPriceCents == null ? 0 : Number(thematic.pixPriceCents) / 100,
       maxCreditInstallments: Math.max(1, Number(thematic.maxCreditInstallments) || 1),
       preparations: thematic.preparations || (course.lessons || []).map((lesson) => lesson.title).join(" · "),
       includes: thematic.includes || "",
