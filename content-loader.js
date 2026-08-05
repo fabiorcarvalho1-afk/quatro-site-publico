@@ -119,29 +119,31 @@
       });
     }
 
-    if (Array.isArray(data.words)) {
-      data.words.forEach((value, index) => {
-        text(root.querySelector(`[data-cms-hero-word="${index}"]`), value);
-      });
-    }
-
-    text(root.querySelector("[data-cms-hero-statement]"), data.statement);
-
-    if (Array.isArray(data.hashtags)) {
-      data.hashtags.forEach((value, index) => {
-        text(root.querySelector(`[data-cms-hero-hashtag="${index}"]`), value);
-      });
-    }
+    text(root.querySelector("[data-cms-hero-eyebrow]"), data.eyebrow);
+    text(root.querySelector("[data-cms-hero-title]"), data.title);
+    text(root.querySelector("[data-cms-hero-description]"), data.description);
 
     if (Array.isArray(data.buttons)) {
       data.buttons.forEach((button, index) => {
         const desktop = root.querySelector(`[data-cms-hero-button="${index}"]`);
-        const mobile = document.querySelector(`[data-cms-hero-mobile-button="${index}"]`);
         text(desktop, button.label);
         href(desktop, button.href);
-        text(mobile, button.label);
-        href(mobile, button.href);
       });
+    }
+
+    if (data.mobile) {
+      text(root.querySelector("[data-cms-hero-mobile-label]"), data.mobile.label);
+      text(root.querySelector("[data-cms-hero-mobile-eyebrow]"), data.mobile.eyebrow);
+      text(root.querySelector("[data-cms-hero-mobile-title]"), data.mobile.title);
+      text(root.querySelector("[data-cms-hero-mobile-description]"), data.mobile.description);
+      const mobileButton = root.querySelector("[data-cms-hero-mobile-button]");
+      text(mobileButton, data.mobile.button_label);
+      href(mobileButton, data.mobile.button_href);
+      if (Array.isArray(data.mobile.proofs)) {
+        data.mobile.proofs.forEach((value, index) => {
+          text(root.querySelector(`[data-cms-hero-mobile-proof="${index}"]`), value);
+        });
+      }
     }
   };
 

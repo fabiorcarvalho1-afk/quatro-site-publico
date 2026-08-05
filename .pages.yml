@@ -505,31 +505,61 @@ content:
               max: 5
             options:
               media: images
-          - name: words
-            label: Palavras em destaque
-            type: string
-            list:
-              min: 3
-              max: 3
-          - name: statement
-            label: Frase principal
+          - name: eyebrow
+            label: Identificação acima do título — computador
             type: string
             required: true
-          - name: hashtags
-            label: Hashtags
+          - name: title
+            label: Título principal — computador
             type: string
-            list:
-              min: 3
-              max: 3
+            required: true
+          - name: description
+            label: Texto de apoio — computador
+            type: text
+            required: true
           - name: buttons
-            label: Botões
+            label: Botões — computador
             component: button
             list:
-              min: 4
-              max: 4
+              min: 2
+              max: 2
               collapsible:
                 collapsed: true
                 summary: "{label}"
+          - name: mobile
+            label: Chamada no celular
+            type: object
+            fields:
+              - name: label
+                label: Identificação superior
+                type: string
+                required: true
+              - name: eyebrow
+                label: Identificação acima do título
+                type: string
+                required: true
+              - name: title
+                label: Título principal
+                type: string
+                required: true
+              - name: description
+                label: Texto de apoio
+                type: text
+                required: true
+              - name: button_label
+                label: Texto do botão
+                type: string
+                required: true
+              - name: button_href
+                label: Link do botão
+                type: string
+                required: true
+              - name: proofs
+                label: Diferenciais abaixo do quadro
+                type: string
+                list:
+                  min: 2
+                  max: 2
 
       - name: intent
         label: Escolha seu caminho

@@ -12,35 +12,31 @@
       "/assets/photos/mesa-pratos.jpg",
       "/assets/photos/fachada.png"
     ],
-    "words": [
-      "Gastronomia",
-      "Confeitaria",
-      "Paixão"
-    ],
-    "statement": "Aprenda, viva e transforme a gastronomia em experiência.",
-    "hashtags": [
-      "#Gastronomia",
-      "#Confeitaria",
-      "#Paixão"
-    ],
+    "eyebrow": "Gastronomia · Confeitaria · Paixão",
+    "title": "Viva a cozinha. Descubra novos caminhos.",
+    "description": "Cursos e experiências para começar, evoluir ou transformar a gastronomia em profissão.",
     "buttons": [
       {
         "label": "Conhecer cursos",
         "href": "#cursos"
       },
       {
-        "label": "Agenda",
-        "href": "agenda.html"
-      },
-      {
         "label": "Ver experiências",
         "href": "experiencias-gastronomicas.html"
-      },
-      {
-        "label": "3 variações visuais",
-        "href": "variacoes-visuais.html"
       }
-    ]
+    ],
+    "mobile": {
+      "label": "Cozinha escola · desde 2015",
+      "eyebrow": "Aprenda fazendo",
+      "title": "Transforme interesse em experiência.",
+      "description": "Formação profissional, cursos rápidos e encontros gastronômicos em uma cozinha feita para aprender na prática.",
+      "button_label": "Escolha seu próximo passo",
+      "button_href": "#cursos",
+      "proofs": [
+        "Estrutura profissional",
+        "Aprendizado prático"
+      ]
+    }
   },
   "intent": {
     "eyebrow": "Escolha seu caminho",
