@@ -554,12 +554,34 @@ content:
                 label: Link do botão
                 type: string
                 required: true
-              - name: proofs
-                label: Diferenciais abaixo do quadro
+          - name: features
+            label: Diferenciais abaixo do quadro
+            type: string
+            list:
+              min: 2
+              max: 2
+          - name: metrics
+            label: Números institucionais
+            type: object
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{value} — {title}"
+            fields:
+              - name: value
+                label: Número ou destaque
                 type: string
-                list:
-                  min: 2
-                  max: 2
+                required: true
+              - name: title
+                label: Título
+                type: string
+                required: true
+              - name: description
+                label: Texto de apoio
+                type: text
+                required: true
 
       - name: intent
         label: Escolha seu caminho

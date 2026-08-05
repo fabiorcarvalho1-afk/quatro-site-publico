@@ -139,11 +139,22 @@
       const mobileButton = root.querySelector("[data-cms-hero-mobile-button]");
       text(mobileButton, data.mobile.button_label);
       href(mobileButton, data.mobile.button_href);
-      if (Array.isArray(data.mobile.proofs)) {
-        data.mobile.proofs.forEach((value, index) => {
-          text(root.querySelector(`[data-cms-hero-mobile-proof="${index}"]`), value);
-        });
-      }
+    }
+
+    if (Array.isArray(data.features)) {
+      data.features.forEach((value, index) => {
+        text(root.querySelector(`[data-cms-hero-feature="${index}"] strong`), value);
+      });
+    }
+
+    if (Array.isArray(data.metrics)) {
+      data.metrics.forEach((metric, index) => {
+        const metricRoot = root.querySelector(`[data-cms-hero-metric="${index}"]`);
+        if (!metricRoot) return;
+        text(metricRoot.querySelector("[data-cms-hero-metric-value]"), metric.value);
+        text(metricRoot.querySelector("[data-cms-hero-metric-title]"), metric.title);
+        text(metricRoot.querySelector("[data-cms-hero-metric-description]"), metric.description);
+      });
     }
   };
 
