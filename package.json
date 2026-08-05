@@ -1,0 +1,7 @@
+{
+  "name": "quatro-folhas-landings",
+  "private": true,
+  "scripts": {
+    "build:pages": "node scripts/build-cloudflare-pages.mjs"
+  }
+}
