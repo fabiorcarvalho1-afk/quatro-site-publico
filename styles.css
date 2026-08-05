@@ -6889,7 +6889,7 @@ body.home-page .home-editorial-hero .hero-video {
 .home-hero-metrics article {
   display: grid;
   min-height: 112px;
-  grid-template-columns: minmax(82px, 0.28fr) minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   gap: clamp(12px, 1.5vw, 22px);
   align-items: center;
   padding: 18px clamp(20px, 2.5vw, 38px);
@@ -6901,6 +6901,7 @@ body.home-page .home-editorial-hero .hero-video {
 
 .home-hero-metrics article > strong {
   display: block;
+  white-space: nowrap;
   color: var(--gold);
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(30px, 2.8vw, 42px);
