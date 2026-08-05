@@ -115,10 +115,15 @@ textarea {
 }
 
 .home-page .site-header:hover,
-.home-page .site-header:focus-within,
+.home-page .site-header:focus-within {
+  border-bottom-color: rgba(255, 253, 250, 0.16);
+  background: rgba(23, 23, 20, 0.42);
+  box-shadow: 0 1px 0 rgba(255, 253, 250, 0.05);
+}
+
 .home-page .site-header.is-open {
   border-bottom-color: rgba(116, 96, 68, 0.18);
-  background: rgba(255, 253, 250, 0.94);
+  background: rgba(255, 253, 250, 0.96);
   box-shadow: 0 1px 0 rgba(23, 23, 20, 0.03);
 }
 
@@ -139,11 +144,11 @@ textarea {
   display: none !important;
 }
 
-.home-page .site-header:not(:hover):not(:focus-within):not(.is-open) .brand-logo-default {
+.home-page .site-header:not(.is-open) .brand-logo-default {
   display: none;
 }
 
-.home-page .site-header:not(:hover):not(:focus-within):not(.is-open) .brand-logo-light {
+.home-page .site-header:not(.is-open) .brand-logo-light {
   display: block !important;
   filter: drop-shadow(0 3px 16px rgba(23, 23, 20, 0.42));
 }
@@ -194,8 +199,6 @@ textarea {
   text-shadow: 0 1px 18px rgba(23, 23, 20, 0.45);
 }
 
-.home-page .site-header:hover .nav-item .nav-link,
-.home-page .site-header:focus-within .nav-item .nav-link,
 .home-page .site-header.is-open .nav-item .nav-link {
   color: #34352f;
   text-shadow: none;
@@ -326,8 +329,6 @@ textarea {
   text-shadow: 0 1px 18px rgba(23, 23, 20, 0.45);
 }
 
-.home-page .site-header:hover .main-nav a,
-.home-page .site-header:focus-within .main-nav a,
 .home-page .site-header.is-open .main-nav a {
   color: #34352f;
   text-shadow: none;
@@ -554,14 +555,14 @@ textarea {
   box-shadow: 0 13px 30px rgba(167, 7, 10, 0.18), inset 0 0 0 1px rgba(255, 253, 250, 0.12);
 }
 
-.home-page .site-header:not(:hover):not(:focus-within):not(.is-open) .solid-btn {
+.home-page .site-header:not(.is-open) .solid-btn {
   border: 1px solid rgba(255, 253, 250, 0.58);
   background: rgba(23, 23, 20, 0.2);
   color: var(--cream);
   box-shadow: none;
 }
 
-.home-page .site-header:not(:hover):not(:focus-within):not(.is-open) .ghost-btn {
+.home-page .site-header:not(.is-open) .ghost-btn {
   border-color: rgba(255, 253, 250, 0.48);
   background: rgba(23, 23, 20, 0.12);
   color: var(--cream);

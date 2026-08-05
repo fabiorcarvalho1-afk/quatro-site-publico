@@ -49,7 +49,7 @@ async function loadPublicSiteSettings() {
     const contact = settings.contact || {};
     const social = settings.social || {};
 
-    document.querySelectorAll(".brand img").forEach((image) => {
+    document.querySelectorAll(".brand img:not(.brand-logo-light)").forEach((image) => {
       if (brand.header_logo) image.src = brand.header_logo;
       if (brand.logo_alt) image.alt = brand.logo_alt;
     });
