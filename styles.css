@@ -6737,7 +6737,7 @@ body.home-page .home-editorial-hero {
 body.home-page .home-editorial-hero .hero-media {
   position: relative;
   inset: auto;
-  min-height: clamp(430px, 58svh, 540px);
+  min-height: clamp(470px, 64svh, 590px);
   background-color: var(--charcoal);
 }
 
@@ -6765,7 +6765,7 @@ body.home-page .home-editorial-hero .hero-video {
   gap: clamp(20px, 3vw, 34px);
   align-items: end;
   width: min(1240px, 100%);
-  margin: -18px auto 18px;
+  margin: -8px auto 18px;
   padding: 12px clamp(18px, 2.2vw, 28px);
   border: 1px solid rgba(187, 143, 68, 0.72);
   border-radius: 20px;
@@ -6923,7 +6923,7 @@ body.home-page .home-editorial-hero .hero-video {
   max-width: 360px;
   margin-top: 2px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13.5px;
   line-height: 1.28;
 }
 
