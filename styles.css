@@ -7478,27 +7478,62 @@ body.home-page .home-editorial-hero .hero-video {
 
 @media (max-width: 620px) {
   .chef-course-hero {
-    min-height: 430px;
-    padding: 78px 14px 0;
+    min-height: 760px;
+    padding: 250px 14px 0;
+  }
+
+  .chef-course-hero-video {
+    height: 58%;
+    object-position: 50% 24%;
+  }
+
+  .chef-course-hero-inner {
+    min-height: auto;
+    align-items: start;
+    gap: 12px;
   }
 
   .chef-course-card {
-    margin-bottom: -10px;
-    padding: 14px 15px;
+    margin-bottom: 0;
+    padding: 13px 15px;
     border-radius: 18px;
   }
 
   .chef-course-card h1 {
-    font-size: clamp(27px, 8.4vw, 33px);
+    font-size: clamp(25px, 7.5vw, 30px);
+    line-height: 1.02;
+  }
+
+  .chef-course-card p:last-child {
+    font-size: 13px;
+    line-height: 1.32;
   }
 
   .chef-course-dates {
-    margin-top: 22px;
-    padding: 15px;
+    margin-top: 0;
+    padding: 13px 15px;
+  }
+
+  .chef-course-dates h2 {
+    font-size: 22px;
+  }
+
+  .chef-course-dates article {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  .chef-course-dates strong {
+    font-size: 18px;
+  }
+
+  .chef-course-dates span {
+    font-size: 11.5px;
   }
 
   .chef-course-proof {
-    padding: 18px 14px 24px;
+    padding: 22px 14px 22px;
+    margin-top: 0;
   }
 
   .chef-course-proof-grid,
@@ -7509,7 +7544,12 @@ body.home-page .home-editorial-hero .hero-video {
   }
 
   .chef-course-proof article {
-    min-height: 58px;
+    min-height: 52px;
+    padding: 10px 13px;
+  }
+
+  .chef-course-proof strong {
+    font-size: 18px;
   }
 
   .chef-course-gallery-grid figure,
