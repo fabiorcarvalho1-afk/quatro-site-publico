@@ -7331,19 +7331,22 @@ body.home-page .home-editorial-hero .hero-video {
 
 .chef-course-profile-grid article,
 .chef-course-topic-grid article {
-  padding: 14px 16px;
-  border-top: 1px solid rgba(116, 19, 38, 0.2);
-  background: rgba(255, 255, 255, 0.34);
+  padding: 16px;
+  border: 1px solid rgba(116, 19, 38, 0.16);
+  background: rgba(255, 253, 249, 0.72);
 }
 
 .chef-course-profile-grid h3 {
   color: var(--wine);
   font-size: 18px;
+  line-height: 1.18;
 }
 
-.chef-course-profile-grid p {
+.chef-course-profile-grid p,
+.chef-course-topic-grid p {
   margin-top: 8px;
   color: var(--muted);
+  font-size: 14px;
   line-height: 1.42;
 }
 
@@ -7357,9 +7360,25 @@ body.home-page .home-editorial-hero .hero-video {
 
 .chef-course-topic-grid article {
   color: var(--ink);
-  font-size: 16px;
   font-weight: 800;
   line-height: 1.35;
+}
+
+.chef-course-topic-grid span {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--wine);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.chef-course-topic-grid h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.14;
 }
 
 .chef-course-gallery {
