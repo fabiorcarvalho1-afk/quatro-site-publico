@@ -8065,3 +8065,14 @@ body.home-page .home-editorial-hero .hero-video {
     min-height: auto;
   }
 }
+
+.chef-course-page .chef-lp-banner .eyebrow,
+.chef-course-page .chef-lp-process .eyebrow {
+  color: #fffdf7 !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.48) !important;
+}
+
+.chef-course-page .chef-lp-banner .eyebrow::before,
+.chef-course-page .chef-lp-process .eyebrow::before {
+  background: rgba(255, 253, 247, 0.9) !important;
+}
