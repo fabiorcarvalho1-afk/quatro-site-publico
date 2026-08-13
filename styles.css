@@ -8085,8 +8085,8 @@ body.home-page .home-editorial-hero .hero-video {
 .pastry-hero {
   padding: clamp(50px, 5.2vw, 72px) 0 clamp(28px, 3.4vw, 42px);
   background:
-    linear-gradient(90deg, rgba(91, 0, 18, 0.08), transparent 28%, rgba(187, 143, 68, 0.1)),
-    linear-gradient(135deg, #f7efe4, #eadccc);
+    radial-gradient(circle at 12% 78%, rgba(187, 143, 68, 0.2), transparent 28%),
+    linear-gradient(135deg, var(--wine), var(--wine-dark));
 }
 
 .pastry-hero-inner {
