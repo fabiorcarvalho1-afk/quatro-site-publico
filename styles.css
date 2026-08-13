@@ -8083,7 +8083,7 @@ body.home-page .home-editorial-hero .hero-video {
 }
 
 .pastry-hero {
-  padding: clamp(50px, 5.2vw, 72px) 0 clamp(28px, 3.4vw, 42px);
+  padding: clamp(28px, 3.4vw, 48px) 0 clamp(18px, 2.4vw, 30px);
   background:
     radial-gradient(circle at 12% 78%, rgba(187, 143, 68, 0.2), transparent 28%),
     linear-gradient(135deg, var(--wine), var(--wine-dark));
@@ -8092,14 +8092,14 @@ body.home-page .home-editorial-hero .hero-video {
 .pastry-hero-inner {
   display: grid;
   width: min(1440px, calc(100% - 42px));
-  grid-template-columns: minmax(540px, 0.6fr) minmax(380px, 0.4fr);
+  grid-template-columns: minmax(520px, 0.62fr) minmax(330px, 0.38fr);
   align-items: center;
   margin: 0 auto;
 }
 
 .pastry-video-side {
   position: relative;
-  height: clamp(470px, 40vw, 580px);
+  height: clamp(390px, 34vw, 490px);
   overflow: hidden;
   border-radius: 30px;
   background:
@@ -8143,7 +8143,7 @@ body.home-page .home-editorial-hero .hero-video {
   display: flex;
   flex-direction: column;
   margin-left: clamp(-96px, -5vw, -64px);
-  padding: clamp(19px, 2.25vw, 28px);
+  padding: clamp(16px, 2vw, 24px);
   border: 1px solid rgba(187, 143, 68, 0.72);
   border-radius: 28px;
   background: rgba(251, 247, 239, 0.96);
@@ -8166,7 +8166,7 @@ body.home-page .home-editorial-hero .hero-video {
   max-width: 520px;
   color: var(--ink);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(25px, 2.55vw, 36px);
+  font-size: clamp(23px, 2.25vw, 32px);
   line-height: 1.02;
   letter-spacing: -0.02em;
 }
@@ -8176,8 +8176,8 @@ body.home-page .home-editorial-hero .hero-video {
   max-width: 500px;
   margin-top: 10px;
   color: var(--muted);
-  font-size: clamp(13px, 0.95vw, 14px);
-  line-height: 1.38;
+  font-size: clamp(12.5px, 0.9vw, 13.5px);
+  line-height: 1.34;
 }
 
 .pastry-hero-actions {
@@ -8185,7 +8185,7 @@ body.home-page .home-editorial-hero .hero-video {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .pastry-hero-actions .ghost-btn {
@@ -8211,8 +8211,8 @@ body.home-page .home-editorial-hero .hero-video {
   grid-template-columns: 1fr;
   gap: 8px 16px;
   align-items: baseline;
-  margin: 0 0 14px;
-  padding: 12px 14px;
+  margin: 0 0 12px;
+  padding: 10px 13px;
   border: 1px solid rgba(187, 143, 68, 0.72);
   border-radius: 16px;
   background:
@@ -8233,7 +8233,7 @@ body.home-page .home-editorial-hero .hero-video {
 .pastry-date-ticket strong {
   color: var(--wine);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(18px, 1.6vw, 23px);
+  font-size: clamp(17px, 1.45vw, 21px);
   line-height: 1;
 }
 
@@ -8247,11 +8247,11 @@ body.home-page .home-editorial-hero .hero-video {
   width: min(1120px, 100%);
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-  margin: 14px auto 0;
+  margin: 12px auto 0;
 }
 
 .pastry-proof article {
-  padding: 12px 14px;
+  padding: 10px 13px;
   border: 1px solid rgba(116, 19, 38, 0.14);
   border-left: 4px solid var(--wine);
   border-radius: 16px;
@@ -8261,7 +8261,7 @@ body.home-page .home-editorial-hero .hero-video {
 .pastry-proof span {
   display: block;
   color: var(--gold);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -8272,7 +8272,7 @@ body.home-page .home-editorial-hero .hero-video {
   margin-top: 7px;
   color: var(--wine);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(16px, 1.35vw, 19px);
+  font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.04;
 }
 
