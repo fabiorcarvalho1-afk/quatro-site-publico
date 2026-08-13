@@ -7281,7 +7281,7 @@ body.home-page .home-editorial-hero .hero-video {
 
 .chef-course-section,
 .chef-course-gallery {
-  padding: clamp(42px, 5vw, 64px) clamp(24px, 5vw, 72px);
+  padding: clamp(30px, 3.8vw, 48px) clamp(24px, 5vw, 72px);
 }
 
 .chef-course-section > *,
@@ -7523,9 +7523,9 @@ body.home-page .home-editorial-hero .hero-video {
 /* Chef Profissional: miolo refinado para paginas profissionalizantes */
 .chef-course-story {
   display: grid;
-  grid-template-columns: minmax(320px, 0.5fr) minmax(0, 0.5fr);
-  gap: 0;
-  align-items: center;
+  grid-template-columns: minmax(280px, 0.42fr) minmax(0, 0.58fr);
+  gap: clamp(18px, 2.6vw, 34px);
+  align-items: stretch;
   background:
     radial-gradient(circle at 78% 20%, rgba(187, 143, 68, 0.13), transparent 34%),
     var(--cream);
@@ -7539,12 +7539,13 @@ body.home-page .home-editorial-hero .hero-video {
 .chef-course-story figure,
 .chef-course-exchange figure {
   position: relative;
-  min-height: 390px;
+  min-height: 0;
+  height: clamp(240px, 26vw, 330px);
   overflow: hidden;
   border: 0;
-  border-radius: 28px;
+  border-radius: 20px;
   background: var(--wine-dark);
-  box-shadow: 0 22px 58px rgba(54, 7, 18, 0.14);
+  box-shadow: 0 12px 34px rgba(54, 7, 18, 0.1);
 }
 
 .chef-course-story img,
@@ -7558,14 +7559,14 @@ body.home-page .home-editorial-hero .hero-video {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 320px;
-  margin-left: clamp(-82px, -5vw, -52px);
-  padding: clamp(28px, 4vw, 50px);
-  border: 1px solid rgba(187, 143, 68, 0.42);
-  border-radius: 28px;
-  background: rgba(251, 247, 239, 0.96);
-  box-shadow: 0 26px 70px rgba(54, 7, 18, 0.13);
-  z-index: 1;
+  min-height: auto;
+  margin-left: 0;
+  padding: clamp(22px, 3vw, 36px);
+  border-top: 1px solid rgba(116, 19, 38, 0.16);
+  border-bottom: 1px solid rgba(116, 19, 38, 0.16);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .chef-course-story-copy h2,
@@ -7574,8 +7575,8 @@ body.home-page .home-editorial-hero .hero-video {
 .chef-course-exchange-copy h2 {
   color: var(--ink);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(31px, 3.45vw, 48px);
-  line-height: 1.02;
+  font-size: clamp(28px, 2.65vw, 38px);
+  line-height: 1.06;
 }
 
 .chef-course-story-copy p:not(.eyebrow),
@@ -7594,7 +7595,7 @@ body.home-page .home-editorial-hero .hero-video {
 
 .chef-course-result-list {
   width: min(1120px, 100%);
-  margin: 34px auto 0;
+  margin: 26px auto 0;
   border-top: 1px solid rgba(116, 19, 38, 0.13);
 }
 
@@ -7603,14 +7604,12 @@ body.home-page .home-editorial-hero .hero-video {
   grid-template-columns: 132px minmax(220px, 0.33fr) minmax(0, 1fr);
   gap: clamp(16px, 2.6vw, 34px);
   align-items: baseline;
-  padding: 22px 0 22px 24px;
+  padding: 16px 0;
   border-bottom: 1px solid rgba(116, 19, 38, 0.13);
-  border-left: 3px solid transparent;
 }
 
 .chef-course-result-list article:hover {
-  border-left-color: rgba(187, 143, 68, 0.92);
-  background: linear-gradient(90deg, rgba(187, 143, 68, 0.08), transparent 28%);
+  background: transparent;
 }
 
 .chef-course-result-list span {
@@ -7642,15 +7641,14 @@ body.home-page .home-editorial-hero .hero-video {
   display: grid;
   width: min(1120px, 100%);
   grid-template-columns: minmax(260px, 0.42fr) minmax(0, 0.58fr);
-  gap: clamp(28px, 4vw, 54px);
+  gap: clamp(22px, 3.2vw, 40px);
   margin: 0 auto;
-  padding: clamp(30px, 4.4vw, 54px);
-  border: 1px solid rgba(187, 143, 68, 0.34);
-  border-radius: 30px;
-  background:
-    linear-gradient(135deg, rgba(255, 253, 249, 0.92), rgba(251, 247, 239, 0.62)),
-    var(--cream);
-  box-shadow: 0 22px 62px rgba(54, 7, 18, 0.08);
+  padding: clamp(24px, 3.4vw, 38px);
+  border-top: 1px solid rgba(187, 143, 68, 0.36);
+  border-bottom: 1px solid rgba(116, 19, 38, 0.14);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .chef-course-menu-list {
@@ -7682,9 +7680,9 @@ body.home-page .home-editorial-hero .hero-video {
 
 .chef-course-exchange {
   display: grid;
-  grid-template-columns: minmax(0, 0.55fr) minmax(280px, 0.45fr);
-  gap: 0;
-  align-items: center;
+  grid-template-columns: minmax(0, 0.58fr) minmax(280px, 0.42fr);
+  gap: clamp(18px, 2.6vw, 34px);
+  align-items: stretch;
   background:
     radial-gradient(circle at 22% 24%, rgba(187, 143, 68, 0.12), transparent 34%),
     var(--paper);
@@ -7694,14 +7692,14 @@ body.home-page .home-editorial-hero .hero-video {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 300px;
-  margin-right: clamp(-74px, -5vw, -48px);
-  padding: clamp(28px, 4vw, 50px);
-  border: 1px solid rgba(187, 143, 68, 0.42);
-  border-radius: 28px;
-  background: rgba(251, 247, 239, 0.96);
-  box-shadow: 0 26px 70px rgba(54, 7, 18, 0.12);
-  z-index: 1;
+  min-height: auto;
+  margin-right: 0;
+  padding: clamp(22px, 3vw, 36px);
+  border-top: 1px solid rgba(116, 19, 38, 0.16);
+  border-bottom: 1px solid rgba(116, 19, 38, 0.16);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .chef-course-exchange-copy .text-btn {
@@ -7710,7 +7708,7 @@ body.home-page .home-editorial-hero .hero-video {
 }
 
 .chef-course-exchange figure {
-  min-height: 360px;
+  height: clamp(230px, 24vw, 310px);
 }
 
 .chef-course-exchange figcaption {
