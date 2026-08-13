@@ -8076,3 +8076,230 @@ body.home-page .home-editorial-hero .hero-video {
 .chef-course-page .chef-lp-process .eyebrow::before {
   background: rgba(255, 253, 247, 0.9) !important;
 }
+
+/* Confeitaria Profissional: topo com video lateral e quadro sobreposto */
+.pastry-course-main {
+  background: var(--paper);
+}
+
+.pastry-hero {
+  padding: clamp(84px, 10vw, 126px) clamp(24px, 5vw, 72px) clamp(34px, 4vw, 48px);
+  background:
+    radial-gradient(circle at 86% 14%, rgba(234, 211, 200, 0.7), transparent 30%),
+    linear-gradient(135deg, #fffaf2, var(--paper));
+}
+
+.pastry-hero-inner {
+  display: grid;
+  width: min(1120px, 100%);
+  grid-template-columns: minmax(300px, 0.42fr) minmax(0, 0.58fr);
+  align-items: center;
+  margin: 0 auto;
+}
+
+.pastry-video-side {
+  position: relative;
+  height: clamp(420px, 38vw, 520px);
+  overflow: hidden;
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(32, 24, 21, 0.04), rgba(91, 0, 18, 0.58)),
+    url("assets/photos/aula-confeitaria.jpg") center / cover;
+  box-shadow: 0 30px 80px rgba(54, 7, 18, 0.22);
+}
+
+.pastry-video-side::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 55%, rgba(251, 245, 235, 0.36));
+  content: "";
+}
+
+.pastry-video-side video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pastry-video-side span {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  z-index: 2;
+  padding: 11px 14px;
+  border: 1px solid rgba(251, 247, 239, 0.62);
+  border-radius: 999px;
+  background: rgba(91, 0, 18, 0.82);
+  color: var(--cream);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pastry-hero-card {
+  position: relative;
+  z-index: 2;
+  margin-left: clamp(-86px, -5vw, -58px);
+  padding: clamp(34px, 5vw, 62px);
+  border: 1px solid rgba(187, 143, 68, 0.62);
+  border-radius: 34px;
+  background: rgba(251, 247, 239, 0.98);
+  box-shadow: 0 28px 76px rgba(54, 7, 18, 0.18);
+}
+
+.pastry-hero-card h1 {
+  max-width: 720px;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px, 4.65vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+
+.pastry-hero-card > p:not(.eyebrow) {
+  max-width: 630px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.48;
+}
+
+.pastry-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.pastry-hero-actions .ghost-btn {
+  border-color: rgba(116, 19, 38, 0.22);
+  color: var(--wine);
+}
+
+.pastry-date-ticket {
+  display: grid;
+  max-width: 600px;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  align-items: baseline;
+  margin-top: 22px;
+  padding: 15px 18px;
+  border: 1px solid rgba(116, 19, 38, 0.16);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fffaf3, #f0dfcf);
+}
+
+.pastry-date-ticket span {
+  grid-row: span 2;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
+
+.pastry-date-ticket strong {
+  color: var(--wine);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.pastry-date-ticket small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.pastry-proof {
+  display: grid;
+  width: min(1120px, 100%);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px auto 0;
+}
+
+.pastry-proof article {
+  padding: 15px 16px;
+  border: 1px solid rgba(116, 19, 38, 0.14);
+  border-left: 4px solid var(--wine);
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.pastry-proof span {
+  display: block;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pastry-proof strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--wine);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(18px, 1.65vw, 21px);
+  line-height: 1.04;
+}
+
+.pastry-course-main .chef-lp-banner .eyebrow,
+.pastry-course-main .chef-lp-process .eyebrow {
+  color: #fffdf7 !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.48) !important;
+}
+
+.pastry-course-main .chef-lp-banner .eyebrow::before,
+.pastry-course-main .chef-lp-process .eyebrow::before {
+  background: rgba(255, 253, 247, 0.9) !important;
+}
+
+@media (max-width: 900px) {
+  .pastry-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .pastry-video-side {
+    height: 360px;
+  }
+
+  .pastry-hero-card {
+    margin: -54px 18px 0;
+  }
+
+  .pastry-proof {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .pastry-hero {
+    padding: 78px 14px 34px;
+  }
+
+  .pastry-video-side {
+    height: 330px;
+    border-radius: 24px;
+  }
+
+  .pastry-hero-card {
+    margin: -42px 10px 0;
+    padding: 26px 22px;
+    border-radius: 24px;
+  }
+
+  .pastry-date-ticket,
+  .pastry-proof {
+    grid-template-columns: 1fr;
+  }
+
+  .pastry-date-ticket span {
+    grid-row: auto;
+    transform: none;
+    writing-mode: horizontal-tb;
+  }
+}
