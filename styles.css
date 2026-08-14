@@ -10229,7 +10229,7 @@ body.home-page .home-editorial-hero .hero-video {
   border-radius: 20px;
   background: rgba(255, 253, 249, 0.96);
   box-shadow: 0 18px 34px rgba(51, 31, 22, 0.12);
-  animation: agendaOrbit 24s steps(5, end) infinite;
+  animation: agendaOrbit 28s linear infinite;
 }
 
 .agenda-orbit-card img {
@@ -10260,17 +10260,32 @@ body.home-page .home-editorial-hero .hero-video {
   0% {
     transform: translate(-50%, -50%) translate(0, var(--orbit-top-y)) rotate(-2deg);
   }
+  10% {
+    transform: translate(-50%, -50%) translate(clamp(116px, 10vw, 143px), -99px) rotate(1deg);
+  }
   20% {
     transform: translate(-50%, -50%) translate(var(--orbit-x), var(--orbit-side-y)) rotate(3deg);
+  }
+  30% {
+    transform: translate(-50%, -50%) translate(clamp(186px, 15vw, 211px), 43px) rotate(1deg);
   }
   40% {
     transform: translate(-50%, -50%) translate(var(--orbit-low-x), var(--orbit-low-y)) rotate(-1deg);
   }
+  50% {
+    transform: translate(-50%, -50%) translate(0, calc(var(--orbit-low-y) + 24px)) rotate(0deg);
+  }
   60% {
     transform: translate(-50%, -50%) translate(calc(var(--orbit-low-x) * -1), var(--orbit-low-y)) rotate(2deg);
   }
+  70% {
+    transform: translate(-50%, -50%) translate(clamp(-211px, -15vw, -186px), 43px) rotate(-1deg);
+  }
   80% {
     transform: translate(-50%, -50%) translate(calc(var(--orbit-x) * -1), var(--orbit-side-y)) rotate(-3deg);
+  }
+  90% {
+    transform: translate(-50%, -50%) translate(clamp(-143px, -10vw, -116px), -99px) rotate(-1deg);
   }
   100% {
     transform: translate(-50%, -50%) translate(0, var(--orbit-top-y)) rotate(-2deg);
