@@ -10205,38 +10205,31 @@ body.home-page .home-editorial-hero .hero-video {
 
 .agenda-orbit-stage {
   position: relative;
-  min-height: 340px;
-  overflow: hidden;
-  border: 1px solid rgba(116, 19, 38, 0.1);
-  border-radius: 30px;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.9), transparent 28%),
-    radial-gradient(circle at 80% 20%, rgba(140, 198, 62, 0.16), transparent 24%),
-    linear-gradient(135deg, rgba(116, 19, 38, 0.1), rgba(201, 154, 67, 0.13));
-  box-shadow: 0 22px 58px rgba(82, 34, 22, 0.08);
+  --orbit-x: clamp(210px, 18vw, 260px);
+  --orbit-low-x: clamp(132px, 12vw, 162px);
+  --orbit-top-y: -150px;
+  --orbit-side-y: -48px;
+  --orbit-low-y: 134px;
+  min-height: 390px;
+  overflow: visible;
 }
 
 .agenda-orbit-stage::before {
-  content: "";
-  position: absolute;
-  inset: 32px 72px;
-  border: 1px dashed rgba(116, 19, 38, 0.16);
-  border-radius: 50%;
+  display: none;
 }
 
 .agenda-orbit-card {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 1;
-  width: clamp(136px, 14vw, 188px);
+  width: clamp(166px, 16vw, 224px);
   margin: 0;
   padding: 8px 8px 11px;
   border: 1px solid rgba(116, 19, 38, 0.14);
   border-radius: 20px;
   background: rgba(255, 253, 249, 0.96);
-  box-shadow: 0 18px 36px rgba(51, 31, 22, 0.14);
-  animation: agendaOrbit 22s linear infinite;
+  box-shadow: 0 18px 34px rgba(51, 31, 22, 0.12);
+  animation: agendaOrbit 24s steps(5, end) infinite;
 }
 
 .agenda-orbit-card img {
@@ -10265,34 +10258,22 @@ body.home-page .home-editorial-hero .hero-video {
 
 @keyframes agendaOrbit {
   0% {
-    z-index: 2;
-    opacity: 0.72;
-    transform: translate(-50%, -50%) translate(0, -118px) scale(0.84) rotate(-2deg);
+    transform: translate(-50%, -50%) translate(0, var(--orbit-top-y)) rotate(-2deg);
   }
   20% {
-    z-index: 3;
-    opacity: 0.86;
-    transform: translate(-50%, -50%) translate(176px, -48px) scale(0.92) rotate(3deg);
+    transform: translate(-50%, -50%) translate(var(--orbit-x), var(--orbit-side-y)) rotate(3deg);
   }
   40% {
-    z-index: 5;
-    opacity: 1;
-    transform: translate(-50%, -50%) translate(110px, 92px) scale(1.04) rotate(-1deg);
+    transform: translate(-50%, -50%) translate(var(--orbit-low-x), var(--orbit-low-y)) rotate(-1deg);
   }
   60% {
-    z-index: 5;
-    opacity: 1;
-    transform: translate(-50%, -50%) translate(-110px, 92px) scale(1.04) rotate(2deg);
+    transform: translate(-50%, -50%) translate(calc(var(--orbit-low-x) * -1), var(--orbit-low-y)) rotate(2deg);
   }
   80% {
-    z-index: 3;
-    opacity: 0.86;
-    transform: translate(-50%, -50%) translate(-176px, -48px) scale(0.92) rotate(-3deg);
+    transform: translate(-50%, -50%) translate(calc(var(--orbit-x) * -1), var(--orbit-side-y)) rotate(-3deg);
   }
   100% {
-    z-index: 2;
-    opacity: 0.72;
-    transform: translate(-50%, -50%) translate(0, -118px) scale(0.84) rotate(-2deg);
+    transform: translate(-50%, -50%) translate(0, var(--orbit-top-y)) rotate(-2deg);
   }
 }
 
