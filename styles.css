@@ -9268,6 +9268,236 @@ body.home-page .home-editorial-hero .hero-video {
   }
 }
 
+/* Mini Chef: ajuste de escala e linguagem visual mais infantil */
+.mini-chef-hero {
+  padding: clamp(26px, 3.6vw, 46px) 0 clamp(30px, 4vw, 56px);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(140, 198, 62, 0.32) 0 72px, transparent 74px),
+    radial-gradient(circle at 72% 8%, rgba(255, 198, 72, 0.34) 0 58px, transparent 60px),
+    radial-gradient(circle at 91% 70%, rgba(167, 7, 10, 0.16) 0 86px, transparent 88px),
+    linear-gradient(135deg, #fff7e8 0%, #fff0d2 48%, #f4f9dc 100%);
+}
+
+.mini-chef-hero-inner {
+  width: min(1260px, calc(100% - 56px));
+  grid-template-columns: minmax(330px, 0.78fr) minmax(520px, 1.22fr);
+  gap: clamp(22px, 3vw, 42px);
+}
+
+.mini-chef-copy {
+  max-width: 560px;
+  padding: clamp(22px, 2.4vw, 34px);
+  border: 2px solid rgba(201, 154, 67, 0.45);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(140, 198, 62, 0.14), transparent 34%),
+    rgba(255, 252, 246, 0.94);
+}
+
+.mini-chef-copy .eyebrow {
+  margin-bottom: 12px;
+  color: #7a0d22;
+  font-size: 10px;
+}
+
+.mini-chef-copy h1 {
+  max-width: 500px;
+  color: #6e0c21;
+  font-size: clamp(34px, 3.2vw, 50px);
+  line-height: 0.98;
+}
+
+.mini-chef-copy > p:not(.eyebrow) {
+  max-width: 500px;
+  margin-top: 12px;
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.38;
+}
+
+.mini-chef-actions {
+  margin-top: 18px;
+}
+
+.mini-chef-actions .solid-btn,
+.mini-chef-actions .ghost-btn {
+  padding: 11px 16px;
+  font-size: 12px;
+}
+
+.mini-chef-actions .solid-btn {
+  background: linear-gradient(135deg, #a7070a, #7a0d22);
+}
+
+.mini-chef-actions .ghost-btn {
+  background: rgba(140, 198, 62, 0.12);
+}
+
+.mini-chef-photo-stage {
+  min-height: clamp(330px, 31vw, 455px);
+}
+
+.mini-chef-photo.is-main {
+  inset: 0 0 0 48px;
+  border-radius: 30px;
+}
+
+.mini-chef-photo.is-floating {
+  bottom: -10px;
+  width: min(260px, 38%);
+  height: min(190px, 38%);
+  border-width: 8px;
+  border-radius: 22px;
+}
+
+.mini-chef-badge {
+  top: 18px;
+  right: 18px;
+  padding: 11px 15px;
+  background: linear-gradient(135deg, #8cc63e, #5e8f24);
+  color: #fffdf7;
+  font-size: 10px;
+}
+
+.mini-chef-strip {
+  gap: 12px;
+  padding-top: clamp(22px, 3vw, 34px);
+  padding-bottom: clamp(22px, 3vw, 34px);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 198, 72, 0.2), transparent 20%),
+    linear-gradient(135deg, #7a0d22 0%, #263823 100%);
+}
+
+.mini-chef-strip article {
+  min-height: 118px;
+  padding: 16px 16px 14px;
+  border-radius: 18px;
+  background: rgba(255, 248, 237, 0.1);
+}
+
+.mini-chef-strip article:nth-child(2) {
+  background: rgba(140, 198, 62, 0.16);
+}
+
+.mini-chef-strip article:nth-child(3) {
+  background: rgba(255, 198, 72, 0.16);
+}
+
+.mini-chef-strip article:nth-child(4) {
+  background: rgba(255, 248, 237, 0.14);
+}
+
+.mini-chef-strip strong {
+  margin-top: 8px;
+  font-size: clamp(20px, 1.45vw, 25px);
+  line-height: 1;
+}
+
+.mini-chef-strip p {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.32;
+}
+
+.mini-chef-learn,
+.mini-chef-journey,
+.mini-chef-gallery-section,
+.mini-chef-options {
+  padding-top: clamp(42px, 5vw, 70px);
+  padding-bottom: clamp(42px, 5vw, 70px);
+}
+
+.mini-chef-cards {
+  gap: 12px;
+}
+
+.mini-chef-cards article,
+.mini-chef-option-grid article {
+  min-height: 150px;
+  padding: 18px 18px 16px;
+  border-radius: 20px;
+}
+
+.mini-chef-cards article:nth-child(1) {
+  background: linear-gradient(180deg, #fff9ec, #fff0d5);
+}
+
+.mini-chef-cards article:nth-child(2) {
+  background: linear-gradient(180deg, #f9ffe9, #edf8d2);
+}
+
+.mini-chef-cards article:nth-child(3) {
+  background: linear-gradient(180deg, #fff5f0, #ffe4d8);
+}
+
+.mini-chef-cards article:nth-child(4) {
+  background: linear-gradient(180deg, #fff8ed, #f2ecd8);
+}
+
+.mini-chef-cards h3,
+.mini-chef-option-grid h3 {
+  font-size: clamp(21px, 1.65vw, 27px);
+  line-height: 1;
+}
+
+.mini-chef-cards p,
+.mini-chef-option-grid p {
+  margin-top: 9px;
+  font-size: 13.5px;
+  line-height: 1.34;
+}
+
+.mini-chef-parents h2 {
+  font-size: clamp(32px, 3.1vw, 46px);
+  line-height: 1;
+}
+
+.mini-chef-parents-list strong {
+  font-size: 23px;
+}
+
+.mini-chef-steps article {
+  min-height: 170px;
+  padding: 19px 18px;
+}
+
+.mini-chef-steps h3 {
+  font-size: clamp(21px, 1.55vw, 27px);
+}
+
+.mini-chef-steps p {
+  font-size: 13.5px;
+}
+
+@media (max-width: 980px) {
+  .mini-chef-hero-inner {
+    width: calc(100% - 36px);
+  }
+
+  .mini-chef-copy {
+    max-width: none;
+  }
+
+  .mini-chef-photo-stage {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 620px) {
+  .mini-chef-copy h1 {
+    font-size: clamp(30px, 9vw, 38px);
+  }
+
+  .mini-chef-photo-stage {
+    min-height: 300px;
+  }
+
+  .mini-chef-strip article,
+  .mini-chef-cards article,
+  .mini-chef-option-grid article {
+    min-height: auto;
+  }
+}
+
 @media (max-width: 900px) {
   .pastry-hero-inner {
     grid-template-columns: 1fr;
