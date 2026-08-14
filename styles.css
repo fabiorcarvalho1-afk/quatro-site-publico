@@ -10156,7 +10156,7 @@ body.home-page .home-editorial-hero .hero-video {
 
 /* Agenda organizada por categoria */
 .agenda-organized {
-  padding: clamp(34px, 4vw, 58px) max(18px, calc((100% - 1220px) / 2)) clamp(54px, 6vw, 84px);
+  padding: clamp(24px, 3vw, 42px) max(18px, calc((100% - 1220px) / 2)) clamp(40px, 4vw, 58px);
   background:
     radial-gradient(circle at 8% 6%, rgba(201, 154, 67, 0.14), transparent 24%),
     linear-gradient(180deg, #fff8ed 0%, #f8efe1 100%);
@@ -10164,7 +10164,19 @@ body.home-page .home-editorial-hero .hero-video {
 
 .agenda-organized-hero {
   max-width: 860px;
-  margin-bottom: 26px;
+  margin-bottom: 18px;
+}
+
+.agenda-orbit-hero {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.82fr) minmax(420px, 1fr);
+  gap: clamp(18px, 3vw, 44px);
+  align-items: center;
+  max-width: none;
+}
+
+.agenda-orbit-copy {
+  max-width: 620px;
 }
 
 .agenda-organized-hero .eyebrow {
@@ -10191,19 +10203,112 @@ body.home-page .home-editorial-hero .hero-video {
   line-height: 1.42;
 }
 
+.agenda-orbit-stage {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  border: 1px solid rgba(116, 19, 38, 0.1);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.9), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(140, 198, 62, 0.16), transparent 24%),
+    linear-gradient(135deg, rgba(116, 19, 38, 0.1), rgba(201, 154, 67, 0.13));
+  box-shadow: 0 22px 58px rgba(82, 34, 22, 0.08);
+}
+
+.agenda-orbit-stage::before {
+  content: "";
+  position: absolute;
+  inset: 32px 72px;
+  border: 1px dashed rgba(116, 19, 38, 0.16);
+  border-radius: 50%;
+}
+
+.agenda-orbit-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: clamp(136px, 14vw, 188px);
+  margin: 0;
+  padding: 8px 8px 11px;
+  border: 1px solid rgba(116, 19, 38, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 253, 249, 0.96);
+  box-shadow: 0 18px 36px rgba(51, 31, 22, 0.14);
+  animation: agendaOrbit 22s linear infinite;
+}
+
+.agenda-orbit-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.agenda-orbit-card figcaption {
+  margin-top: 8px;
+  color: var(--wine);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.orbit-card-1 { animation-delay: 0s; }
+.orbit-card-2 { animation-delay: -4.4s; }
+.orbit-card-3 { animation-delay: -8.8s; }
+.orbit-card-4 { animation-delay: -13.2s; }
+.orbit-card-5 { animation-delay: -17.6s; }
+
+@keyframes agendaOrbit {
+  0% {
+    z-index: 2;
+    opacity: 0.72;
+    transform: translate(-50%, -50%) translate(0, -118px) scale(0.84) rotate(-2deg);
+  }
+  20% {
+    z-index: 3;
+    opacity: 0.86;
+    transform: translate(-50%, -50%) translate(176px, -48px) scale(0.92) rotate(3deg);
+  }
+  40% {
+    z-index: 5;
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(110px, 92px) scale(1.04) rotate(-1deg);
+  }
+  60% {
+    z-index: 5;
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(-110px, 92px) scale(1.04) rotate(2deg);
+  }
+  80% {
+    z-index: 3;
+    opacity: 0.86;
+    transform: translate(-50%, -50%) translate(-176px, -48px) scale(0.92) rotate(-3deg);
+  }
+  100% {
+    z-index: 2;
+    opacity: 0.72;
+    transform: translate(-50%, -50%) translate(0, -118px) scale(0.84) rotate(-2deg);
+  }
+}
+
 .agenda-category {
   display: grid;
   grid-template-columns: minmax(300px, 0.52fr) minmax(520px, 1fr);
-  gap: 16px;
+  gap: 12px;
   align-items: stretch;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .agenda-category-card {
   display: flex;
-  min-height: 230px;
+  min-height: 188px;
   flex-direction: column;
-  padding: 22px;
+  padding: 18px;
   border: 1px solid rgba(116, 19, 38, 0.14);
   border-radius: 22px;
   background:
@@ -10236,15 +10341,15 @@ body.home-page .home-editorial-hero .hero-video {
 }
 
 .agenda-category-card h2 {
-  margin: 16px 0 0;
+  margin: 12px 0 0;
   color: var(--wine);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(28px, 2.3vw, 38px);
+  font-size: clamp(24px, 2vw, 32px);
   line-height: 0.98;
 }
 
 .agenda-category-card p {
-  margin: 12px 0 0;
+  margin: 9px 0 0;
   color: var(--muted);
   font-size: 15px;
   line-height: 1.4;
@@ -10257,7 +10362,7 @@ body.home-page .home-editorial-hero .hero-video {
   justify-content: center;
   width: fit-content;
   margin-top: auto;
-  padding: 10px 14px;
+  padding: 9px 13px;
   border-radius: 999px;
   background: var(--wine);
   color: var(--cream);
@@ -10269,7 +10374,7 @@ body.home-page .home-editorial-hero .hero-video {
 
 .agenda-date-panel {
   display: grid;
-  gap: 10px;
+  gap: 8px;
   align-content: stretch;
 }
 
@@ -10279,8 +10384,8 @@ body.home-page .home-editorial-hero .hero-video {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 16px;
   align-items: center;
-  min-height: 70px;
-  padding: 14px 16px;
+  min-height: 62px;
+  padding: 12px 14px;
   border: 1px solid rgba(116, 19, 38, 0.12);
   border-left: 5px solid var(--wine);
   border-radius: 18px;
@@ -10302,7 +10407,7 @@ body.home-page .home-editorial-hero .hero-video {
   margin: 0;
   color: var(--ink);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(22px, 1.7vw, 28px);
+  font-size: clamp(19px, 1.45vw, 24px);
   line-height: 1;
 }
 
@@ -10342,7 +10447,7 @@ body.home-page .home-editorial-hero .hero-video {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 22px;
+  margin-top: 16px;
 }
 
 .agenda-reserve-compact article {
@@ -10381,6 +10486,18 @@ body.home-page .home-editorial-hero .hero-video {
 }
 
 @media (max-width: 900px) {
+  .agenda-orbit-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .agenda-orbit-copy {
+    max-width: 100%;
+  }
+
+  .agenda-orbit-stage {
+    min-height: 310px;
+  }
+
   .agenda-category {
     grid-template-columns: 1fr;
   }
@@ -10394,6 +10511,37 @@ body.home-page .home-editorial-hero .hero-video {
   .agenda-organized {
     padding-right: 16px;
     padding-left: 16px;
+  }
+
+  .agenda-organized-hero h1 {
+    font-size: clamp(32px, 11vw, 44px);
+  }
+
+  .agenda-orbit-stage {
+    display: grid;
+    min-height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 12px;
+    overflow: visible;
+  }
+
+  .agenda-orbit-stage::before {
+    display: none;
+  }
+
+  .agenda-orbit-card {
+    position: static;
+    width: 100%;
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+
+  .agenda-orbit-card:last-child {
+    grid-column: 1 / -1;
+    width: min(100%, 190px);
+    justify-self: center;
   }
 
   .agenda-date-panel article,
