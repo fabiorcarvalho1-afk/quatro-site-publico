@@ -8345,8 +8345,102 @@ body.home-page .home-editorial-hero .hero-video {
   background: rgba(255, 253, 247, 0.9) !important;
 }
 
+.page-form-section.pastry-enroll-section {
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.86fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: stretch;
+  padding-top: clamp(54px, 6vw, 86px);
+  padding-bottom: clamp(54px, 6vw, 86px);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(194, 149, 75, 0.18), transparent 30%),
+    linear-gradient(135deg, #192018 0%, #213524 52%, #141914 100%);
+}
+
+.pastry-enroll-photo {
+  position: relative;
+  min-height: clamp(390px, 34vw, 520px);
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(220, 170, 86, 0.42);
+  border-radius: 28px;
+  background: var(--wine-dark);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.26);
+}
+
+.pastry-enroll-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+
+.pastry-enroll-photo::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(20, 17, 14, 0.04) 0%, rgba(20, 17, 14, 0.22) 42%, rgba(20, 17, 14, 0.84) 100%),
+    linear-gradient(90deg, rgba(116, 19, 38, 0.2), transparent 58%);
+}
+
+.pastry-enroll-photo figcaption {
+  position: absolute;
+  right: clamp(22px, 3vw, 44px);
+  bottom: clamp(22px, 3vw, 42px);
+  left: clamp(22px, 3vw, 44px);
+  z-index: 1;
+  color: var(--cream);
+}
+
+.pastry-enroll-photo span {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fffdf7;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.pastry-enroll-photo span::before {
+  width: 46px;
+  height: 2px;
+  content: "";
+  background: var(--gold);
+}
+
+.pastry-enroll-photo strong {
+  display: block;
+  max-width: 560px;
+  margin-top: 12px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 3.2vw, 54px);
+  font-weight: 800;
+  line-height: 0.96;
+}
+
+.pastry-enroll-photo small {
+  display: block;
+  max-width: 520px;
+  margin-top: 12px;
+  color: rgba(255, 248, 238, 0.84);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.45;
+}
+
+.pastry-enroll-section .contact-form {
+  background: rgba(255, 252, 246, 0.97);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+}
+
 @media (max-width: 900px) {
   .pastry-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .page-form-section.pastry-enroll-section {
     grid-template-columns: 1fr;
   }
 
@@ -8382,6 +8476,19 @@ body.home-page .home-editorial-hero .hero-video {
   .pastry-date-ticket,
   .pastry-proof {
     grid-template-columns: 1fr;
+  }
+
+  .page-form-section.pastry-enroll-section {
+    padding: 34px 16px;
+  }
+
+  .pastry-enroll-photo {
+    min-height: 330px;
+    border-radius: 22px;
+  }
+
+  .pastry-enroll-photo strong {
+    font-size: clamp(30px, 9vw, 40px);
   }
 
   .pastry-date-ticket span {
