@@ -7563,6 +7563,220 @@ body.home-page .home-editorial-hero .hero-video {
   }
 }
 
+/* Aulas temáticas: landing de experiência */
+.thematic-landing-page main {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(201, 154, 67, 0.14), transparent 26%),
+    linear-gradient(180deg, #fff8ed 0%, #f8efe1 100%);
+}
+
+.thematic-landing-page .thematic-hero {
+  position: relative;
+  grid-template-columns: minmax(360px, 0.86fr) minmax(420px, 1fr);
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+  padding-top: clamp(38px, 5vw, 70px);
+  padding-bottom: clamp(30px, 4vw, 54px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 16%, rgba(140, 198, 62, 0.15), transparent 22%),
+    linear-gradient(135deg, #fffaf2 0%, #f7eddf 100%);
+}
+
+.thematic-landing-page .thematic-hero::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 118px;
+  background: linear-gradient(90deg, rgba(116, 19, 38, 0.96), rgba(141, 20, 32, 0.88));
+}
+
+.thematic-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 660px;
+}
+
+.thematic-landing-page .thematic-hero h1 {
+  max-width: 660px;
+  color: var(--ink);
+  font-size: clamp(42px, 4.6vw, 74px);
+  line-height: 0.95;
+}
+
+.thematic-landing-page .thematic-hero p:not(.eyebrow) {
+  max-width: 610px;
+  color: #5a5048;
+  font-size: clamp(17px, 1.45vw, 22px);
+  line-height: 1.45;
+}
+
+.thematic-landing-page .thematic-hero .info-strip {
+  margin-top: 20px;
+}
+
+.thematic-landing-page .thematic-hero .info-strip span {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(116, 19, 38, 0.16);
+  color: var(--wine);
+}
+
+.thematic-hero-visual {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(360px, 42vw, 560px);
+}
+
+.thematic-hero-photo {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 253, 248, 0.72);
+  background: #fffaf2;
+  box-shadow: 0 26px 70px rgba(57, 36, 24, 0.18);
+}
+
+.thematic-hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thematic-hero-photo.main {
+  top: 4%;
+  right: 3%;
+  width: min(76%, 520px);
+  height: 72%;
+  border-radius: 34px;
+}
+
+.thematic-hero-photo.small {
+  width: min(42%, 250px);
+  height: 36%;
+  border: 8px solid #fffaf2;
+  border-radius: 24px;
+}
+
+.thematic-hero-photo.one {
+  left: 4%;
+  bottom: 13%;
+  transform: rotate(-4deg);
+}
+
+.thematic-hero-photo.two {
+  right: 0;
+  bottom: 0;
+  transform: rotate(4deg);
+}
+
+.thematic-benefits {
+  position: relative;
+  z-index: 2;
+  margin-top: -28px;
+  background: transparent;
+}
+
+.thematic-benefits article {
+  min-height: 168px;
+  border-top: 4px solid var(--wine);
+  background:
+    radial-gradient(circle at 100% 100%, rgba(201, 154, 67, 0.16), transparent 32%),
+    rgba(255, 253, 248, 0.96);
+}
+
+.thematic-theme-ideas {
+  padding-top: clamp(36px, 4vw, 58px);
+  padding-bottom: clamp(34px, 4vw, 54px);
+}
+
+.thematic-idea-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.thematic-idea-grid article {
+  display: grid;
+  gap: 8px;
+  min-height: 138px;
+  padding: 18px;
+  border: 1px solid rgba(116, 19, 38, 0.12);
+  border-left: 5px solid var(--gold);
+  border-radius: 20px;
+  background: rgba(255, 252, 246, 0.94);
+  box-shadow: 0 14px 34px rgba(82, 34, 22, 0.06);
+}
+
+.thematic-idea-grid span {
+  color: var(--wine);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.thematic-idea-grid strong {
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(22px, 1.8vw, 30px);
+  line-height: 1;
+}
+
+.thematic-idea-grid small {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.thematic-landing-page .thematic-catalog-page,
+.thematic-landing-page .detail-section,
+.thematic-landing-page .content-band.light,
+.thematic-landing-page .page-form-section {
+  padding-top: clamp(38px, 4.5vw, 62px);
+  padding-bottom: clamp(38px, 4.5vw, 62px);
+}
+
+@media (max-width: 980px) {
+  .thematic-landing-page .thematic-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .thematic-hero-visual {
+    min-height: 360px;
+  }
+
+  .thematic-idea-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .thematic-landing-page .thematic-hero {
+    padding-top: 28px;
+  }
+
+  .thematic-landing-page .thematic-hero h1 {
+    font-size: clamp(38px, 11vw, 52px);
+  }
+
+  .thematic-hero-visual {
+    min-height: 300px;
+  }
+
+  .thematic-hero-photo.main {
+    width: 86%;
+    height: 68%;
+  }
+
+  .thematic-hero-photo.small {
+    width: 48%;
+  }
+
+  .thematic-idea-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Chef Profissional: miolo refinado para paginas profissionalizantes */
 .chef-course-story {
   display: grid;

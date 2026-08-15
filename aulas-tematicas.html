@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>aulas temáticas | Quatro Folhas</title>
-    <meta name="description" content="Aulas gastronômicas avulsas para viver uma experiência diferente na Quatro Folhas.">
+    <title>Aulas Temáticas de Gastronomia | Quatro Folhas</title>
+    <meta name="description" content="Aulas práticas de um dia com ingredientes inclusos, cozinha estruturada, acompanhamento de chefs e certificado de participação.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="thematic-landing-page">
     <header class="site-header">
       <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
@@ -68,11 +68,57 @@
       </div>
     </header>
     <main>
-      <section class="page-hero">
+      <section class="page-hero thematic-hero">
+        <div class="thematic-hero-copy">
+          <p class="eyebrow">Aulas temáticas</p>
+          <h1>Uma aula, um tema, uma experiência para sair cozinhando melhor.</h1>
+          <p>Aulas práticas de um dia, com ingredientes inclusos, cozinha estruturada, acompanhamento de chefs e certificado de participação.</p>
+          <div class="page-nav">
+            <a href="#agenda">Ver próximas aulas</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#reserva">Receber agenda no WhatsApp</a>
+          </div>
+          <div class="info-strip">
+            <span>Ingredientes inclusos</span>
+            <span>Cozinha equipada</span>
+            <span>Aula prática</span>
+            <span>Certificado</span>
+          </div>
+        </div>
+        <div class="thematic-hero-visual" aria-label="Experiências gastronômicas Quatro Folhas">
+          <figure class="thematic-hero-photo main"><img src="assets/photos/mesa-pratos.jpg" alt="Pratos preparados em aula temática"></figure>
+          <figure class="thematic-hero-photo small one"><img src="assets/photos/cozinha-aula.jpg" alt="Aula prática na cozinha Quatro Folhas"></figure>
+          <figure class="thematic-hero-photo small two"><img src="assets/photos/aula-confeitaria.jpg" alt="Preparo de confeitaria em aula"></figure>
+        </div>
+      </section>
+      <section class="signature-strip thematic-benefits" aria-label="Diferenciais das aulas temáticas">
+        <article><span>Incluso</span><strong>Todos os ingredientes</strong><p>Você não precisa trazer insumos. Tudo que será usado na aula já está incluído.</p></article>
+        <article><span>Estrutura</span><strong>Cozinha escola equipada</strong><p>A experiência acontece em uma cozinha estruturada, com bancada, utensílios e organização.</p></article>
+        <article><span>Formato</span><strong>Prática de um dia</strong><p>Você chega, cozinha, aprende, degusta e leva repertório para repetir em casa.</p></article>
+        <article><span>Conclusão</span><strong>Certificado</strong><p>Ao final da experiência, o participante recebe certificado de participação.</p></article>
+      </section>
+      <section class="content-band light thematic-theme-ideas" aria-label="Temas de aulas temáticas">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Temas e experiências</p>
+            <h2>Escolha pelo sabor, pela ocasião ou pela curiosidade</h2>
+          </div>
+          <p class="section-callout">Quando uma data estiver aberta, ela aparece na agenda. Quando ainda não estiver, você pode deixar seu interesse para receber aviso.</p>
+        </div>
+        <div class="thematic-idea-grid">
+          <article><span>01</span><strong>Massas e risotos</strong><small>Para quem quer cozinhar melhor em casa.</small></article>
+          <article><span>02</span><strong>Confeitaria em uma aula</strong><small>Doces, finalização e técnicas práticas.</small></article>
+          <article><span>03</span><strong>Jantar especial</strong><small>Uma experiência para receber melhor.</small></article>
+          <article><span>04</span><strong>Pães e fermentação</strong><small>Processo, aroma e prática de bancada.</small></article>
+          <article><span>05</span><strong>Sobremesas práticas</strong><small>Preparo, montagem e apresentação.</small></article>
+          <article><span>06</span><strong>Experiência para grupos</strong><small>Amigos, casais ou equipe em formato fechado.</small></article>
+        </div>
+      </section>
+      <section class="page-hero thematic-old-hero" hidden>
         <div><p class="eyebrow">Aulas temáticas</p><h1>Aulas gastronômicas para viver a cozinha de um jeito especial</h1><p>Aulas temáticas para adultos, casais, amigos, famílias e amantes da gastronomia. você aprende, prepara, degusta e vive uma experiência conduzida por profissionais.</p><div class="page-nav"><a href="#agenda">Agenda</a><a href="#como-funciona">Como funciona</a><a href="#reserva">Reservar vaga</a></div><div class="info-strip"><span>Sem experiência prévia</span><span>Aula prática</span><span>Degustação</span><span>Reserva assistida</span></div></div>
         <div class="page-hero-image" style="background-image:url('assets/photos/mesa-pratos.jpg')"></div>
       </section>
-<section class="signature-strip" aria-label="Diferenciais das aulas temáticas">
+<section class="signature-strip thematic-old-benefits" aria-label="Diferenciais das aulas temáticas" hidden>
         <article><span>vivência</span><strong>Para todos os níveis</strong><p>A proposta é aprender e viver a cozinha em um encontro prático, acolhedor e bem conduzido.</p></article>
 <article><span>Formato</span><strong>Aula com degustação</strong><p>O participante prepara, acompanha técnicas e finaliza a experiência é mesa.</p></article>
 <article><span>Grupos</span><strong>Experiência exclusiva</strong><p>Amigos, casais e empresas também podem solicitar uma aula fechada.</p></article>
@@ -94,15 +140,15 @@
       <section class="detail-section thematic-experience" id="como-funciona">
         <div>
           <p class="eyebrow">Como funciona</p>
-          <h2>Você escolhe o tema, cozinha com orientação e termina é mesa</h2>
-          <p>O aluno escolhe a aula de interesse, faz a inscrição e garante a vaga. No dia da aula, é só chegar com vontade de aprender: a escola fornece os insumos, Utensílios e toda a estrutura necessária.</p>
+          <h2>Você escolhe o tema, cozinha com orientação e termina à mesa</h2>
+          <p>O participante escolhe a aula de interesse, faz a inscrição e garante a vaga. No dia da aula, é só chegar com vontade de aprender: todos os ingredientes, utensílios e a estrutura de cozinha já estão preparados pela escola.</p>
           <div class="detail-image"><img src="assets/photos/cozinha-aula.jpg" alt="Alunos em aula prática na cozinha da Quatro Folhas"></div>
         </div>
         <div class="detail-list">
           <div class="detail-item"><h3>Chegada e orientação</h3><p>O chef professor apresenta o tema, explica as técnicas dos preparos e organiza o ritmo da aula.</p></div>
           <div class="detail-item"><h3>Prática nas bancadas</h3><p>Os alunos se organizam em bancadas e realizam as preparações com supervisão próxima do professor.</p></div>
           <div class="detail-item"><h3>Dicas durante o preparo</h3><p>Durante a aula, o chef dá dicas fundamentais para a excelência do prato e tira dúvidas que surgem no processo.</p></div>
-          <div class="detail-item"><h3>Mesa e degustação</h3><p>Depois dos preparos, os alunos fazem os empratamentos, montam a mesa e terminam a experiência com conversa, degustação e memória afetiva.</p></div>
+          <div class="detail-item"><h3>Mesa, degustação e certificado</h3><p>Depois dos preparos, os alunos fazem os empratamentos, montam a mesa e terminam a experiência com conversa, degustação, memória afetiva e certificado de participação.</p></div>
         </div>
       </section>
       <section class="content-band light" aria-label="Perguntas rápidas">
