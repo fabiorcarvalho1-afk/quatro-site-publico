@@ -160,12 +160,12 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(8px, 1.2vw, 14px);
+  gap: clamp(7px, .9vw, 12px);
   min-width: 0;
   overflow: visible;
   white-space: nowrap;
-  padding: 2px 10px;
-  font-size: 13px;
+  padding: 2px 6px;
+  font-size: clamp(11px, .88vw, 13px);
   font-weight: 700;
 }
 
@@ -361,7 +361,7 @@ textarea {
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: nowrap;
 }
 
@@ -402,6 +402,23 @@ textarea {
 
 .cert-link {
   white-space: nowrap;
+}
+
+@media (max-width: 1480px) and (min-width: 1061px) {
+  .home-page .main-nav a[href$="franquia.html"],
+  .home-page .main-nav a[href$="carreira.html"] {
+    display: none;
+  }
+
+  .home-page .brand img {
+    width: 190px;
+  }
+
+  .home-page .ghost-btn {
+    min-height: 36px;
+    padding-inline: 15px;
+    font-size: 12px;
+  }
 }
 
 .site-header .cert-link,
