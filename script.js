@@ -167,6 +167,27 @@ function installKidsSchoolsMenu() {
 
 installKidsSchoolsMenu();
 
+function installCalculatorsMenuLink() {
+  if (currentPage.startsWith("admin-")) return;
+  const nav = document.querySelector(".main-nav");
+  if (!nav || nav.querySelector('a[href$="calculadoras-gastronomicas.html"]')) return;
+
+  const link = document.createElement("a");
+  link.href = "calculadoras-gastronomicas.html";
+  link.textContent = "Calculadoras";
+
+  const agendaLink = nav.querySelector('a[href$="agenda.html"]');
+  const thematicLink = nav.querySelector('a[href$="aulas-tematicas.html"]');
+  const reference = thematicLink || agendaLink?.nextSibling || agendaLink;
+  if (reference && reference.parentNode === nav) {
+    nav.insertBefore(link, reference);
+  } else {
+    nav.appendChild(link);
+  }
+}
+
+installCalculatorsMenuLink();
+
 
 function simplifyCoursesMenu() {
   const coursesLink = document.querySelector('.nav-item.has-mega > a[href$="cursos.html"]');
