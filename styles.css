@@ -8102,16 +8102,46 @@ body.home-page .home-editorial-hero .hero-video {
   width: min(84vw, 1160px);
   margin: 12px auto;
   overflow: hidden;
-  border: 1px solid rgba(168, 120, 32, 0.28);
+  border: 1px solid rgba(218, 172, 86, 0.52);
   border-radius: 24px;
   background:
-    radial-gradient(circle at 12% 20%, rgba(255, 250, 242, 0.18), transparent 28%),
-    radial-gradient(circle at 90% 0%, rgba(168, 120, 32, 0.2), transparent 36%),
-    linear-gradient(135deg, #650316 0%, #7a061c 48%, #4d0010 100%);
-  box-shadow: 0 14px 34px rgba(62, 20, 24, 0.1);
+    linear-gradient(90deg, rgba(255, 250, 242, 0.08) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 15% 18%, rgba(255, 242, 205, 0.18), transparent 24%),
+    radial-gradient(circle at 88% 12%, rgba(218, 172, 86, 0.26), transparent 30%),
+    linear-gradient(135deg, #3d0712 0%, #71091d 46%, #8b1228 60%, #43000f 100%);
+  background-size: 54px 100%, auto, auto, auto;
+  box-shadow:
+    0 18px 46px rgba(62, 20, 24, 0.16),
+    inset 0 0 0 1px rgba(255, 250, 242, 0.08);
+}
+
+.pastry-feature-shot::before {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(241, 205, 126, 0.42);
+  border-radius: 18px;
+  content: "";
+  pointer-events: none;
+}
+
+.pastry-feature-shot::after {
+  position: absolute;
+  top: 28px;
+  right: clamp(22px, 3vw, 42px);
+  width: 96px;
+  height: 96px;
+  border: 1px solid rgba(241, 205, 126, 0.32);
+  border-radius: 50%;
+  box-shadow:
+    -18px 18px 0 rgba(241, 205, 126, 0.08),
+    -36px 36px 0 rgba(255, 250, 242, 0.04);
+  content: "";
+  pointer-events: none;
 }
 
 .pastry-feature-shot figure {
+  position: relative;
+  z-index: 1;
   height: clamp(300px, 28vw, 390px);
   min-height: 0;
   margin: 14px 0 14px 14px;
@@ -8133,6 +8163,8 @@ body.home-page .home-editorial-hero .hero-video {
 }
 
 .pastry-feature-shot div {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8141,12 +8173,17 @@ body.home-page .home-editorial-hero .hero-video {
 }
 
 .pastry-feature-shot .eyebrow {
+  width: fit-content;
+  padding: 6px 10px;
+  border: 1px solid rgba(241, 205, 126, 0.46);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.08);
   color: #fffaf2 !important;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
 .pastry-feature-shot .eyebrow::before {
-  background: rgba(251, 247, 239, 0.75);
+  display: none;
 }
 
 .pastry-feature-shot h2 {
