@@ -213,6 +213,10 @@ function simplifyCoursesMenu() {
         <strong>Confeitaria Profissional</strong>
         <span>Técnicas, produção e rotina de confeitaria</span>
       </a>
+      <a href="bolos-e-doces-finos-especializacao.html" role="menuitem">
+        <strong>Bolos e Doces Finos</strong>
+        <span>Especialização em confeitaria com acabamento profissional</span>
+      </a>
       <a href="cursos-rapidos.html" role="menuitem">
         <strong>Cursos Rápidos</strong>
         <span>Aprendizados específicos em formatos compactos</span>
