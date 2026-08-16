@@ -418,7 +418,18 @@ textarea {
 
 @media (min-width: 1061px) {
   .home-page .header-tools {
-    transform: translateX(-56px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transform: translateX(-52px);
+  }
+
+  .home-page .header-tools .ghost-btn,
+  .home-page .header-tools .portal-toggle {
+    min-width: 176px;
+    justify-content: center;
+    text-align: center;
   }
 
   .home-page .header-whatsapp {
@@ -437,6 +448,14 @@ textarea {
     width: 46px;
     min-width: 46px;
     height: 46px;
+    border: 1px solid rgba(255, 253, 250, .34);
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 14px 34px rgba(23, 23, 20, .28);
+  }
+
+  .home-page .site-header:not(.is-open) .header-whatsapp .whatsapp-btn,
+  .home-page .site-header .header-whatsapp .whatsapp-btn {
     border: 1px solid rgba(255, 253, 250, .34);
     background: #25d366;
     color: #fff;
