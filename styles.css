@@ -405,11 +405,6 @@ textarea {
 }
 
 @media (max-width: 1480px) and (min-width: 1061px) {
-  .home-page .main-nav a[href$="franquia.html"],
-  .home-page .main-nav a[href$="carreira.html"] {
-    display: none;
-  }
-
   .home-page .brand img {
     width: 190px;
   }
