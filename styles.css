@@ -416,6 +416,57 @@ textarea {
   }
 }
 
+@media (min-width: 1061px) {
+  .home-page .header-tools {
+    transform: translateX(-56px);
+  }
+
+  .home-page .header-whatsapp {
+    position: absolute;
+    top: 78px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+  }
+
+  .home-page .header-whatsapp .whatsapp-btn {
+    order: 1;
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    border: 1px solid rgba(255, 253, 250, .34);
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 14px 34px rgba(23, 23, 20, .28);
+  }
+
+  .home-page .header-whatsapp .lang-switch {
+    order: 2;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+    border-color: rgba(255, 253, 250, .28);
+    background: rgba(23, 23, 20, .18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .home-page .header-whatsapp .lang-link {
+    min-width: 32px;
+    height: 28px;
+    padding: 0 7px;
+    color: rgba(255, 253, 250, .86);
+  }
+
+  .home-page .header-whatsapp .lang-link.is-active {
+    background: rgba(255, 253, 250, .20);
+    color: #fff;
+  }
+}
+
 .site-header .cert-link,
 .site-header .student-portal {
   display: none;

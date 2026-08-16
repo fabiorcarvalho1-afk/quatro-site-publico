@@ -480,15 +480,6 @@ function mountHeroVideoReady() {
   } catch (e) {}
 }
 
-function moveHomePortalToLanguageRow() {
-  if (!document.body.classList.contains("home-page")) return;
-  const headerWhatsapp = document.querySelector(".header-whatsapp");
-  const langSwitch = headerWhatsapp?.querySelector(".lang-switch");
-  if (!headerWhatsapp || !langSwitch || !studentPortal) return;
-  if (studentPortal.parentElement === headerWhatsapp) return;
-  langSwitch.insertAdjacentElement("afterend", studentPortal);
-}
-
 function mountWhatsappFab() {
   const isHome = document.body.classList.contains("home-page");
   if (isHome) return;
@@ -690,7 +681,6 @@ menuToggle?.addEventListener("click", () => {
   menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
-moveHomePortalToLanguageRow();
 mountWhatsappFab();
 mountHeroVideoReady();
 
