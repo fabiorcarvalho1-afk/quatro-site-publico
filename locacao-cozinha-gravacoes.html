@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Locação de Cozinha para Gravações | Quatro Folhas</title>
+  <meta name="description" content="Locação da cozinha Quatro Folhas para gravações, publicidade, streaming, fotos, conteúdo gastronômico e produções de marca em São Paulo.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Locação de Cozinha para Gravações | Quatro Folhas">
+  <meta property="og:description" content="Uma cozinha escola com estrutura real, identidade visual e histórico de gravações para grandes mídias e marcas.">
+  <meta property="og:image" content="https://rascunho.quatrofolhasgastronomia.com.br/assets/photos/cozinha-qf.png">
+  <meta name="theme-color" content="#741326">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --wine: #760013;
+      --wine-dark: #36070f;
+      --cream: #fbf5eb;
+      --paper: #fffaf3;
+      --gold: #c89a42;
+      --green: #17261a;
+      --ink: #1f1917;
+      --muted: #6c625b;
+      --line: rgba(118, 0, 19, .18);
+      --shadow: 0 28px 70px rgba(40, 14, 10, .18);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(39, 16, 13, .88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand img { width: 245px; height: auto; }
+
+    .header-cta,
+    .primary-cta,
+    .secondary-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      min-height: 48px;
+      padding: 0 24px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .header-cta,
+    .primary-cta {
+      color: #fff;
+      background: linear-gradient(135deg, #a80018, #760013);
+      box-shadow: 0 18px 40px rgba(118, 0, 19, .28);
+    }
+
+    .secondary-cta {
+      color: var(--wine);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(118, 0, 19, .24);
+    }
+
+    .header-cta:hover,
+    .primary-cta:hover,
+    .secondary-cta:hover { transform: translateY(-2px); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 720px;
+      padding: 74px 0 56px;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(200,154,66,.26), transparent 30%),
+        linear-gradient(135deg, rgba(54,7,15,.92), rgba(118,0,19,.90)),
+        url("assets/photos/cozinha-qf.png") center/cover;
+      color: #fff;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(20, 10, 8, .78), rgba(20, 10, 8, .34) 50%, rgba(20, 10, 8, .72));
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(330px, .62fr);
+      gap: 34px;
+      align-items: end;
+    }
+
+    .hero-card {
+      background: rgba(255,250,243,.96);
+      color: var(--ink);
+      border: 1px solid rgba(200,154,66,.55);
+      border-radius: 30px;
+      padding: clamp(30px, 4vw, 52px);
+      box-shadow: var(--shadow);
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 18px;
+      color: var(--wine);
+      text-transform: uppercase;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+    }
+
+    .label::before {
+      content: "";
+      width: 58px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: .96;
+      letter-spacing: -.045em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 6.1vw, 5.95rem);
+      max-width: 870px;
+    }
+
+    .hero-lead {
+      margin: 22px 0 0;
+      max-width: 760px;
+      color: #594f48;
+      font-size: clamp(1.05rem, 1.65vw, 1.35rem);
+      line-height: 1.52;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .authority-card {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 28px;
+      background: rgba(54, 7, 15, .72);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .authority-card h2 {
+      color: #fff;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+    }
+
+    .authority-card p {
+      margin: 14px 0 0;
+      color: rgba(255,255,255,.82);
+      line-height: 1.55;
+    }
+
+    .media-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .media-list span {
+      display: block;
+      padding: 12px 14px;
+      color: #fff;
+      border: 1px solid rgba(200,154,66,.34);
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+      font-weight: 800;
+    }
+
+    .proof-strip {
+      background: var(--wine);
+      color: #fff;
+      border-top: 1px solid rgba(255,255,255,.12);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .proof-item {
+      min-height: 132px;
+      padding: 28px 24px;
+      border-left: 1px solid rgba(255,255,255,.18);
+    }
+
+    .proof-item:first-child { border-left: 0; }
+    .proof-item strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.45rem, 2vw, 2.1rem);
+      line-height: 1;
+    }
+
+    .proof-item span {
+      display: block;
+      margin-top: 10px;
+      color: rgba(255,255,255,.74);
+      line-height: 1.42;
+    }
+
+    .section {
+      padding: clamp(56px, 7vw, 96px) 0;
+    }
+
+    .section.light { background: var(--paper); }
+    .section.dark { background: var(--green); color: #fff; }
+
+    .heading {
+      display: grid;
+      grid-template-columns: 1fr .72fr;
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .heading h2 {
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      color: inherit;
+    }
+
+    .heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .dark .heading p { color: rgba(255,255,255,.72); }
+    .dark .label { color: #f4d48d; }
+
+    .productions {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+    }
+
+    .production-feature,
+    .production-card,
+    .structure-card,
+    .form-card {
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255,250,243,.88);
+      box-shadow: 0 18px 45px rgba(39, 16, 13, .08);
+      overflow: hidden;
+    }
+
+    .production-feature {
+      min-height: 420px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(180deg, transparent 25%, rgba(54,7,15,.86)),
+        url("assets/photos/cozinha-bancadas.jpg") center/cover;
+      color: #fff;
+      padding: 34px;
+    }
+
+    .production-feature h3 {
+      max-width: 720px;
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+    }
+
+    .production-feature p {
+      max-width: 760px;
+      margin: 14px 0 0;
+      color: rgba(255,255,255,.82);
+      line-height: 1.55;
+    }
+
+    .production-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .production-card {
+      padding: 24px;
+    }
+
+    .production-card small,
+    .structure-card small {
+      display: block;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .16em;
+      margin-bottom: 9px;
+    }
+
+    .production-card h3,
+    .structure-card h3 {
+      color: var(--wine);
+      font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+      letter-spacing: -.035em;
+    }
+
+    .production-card p,
+    .structure-card p {
+      margin: 10px 0 0;
+      color: #5e544d;
+      line-height: 1.55;
+    }
+
+    .structure-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .structure-card {
+      padding: 26px;
+      background: rgba(255,250,243,.96);
+    }
+
+    .visual-band {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .visual-photo {
+      min-height: 440px;
+      border-radius: 28px;
+      background: url("assets/photos/parede-equipamentos.jpg") center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-copy {
+      padding: 38px;
+      border-radius: 28px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .visual-copy h2 {
+      color: #fff;
+      font-size: clamp(2.2rem, 4.5vw, 4.3rem);
+    }
+
+    .visual-copy p {
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.78);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      counter-reset: steps;
+    }
+
+    .flow article {
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,250,243,.86);
+    }
+
+    .flow article::before {
+      counter-increment: steps;
+      content: "0" counter(steps);
+      display: inline-flex;
+      margin-bottom: 22px;
+      color: #fff;
+      background: var(--wine);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 900;
+      font-size: .78rem;
+    }
+
+    .flow h3 {
+      color: var(--wine);
+      font-size: 1.7rem;
+    }
+
+    .flow p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .conversion {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(200,154,66,.18), transparent 26%),
+        linear-gradient(135deg, #17261a, #0f1c12);
+      color: #fff;
+      padding: 72px 0;
+    }
+
+    .conversion-grid {
+      display: grid;
+      grid-template-columns: .82fr 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .conversion h2 {
+      font-size: clamp(2.4rem, 4.8vw, 4.8rem);
+    }
+
+    .conversion p {
+      color: rgba(255,255,255,.78);
+      line-height: 1.65;
+      font-size: 1.08rem;
+    }
+
+    .conversion-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .conversion-points span {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .form-card {
+      padding: 28px;
+      background: var(--paper);
+    }
+
+    .lead-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: .95rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(54,7,15,.18);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea { min-height: 112px; resize: vertical; }
+
+    .acceptance {
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      color: #5e544d;
+      font-weight: 600;
+      font-size: .84rem;
+      line-height: 1.45;
+    }
+
+    .acceptance input { width: 18px; min-height: 18px; margin-top: 2px; }
+    .form-feedback { margin: 0; color: var(--wine); font-weight: 800; }
+
+    .footer {
+      padding: 34px 0;
+      background: #110b0a;
+      color: rgba(255,255,255,.72);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .footer img { width: 230px; }
+    .footer p { margin: 0; line-height: 1.5; }
+
+    .mobile-bar { display: none; }
+
+    @media (max-width: 920px) {
+      .shell { width: min(100% - 28px, 680px); }
+      .header-inner { min-height: 66px; }
+      .brand img { width: 190px; }
+      .header-cta { display: none; }
+      .hero { min-height: auto; padding: 40px 0 30px; }
+      .hero-grid,
+      .heading,
+      .productions,
+      .visual-band,
+      .conversion-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-card { padding: 26px; border-radius: 24px; }
+      h1 { font-size: clamp(2.65rem, 14vw, 4rem); }
+      .proof-grid,
+      .structure-grid,
+      .flow,
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+      .proof-item { border-left: 0; border-top: 1px solid rgba(255,255,255,.16); min-height: auto; }
+      .proof-item:first-child { border-top: 0; }
+      .production-feature,
+      .visual-photo { min-height: 330px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .mobile-bar {
+        position: fixed;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        z-index: 30;
+        padding: 8px;
+        border-radius: 18px;
+        background: rgba(17,11,10,.86);
+        backdrop-filter: blur(14px);
+      }
+      .mobile-bar a {
+        min-height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: var(--wine);
+        color: #fff;
+        font-weight: 900;
+        font-size: .9rem;
+      }
+      body { padding-bottom: 74px; }
+    }
+  </style>
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', function () {
+      if (!window.location.hash) requestAnimationFrame(function () { window.scrollTo(0, 0); });
+    });
+  </script>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TVNKR26F');
+  </script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVNKR26F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Quatro Folhas — página inicial">
+        <img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia">
+      </a>
+      <a class="header-cta" href="#consulta">Consultar disponibilidade</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-card">
+          <p class="label">Locação da cozinha · gravações e marcas</p>
+          <h1>Uma cozinha real, equipada e já escolhida por grandes produções.</h1>
+          <p class="hero-lead"><strong>Estrutura gastronômica com peso de mídia.</strong> A Quatro Folhas recebe gravações, campanhas, conteúdos, fotos, ativações e projetos que precisam de um cenário profissional, funcional e visualmente forte.</p>
+          <div class="hero-actions">
+            <a class="primary-cta" href="#consulta">Quero consultar a locação</a>
+            <a class="secondary-cta" href="https://wa.me/5511947781922?text=Ol%C3%A1%2C%20quero%20consultar%20a%20loca%C3%A7%C3%A3o%20da%20cozinha%20para%20grava%C3%A7%C3%A3o%20ou%20produ%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp</a>
+          </div>
+        </div>
+
+        <aside class="authority-card" aria-label="Produções que já passaram pela Quatro Folhas">
+          <div>
+            <p class="label">Histórico</p>
+            <h2>Já recebeu produções de TV, streaming, publicidade e YouTube.</h2>
+            <p>Esse histórico reforça a credibilidade do espaço para agências, produtoras, marcas, chefs e projetos gastronômicos.</p>
+          </div>
+          <div class="media-list">
+            <span>Novela Vertical · Globoplay</span>
+            <span>Batalha dos Confeiteiros</span>
+            <span>Bake Off Brasil</span>
+            <span>Propaganda Ninho</span>
+            <span>Episódio · Canal Balela</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="proof-strip" aria-label="Diferenciais da locação">
+      <div class="shell proof-grid">
+        <article class="proof-item"><strong>Cozinha escola</strong><span>Bancadas, equipamentos, utensílios e ambiente preparado para produção.</span></article>
+        <article class="proof-item"><strong>Imagem forte</strong><span>Cenário gastronômico real, com identidade e textura visual.</span></article>
+        <article class="proof-item"><strong>Produções reais</strong><span>Histórico com TV, streaming, publicidade, YouTube e marcas.</span></article>
+        <article class="proof-item"><strong>Consulta técnica</strong><span>Avaliação conforme roteiro, equipe, horários, apoio e uso do espaço.</span></article>
+      </div>
+    </section>
+
+    <section class="section light" id="producoes">
+      <div class="shell">
+        <div class="heading">
+          <div>
+            <p class="label">Autoridade do espaço</p>
+            <h2>Não é uma cozinha genérica. É um cenário com repertório.</h2>
+          </div>
+          <p>Para uma marca, produtora ou agência, o espaço precisa funcionar tecnicamente e comunicar qualidade antes mesmo da primeira cena.</p>
+        </div>
+
+        <div class="productions">
+          <article class="production-feature">
+            <div>
+              <h3>Uma cozinha preparada para ensinar, produzir e aparecer bem na câmera.</h3>
+              <p>A estrutura combina escala, bancada, equipamentos, iluminação do ambiente e estética de escola gastronômica profissional.</p>
+            </div>
+          </article>
+
+          <div class="production-list">
+            <article class="production-card">
+              <small>Streaming e TV</small>
+              <h3>Novela Vertical Globoplay, Batalha dos Confeiteiros e Bake Off Brasil</h3>
+              <p>Produções que exigem ambiente reconhecível, estrutura funcional e espaço compatível com equipe técnica.</p>
+            </article>
+            <article class="production-card">
+              <small>Publicidade</small>
+              <h3>Propaganda Ninho e projetos de marca</h3>
+              <p>Um cenário gastronômico real para campanhas, ativações, demonstrações, receitas e conteúdos de produto.</p>
+            </article>
+            <article class="production-card">
+              <small>YouTube e conteúdo</small>
+              <h3>Episódio do canal Balela e outros formatos digitais</h3>
+              <p>Espaço para gravações com chefs, convidados, influenciadores, criadores e projetos especiais.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="estrutura">
+      <div class="shell">
+        <div class="heading">
+          <div>
+            <p class="label">Estrutura disponível</p>
+            <h2>O que a produção encontra na Quatro Folhas</h2>
+          </div>
+          <p>A locação é avaliada conforme o formato do projeto, quantidade de pessoas, necessidade de equipamentos, tempo de uso e apoio operacional.</p>
+        </div>
+
+        <div class="structure-grid">
+          <article class="structure-card">
+            <small>Cozinha</small>
+            <h3>Bancadas, fogões e área de preparo</h3>
+            <p>Ambiente de cozinha escola com estrutura para preparo, demonstração, gravação e circulação da equipe.</p>
+          </article>
+          <article class="structure-card">
+            <small>Produção</small>
+            <h3>Equipamentos e utensílios de apoio</h3>
+            <p>Itens disponíveis são alinhados antes, conforme roteiro, receita, tempo de gravação e demanda técnica.</p>
+          </article>
+          <article class="structure-card">
+            <small>Imagem</small>
+            <h3>Identidade gastronômica reconhecível</h3>
+            <p>O espaço comunica gastronomia profissional, escola, prática e credibilidade para marcas e mídia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="formatos">
+      <div class="shell visual-band">
+        <div class="visual-photo" aria-label="Equipamentos e cenário da cozinha Quatro Folhas"></div>
+        <div class="visual-copy">
+          <p class="label">Uso profissional</p>
+          <h2>Para projetos que precisam parecer profissionais porque são profissionais.</h2>
+          <p>Gravações de receitas, publicidade, programas, branded content, aulas filmadas, fotos, ativações, workshops, ações com imprensa e conteúdos especiais podem ser avaliados pela equipe.</p>
+          <p>Antes da proposta, entendemos o roteiro, a equipe, horários, equipamentos necessários, uso de marca, apoio da escola e regras de utilização.</p>
+          <div class="hero-actions">
+            <a class="primary-cta" href="#consulta">Solicitar avaliação</a>
+            <a class="secondary-cta" href="midia-e-gravacoes.html">Ver mídia e gravações</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="processo">
+      <div class="shell">
+        <div class="heading">
+          <div>
+            <p class="label">Como funciona</p>
+            <h2>Da consulta ao dia da produção</h2>
+          </div>
+          <p>Não trabalhamos como aluguel genérico de sala. A análise considera viabilidade técnica, agenda da escola e nível de apoio necessário.</p>
+        </div>
+        <div class="flow">
+          <article><h3>Briefing</h3><p>Você informa objetivo, data, equipe, duração, roteiro e tipo de uso.</p></article>
+          <article><h3>Avaliação</h3><p>A escola verifica agenda, estrutura, equipamentos, circulação e compatibilidade.</p></article>
+          <article><h3>Proposta</h3><p>A proposta considera período, apoio, uso do espaço, preparação e necessidades extras.</p></article>
+          <article><h3>Produção</h3><p>No dia, o uso segue os combinados de montagem, gravação, operação e finalização.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="conversion" id="consulta">
+      <div class="shell conversion-grid">
+        <div>
+          <p class="label">Consulta de locação</p>
+          <h2>Conte o projeto para avaliarmos a estrutura.</h2>
+          <p>Envie as informações principais. A equipe retorna pelo WhatsApp para entender detalhes, disponibilidade e formato de proposta.</p>
+          <div class="conversion-points">
+            <span>Gravações, fotos, publicidade e conteúdo</span>
+            <span>Consulta conforme data e necessidade técnica</span>
+            <span>Retorno pelo WhatsApp informado no cadastro</span>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form class="lead-form" data-demo-form data-source="landing_locacao_cozinha_gravacoes" data-success="Recebemos sua solicitação. Nossa equipe entrará em contato pelo WhatsApp para avaliar a locação." action="#" method="post">
+            <div class="field-row">
+              <label>Nome completo<input type="text" name="nome" autocomplete="name" required></label>
+              <label>Empresa / projeto<input type="text" name="empresa" required></label>
+            </div>
+            <div class="field-row">
+              <label>WhatsApp<input type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required></label>
+              <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
+            </div>
+            <div class="field-row">
+              <label>Tipo de produção
+                <select name="tipo_producao" required>
+                  <option value="">Selecione</option>
+                  <option>Gravação para TV / streaming</option>
+                  <option>Publicidade / campanha de marca</option>
+                  <option>YouTube / conteúdo digital</option>
+                  <option>Fotos / still</option>
+                  <option>Workshop / evento</option>
+                  <option>Outro formato</option>
+                </select>
+              </label>
+              <label>Data ou período desejado<input type="text" name="periodo" placeholder="Ex.: data flexível, diária, manhã, noite"></label>
+            </div>
+            <label>Resumo do projeto<textarea name="resumo" placeholder="Conte objetivo, equipe envolvida, duração estimada, equipamentos necessários e uso pretendido da cozinha."></textarea></label>
+            <label class="acceptance"><input type="checkbox" name="consentimento" required><span>Autorizo o contato da Quatro Folhas por WhatsApp, telefone ou e-mail e concordo com a <a href="politica-de-privacidade.html" target="_blank">Política de Privacidade</a>.</span></label>
+            <input type="hidden" name="interesse" value="Locação da Cozinha para Gravações">
+            <input type="hidden" name="campanha" value="Landing Locação da Cozinha">
+            <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="gclid"><input type="hidden" name="fbclid">
+            <button class="primary-cta" type="submit">Consultar disponibilidade</button>
+            <p class="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <img src="assets/logo-quatrofolhas-horizontal-negativo.png" alt="Quatro Folhas Escola de Gastronomia">
+      <p>Quatro Folhas Escola de Gastronomia · São Paulo, SP<br>Locação sujeita à disponibilidade, avaliação técnica e proposta personalizada.</p>
+    </div>
+  </footer>
+
+  <div class="mobile-bar" aria-label="Ações de contato">
+    <a href="https://wa.me/5511947781922?text=Ol%C3%A1%2C%20quero%20consultar%20a%20loca%C3%A7%C3%A3o%20da%20cozinha%20Quatro%20Folhas." target="_blank" rel="noopener">WhatsApp</a>
+    <a href="#consulta">Consultar</a>
+  </div>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'].forEach(function (name) {
+        const field = document.querySelector('[name="' + name + '"]');
+        if (field) field.value = params.get(name) || '';
+      });
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
