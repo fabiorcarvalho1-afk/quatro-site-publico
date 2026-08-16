@@ -94,8 +94,8 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 720px;
-      padding: 74px 0 56px;
+      min-height: 610px;
+      padding: 48px 0 42px;
       background:
         radial-gradient(circle at 82% 10%, rgba(200,154,66,.26), transparent 30%),
         linear-gradient(135deg, rgba(54,7,15,.92), rgba(118,0,19,.90)),
@@ -113,8 +113,8 @@
     .hero-grid {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(330px, .62fr);
-      gap: 34px;
+      grid-template-columns: minmax(0, .94fr) minmax(360px, .72fr);
+      gap: 26px;
       align-items: end;
     }
 
@@ -123,8 +123,8 @@
       color: var(--ink);
       border: 1px solid rgba(200,154,66,.55);
       border-radius: 30px;
-      padding: clamp(30px, 4vw, 52px);
-      box-shadow: var(--shadow);
+      padding: clamp(24px, 3vw, 38px);
+      box-shadow: 0 22px 54px rgba(40, 14, 10, .16);
     }
 
     .label {
@@ -154,15 +154,15 @@
     }
 
     h1 {
-      font-size: clamp(3rem, 6.1vw, 5.95rem);
-      max-width: 870px;
+      font-size: clamp(2.55rem, 4.5vw, 4.45rem);
+      max-width: 720px;
     }
 
     .hero-lead {
       margin: 22px 0 0;
       max-width: 760px;
       color: #594f48;
-      font-size: clamp(1.05rem, 1.65vw, 1.35rem);
+      font-size: clamp(1rem, 1.2vw, 1.16rem);
       line-height: 1.52;
     }
 
@@ -170,7 +170,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 22px;
     }
 
     .authority-card {
@@ -179,9 +179,9 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 24px;
-      padding: 28px;
+      padding: 18px;
       border: 1px solid rgba(255,255,255,.22);
-      border-radius: 28px;
+      border-radius: 24px;
       background: rgba(54, 7, 15, .72);
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
@@ -189,13 +189,62 @@
 
     .authority-card h2 {
       color: #fff;
-      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-size: clamp(1.45rem, 2.15vw, 2.25rem);
+      line-height: 1.02;
     }
 
     .authority-card p {
-      margin: 14px 0 0;
+      margin: 10px 0 0;
       color: rgba(255,255,255,.82);
       line-height: 1.55;
+      font-size: .94rem;
+    }
+
+    .media-reel {
+      position: relative;
+      min-height: 255px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(200,154,66,.34);
+      background: #180a0d;
+    }
+
+    .media-reel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.04);
+      animation: mediaFade 18s infinite;
+    }
+
+    .media-reel img:nth-child(2) { animation-delay: 4.5s; }
+    .media-reel img:nth-child(3) { animation-delay: 9s; }
+    .media-reel img:nth-child(4) { animation-delay: 13.5s; }
+
+    .media-reel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(12,7,6,.05), rgba(12,7,6,.72));
+    }
+
+    .reel-caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      z-index: 2;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+
+    @keyframes mediaFade {
+      0%, 19% { opacity: 1; transform: scale(1); }
+      25%, 100% { opacity: 0; transform: scale(1.04); }
     }
 
     .media-list {
@@ -206,12 +255,13 @@
 
     .media-list span {
       display: block;
-      padding: 12px 14px;
+      padding: 10px 12px;
       color: #fff;
       border: 1px solid rgba(200,154,66,.34);
       border-radius: 16px;
       background: rgba(255,255,255,.08);
       font-weight: 800;
+      font-size: .9rem;
     }
 
     .proof-strip {
@@ -227,8 +277,8 @@
     }
 
     .proof-item {
-      min-height: 132px;
-      padding: 28px 24px;
+      min-height: 104px;
+      padding: 22px 20px;
       border-left: 1px solid rgba(255,255,255,.18);
     }
 
@@ -236,19 +286,20 @@
     .proof-item strong {
       display: block;
       font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(1.45rem, 2vw, 2.1rem);
+      font-size: clamp(1.2rem, 1.5vw, 1.65rem);
       line-height: 1;
     }
 
     .proof-item span {
       display: block;
-      margin-top: 10px;
+      margin-top: 8px;
       color: rgba(255,255,255,.74);
       line-height: 1.42;
+      font-size: .9rem;
     }
 
     .section {
-      padding: clamp(56px, 7vw, 96px) 0;
+      padding: clamp(42px, 5vw, 70px) 0;
     }
 
     .section.light { background: var(--paper); }
@@ -257,20 +308,20 @@
     .heading {
       display: grid;
       grid-template-columns: 1fr .72fr;
-      gap: 42px;
+      gap: 32px;
       align-items: end;
-      margin-bottom: 36px;
+      margin-bottom: 26px;
     }
 
     .heading h2 {
-      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      font-size: clamp(2rem, 3.65vw, 3.65rem);
       color: inherit;
     }
 
     .heading p {
       margin: 0;
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.6;
     }
 
@@ -295,7 +346,7 @@
     }
 
     .production-feature {
-      min-height: 420px;
+      min-height: 330px;
       position: relative;
       display: flex;
       align-items: flex-end;
@@ -303,12 +354,12 @@
         linear-gradient(180deg, transparent 25%, rgba(54,7,15,.86)),
         url("assets/photos/cozinha-bancadas.jpg") center/cover;
       color: #fff;
-      padding: 34px;
+      padding: 26px;
     }
 
     .production-feature h3 {
       max-width: 720px;
-      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      font-size: clamp(1.95rem, 3vw, 3.05rem);
     }
 
     .production-feature p {
@@ -320,11 +371,11 @@
 
     .production-list {
       display: grid;
-      gap: 16px;
+      gap: 12px;
     }
 
     .production-card {
-      padding: 24px;
+      padding: 20px;
     }
 
     .production-card small,
@@ -340,7 +391,7 @@
     .production-card h3,
     .structure-card h3 {
       color: var(--wine);
-      font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+      font-size: clamp(1.25rem, 1.8vw, 1.68rem);
       letter-spacing: -.035em;
     }
 
@@ -354,11 +405,11 @@
     .structure-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 14px;
     }
 
     .structure-card {
-      padding: 26px;
+      padding: 20px;
       background: rgba(255,250,243,.96);
     }
 
@@ -370,14 +421,14 @@
     }
 
     .visual-photo {
-      min-height: 440px;
+      min-height: 345px;
       border-radius: 28px;
       background: url("assets/photos/parede-equipamentos.jpg") center/cover;
       box-shadow: var(--shadow);
     }
 
     .visual-copy {
-      padding: 38px;
+      padding: 28px;
       border-radius: 28px;
       background: rgba(255,255,255,.08);
       border: 1px solid rgba(255,255,255,.14);
@@ -385,14 +436,14 @@
 
     .visual-copy h2 {
       color: #fff;
-      font-size: clamp(2.2rem, 4.5vw, 4.3rem);
+      font-size: clamp(1.95rem, 3.25vw, 3.2rem);
     }
 
     .visual-copy p {
       margin: 18px 0 0;
       color: rgba(255,255,255,.78);
       line-height: 1.7;
-      font-size: 1.05rem;
+      font-size: .98rem;
     }
 
     .flow {
@@ -403,7 +454,7 @@
     }
 
     .flow article {
-      padding: 24px;
+      padding: 20px;
       border-radius: 24px;
       border: 1px solid var(--line);
       background: rgba(255,250,243,.86);
@@ -424,7 +475,7 @@
 
     .flow h3 {
       color: var(--wine);
-      font-size: 1.7rem;
+      font-size: 1.45rem;
     }
 
     .flow p {
@@ -438,24 +489,24 @@
         radial-gradient(circle at 15% 20%, rgba(200,154,66,.18), transparent 26%),
         linear-gradient(135deg, #17261a, #0f1c12);
       color: #fff;
-      padding: 72px 0;
+      padding: 52px 0;
     }
 
     .conversion-grid {
       display: grid;
-      grid-template-columns: .82fr 1fr;
-      gap: 42px;
+      grid-template-columns: .75fr 1fr;
+      gap: 30px;
       align-items: center;
     }
 
     .conversion h2 {
-      font-size: clamp(2.4rem, 4.8vw, 4.8rem);
+      font-size: clamp(2rem, 3.65vw, 3.65rem);
     }
 
     .conversion p {
       color: rgba(255,255,255,.78);
       line-height: 1.65;
-      font-size: 1.08rem;
+      font-size: .98rem;
     }
 
     .conversion-points {
@@ -474,7 +525,7 @@
     }
 
     .form-card {
-      padding: 28px;
+      padding: 22px;
       background: var(--paper);
     }
 
@@ -499,7 +550,7 @@
 
     input, select, textarea {
       width: 100%;
-      min-height: 48px;
+      min-height: 44px;
       border: 1px solid rgba(54,7,15,.18);
       border-radius: 14px;
       padding: 12px 14px;
@@ -633,10 +684,17 @@
         </div>
 
         <aside class="authority-card" aria-label="Produções que já passaram pela Quatro Folhas">
+          <div class="media-reel" aria-label="Imagens da estrutura da cozinha Quatro Folhas">
+            <img src="assets/photos/cozinha-qf.png" alt="Cozinha Quatro Folhas preparada para gravações">
+            <img src="assets/photos/cozinha-bancadas.jpg" alt="Bancadas da cozinha escola Quatro Folhas">
+            <img src="assets/photos/parede-equipamentos.jpg" alt="Equipamentos e utensílios da cozinha Quatro Folhas">
+            <img src="assets/photos/equipamentos.jpg" alt="Estrutura de equipamentos da Quatro Folhas">
+            <span class="reel-caption">Estrutura real para câmera, equipe e preparo</span>
+          </div>
           <div>
             <p class="label">Histórico</p>
-            <h2>Já recebeu produções de TV, streaming, publicidade e YouTube.</h2>
-            <p>Esse histórico reforça a credibilidade do espaço para agências, produtoras, marcas, chefs e projetos gastronômicos.</p>
+            <h2>Créditos de projetos realizados na nossa estrutura.</h2>
+            <p>Os nomes abaixo entram como referência textual de produções e parceiros. Logotipos oficiais só devem ser usados com autorização de marca.</p>
           </div>
           <div class="media-list">
             <span>Novela Vertical · Globoplay</span>
