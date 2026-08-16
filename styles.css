@@ -8094,6 +8094,70 @@ body.home-page .home-editorial-hero .hero-video {
   line-height: 1.38;
 }
 
+.pastry-feature-shot {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.58fr) minmax(300px, 0.42fr);
+  gap: 0;
+  width: min(86vw, 1280px);
+  margin: 18px auto;
+  overflow: hidden;
+  border: 1px solid rgba(168, 120, 32, 0.28);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(168, 120, 32, 0.18), transparent 36%),
+    linear-gradient(135deg, #f9f1e5 0%, #fffaf2 52%, #6f071a 52%, #520011 100%);
+  box-shadow: 0 24px 64px rgba(62, 20, 24, 0.14);
+}
+
+.pastry-feature-shot figure {
+  min-height: 330px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.pastry-feature-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+}
+
+.pastry-feature-shot div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(26px, 4vw, 56px);
+  color: var(--cream);
+}
+
+.pastry-feature-shot .eyebrow {
+  color: #f3d081;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pastry-feature-shot .eyebrow::before {
+  background: rgba(251, 247, 239, 0.75);
+}
+
+.pastry-feature-shot h2 {
+  max-width: 520px;
+  margin: 12px 0 0;
+  color: var(--cream);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 3vw, 48px);
+  line-height: 0.98;
+}
+
+.pastry-feature-shot p:not(.eyebrow) {
+  max-width: 460px;
+  margin: 14px 0 0;
+  color: rgba(251, 247, 239, 0.88);
+  font-size: 16px;
+  line-height: 1.42;
+}
+
 .chef-lp-differentials {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -10702,6 +10766,15 @@ body.home-page .home-editorial-hero .hero-video {
   .pastry-proof {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .pastry-feature-shot {
+    grid-template-columns: 1fr;
+    width: calc(100% - 36px);
+  }
+
+  .pastry-feature-shot figure {
+    min-height: 360px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -10723,6 +10796,24 @@ body.home-page .home-editorial-hero .hero-video {
   .pastry-date-ticket,
   .pastry-proof {
     grid-template-columns: 1fr;
+  }
+
+  .pastry-feature-shot {
+    width: calc(100% - 28px);
+    margin: 14px auto;
+    border-radius: 22px;
+  }
+
+  .pastry-feature-shot figure {
+    min-height: 300px;
+  }
+
+  .pastry-feature-shot div {
+    padding: 24px 22px 28px;
+  }
+
+  .pastry-feature-shot h2 {
+    font-size: clamp(28px, 9vw, 38px);
   }
 
   .page-form-section.pastry-enroll-section {
