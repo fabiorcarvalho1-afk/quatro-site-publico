@@ -8097,13 +8097,13 @@ body.home-page .home-editorial-hero .hero-video {
 .pastry-feature-shot {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.58fr) minmax(260px, 0.42fr);
-  gap: 0;
-  width: min(76vw, 980px);
-  margin: 6px auto;
+  grid-template-columns: minmax(0, 0.62fr) minmax(280px, 0.38fr);
+  gap: 10px;
+  width: min(84vw, 1160px);
+  margin: 12px auto;
   overflow: hidden;
   border: 1px solid rgba(168, 120, 32, 0.28);
-  border-radius: 18px;
+  border-radius: 24px;
   background:
     radial-gradient(circle at 12% 20%, rgba(255, 250, 242, 0.18), transparent 28%),
     radial-gradient(circle at 90% 0%, rgba(168, 120, 32, 0.2), transparent 36%),
@@ -8112,13 +8112,13 @@ body.home-page .home-editorial-hero .hero-video {
 }
 
 .pastry-feature-shot figure {
-  height: 190px;
+  height: clamp(300px, 28vw, 390px);
   min-height: 0;
-  margin: 10px 0 10px 10px;
+  margin: 14px 0 14px 14px;
   overflow: hidden;
   padding: 5px;
   border: 1px solid rgba(241, 205, 126, 0.58);
-  border-radius: 16px;
+  border-radius: 22px;
   background: rgba(255, 250, 242, 0.94);
   box-shadow: 0 14px 30px rgba(24, 8, 10, 0.22);
 }
@@ -8128,15 +8128,15 @@ body.home-page .home-editorial-hero .hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 46%;
-  border-radius: 12px;
+  object-position: center 62%;
+  border-radius: 17px;
 }
 
 .pastry-feature-shot div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(16px, 2.3vw, 26px);
+  padding: clamp(22px, 3vw, 38px) clamp(22px, 3vw, 36px) clamp(22px, 3vw, 38px) 6px;
   color: var(--cream);
 }
 
@@ -10777,13 +10777,17 @@ body.home-page .home-editorial-hero .hero-video {
 
   .pastry-feature-shot {
     grid-template-columns: 1fr;
-    width: calc(100% - 52px);
+    width: calc(100% - 40px);
   }
 
   .pastry-feature-shot figure {
-    height: 190px;
+    height: 340px;
     min-height: 0;
-    margin: 10px 10px 0;
+    margin: 12px 12px 0;
+  }
+
+  .pastry-feature-shot div {
+    padding: 24px 24px 28px;
   }
 }
 
@@ -10810,23 +10814,23 @@ body.home-page .home-editorial-hero .hero-video {
 
   .pastry-feature-shot {
     width: calc(100% - 28px);
-    margin: 8px auto;
-    border-radius: 18px;
+    margin: 10px auto;
+    border-radius: 22px;
   }
 
   .pastry-feature-shot figure {
-    height: 160px;
+    height: 300px;
     min-height: 0;
-    margin: 8px 8px 0;
-    padding: 4px;
+    margin: 10px 10px 0;
+    padding: 5px;
   }
 
   .pastry-feature-shot div {
-    padding: 16px 16px 18px;
+    padding: 20px 18px 22px;
   }
 
   .pastry-feature-shot h2 {
-    font-size: clamp(22px, 6.8vw, 28px);
+    font-size: clamp(24px, 7.2vw, 32px);
   }
 
   .page-form-section.pastry-enroll-section {
