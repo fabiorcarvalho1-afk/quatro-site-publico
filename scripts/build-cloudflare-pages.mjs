@@ -39,54 +39,15 @@ async function main() {
     }
 
     await cp(sourcePath, targetPath);
-
-    if (entry.name.endsWith('.html')) {
-      await createPrettyRoute(entry.name);
-    }
   }
 
+  await removeDuplicateRouteDirectories();
   await createRedirects();
-}
-
-async function createPrettyRoute(htmlFilename) {
-  if (htmlFilename === 'index.html') return;
-
-  const routeName = htmlFilename.slice(0, -'.html'.length);
-  const routeDir = path.join(distDir, routeName);
-  await mkdir(routeDir, { recursive: true });
-
-  const htmlSource = path.join(distDir, htmlFilename);
-  const htmlContent = await readFile(htmlSource, 'utf8');
-  await writeFile(path.join(routeDir, 'index.html'), htmlContent, 'utf8');
 }
 
 async function createRedirects() {
   const redirectsPath = path.join(distDir, '_redirects');
-  let redirectsContent = '';
-
-  try {
-    redirectsContent = await readFile(redirectsPath, 'utf8');
-  } catch {
-    redirectsContent = '';
-  }
-
-  const requiredLines = [
-    '/chef-profissional-setembro-2026 /chef-profissional-setembro-2026.html 200',
-    '/chef-profissional /chef-profissional.html 200',
-    '/confeitaria-profissional-setembro-2026 /confeitaria-profissional-setembro-2026.html 200',
-    '/confeitaria-profissional /confeitaria-profissional.html 200',
-  ];
-
-  const normalized = redirectsContent
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter(Boolean);
-
-  for (const line of requiredLines) {
-    if (!normalized.includes(line)) normalized.push(line);
-  }
-
-  await writeFile(redirectsPath, `${normalized.join('\n')}\n`, 'utf8');
+  await writeFile(redirectsPath, '', 'utf8');
 }
 
 async function copyDirectoryFiltered(sourceDir, targetDir) {
@@ -114,6 +75,21 @@ async function copyDirectoryFiltered(sourceDir, targetDir) {
 
 function formatMiB(size) {
   return `${(size / (1024 * 1024)).toFixed(2)} MiB`;
+}
+
+async function removeDuplicateRouteDirectories() {
+  const entries = await readdir(distDir, { withFileTypes: true });
+  const htmlRouteNames = new Set(
+    entries
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.html'))
+      .map((entry) => entry.name.slice(0, -'.html'.length))
+      .filter(Boolean),
+  );
+
+  for (const routeName of htmlRouteNames) {
+    const duplicatedDirectory = path.join(distDir, routeName);
+    await rm(duplicatedDirectory, { recursive: true, force: true });
+  }
 }
 
 await main();
