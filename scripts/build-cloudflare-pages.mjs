@@ -15,6 +15,7 @@ const skipNames = new Set([
   'node_modules',
   'scripts',
 ]);
+const maxAssetBytes = 25 * 1024 * 1024;
 
 async function main() {
   await rm(distDir, { recursive: true, force: true });
@@ -27,7 +28,13 @@ async function main() {
     const targetPath = path.join(distDir, entry.name);
 
     if (entry.isDirectory()) {
-      await cp(sourcePath, targetPath, { recursive: true });
+      await copyDirectoryFiltered(sourcePath, targetPath);
+      continue;
+    }
+
+    const sourceStat = await stat(sourcePath);
+    if (sourceStat.size > maxAssetBytes) {
+      console.warn(`Skipping oversized asset: ${entry.name} (${formatMiB(sourceStat.size)})`);
       continue;
     }
 
@@ -80,6 +87,33 @@ async function createRedirects() {
   }
 
   await writeFile(redirectsPath, `${normalized.join('\n')}\n`, 'utf8');
+}
+
+async function copyDirectoryFiltered(sourceDir, targetDir) {
+  await mkdir(targetDir, { recursive: true });
+  const entries = await readdir(sourceDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const sourcePath = path.join(sourceDir, entry.name);
+    const targetPath = path.join(targetDir, entry.name);
+
+    if (entry.isDirectory()) {
+      await copyDirectoryFiltered(sourcePath, targetPath);
+      continue;
+    }
+
+    const sourceStat = await stat(sourcePath);
+    if (sourceStat.size > maxAssetBytes) {
+      console.warn(`Skipping oversized asset: ${path.relative(rootDir, sourcePath)} (${formatMiB(sourceStat.size)})`);
+      continue;
+    }
+
+    await cp(sourcePath, targetPath);
+  }
+}
+
+function formatMiB(size) {
+  return `${(size / (1024 * 1024)).toFixed(2)} MiB`;
 }
 
 await main();
