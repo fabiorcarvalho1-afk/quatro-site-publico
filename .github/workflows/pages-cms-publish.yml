@@ -48,6 +48,7 @@ jobs:
           node --check content-loader.js
           node --check courses-loader.js
           node --check thematic-loader.js
+          node --check scripts/build-cloudflare-pages.mjs
           node <<'NODE'
           const fs = require("fs");
           const path = require("path");
@@ -58,6 +59,11 @@ jobs:
             console.log(`JSON válido: ${filepath}`);
           }
           NODE
+
+      - name: Gerar saída estática para Cloudflare
+        shell: bash
+        run: |
+          npm run build:pages
 
       - name: Sincronizar com a versão publicada
         env:
