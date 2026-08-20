@@ -1006,10 +1006,17 @@ document.querySelectorAll("[data-franchise-login]").forEach((form) => {
 document.querySelectorAll("[data-certificate-validation]").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const result = form.querySelector(".validation-result");
+    const codeInput = form.querySelector("input[name='certificateCode'], input[type='text']");
+    const code = (codeInput?.value || "").trim().toUpperCase();
+    const validResult = form.querySelector("[data-valid-result]");
+    const missingResult = form.querySelector("[data-missing-result]");
+    const legacyResult = form.querySelector(".validation-result:not([data-valid-result]):not([data-missing-result])");
     const button = form.querySelector("button[type='submit']");
-    if (result) result.hidden = false;
-    if (button) button.textContent = "Certificado validado";
+    const isValidDemo = !code || code === "QF-2026-0001";
+    if (validResult) validResult.hidden = !isValidDemo;
+    if (missingResult) missingResult.hidden = isValidDemo;
+    if (legacyResult) legacyResult.hidden = false;
+    if (button) button.textContent = isValidDemo ? "Certificado validado" : "Consultar novamente";
   });
 });
 

@@ -33,73 +33,48 @@
       </div>
     </header>
 
-    <main>
-      <section class="page-hero portal-hero">
-        <div>
-          <p class="eyebrow">Validação</p>
-          <h1>Conferência pública de certificados Quatro Folhas</h1>
-          <p>Empresas, escolas, alunos e parceiros podem consultar um código e o sobrenome do aluno para confirmar se o certificado foi emitido pela escola.</p>
-          <div class="info-strip">
-            <span>Código único</span>
-            <span>Consulta pública</span>
-            <span>Nome mascarado</span>
-            <span>Confirmação online</span>
+    <main class="certificate-validation-page">
+      <section class="certificate-validation-hero" id="consulta">
+        <div class="certificate-validation-copy">
+          <p class="eyebrow">Validação de certificado</p>
+          <h1>Confirme a autenticidade do certificado.</h1>
+          <p>Digite o número que consta no certificado para verificar se ele foi emitido pela Quatro Folhas Escola de Gastronomia.</p>
+        </div>
+
+        <form class="certificate-validation-card" data-certificate-validation>
+          <div class="certificate-card-head">
+            <p class="eyebrow">Consulta protegida</p>
+            <h2>Validar certificado</h2>
+            <p>Por segurança, a consulta exibe apenas as informações necessárias.</p>
           </div>
-        </div>
-        <div class="portal-summary">
-          <p class="eyebrow">Validação</p>
-          <h2>QF-2026-0001</h2>
-          <p>A consulta confirma o sobrenome, mas exibe o nome do aluno com privacidade.</p>
-          <a class="solid-btn" href="#consulta">Validar código</a>
-        </div>
-      </section>
 
-      <section class="signature-strip" aria-label="Diferenciais da validação de certificados">
-        <article><span>Código</span><strong>Identificação única</strong><p>Cada certificado recebe um código próprio para consulta pública.</p></article>
-        <article><span>Sobrenome</span><strong>Conferência extra</strong><p>A validação solicita sobrenome para evitar consulta aberta apenas por código.</p></article>
-        <article><span>Privacidade</span><strong>Confirmação</strong><p>O resultado confirma o aluno sem expor o nome completo. Dados sigilosos conforme a LGPD.</p></article>
-        <article><span>Base única</span><strong>Registro oficial</strong><p>A consulta usa a base de certificados emitidos pela escola.</p></article>
-      </section>
-
-      <section class="page-form-section" id="consulta">
-        <div>
-          <p class="eyebrow">Consulta</p>
-          <h2>Digite o código e o sobrenome</h2>
-        <p>A consulta confere se o sobrenome informado corresponde ao certificado. A resposta usa a mesma base de documentos liberados pela escola.</p>
-        </div>
-        <form class="contact-form" data-certificate-validation>
-          <label>Código do certificado<input type="text" value="QF-2026-0001" required></label>
-          <label>Sobrenome do aluno<input type="text" value="Rocha" required></label>
+          <label>Número do certificado<input name="certificateCode" type="text" value="QF-2026-0001" autocomplete="off" required></label>
           <button class="solid-btn" type="submit">Validar certificado</button>
-          <div class="validation-result" hidden>
-            <span class="tag">Certificado válido</span>
-            <h3>Aluno: C***** R*****</h3>
-            <p>Curso/Aula: Massas Artesanais</p>
-            <p>Data: 20/06/2026 | Carga horária: 3 horas</p>
-            <p>Emitido por: Quatro Folhas Escola de Gastronomia</p>
-            <p>Código: QF-2026-0001</p>
+
+          <div class="certificate-lgpd-note">
+            <strong>LGPD</strong>
+            <span>Os dados são protegidos. A página mostra somente as iniciais do aluno, o curso, a data e a confirmação de autenticidade.</span>
+          </div>
+
+          <div class="validation-result certificate-result is-valid" hidden data-valid-result>
+            <span class="certificate-status">Certificado autêntico</span>
+            <h3>Certificado localizado em nossa base.</h3>
+            <dl>
+              <div><dt>Aluno</dt><dd>F. C. S.</dd></div>
+              <div><dt>Curso</dt><dd>Chef Profissional</dd></div>
+              <div><dt>Data</dt><dd>10/08/2026</dd></div>
+              <div><dt>Confirmação</dt><dd>Documento válido</dd></div>
+            </dl>
+          </div>
+
+          <div class="validation-result certificate-result is-missing" hidden data-missing-result>
+            <span class="certificate-status">Não localizado</span>
+            <h3>Certificado não encontrado em nossa base.</h3>
+            <p>Confira o número digitado. Se o certificado continuar sem aparecer, entre em contato com a Quatro Folhas para verificar.</p>
+            <a class="certificate-whatsapp" href="https://wa.me/5511947781922" target="_blank" rel="noreferrer">Verificar pelo WhatsApp</a>
           </div>
         </form>
       </section>
-
-      <section class="content-band light">
-        <div class="section-heading split">
-          <div>
-          <p class="eyebrow">Resultado da consulta</p>
-          <h2>O que a validação exibe</h2>
-          </div>
-          <p>Para proteger dados pessoais, a página pública deve confirmar o certificado sem expor nome completo.</p>
-        </div>
-        <div class="admin-table">
-          <div class="admin-row admin-head"><span>Campo</span><span>Informação</span><span>Exibição</span><span>Status</span><span>Observação</span></div>
-          <div class="admin-row"><span>Código</span><span>QF-2026-0001</span><span>Pública</span><span><mark class="status-ok">Válido</mark></span><span>Código único do certificado.</span></div>
-          <div class="admin-row"><span>Curso/Aula</span><span>Massas Artesanais</span><span>Pública</span><span><mark class="status-ok">Válido</mark></span><span>Confirma a formação.</span></div>
-          <div class="admin-row"><span>Data</span><span>20/06/2026</span><span>Pública</span><span><mark class="status-ok">Válido</mark></span><span>Data de conclusão.</span></div>
-          <div class="admin-row"><span>Aluno</span><span>C***** R*****</span><span>Mascarada</span><span><mark class="status-ok">Privacidade</mark></span><span>Primeira letra + asteriscos.</span></div>
-          <div class="admin-row"><span>Sobrenome</span><span>Usado para conferência</span><span>não exibido</span><span><mark class="status-ok">Controle</mark></span><span>Evita consulta aberta apenas por código.</span></div>
-        </div>
-      </section>
-
     </main>
 
     <footer class="site-footer">
