@@ -3566,7 +3566,7 @@ textarea {
 }
 
 .certificate-validation-copy .eyebrow {
-  color: #fffdf7;
+  color: #fffdf7 !important;
 }
 
 .certificate-card-head .eyebrow {
