@@ -864,6 +864,99 @@ textarea {
   }
 }
 
+/* Cursos profissionalizantes — ajuste inspirado na pagina Chef: menos vinho liso, mais imagem real */
+.prof-courses-hero {
+  background:
+    linear-gradient(90deg, rgba(38, 20, 16, .72) 0%, rgba(38, 20, 16, .48) 46%, rgba(251, 246, 238, .94) 100%),
+    url("assets/photos/cozinha-bancadas.jpg") center/cover;
+}
+
+.prof-courses-hero__content {
+  background: rgba(255, 250, 242, .97);
+}
+
+.prof-courses-hero__visual img {
+  filter: saturate(.96) contrast(.98);
+}
+
+.prof-courses-proof {
+  background: #fbf6ee;
+}
+
+.prof-courses-proof article {
+  min-height: 78px;
+}
+
+.prof-course-card::after {
+  display: none;
+}
+
+.prof-course-card {
+  border-color: rgba(203, 154, 63, .30);
+  box-shadow: 0 16px 36px rgba(47, 25, 16, .07);
+}
+
+.prof-course-card--featured {
+  background: #fff8ed;
+}
+
+.prof-course-card figure {
+  height: 150px;
+}
+
+.prof-course-tag {
+  background: rgba(139, 0, 22, .10);
+  color: #8b0016;
+}
+
+.prof-course-card h3 {
+  color: #6f0715;
+}
+
+.prof-courses-value {
+  background:
+    linear-gradient(180deg, rgba(251, 246, 238, .92), rgba(251, 246, 238, .98)),
+    url("assets/photos/cozinha-aula.jpg") center/cover;
+  color: #211817;
+}
+
+.prof-courses-value .prof-courses-eyebrow {
+  color: #8b0016;
+}
+
+.prof-courses-value h2 {
+  color: #211817;
+}
+
+.prof-courses-value p {
+  color: #5f544d;
+}
+
+.prof-courses-value__photo {
+  border-color: rgba(203, 154, 63, .42);
+  box-shadow: 0 18px 42px rgba(51, 29, 20, .12);
+}
+
+.prof-courses-value__items article {
+  border-color: rgba(203, 154, 63, .34);
+  background: rgba(255, 250, 242, .88);
+  box-shadow: 0 14px 32px rgba(51, 29, 20, .08);
+}
+
+.prof-courses-value__items strong {
+  color: #6f0715;
+}
+
+.prof-courses-value__items span {
+  color: #5f544d;
+}
+
+@media (max-width: 760px) {
+  .prof-course-card figure {
+    height: 140px;
+  }
+}
+
 .main-nav a {
   white-space: nowrap;
 }
