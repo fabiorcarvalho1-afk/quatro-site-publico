@@ -43,6 +43,13 @@
 
   const emptyMessage = "Nenhuma aula temática cadastrada no momento.";
 
+  const splitItems = (value) => String(value || "")
+    .split(/\r?\n|\s+[•·]\s+|;/)
+    .map((item) => item.trim().replace(/^[\-–—•]+\s*/, ""))
+    .filter(Boolean);
+
+  const detailHref = (item) => `aulas-tematicas.html#aula-${encodeURIComponent(item.id || item.title || "tematica")}`;
+
   const renderEmpty = (container, message = emptyMessage) => {
     if (!container) return;
     container.replaceChildren(create("p", "thematic-empty", message));
@@ -98,9 +105,10 @@
     button.dataset.includes = item.includes || "";
   };
 
-  const renderThematicCard = (item) => {
+  const renderThematicCard = (item, options = {}) => {
     const article = create("article", "thematic-card");
     article.dataset.category = item.category || "cozinha";
+    article.id = `aula-${item.id || item.title || "tematica"}`.replace(/[^a-zA-Z0-9_-]+/g, "-");
 
     const figure = create("figure", "thematic-card-image");
     const image = create("img");
@@ -132,7 +140,10 @@
     });
 
     const preparations = create("div", "thematic-preparations");
-    preparations.append(create("strong", "", "Nesta aula você prepara"), create("span", "", item.preparations || ""));
+    const preparationItems = splitItems(item.preparations);
+    const preparationList = create("ul", "thematic-preparation-list");
+    preparationItems.forEach((entry) => preparationList.append(create("li", "", entry)));
+    preparations.append(create("strong", "", "Nesta aula você prepara"), preparationItems.length ? preparationList : create("span", "", item.preparations || ""));
 
     const included = create("div", "thematic-includes");
     included.append(
@@ -147,11 +158,21 @@
     if (installmentLabel) price.append(create("small", "thematic-installments", installmentLabel));
     const pixLabel = pixText(item);
     if (pixLabel) price.append(create("small", "thematic-pix-price", pixLabel));
-    const button = create("button");
-    configureButton(button, item, item.button || "Reservar e comprar");
+    const button = options.summary ? create("a") : create("button");
+    if (options.summary) {
+      button.className = "solid-btn";
+      button.href = detailHref(item);
+      button.textContent = "Saiba mais";
+    } else {
+      configureButton(button, item, item.button || "Reservar e comprar");
+    }
     footer.append(price, button);
 
-    body.append(meta, preparations, included, footer);
+    if (options.summary) {
+      body.append(meta, footer);
+    } else {
+      body.append(meta, preparations, included, footer);
+    }
     article.append(figure, body);
     return article;
   };
@@ -172,7 +193,7 @@
     return article;
   };
 
-  const renderHomeOrPage = (root, copy, items, limit) => {
+  const renderHomeOrPage = (root, copy, items, limit, options = {}) => {
     if (!root) return;
     const eyebrow = root.querySelector(".thematic-heading .eyebrow");
     const title = root.querySelector(".thematic-heading h2");
@@ -185,7 +206,7 @@
     if (grid) {
       const displayedItems = items.slice(0, limit || items.length);
       if (displayedItems.length) {
-        grid.replaceChildren(...displayedItems.map(renderThematicCard));
+        grid.replaceChildren(...displayedItems.map((item) => renderThematicCard(item, options)));
         if (typeof window.enhanceDynamicTriggers === "function") window.enhanceDynamicTriggers(grid);
       } else {
         renderEmpty(grid);
@@ -351,7 +372,7 @@
         .filter((item) => item.visible !== false)
         .sort((a, b) => Number(a.order || 0) - Number(b.order || 0));
       const homeItems = items.filter((item) => item.show_home !== false);
-      renderHomeOrPage(document.querySelector('[data-cms-thematic-source="home"]'), content.home || {}, homeItems, 3);
+      renderHomeOrPage(document.querySelector('[data-cms-thematic-source="home"]'), content.home || {}, homeItems, 3, { summary: true });
       renderHomeOrPage(document.querySelector('[data-cms-thematic-source="page"]'), content.page || {}, items);
       renderAgenda(content, items);
       if (typeof window.bindThematicFilters === "function") window.bindThematicFilters();

@@ -11979,3 +11979,42 @@ body.home-page .home-editorial-hero .hero-video {
     writing-mode: horizontal-tb;
   }
 }
+
+.thematic-preparation-list {
+  display: grid;
+  gap: 4px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thematic-preparation-list li {
+  position: relative;
+  padding-left: 14px;
+  color: #51473f;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+
+.thematic-preparation-list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #a61f24;
+  font-weight: 900;
+}
+
+.home-page .thematic-card-body {
+  padding: clamp(16px, 1.7vw, 20px);
+}
+
+.home-page .thematic-card-body > p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.home-page .thematic-card-footer {
+  padding-top: 16px;
+}
