@@ -12078,27 +12078,38 @@ body.thematic-page {
 
 .thematic-hero-facts {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+  padding: 24px;
+  background: #b60008;
 }
 
 .thematic-hero-facts span {
-  padding: 14px 16px;
-  border: 1px solid rgba(127, 22, 27, 0.13);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.82);
-  color: #725e53;
-  font-size: 13px;
-  line-height: 1.24;
+  min-height: 96px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(255, 225, 188, 0.52);
+  background: transparent;
+  color: #fff7ee;
+}
+
+.thematic-hero-facts small {
+  display: block;
+  margin-bottom: 12px;
+  color: #fff7ee;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .thematic-hero-facts strong {
   display: block;
-  margin-bottom: 4px;
-  color: #8b171c;
-  font-size: 16px;
+  color: #fff7ee;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(22px, 2.2vw, 30px);
   font-weight: 900;
+  line-height: 0.95;
 }
 
 .thematic-hero-visual {
