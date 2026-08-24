@@ -6495,10 +6495,11 @@ main .page-form-section.visit-section .eyebrow::before {
 
 .thematic-price .thematic-pix-price {
   color: #176b45;
+  display: block;
   font-family: inherit;
-  font-size: 12px;
-  font-weight: 850;
-  line-height: 1.3;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
 }
 
 .thematic-card-footer .solid-btn {
