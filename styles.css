@@ -12034,13 +12034,8 @@ body.thematic-page {
 
 .thematic-page .thematic-course-hero-photo {
   object-fit: cover;
-  object-position: center 46%;
+  object-position: center center;
   background: #1f1613;
-  transition: opacity 520ms ease;
-}
-
-.thematic-page .thematic-course-hero-photo.is-changing {
-  opacity: 0.28;
 }
 
 .thematic-page .chef-course-card h1 {
