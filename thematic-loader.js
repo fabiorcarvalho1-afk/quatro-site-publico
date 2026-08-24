@@ -193,6 +193,39 @@
     return article;
   };
 
+
+  const initThematicHeroCarousel = (items) => {
+    const heroImage = document.querySelector("[data-thematic-hero-carousel]");
+    if (!heroImage) return;
+
+    const fallback = heroImage.getAttribute("src") || "assets/photos/aulas-tematicas-turma.jpeg";
+    const images = [...new Set((items || [])
+      .map((item) => String(item.image || "").trim())
+      .filter(Boolean))];
+
+    if (!images.includes(fallback)) images.push(fallback);
+    if (!images.length) return;
+
+    let index = 0;
+    const setImage = (nextIndex) => {
+      index = nextIndex % images.length;
+      const nextSrc = images[index];
+      if (!nextSrc || heroImage.getAttribute("src") === nextSrc) return;
+
+      heroImage.classList.add("is-changing");
+      window.setTimeout(() => {
+        heroImage.src = nextSrc;
+        heroImage.alt = "Aula temática da Quatro Folhas";
+        heroImage.classList.remove("is-changing");
+      }, 220);
+    };
+
+    setImage(0);
+    if (images.length > 1) {
+      window.setInterval(() => setImage(index + 1), 5200);
+    }
+  };
+
   const renderHomeOrPage = (root, copy, items, limit, options = {}) => {
     if (!root) return;
     const eyebrow = root.querySelector(".thematic-heading .eyebrow");
@@ -375,6 +408,7 @@
       renderHomeOrPage(document.querySelector('[data-cms-thematic-source="home"]'), content.home || {}, homeItems, 3, { summary: true });
       renderHomeOrPage(document.querySelector('[data-cms-thematic-source="page"]'), content.page || {}, items);
       renderAgenda(content, items);
+      initThematicHeroCarousel(items);
       if (typeof window.bindThematicFilters === "function") window.bindThematicFilters();
     })
     .catch((error) => {
