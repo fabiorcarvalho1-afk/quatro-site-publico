@@ -12033,8 +12033,8 @@ body.thematic-page {
 }
 
 .thematic-page .thematic-course-hero-photo {
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center 46%;
   background: #1f1613;
 }
 
