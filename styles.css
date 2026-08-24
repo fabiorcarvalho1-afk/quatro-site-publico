@@ -12029,6 +12029,13 @@ body.thematic-page {
 
 .thematic-page .thematic-course-hero {
   margin-top: 0;
+  background: #1f1613;
+}
+
+.thematic-page .thematic-course-hero-photo {
+  object-fit: contain;
+  object-position: center center;
+  background: #1f1613;
 }
 
 .thematic-page .chef-course-card h1 {
