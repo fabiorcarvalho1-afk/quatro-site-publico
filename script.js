@@ -906,7 +906,7 @@ document.querySelectorAll("[data-demo-form]").forEach((form) => {
 
     try {
       await submitLead(payload);
-      feedback.textContent = form.dataset.successText || "Recebemos sua mensagem. Nossa equipe entrara em contato pelo WhatsApp.";
+      feedback.textContent = form.dataset.successText || form.dataset.success || "Recebemos sua mensagem. Nossa equipe entrara em contato pelo WhatsApp.";
       form.reset();
       resetTurnstile(form);
     } catch (error) {
@@ -915,8 +915,9 @@ document.querySelectorAll("[data-demo-form]").forEach((form) => {
         resetTurnstile(form);
         return;
       }
+      console.error("Falha ao gravar lead no CRM", error);
       whatsappLeadFallback(payload);
-      feedback.textContent = "Recebemos seu interesse. Vamos continuar o atendimento pelo WhatsApp.";
+      feedback.textContent = "Nao foi possivel gravar seu interesse no sistema agora. O WhatsApp foi aberto para continuar o atendimento.";
       resetTurnstile(form);
     } finally {
       stopLoading();
