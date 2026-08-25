@@ -1205,17 +1205,24 @@ textarea {
 }
 
 @media (min-width: 1061px) {
+  .home-page .site-header {
+    grid-template-areas:
+      "brand nav whats"
+      ". tools whats";
+  }
+
   .home-page .header-tools {
-    flex-direction: column;
+    grid-area: tools;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 7px;
-    transform: translateX(-52px);
+    transform: none;
   }
 
   .home-page .header-tools .ghost-btn,
   .home-page .header-tools .portal-toggle {
-    min-width: 176px;
+    min-width: 168px;
     justify-content: center;
     text-align: center;
   }
