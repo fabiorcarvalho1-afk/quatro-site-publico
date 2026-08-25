@@ -1214,7 +1214,7 @@ textarea {
   .home-page .header-tools {
     position: absolute;
     top: 82px;
-    right: 82px;
+    right: 118px;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
@@ -1224,7 +1224,8 @@ textarea {
 
   .home-page .header-tools .ghost-btn,
   .home-page .header-tools .portal-toggle {
-    min-width: 168px;
+    min-width: 148px;
+    padding-inline: 16px;
     justify-content: center;
     text-align: center;
   }
