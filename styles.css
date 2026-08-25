@@ -12535,18 +12535,18 @@ body.thematic-page {
 
 .entrepreneurs-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.38fr);
-  gap: clamp(24px, 4vw, 52px);
+  grid-template-columns: minmax(0, 0.76fr) minmax(260px, 0.34fr);
+  gap: clamp(22px, 3.5vw, 44px);
   align-items: center;
-  padding: 56px clamp(24px, 4vw, 56px) 38px;
+  padding: 46px clamp(24px, 4vw, 56px) 30px;
 }
 
 .entrepreneurs-hero h1 {
-  max-width: 660px;
+  max-width: 540px;
   margin: 10px 0 14px;
-  font-size: clamp(2.7rem, 4.8vw, 4.9rem);
-  line-height: 0.94;
-  letter-spacing: -0.055em;
+  font-size: clamp(1.95rem, 3.1vw, 3.05rem);
+  line-height: 1.06;
+  letter-spacing: -0.045em;
 }
 
 .entrepreneurs-hero p {
@@ -12559,14 +12559,14 @@ body.thematic-page {
 .entrepreneurs-hero aside {
   position: relative;
   overflow: hidden;
-  padding: 24px;
+  padding: 22px;
   border: 1px solid rgba(155, 0, 9, 0.22);
-  border-radius: 28px;
+  border-radius: 24px;
   background:
     radial-gradient(circle at top right, rgba(180, 126, 22, 0.2), transparent 42%),
     linear-gradient(135deg, #fffaf3 0%, #f4e5d8 100%);
   color: #241713;
-  box-shadow: 0 18px 48px rgba(75, 45, 22, 0.1);
+  box-shadow: 0 14px 34px rgba(75, 45, 22, 0.08);
 }
 
 .entrepreneurs-hero aside::before {
@@ -12583,7 +12583,7 @@ body.thematic-page {
   display: block;
   font-family: var(--display-font);
   color: #8f111b;
-  font-size: 1.55rem;
+  font-size: 1.35rem;
   line-height: 1.05;
 }
 
@@ -12598,8 +12598,8 @@ body.thematic-page {
 .entrepreneurs-intro {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  padding: 0 clamp(24px, 4vw, 56px) 48px;
+  gap: 14px;
+  padding: 0 clamp(24px, 4vw, 56px) 34px;
 }
 
 .entrepreneurs-intro article,
@@ -12611,31 +12611,39 @@ body.thematic-page {
 }
 
 .entrepreneurs-intro article {
-  min-height: 220px;
-  padding: 26px;
+  position: relative;
+  min-height: 132px;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 18px 20px;
 }
 
 .entrepreneurs-intro article:nth-child(even) {
-  border-left: 6px solid #806845;
+  border-top: 4px solid #806845;
 }
 
 .entrepreneurs-intro article:nth-child(odd) {
-  border-left: 6px solid #b4000b;
+  border-top: 4px solid #b4000b;
 }
 
 .entrepreneurs-intro h2 {
-  margin: 28px 0 10px;
+  margin: 14px 0 7px;
   font-family: var(--display-font);
   color: #9b0009;
-  font-size: 2rem;
-  line-height: 1;
+  font-size: 1.28rem;
+  line-height: 1.04;
 }
 
 .entrepreneurs-intro p,
 .entrepreneur-card p,
 .entrepreneurs-disclaimer p {
   color: #66564d;
-  line-height: 1.65;
+  line-height: 1.5;
+}
+
+.entrepreneurs-intro p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .entrepreneurs-directory {
