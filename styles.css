@@ -12311,22 +12311,37 @@ body.thematic-page {
 
 /* Vitrine de Alunos Empreendedores */
 .home-entrepreneurs-section {
-  padding: 72px clamp(24px, 5vw, 80px);
-  background: linear-gradient(135deg, #fff8ef 0%, #f2e7d9 100%);
+  padding: clamp(52px, 7vw, 92px) clamp(20px, 5vw, 80px);
+  background:
+    radial-gradient(circle at 76% 16%, rgba(201, 145, 45, 0.22), transparent 32%),
+    linear-gradient(135deg, #fff8ef 0%, #f2e7d9 100%);
 }
 
 .home-entrepreneurs-card {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-  gap: 32px;
-  align-items: stretch;
-  max-width: 1220px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+  gap: clamp(28px, 5vw, 62px);
+  align-items: center;
+  max-width: 1260px;
+  min-height: 520px;
   margin: 0 auto;
-  padding: clamp(28px, 5vw, 56px);
+  padding: clamp(30px, 5vw, 64px);
+  overflow: hidden;
   border: 1px solid rgba(132, 30, 31, 0.18);
-  border-radius: 34px;
+  border-radius: 36px;
   background: #fffdf8;
-  box-shadow: 0 28px 80px rgba(72, 45, 24, 0.12);
+  box-shadow: 0 30px 86px rgba(72, 45, 24, 0.14);
+}
+
+.home-entrepreneurs-card::before {
+  content: "";
+  position: absolute;
+  inset: 8% -10% -24% 54%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 145, 45, 0.26), rgba(167, 7, 10, 0.13) 43%, transparent 68%);
 }
 
 .home-entrepreneurs-copy h2,
@@ -12337,72 +12352,171 @@ body.thematic-page {
 }
 
 .home-entrepreneurs-copy h2 {
-  max-width: 620px;
+  max-width: 700px;
   margin: 12px 0;
-  font-size: clamp(2.4rem, 5vw, 5.1rem);
-  line-height: 0.92;
+  font-size: clamp(2.8rem, 5.8vw, 5.6rem);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
 }
 
 .home-entrepreneurs-copy p {
   max-width: 560px;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   color: #6f5a4d;
   font-size: 1.05rem;
   line-height: 1.75;
 }
 
 .home-entrepreneurs-preview {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  position: relative;
+  min-height: 420px;
 }
 
 .home-entrepreneurs-preview article {
-  min-height: 220px;
+  position: absolute;
+  width: min(44%, 230px);
+  min-width: 176px;
+  height: 318px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 24px;
-  border: 1px solid rgba(255,255,255,0.28);
-  background: linear-gradient(160deg, #9b0009 0%, #6d111b 72%);
-  color: #fff;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgba(255, 247, 238, 0.18);
+  border-radius: 30px;
+  color: #fff7ee;
+  box-shadow: 0 26px 70px rgba(35, 20, 14, 0.22);
+}
+
+.home-entrepreneurs-preview article:nth-child(1) {
+  left: 0;
+  top: 20px;
+  transform: rotate(-4deg);
+  background: linear-gradient(160deg, #9b0009 0%, #3a1714 88%);
 }
 
 .home-entrepreneurs-preview article:nth-child(2) {
-  background: linear-gradient(160deg, #7a6243 0%, #3a251b 78%);
+  left: 30%;
+  top: 72px;
+  height: 340px;
+  transform: rotate(3deg);
+  background: linear-gradient(160deg, #7a6243 0%, #2e1b16 82%);
 }
 
 .home-entrepreneurs-preview article:nth-child(3) {
-  background: linear-gradient(160deg, #221713 0%, #8d111b 120%);
+  right: 0;
+  top: 10px;
+  height: 300px;
+  transform: rotate(-2deg);
+  background: linear-gradient(160deg, #2b1714 0%, #8d111b 120%);
+}
+
+.entrepreneur-story-photo {
+  position: absolute;
+  inset: 0 0 36%;
+  background:
+    radial-gradient(circle at 28% 30%, #ffe0a2 0 12%, transparent 13%),
+    radial-gradient(circle at 60% 44%, #fff2d2 0 11%, transparent 12%),
+    radial-gradient(circle at 48% 72%, #c9912d 0 16%, transparent 17%),
+    linear-gradient(135deg, rgba(255,255,255,0.2), rgba(0,0,0,0.08));
+  opacity: 0.92;
 }
 
 .home-entrepreneurs-preview span,
 .entrepreneurs-intro span {
+  position: relative;
+  z-index: 1;
   width: fit-content;
   border-radius: 999px;
-  background: #fff;
+  background: #fff7ee;
   color: #9b0009;
-  padding: 5px 11px;
+  padding: 7px 11px;
   font-size: 0.78rem;
   font-weight: 900;
 }
 
 .home-entrepreneurs-preview strong {
+  position: relative;
+  z-index: 1;
   display: block;
-  margin-top: 22px;
+  margin-top: 18px;
   font-family: var(--display-font);
   font-size: 1.8rem;
-  line-height: 1;
+  line-height: 0.98;
 }
 
 .home-entrepreneurs-preview small {
+  position: relative;
+  z-index: 1;
   display: block;
-  margin-top: 12px;
+  margin-top: 10px;
   color: rgba(255,255,255,0.78);
-  font-size: 0.96rem;
-  line-height: 1.45;
+  font-size: 0.94rem;
+  line-height: 1.4;
 }
 
+.home-entrepreneurs-badge {
+  position: absolute;
+  right: 8px;
+  bottom: 22px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 10px 13px;
+  background: rgba(255, 247, 238, 0.94);
+  color: #9b0009;
+  font-size: 0.78rem;
+  font-weight: 900;
+  box-shadow: 0 14px 36px rgba(35, 20, 14, 0.14);
+}
+
+.home-entrepreneurs-badge span {
+  display: block;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 999px;
+  background: #c20b10;
+}
+
+@media (max-width: 920px) {
+  .home-entrepreneurs-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-entrepreneurs-preview {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-entrepreneurs-card {
+    padding: 24px;
+    border-radius: 28px;
+  }
+
+  .home-entrepreneurs-preview {
+    min-height: 620px;
+  }
+
+  .home-entrepreneurs-preview article {
+    position: relative;
+    inset: auto !important;
+    width: 100%;
+    height: 176px !important;
+    min-width: 0;
+    margin-bottom: 14px;
+    transform: none !important;
+  }
+
+  .home-entrepreneurs-badge {
+    position: relative;
+    right: auto;
+    bottom: auto;
+  }
+}
 .entrepreneurs-page {
   background: #f7efe7;
 }
