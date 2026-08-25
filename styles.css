@@ -1208,14 +1208,15 @@ textarea {
   .home-page .site-header {
     grid-template-areas:
       "brand nav whats"
-      ". tools whats";
+      "brand nav tools";
   }
 
   .home-page .header-tools {
     grid-area: tools;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    justify-self: end;
     gap: 7px;
     transform: none;
   }
