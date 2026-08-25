@@ -129,6 +129,29 @@ textarea {
   box-shadow: 0 1px 0 rgba(23, 23, 20, 0.03);
 }
 
+.home-page .site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -82px;
+  height: 96px;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(180deg, rgba(18, 18, 16, 0.72), rgba(18, 18, 16, 0.58) 62%, rgba(18, 18, 16, 0));
+  transition: opacity 180ms ease;
+  z-index: 0;
+}
+
+.home-page .site-header:hover::after,
+.home-page .site-header:focus-within::after {
+  opacity: 1;
+}
+
+.home-page .site-header > * {
+  position: relative;
+  z-index: 1;
+}
 .brand {
   grid-area: brand;
   display: flex;
