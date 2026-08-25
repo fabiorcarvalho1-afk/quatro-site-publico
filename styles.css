@@ -12518,11 +12518,16 @@ body.thematic-page {
   }
 }
 .entrepreneurs-page {
-  background: #f7efe7;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(196, 137, 38, 0.34), transparent 28%),
+    radial-gradient(circle at 86% 18%, rgba(180, 0, 11, 0.28), transparent 32%),
+    linear-gradient(135deg, #150b0a 0%, #251312 46%, #120908 100%);
+  color: #fff7ed;
 }
 
 .entrepreneurs-main {
-  padding-top: 104px;
+  padding-top: 118px;
+  padding-bottom: 72px;
 }
 
 .entrepreneurs-hero,
@@ -12538,35 +12543,63 @@ body.thematic-page {
   grid-template-columns: minmax(0, 0.76fr) minmax(260px, 0.34fr);
   gap: clamp(22px, 3.5vw, 44px);
   align-items: center;
-  padding: 46px clamp(24px, 4vw, 56px) 30px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 219, 165, 0.18);
+  border-radius: 36px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    radial-gradient(circle at 78% 18%, rgba(201, 145, 45, 0.34), transparent 34%),
+    linear-gradient(135deg, rgba(73, 16, 18, 0.95) 0%, rgba(32, 16, 13, 0.96) 62%, rgba(15, 10, 9, 0.98) 100%);
+  padding: 54px clamp(24px, 4vw, 58px) 48px;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34);
+}
+
+.entrepreneurs-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -70px -90px auto;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(255, 219, 165, 0.18);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 219, 165, 0.16), transparent 62%);
+  pointer-events: none;
 }
 
 .entrepreneurs-hero h1 {
-  max-width: 540px;
+  max-width: 620px;
   margin: 10px 0 14px;
-  font-size: clamp(1.95rem, 3.1vw, 3.05rem);
-  line-height: 1.06;
+  color: #fff8ef;
+  font-size: clamp(2.05rem, 3.35vw, 3.4rem);
+  line-height: 1.02;
   letter-spacing: -0.045em;
 }
 
 .entrepreneurs-hero p {
-  max-width: 620px;
-  color: #6c564a;
-  font-size: 1.04rem;
-  line-height: 1.65;
+  max-width: 560px;
+  color: rgba(255, 248, 239, 0.78);
+  font-size: 1.02rem;
+  line-height: 1.58;
+}
+
+.entrepreneurs-page .eyebrow {
+  color: #ffd38e;
 }
 
 .entrepreneurs-hero aside {
   position: relative;
   overflow: hidden;
-  padding: 22px;
-  border: 1px solid rgba(155, 0, 9, 0.22);
-  border-radius: 24px;
+  z-index: 1;
+  padding: 24px;
+  border: 1px solid rgba(255, 219, 165, 0.22);
+  border-radius: 28px;
   background:
-    radial-gradient(circle at top right, rgba(180, 126, 22, 0.2), transparent 42%),
-    linear-gradient(135deg, #fffaf3 0%, #f4e5d8 100%);
-  color: #241713;
-  box-shadow: 0 14px 34px rgba(75, 45, 22, 0.08);
+    radial-gradient(circle at top right, rgba(255, 211, 142, 0.22), transparent 44%),
+    rgba(255, 255, 255, 0.08);
+  color: #fff8ef;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px);
 }
 
 .entrepreneurs-hero aside::before {
@@ -12576,50 +12609,74 @@ body.thematic-page {
   height: 4px;
   margin-bottom: 20px;
   border-radius: 999px;
-  background: #9b0009;
+  background: #ffd38e;
 }
 
 .entrepreneurs-hero aside strong {
   display: block;
   font-family: var(--display-font);
-  color: #8f111b;
-  font-size: 1.35rem;
+  color: #fff8ef;
+  font-size: 1.45rem;
   line-height: 1.05;
 }
 
 .entrepreneurs-hero aside span {
   display: block;
   margin-top: 12px;
-  color: #6c564a;
+  color: rgba(255, 248, 239, 0.74);
   font-size: 0.96rem;
   line-height: 1.55;
+}
+
+.entrepreneurs-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.entrepreneurs-hero-tags small {
+  border: 1px solid rgba(255, 211, 142, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 211, 142, 0.12);
+  color: #ffd38e;
+  padding: 7px 10px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .entrepreneurs-intro {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  padding: 0 clamp(24px, 4vw, 56px) 34px;
+  padding: 22px clamp(24px, 4vw, 56px) 42px;
 }
 
 .entrepreneurs-intro article,
 .entrepreneur-card,
 .entrepreneurs-disclaimer {
   border: 1px solid #e5cdb9;
-  background: #fffaf3;
-  box-shadow: 0 18px 50px rgba(75, 45, 22, 0.08);
+  background: rgba(255, 248, 239, 0.94);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
 }
 
 .entrepreneurs-intro article {
   position: relative;
   min-height: 132px;
   overflow: hidden;
+  border: 1px solid rgba(255, 219, 165, 0.18);
   border-radius: 20px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(255, 211, 142, 0.22), transparent 38%),
+    rgba(255, 255, 255, 0.08);
   padding: 18px 20px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
 }
 
 .entrepreneurs-intro article:nth-child(even) {
-  border-top: 4px solid #806845;
+  border-top: 4px solid #c9912d;
 }
 
 .entrepreneurs-intro article:nth-child(odd) {
@@ -12629,7 +12686,7 @@ body.thematic-page {
 .entrepreneurs-intro h2 {
   margin: 14px 0 7px;
   font-family: var(--display-font);
-  color: #9b0009;
+  color: #fff8ef;
   font-size: 1.28rem;
   line-height: 1.04;
 }
@@ -12643,11 +12700,17 @@ body.thematic-page {
 
 .entrepreneurs-intro p {
   margin: 0;
+  color: rgba(255, 248, 239, 0.72);
   font-size: 0.9rem;
 }
 
 .entrepreneurs-directory {
-  padding: 64px clamp(24px, 4vw, 56px);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 88% 4%, rgba(180, 0, 11, 0.1), transparent 28%),
+    #fff8ef;
+  padding: 44px clamp(24px, 4vw, 56px);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.24);
 }
 
 .entrepreneurs-section-heading {
@@ -12665,8 +12728,13 @@ body.thematic-page {
 
 .entrepreneurs-section-heading h2 {
   margin: 0;
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
-  line-height: 0.95;
+  color: #241713;
+  font-size: clamp(1.9rem, 3.4vw, 3.35rem);
+  line-height: 1;
+}
+
+.entrepreneurs-section-heading p {
+  color: #6c564a;
 }
 
 .entrepreneurs-grid {
@@ -12683,11 +12751,11 @@ body.thematic-page {
 }
 
 .entrepreneurs-category-nav a {
-  border: 1px solid rgba(155, 0, 9, 0.18);
+  border: 1px solid rgba(155, 0, 9, 0.16);
   border-radius: 999px;
-  background: #fffaf3;
+  background: #fff;
   color: #8f111b;
-  padding: 12px 18px;
+  padding: 11px 17px;
   font-weight: 900;
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(75, 45, 22, 0.06);
@@ -12704,13 +12772,13 @@ body.thematic-page {
 }
 
 .entrepreneur-category {
-  border: 1px solid #e5cdb9;
-  border-radius: 32px;
+  border: 1px solid #ecd7c5;
+  border-radius: 28px;
   background:
-    radial-gradient(circle at top right, rgba(180, 126, 22, 0.13), transparent 34%),
-    #fffaf3;
-  padding: clamp(22px, 3vw, 34px);
-  box-shadow: 0 18px 50px rgba(75, 45, 22, 0.08);
+    linear-gradient(90deg, rgba(155, 0, 9, 0.08), transparent 36%),
+    #fffdf8;
+  padding: clamp(20px, 2.5vw, 28px);
+  box-shadow: 0 16px 42px rgba(75, 45, 22, 0.07);
 }
 
 .entrepreneur-category-heading {
@@ -12723,8 +12791,8 @@ body.thematic-page {
 
 .entrepreneur-category-heading > span {
   display: inline-grid;
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   place-items: center;
   border-radius: 999px;
   background: #9b0009;
@@ -12736,8 +12804,8 @@ body.thematic-page {
   margin: 0 0 8px;
   font-family: var(--display-font);
   color: #241713;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  line-height: 0.98;
+  font-size: clamp(1.55rem, 2.7vw, 2.4rem);
+  line-height: 1.02;
 }
 
 .entrepreneur-category-heading p {
@@ -12757,23 +12825,34 @@ body.thematic-page {
   grid-template-columns: auto minmax(150px, 0.8fr) minmax(220px, 1.2fr) minmax(170px, 0.8fr);
   gap: 18px;
   align-items: center;
-  border: 1px solid #edd9c8;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.78);
-  padding: 18px;
-  box-shadow: 0 10px 28px rgba(75, 45, 22, 0.06);
+  border: 1px solid rgba(36, 23, 19, 0.08);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.94), rgba(255,248,239,0.94)),
+    #fff;
+  padding: 15px;
+  box-shadow: 0 10px 26px rgba(75, 45, 22, 0.07);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.entrepreneur-business-card:hover {
+  border-color: rgba(155, 0, 9, 0.22);
+  box-shadow: 0 18px 38px rgba(75, 45, 22, 0.13);
+  transform: translateY(-2px);
 }
 
 .entrepreneur-logo {
   display: inline-grid;
-  width: 70px;
-  height: 70px;
+  width: 62px;
+  height: 62px;
   place-items: center;
-  border-radius: 22px;
-  background: #806845;
+  border-radius: 19px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 211, 142, 0.34), transparent 34%),
+    #806845;
   color: #fff;
   font-family: var(--display-font);
-  font-size: 1.65rem;
+  font-size: 1.45rem;
   font-weight: 900;
   letter-spacing: -0.02em;
 }
@@ -12792,9 +12871,9 @@ body.thematic-page {
 
 .entrepreneur-label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   color: #9b0009;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -12803,7 +12882,7 @@ body.thematic-page {
 .entrepreneur-business-card h4 {
   margin: 0;
   color: #241713;
-  font-size: 1.25rem;
+  font-size: 1.12rem;
   line-height: 1.15;
 }
 
@@ -12816,10 +12895,10 @@ body.thematic-page {
 .entrepreneur-business-card strong {
   display: inline-flex;
   border-radius: 999px;
-  background: #f1e4d4;
+  background: #f7ead8;
   color: #7c1522;
-  padding: 9px 13px;
-  font-size: 0.95rem;
+  padding: 8px 12px;
+  font-size: 0.9rem;
 }
 
 .entrepreneur-card {
