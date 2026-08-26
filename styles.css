@@ -1600,11 +1600,17 @@ textarea:focus-visible {
 }
 
 .voucher-hero-image {
-  background-color: #f5f0ea;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 24px 64px rgba(23, 23, 20, 0.14);
   outline: none;
+}
+
+.voucher-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .page-hero-video-demo {
