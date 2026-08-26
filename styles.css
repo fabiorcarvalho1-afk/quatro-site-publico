@@ -12583,8 +12583,12 @@ body.thematic-page {
   line-height: 1.58;
 }
 
-.entrepreneurs-page .entrepreneurs-hero .eyebrow {
-  color: #fff;
+body.entrepreneurs-page main .entrepreneurs-hero .eyebrow {
+  color: #fff !important;
+}
+
+body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
+  background: #fff !important;
 }
 
 .entrepreneurs-page .entrepreneurs-directory .eyebrow {
