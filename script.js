@@ -929,43 +929,45 @@ if (!isBackofficePage) {
   });
 }
 
-document.querySelectorAll("[data-demo-form]").forEach((form) => {
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const button = form.querySelector("button[type='submit']");
-    const feedback = ensureFeedback(form);
-    if (form.querySelector("[name='website']")?.value) {
-      feedback.textContent = "Nao foi possivel enviar a mensagem. Tente novamente.";
-      return;
-    }
-    if (!getTurnstileToken(form)) {
-      feedback.textContent = "Conclua a verificação de segurança antes de enviar.";
-      return;
-    }
-    const stopLoading = setButtonLoading(button, "Enviando");
-    const source = form.dataset.source || `site_${currentPage.replace(".html", "")}`;
-    const payload = buildLeadPayload(form, source);
-
-    try {
-      await submitLead(payload);
-      feedback.textContent = form.dataset.successText || form.dataset.success || "Recebemos sua mensagem. Nossa equipe entrara em contato pelo WhatsApp.";
-      form.reset();
-      resetTurnstile(form);
-    } catch (error) {
-      if (isTurnstileError(error)) {
-        feedback.textContent = error.message || "Não foi possível validar a verificação de segurança.";
-        resetTurnstile(form);
+if (!isBackofficePage) {
+  document.querySelectorAll("[data-demo-form]").forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = form.querySelector("button[type='submit']");
+      const feedback = ensureFeedback(form);
+      if (form.querySelector("[name='website']")?.value) {
+        feedback.textContent = "Nao foi possivel enviar a mensagem. Tente novamente.";
         return;
       }
-      console.error("Falha ao gravar lead no CRM", error);
-      whatsappLeadFallback(payload);
-      feedback.textContent = "Nao foi possivel gravar seu interesse no sistema agora. O WhatsApp foi aberto para continuar o atendimento.";
-      resetTurnstile(form);
-    } finally {
-      stopLoading();
-    }
+      if (!getTurnstileToken(form)) {
+        feedback.textContent = "Conclua a verificação de segurança antes de enviar.";
+        return;
+      }
+      const stopLoading = setButtonLoading(button, "Enviando");
+      const source = form.dataset.source || `site_${currentPage.replace(".html", "")}`;
+      const payload = buildLeadPayload(form, source);
+
+      try {
+        await submitLead(payload);
+        feedback.textContent = form.dataset.successText || form.dataset.success || "Recebemos sua mensagem. Nossa equipe entrara em contato pelo WhatsApp.";
+        form.reset();
+        resetTurnstile(form);
+      } catch (error) {
+        if (isTurnstileError(error)) {
+          feedback.textContent = error.message || "Não foi possível validar a verificação de segurança.";
+          resetTurnstile(form);
+          return;
+        }
+        console.error("Falha ao gravar lead no CRM", error);
+        whatsappLeadFallback(payload);
+        feedback.textContent = "Nao foi possivel gravar seu interesse no sistema agora. O WhatsApp foi aberto para continuar o atendimento.";
+        resetTurnstile(form);
+      } finally {
+        stopLoading();
+      }
+    });
   });
-});
+}
 
 document.querySelectorAll("[data-portal-login]").forEach((form) => {
   form.addEventListener("submit", async (event) => {
