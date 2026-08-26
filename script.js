@@ -23,6 +23,38 @@ const AUTH_ACCESS_TOKEN_KEY = "qf_admin_access_token";
 const AUTH_REFRESH_TOKEN_KEY = "qf_admin_refresh_token";
 const AUTH_CURRENT_USER_KEY = "qf_current_user";
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const PAGE_LEAD_INTERESTS = {
+  "a-escola.html": "Visita ou atendimento institucional",
+  "aulas-para-escolas.html": "Aulas para escolas",
+  "aulas-tematicas.html": "Aulas temáticas",
+  "aulas-tematicas-experiencias.html": "Aulas temáticas — experiências de um dia",
+  "auxiliar-de-cozinha.html": "Auxiliar de Cozinha",
+  "bolos-e-doces-finos.html": "Especialização em Bolos e Doces Finos",
+  "bolos-e-doces-finos-especializacao.html": "Especialização em Bolos e Doces Finos",
+  "cadastrar-vaga.html": "Cadastro de vaga para alunos",
+  "chef-express.html": "Chef Express",
+  "chef-profissional.html": "Chef Profissional",
+  "chef-profissional-setembro-2026.html": "Chef Profissional — turma 14/09/2026",
+  "confeitaria-profissional.html": "Confeitaria Profissional",
+  "confeitaria-profissional-setembro-2026.html": "Confeitaria Profissional — turma 10/09/2026",
+  "contato.html": "Contato geral",
+  "criancas-e-escolas.html": "Crianças e escolas",
+  "cursos.html": "Cursos Quatro Folhas",
+  "cursos-rapidos.html": "Cursos rápidos",
+  "empresas-e-marcas.html": "Empresas e marcas",
+  "experiencias-gastronomicas.html": "Experiências gastronômicas",
+  "festa-infantil-gastronomica-experiencia.html": "Festa Infantil Gastronômica",
+  "franquia.html": "Franquia Quatro Folhas",
+  "index.html": "Página inicial",
+  "intercambio.html": "Intercâmbio",
+  "locacao-cozinha-gravacoes.html": "Locação da cozinha para gravações",
+  "locacao-da-cozinha.html": "Locação da cozinha",
+  "media-kit-marcas.html": "Media kit para marcas",
+  "mini-chef.html": "Mini Chef",
+  "parcerias-com-marcas.html": "Parcerias com marcas",
+  "solicitar-proposta.html": "Solicitação de proposta",
+  "team-building.html": "Team building"
+};
 const DEFAULT_WHATSAPP_NUMBER = "5511947781922";
 let publicSiteSettings = {
   contact: {
@@ -402,6 +434,7 @@ function buildLeadPayload(form, source, extraPayload = {}) {
   const data = formToObject(form);
   const turnstileToken = getTurnstileToken(form);
   delete data["cf-turnstile-response"];
+  const normalizedExtraPayload = { ...extraPayload };
   const allTextInputs = [...form.querySelectorAll("input[type='text'], input:not([type]), textarea")];
   const fallbackName = allTextInputs[0]?.value?.trim() || "Lead site Quatro Folhas";
   const fallbackMessage = form.querySelector("textarea")?.value?.trim() || "";
@@ -412,6 +445,15 @@ function buildLeadPayload(form, source, extraPayload = {}) {
   const phone = getFieldValue(data, "whatsapp", "telefone", "phone") || fallbackPhone;
   const email = getFieldValue(data, "email") || fallbackEmail;
   const message = getFieldValue(data, "mensagem", "message", "descricao") || fallbackMessage;
+  const interest = getFieldValue(data, "interest", "aula", "curso", "interesse")
+    || normalizedExtraPayload.interest
+    || form.dataset.interest
+    || PAGE_LEAD_INTERESTS[currentPage]
+    || "";
+
+  if (interest && !normalizedExtraPayload.interest) {
+    normalizedExtraPayload.interest = interest;
+  }
 
   return {
     name,
@@ -423,7 +465,7 @@ function buildLeadPayload(form, source, extraPayload = {}) {
       page: window.location.href,
       turnstileToken,
       ...data,
-      ...extraPayload
+      ...normalizedExtraPayload
     }
   };
 }
