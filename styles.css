@@ -1620,8 +1620,8 @@ textarea:focus-visible {
 }
 
 .voucher-premium-hero {
-  padding-top: clamp(34px, 5vw, 58px);
-  padding-bottom: clamp(36px, 5vw, 64px);
+  padding-top: clamp(28px, 4vw, 44px);
+  padding-bottom: clamp(30px, 4vw, 48px);
   background:
     radial-gradient(circle at 20% 84%, rgba(151, 4, 12, 0.16), transparent 22%),
     linear-gradient(180deg, rgba(255, 248, 237, 0.98), rgba(242, 224, 207, 0.96));
@@ -1629,13 +1629,13 @@ textarea:focus-visible {
 
 .voucher-premium-top {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
-  gap: clamp(26px, 4vw, 48px);
-  align-items: end;
+  grid-template-columns: minmax(0, 0.95fr) minmax(240px, 0.5fr);
+  gap: clamp(20px, 3vw, 34px);
+  align-items: center;
 }
 
 .voucher-premium-copy {
-  max-width: 760px;
+  max-width: 660px;
 }
 
 .voucher-premium-copy .eyebrow,
@@ -1644,46 +1644,46 @@ textarea:focus-visible {
 }
 
 .voucher-premium-copy h1 {
-  max-width: 780px;
-  margin-top: 14px;
-  font-size: clamp(42px, 6.2vw, 78px);
-  line-height: 0.94;
-  letter-spacing: -0.055em;
+  max-width: 650px;
+  margin-top: 12px;
+  font-size: clamp(34px, 4.4vw, 58px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 }
 
 .voucher-premium-copy p {
-  max-width: 650px;
-  margin-top: 18px;
+  max-width: 590px;
+  margin-top: 14px;
   color: var(--muted);
-  font-size: clamp(16px, 1.25vw, 18px);
-  line-height: 1.7;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.6;
 }
 
 .voucher-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .voucher-premium-note {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
-  padding: clamp(24px, 3vw, 34px);
+  border-radius: 22px;
+  padding: clamp(18px, 2.4vw, 26px);
   color: #fffdfa;
   background:
     linear-gradient(135deg, rgba(30, 14, 10, 0.76), rgba(126, 11, 18, 0.82)),
     radial-gradient(circle at 95% 12%, rgba(214, 164, 77, 0.28), transparent 26%);
-  box-shadow: 0 22px 58px rgba(35, 20, 16, 0.2);
+  box-shadow: 0 16px 42px rgba(35, 20, 16, 0.14);
 }
 
 .voucher-premium-note::before {
   content: "";
   display: block;
-  width: 66px;
-  height: 4px;
-  margin-bottom: 24px;
+  width: 46px;
+  height: 3px;
+  margin-bottom: 16px;
   border-radius: 999px;
   background: #f3cf85;
 }
@@ -1701,39 +1701,40 @@ textarea:focus-visible {
 .voucher-premium-note strong {
   display: block;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(22px, 2.2vw, 32px);
-  line-height: 1.04;
+  font-size: clamp(19px, 1.75vw, 25px);
+  line-height: 1.08;
 }
 
 .voucher-experience-wall {
   display: grid;
-  grid-template-columns: minmax(180px, 0.86fr) minmax(320px, 1.28fr) minmax(180px, 0.86fr);
-  gap: clamp(14px, 2vw, 20px);
-  align-items: stretch;
-  margin-top: clamp(30px, 4vw, 46px);
+  grid-template-columns: minmax(150px, 0.6fr) minmax(420px, 1.7fr) minmax(150px, 0.6fr);
+  gap: clamp(12px, 1.6vw, 18px);
+  align-items: center;
+  margin-top: clamp(24px, 3vw, 36px);
 }
 
 .voucher-tile {
   position: relative;
-  min-height: clamp(230px, 32vw, 330px);
+  min-height: clamp(170px, 20vw, 235px);
   overflow: hidden;
-  border-radius: 28px;
-  padding: clamp(22px, 2.8vw, 34px);
+  border-radius: 22px;
+  padding: clamp(16px, 2vw, 24px);
   color: #fffdfa;
   background:
     linear-gradient(180deg, rgba(35, 20, 16, 0.05), rgba(35, 20, 16, 0.74)),
     radial-gradient(circle at 70% 18%, rgba(244, 208, 133, 0.34), transparent 22%),
     linear-gradient(135deg, #960912, #2a0f0c);
-  box-shadow: 0 24px 58px rgba(35, 20, 16, 0.18);
+  box-shadow: 0 12px 32px rgba(35, 20, 16, 0.1);
+  opacity: 0.86;
 }
 
 .voucher-tile::after {
   content: "";
   position: absolute;
   inset: auto -12% -24% auto;
-  width: 170px;
-  height: 170px;
-  border: 32px solid rgba(255, 244, 221, 0.12);
+  width: 120px;
+  height: 120px;
+  border: 24px solid rgba(255, 244, 221, 0.1);
   border-radius: 50%;
 }
 
@@ -1756,7 +1757,7 @@ textarea:focus-visible {
   z-index: 1;
   display: block;
   color: #f7d690;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1769,25 +1770,27 @@ textarea:focus-visible {
   display: block;
   margin-top: 8px;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(24px, 2.6vw, 36px);
+  font-size: clamp(19px, 1.9vw, 27px);
   line-height: 1;
 }
 
 .voucher-tile p {
   position: relative;
   z-index: 1;
-  max-width: 260px;
-  margin-top: 12px;
+  max-width: 230px;
+  margin-top: 10px;
   color: rgba(255, 253, 250, 0.86);
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.42;
 }
 
 .voucher-tile-main {
-  min-height: clamp(280px, 35vw, 390px);
+  min-height: clamp(330px, 38vw, 460px);
   margin: 0;
   padding: 0;
   background: #4a120f;
+  opacity: 1;
+  box-shadow: 0 30px 70px rgba(35, 20, 16, 0.24);
 }
 
 .voucher-tile-main::before {
@@ -1795,7 +1798,7 @@ textarea:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(23, 10, 8, 0.03), rgba(23, 10, 8, 0.7));
+  background: linear-gradient(180deg, rgba(23, 10, 8, 0), rgba(23, 10, 8, 0.46));
 }
 
 .voucher-tile-main img {
@@ -1811,19 +1814,19 @@ textarea:focus-visible {
 .voucher-tile-main figcaption {
   position: absolute;
   z-index: 2;
-  left: clamp(22px, 3vw, 34px);
-  right: clamp(22px, 3vw, 34px);
-  bottom: clamp(20px, 3vw, 32px);
+  left: clamp(20px, 2.4vw, 30px);
+  right: clamp(20px, 2.4vw, 30px);
+  bottom: clamp(18px, 2.4vw, 28px);
 }
 
 .voucher-premium-section {
-  padding-top: clamp(38px, 5vw, 68px);
-  padding-bottom: clamp(42px, 5vw, 72px);
+  padding-top: clamp(30px, 4vw, 48px);
+  padding-bottom: clamp(34px, 4vw, 54px);
   background: rgba(255, 248, 237, 0.78);
 }
 
 .voucher-premium-section .section-heading {
-  margin-bottom: 26px;
+  margin-bottom: 20px;
 }
 
 .voucher-premium-section .section-heading h2 {
@@ -1837,9 +1840,9 @@ textarea:focus-visible {
 }
 
 .voucher-steps article {
-  min-height: 190px;
-  border-radius: 24px;
-  padding: 24px;
+  min-height: 150px;
+  border-radius: 20px;
+  padding: 20px;
   background:
     radial-gradient(circle at 100% 0%, rgba(183, 14, 22, 0.08), transparent 34%),
     rgba(255, 253, 250, 0.82);
@@ -1851,19 +1854,19 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   color: #fff;
   background: var(--wine);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
 }
 
 .voucher-steps h3 {
   margin-bottom: 8px;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .voucher-steps p {
