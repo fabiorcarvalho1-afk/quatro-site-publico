@@ -202,8 +202,8 @@
       },
       {
         "id": "gift",
-        "image": "/assets/photos/lounge-chef.jpg",
-        "alt": "Experiência gastronômica para presentear",
+        "image": "/assets/photos/cartao-presente.png",
+        "alt": "Cartão presente Quatro Folhas",
         "label": "Cartão presente",
         "title": "Quero presentear alguém",
         "description": "Um presente diferente para quem ama gastronomia e novas experiências.",
@@ -334,9 +334,9 @@
         "caption": "Confeitaria em aula"
       },
       {
-        "image": "/assets/photos/lounge-chef.jpg",
-        "alt": "Lounge interno com letreiro The Chef is Here",
-        "caption": "Ambiente de recepção"
+        "image": "/assets/photos/cartao-presente.png",
+        "alt": "Cartão presente Quatro Folhas",
+        "caption": "Cartão presente"
       }
     ]
   },
