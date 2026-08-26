@@ -12526,8 +12526,8 @@ body.thematic-page {
 }
 
 .entrepreneurs-main {
-  padding-top: 118px;
-  padding-bottom: 72px;
+  padding-top: 96px;
+  padding-bottom: 56px;
 }
 
 .entrepreneurs-hero,
@@ -12546,12 +12546,12 @@ body.thematic-page {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 219, 165, 0.18);
-  border-radius: 36px;
+  border-radius: 32px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
     radial-gradient(circle at 78% 18%, rgba(201, 145, 45, 0.34), transparent 34%),
     linear-gradient(135deg, rgba(73, 16, 18, 0.95) 0%, rgba(32, 16, 13, 0.96) 62%, rgba(15, 10, 9, 0.98) 100%);
-  padding: 54px clamp(24px, 4vw, 58px) 48px;
+  padding: 38px clamp(24px, 4vw, 52px) 36px;
   box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34);
 }
 
@@ -12568,10 +12568,10 @@ body.thematic-page {
 }
 
 .entrepreneurs-hero h1 {
-  max-width: 620px;
-  margin: 10px 0 14px;
+  max-width: 520px;
+  margin: 8px 0 12px;
   color: #fff8ef;
-  font-size: clamp(2.05rem, 3.35vw, 3.4rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1.02;
   letter-spacing: -0.045em;
 }
@@ -12584,16 +12584,16 @@ body.thematic-page {
 }
 
 .entrepreneurs-page .eyebrow {
-  color: #ffd38e;
+  color: #fff;
 }
 
 .entrepreneurs-hero aside {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  padding: 24px;
+  padding: 20px;
   border: 1px solid rgba(255, 219, 165, 0.22);
-  border-radius: 28px;
+  border-radius: 24px;
   background:
     radial-gradient(circle at top right, rgba(255, 211, 142, 0.22), transparent 44%),
     rgba(255, 255, 255, 0.08);
@@ -12607,7 +12607,7 @@ body.thematic-page {
   display: block;
   width: 58px;
   height: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   border-radius: 999px;
   background: #ffd38e;
 }
@@ -12616,7 +12616,7 @@ body.thematic-page {
   display: block;
   font-family: var(--display-font);
   color: #fff8ef;
-  font-size: 1.45rem;
+  font-size: 1.32rem;
   line-height: 1.05;
 }
 
@@ -12624,15 +12624,15 @@ body.thematic-page {
   display: block;
   margin-top: 12px;
   color: rgba(255, 248, 239, 0.74);
-  font-size: 0.96rem;
-  line-height: 1.55;
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .entrepreneurs-hero-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .entrepreneurs-hero-tags small {
@@ -12651,7 +12651,7 @@ body.thematic-page {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  padding: 22px clamp(24px, 4vw, 56px) 42px;
+  padding: 16px clamp(24px, 4vw, 56px) 34px;
 }
 
 .entrepreneurs-intro article,
@@ -12664,14 +12664,14 @@ body.thematic-page {
 
 .entrepreneurs-intro article {
   position: relative;
-  min-height: 132px;
+  min-height: 118px;
   overflow: hidden;
   border: 1px solid rgba(255, 219, 165, 0.18);
   border-radius: 20px;
   background:
     radial-gradient(circle at 92% 12%, rgba(255, 211, 142, 0.22), transparent 38%),
     rgba(255, 255, 255, 0.08);
-  padding: 18px 20px;
+  padding: 15px 18px;
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
 }
 
@@ -12684,10 +12684,10 @@ body.thematic-page {
 }
 
 .entrepreneurs-intro h2 {
-  margin: 14px 0 7px;
+  margin: 10px 0 6px;
   font-family: var(--display-font);
   color: #fff8ef;
-  font-size: 1.28rem;
+  font-size: 1.18rem;
   line-height: 1.04;
 }
 
@@ -12701,7 +12701,7 @@ body.thematic-page {
 .entrepreneurs-intro p {
   margin: 0;
   color: rgba(255, 248, 239, 0.72);
-  font-size: 0.9rem;
+  font-size: 0.86rem;
 }
 
 .entrepreneurs-directory {
