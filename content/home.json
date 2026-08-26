@@ -21,8 +21,8 @@
         "href": "#cursos"
       },
       {
-        "label": "Ver experiências",
-        "href": "experiencias-gastronomicas.html"
+        "label": "Ver aulas temáticas",
+        "href": "aulas-tematicas.html"
       }
     ],
     "mobile": {
@@ -70,7 +70,7 @@
         "number": "02",
         "title": "Quero uma aula gastronômica",
         "description": "Aulas temáticas para aprender receitas, descobrir sabores e viver uma experiência diferente.",
-        "href": "experiencias-gastronomicas.html"
+        "href": "aulas-tematicas.html"
       },
       {
         "number": "03",

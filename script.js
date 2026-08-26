@@ -42,7 +42,6 @@ const PAGE_LEAD_INTERESTS = {
   "cursos.html": "Cursos Quatro Folhas",
   "cursos-rapidos.html": "Cursos rápidos",
   "empresas-e-marcas.html": "Empresas e marcas",
-  "experiencias-gastronomicas.html": "Experiências gastronômicas",
   "festa-infantil-gastronomica-experiencia.html": "Festa Infantil Gastronômica",
   "franquia.html": "Franquia Quatro Folhas",
   "index.html": "Página inicial",
