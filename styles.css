@@ -1599,6 +1599,14 @@ textarea:focus-visible {
   outline-offset: -10px;
 }
 
+.voucher-hero-image {
+  background-color: #f5f0ea;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  outline: none;
+}
+
 .page-hero-video-demo {
   position: relative;
   min-height: clamp(280px, 42svh, 390px);
