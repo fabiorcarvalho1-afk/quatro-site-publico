@@ -1673,3 +1673,34 @@ if (!localStorage.getItem(COOKIE_KEY)) {
     });
   });
 }
+
+document.querySelectorAll("[data-measure-converter]").forEach((converter) => {
+  const amountInput = converter.querySelector("[data-measure-amount]");
+  const unitSelect = converter.querySelector("[data-measure-unit]");
+  const result = converter.querySelector("[data-measure-result]");
+  if (!amountInput || !unitSelect || !result) return;
+
+  const measures = {
+    "flour-cup": { value: 120, unit: "g" },
+    "sugar-cup": { value: 200, unit: "g" },
+    "butter-cup": { value: 200, unit: "g" },
+    "milk-cup": { value: 240, unit: "ml" },
+    tbsp: { value: 15, unit: "ml" },
+    tsp: { value: 5, unit: "ml" },
+  };
+
+  const formatMeasure = (value, unit) => {
+    const rounded = Math.round(value * 10) / 10;
+    return `${Number.isInteger(rounded) ? rounded : rounded.toLocaleString("pt-BR")} ${unit}`;
+  };
+
+  const updateMeasure = () => {
+    const amount = Math.max(0, Number(amountInput.value || 0));
+    const measure = measures[unitSelect.value] || measures["flour-cup"];
+    result.textContent = formatMeasure(amount * measure.value, measure.unit);
+  };
+
+  amountInput.addEventListener("input", updateMeasure);
+  unitSelect.addEventListener("change", updateMeasure);
+  updateMeasure();
+});
