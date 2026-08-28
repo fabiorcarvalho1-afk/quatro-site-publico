@@ -14300,3 +14300,148 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
     min-height: 0;
   }
 }
+
+/* QF A Escola - modelo editorial de cards */
+.school-practice .school-section-heading,
+.school-experience .school-section-heading,
+.school-results .school-section-heading,
+.school-history .school-section-heading {
+  grid-template-columns: minmax(360px, 0.56fr) minmax(300px, 0.44fr);
+  gap: clamp(28px, 5vw, 82px);
+  align-items: start;
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+
+.school-practice .school-section-heading h2,
+.school-experience .school-section-heading h2,
+.school-results .school-section-heading h2,
+.school-history .school-section-heading h2 {
+  max-width: 680px;
+  font-size: clamp(32px, 3.4vw, 52px);
+  line-height: 1.02;
+}
+
+.school-practice .school-section-heading > p,
+.school-experience .school-section-heading > p,
+.school-results .school-section-heading > p,
+.school-history .school-section-heading > p {
+  max-width: 540px;
+  padding-top: clamp(8px, 1vw, 18px);
+  font-size: clamp(15px, 1.05vw, 18px);
+  line-height: 1.52;
+}
+
+.school-feature-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 1.5vw, 22px);
+}
+
+.school-feature-grid article {
+  position: relative;
+  min-height: 178px;
+  padding: clamp(22px, 2vw, 28px);
+  border: 1px solid rgba(128, 97, 60, 0.2);
+  border-left: 5px solid var(--wine);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 90% 88%, transparent 0 54px, rgba(128, 97, 60, 0.06) 55px 76px, transparent 77px),
+    rgba(255, 253, 250, 0.9);
+  box-shadow: 0 18px 42px rgba(57, 33, 20, 0.08);
+}
+
+.school-feature-grid article:nth-child(even) {
+  border-left-color: #80613c;
+}
+
+.school-feature-grid span {
+  width: 40px;
+  height: 28px;
+  margin-bottom: 18px;
+  background: var(--wine);
+  font-size: 12px;
+}
+
+.school-feature-grid article:nth-child(even) span {
+  background: #b07d1a;
+}
+
+.school-feature-grid h3 {
+  max-width: 250px;
+  margin-bottom: 8px;
+  color: var(--wine);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(22px, 1.8vw, 30px);
+  line-height: 1.02;
+}
+
+.school-feature-grid p {
+  max-width: 280px;
+  color: var(--muted);
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.38;
+}
+
+.school-practice-link {
+  display: inline-flex;
+  margin-top: 24px;
+}
+
+.school-value-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.2vw, 18px);
+}
+
+.school-value-grid span {
+  min-height: 118px;
+  align-items: flex-start;
+  padding: clamp(18px, 1.6vw, 24px);
+  border-left: 5px solid var(--wine);
+  background:
+    radial-gradient(circle at 92% 88%, transparent 0 46px, rgba(128, 97, 60, 0.06) 47px 66px, transparent 67px),
+    rgba(255, 253, 250, 0.9);
+  color: var(--wine);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(18px, 1.35vw, 23px);
+  line-height: 1.08;
+}
+
+.school-value-grid span:nth-child(even) {
+  border-left-color: #80613c;
+}
+
+.school-mosaic {
+  grid-template-columns: minmax(320px, 1.1fr) repeat(2, minmax(180px, 0.72fr));
+  grid-auto-rows: clamp(170px, 15vw, 230px);
+}
+
+.school-mosaic img:first-child {
+  grid-row: span 2;
+}
+
+@media (max-width: 1180px) {
+  .school-feature-grid,
+  .school-value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .school-practice .school-section-heading,
+  .school-experience .school-section-heading,
+  .school-results .school-section-heading,
+  .school-history .school-section-heading,
+  .school-feature-grid,
+  .school-value-grid,
+  .school-mosaic {
+    grid-template-columns: 1fr;
+  }
+
+  .school-feature-grid article,
+  .school-value-grid span {
+    min-height: 0;
+  }
+
+  .school-mosaic img:first-child {
+    grid-row: auto;
+  }
+}
