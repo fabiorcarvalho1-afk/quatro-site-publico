@@ -167,75 +167,76 @@
       }
 
       .home-calculators-section {
-        padding: clamp(48px, 5vw, 78px) clamp(18px, 4vw, 72px);
+        padding: clamp(38px, 4.2vw, 62px) clamp(18px, 4vw, 72px);
         background:
-          radial-gradient(circle at 8% 14%, rgba(180, 11, 22, .12), transparent 30%),
-          radial-gradient(circle at 88% 18%, rgba(203, 151, 55, .18), transparent 28%),
+          radial-gradient(circle at 8% 12%, rgba(180, 11, 22, .10), transparent 28%),
+          radial-gradient(circle at 92% 20%, rgba(203, 151, 55, .18), transparent 26%),
           linear-gradient(135deg, #fffaf3, #f3eadc);
       }
 
       .home-calculators-card {
-        width: min(100%, 1420px);
+        width: min(100%, 1340px);
         margin: 0 auto;
         display: grid;
-        grid-template-columns: minmax(0, .9fr) minmax(360px, .62fr);
-        gap: clamp(18px, 2.6vw, 34px);
+        grid-template-columns: minmax(0, .92fr) minmax(320px, .48fr);
+        gap: clamp(14px, 2vw, 24px);
         align-items: stretch;
-        border: 1px solid rgba(126, 82, 38, .2);
-        border-radius: 30px;
+        border: 1px solid rgba(126, 82, 38, .18);
+        border-radius: 26px;
         background:
           linear-gradient(135deg, rgba(255, 253, 248, .96), rgba(255, 247, 236, .86)),
           #fffaf3;
-        box-shadow: 0 24px 70px rgba(53, 24, 13, .12);
+        box-shadow: 0 18px 48px rgba(53, 24, 13, .10);
       }
 
       .home-calculators-copy {
-        padding: clamp(28px, 4vw, 56px);
+        padding: clamp(24px, 3.2vw, 42px);
       }
 
       .home-calculators-copy h2 {
-        margin: 14px 0 14px;
-        max-width: 700px;
+        margin: 12px 0 12px;
+        max-width: 610px;
         color: #221815;
         font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(36px, 3.7vw, 62px);
-        line-height: .98;
+        font-size: clamp(30px, 2.8vw, 46px);
+        line-height: 1.02;
         letter-spacing: -.04em;
       }
 
       .home-calculators-copy p {
         margin: 0;
-        max-width: 680px;
+        max-width: 600px;
         color: #625852;
-        font-size: clamp(16px, 1.25vw, 20px);
-        line-height: 1.58;
+        font-size: clamp(14px, 1.05vw, 17px);
+        line-height: 1.55;
       }
 
       .home-calculators-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 24px;
+        margin-top: 20px;
       }
 
       .home-calculators-list {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 30px;
+        gap: 10px;
+        margin-top: 22px;
       }
 
       .home-calculators-list span {
-        min-height: 118px;
+        min-height: 82px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 18px;
-        padding: 18px;
+        gap: 10px;
+        padding: 14px;
         border: 1px solid rgba(126, 82, 38, .18);
-        border-radius: 18px;
+        border-radius: 16px;
         background: rgba(255,255,255,.7);
         color: #760013;
+        font-size: 15px;
         font-weight: 900;
         box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
       }
@@ -248,21 +249,23 @@
         letter-spacing: .12em;
       }
 
-      .measure-converter {
-        margin: 18px;
-        padding: clamp(22px, 3vw, 34px);
-        border: 1px solid rgba(255, 227, 171, .28);
-        border-radius: 24px;
+      .home-calculators-side {
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 14px;
+        padding: clamp(22px, 2.7vw, 34px);
+        border: 1px solid rgba(255, 227, 171, .26);
+        border-radius: 22px;
         background:
-          radial-gradient(circle at 90% 10%, rgba(221, 169, 66, .28), transparent 28%),
+          radial-gradient(circle at 85% 12%, rgba(221, 169, 66, .24), transparent 30%),
           linear-gradient(145deg, #3b1d17 0%, #7d0b14 58%, #a50b15 100%);
         color: #fff9ef;
-        box-shadow: 0 22px 46px rgba(102, 10, 17, .24);
+        box-shadow: 0 18px 38px rgba(102, 10, 17, .22);
       }
 
-      .measure-converter label,
-      .measure-converter-title span,
-      .measure-result span {
+      .home-calculators-side span {
         display: block;
         color: rgba(255, 249, 239, .72);
         font-size: 11px;
@@ -271,66 +274,33 @@
         text-transform: uppercase;
       }
 
-      .measure-converter-title strong {
+      .home-calculators-side strong {
         display: block;
-        margin-top: 8px;
-        max-width: 360px;
+        margin-top: 10px;
+        max-width: 340px;
         font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(28px, 2.4vw, 40px);
-        line-height: 1.02;
+        font-size: clamp(26px, 2.1vw, 36px);
+        line-height: 1.03;
       }
 
-      .measure-converter-grid {
-        display: grid;
-        grid-template-columns: .72fr 1fr;
-        gap: 12px;
-        margin-top: 24px;
-      }
-
-      .measure-converter input,
-      .measure-converter select {
-        width: 100%;
-        margin-top: 8px;
-        border: 1px solid rgba(255,255,255,.22);
-        border-radius: 14px;
-        background: rgba(255,255,255,.92);
-        color: #271915;
-        font: inherit;
-        font-weight: 800;
-        padding: 13px 14px;
-      }
-
-      .measure-result {
-        margin-top: 18px;
-        padding: 18px;
-        border: 1px solid rgba(255,255,255,.22);
-        border-radius: 18px;
-        background: rgba(20, 10, 8, .24);
-      }
-
-      .measure-result strong {
-        display: block;
-        margin-top: 4px;
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(34px, 3vw, 48px);
-        line-height: 1;
-      }
-
-      .measure-note {
-        margin: 14px 0 0;
+      .home-calculators-side p {
+        margin: 12px 0 20px;
         color: rgba(255, 249, 239, .78);
-        font-size: 13px;
-        line-height: 1.45;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .home-calculators-side .solid-btn {
+        width: fit-content;
+        background: #fff8ec;
+        color: #7d0b14;
+        box-shadow: none;
       }
 
       @media (max-width: 980px) {
         .home-calculators-card { grid-template-columns: 1fr; }
         .home-calculators-list { grid-template-columns: 1fr; }
-        .measure-converter { margin-top: 0; }
-      }
-
-      @media (max-width: 560px) {
-        .measure-converter-grid { grid-template-columns: 1fr; }
+        .home-calculators-side { margin-top: 0; }
       }
     </style>
   </head>
@@ -612,8 +582,8 @@
         <div class="home-calculators-card">
           <div class="home-calculators-copy">
             <p class="eyebrow">Calculadoras gastronômicas</p>
-            <h2>Precisão também faz parte da receita.</h2>
-            <p>Ferramentas rápidas para ajustar medidas, estimar massas, porções e quantidades antes de cozinhar com mais segurança.</p>
+            <h2>Planeje antes de produzir.</h2>
+            <p>Ferramentas rápidas para estimar medidas, formas, massas e porções antes de ir para a bancada.</p>
             <div class="home-calculators-actions">
               <a class="solid-btn large" href="calculadoras-gastronomicas.html">Acessar calculadoras</a>
               <a class="light-btn large" href="cursos.html">Aprender na prática</a>
@@ -624,33 +594,13 @@
               <span>Doces e salgados <small>Festas</small></span>
             </div>
           </div>
-          <div class="measure-converter" data-measure-converter>
-            <div class="measure-converter-title">
-              <span>Conversor de medidas</span>
-              <strong>Converta volumes comuns em peso aproximado.</strong>
+          <div class="home-calculators-side">
+            <div>
+              <span>Novo recurso</span>
+              <strong>Conversor de medidas</strong>
+              <p>Os cálculos ficam reunidos em uma página própria, para consultar com calma sem poluir a página inicial.</p>
             </div>
-            <div class="measure-converter-grid">
-              <label>
-                Quantidade
-                <input type="number" min="0" step="0.25" value="1" data-measure-amount>
-              </label>
-              <label>
-                Medida
-                <select data-measure-unit>
-                  <option value="flour-cup">xícara de farinha de trigo</option>
-                  <option value="sugar-cup">xícara de açúcar</option>
-                  <option value="butter-cup">xícara de manteiga</option>
-                  <option value="milk-cup">xícara de leite</option>
-                  <option value="tbsp">colher de sopa</option>
-                  <option value="tsp">colher de chá</option>
-                </select>
-              </label>
-            </div>
-            <div class="measure-result" aria-live="polite">
-              <span>Resultado aproximado</span>
-              <strong data-measure-result>120 g</strong>
-            </div>
-            <p class="measure-note">Referência prática para cozinha. Ingredientes diferentes podem variar conforme densidade, marca e compactação.</p>
+            <a class="solid-btn large" href="calculadoras-gastronomicas.html">Abrir ferramentas</a>
           </div>
         </div>
       </section>

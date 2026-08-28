@@ -296,6 +296,7 @@
             <strong>Use como ponto de partida.</strong>
             <p>As quantidades podem variar conforme receita, técnica, rendimento, equipamento e padrão de serviço.</p>
             <ul class="calc-hero-list">
+              <li>Conversor de medidas</li>
               <li>Forma, volume e massa de bolo</li>
               <li>Risoto, proteína e acompanhamentos</li>
               <li>Doces e salgados para festa</li>
@@ -306,6 +307,33 @@
 
       <section class="calc-tools">
         <div class="calc-tools-inner">
+          <article class="calc-tool" id="conversor-medidas">
+            <div class="calc-tool-copy">
+              <p class="eyebrow">Medidas</p>
+              <h2>Conversor de medidas</h2>
+              <p>Converta medidas comuns de cozinha em peso ou volume aproximado para organizar melhor a produção.</p>
+              <small class="calc-note">Use como referência prática. Densidade, marca e compactação alteram o resultado final.</small>
+            </div>
+            <div class="calc-tool-form">
+              <div class="calc-form-grid">
+                <label class="calc-field">Quantidade
+                  <input id="measureAmount" type="number" min="0" step="0.25" value="1">
+                </label>
+                <label class="calc-field">Medida
+                  <select id="measureUnit">
+                    <option value="flour-cup">xícara de farinha de trigo</option>
+                    <option value="sugar-cup">xícara de açúcar</option>
+                    <option value="butter-cup">xícara de manteiga</option>
+                    <option value="milk-cup">xícara de leite</option>
+                    <option value="tbsp">colher de sopa</option>
+                    <option value="tsp">colher de chá</option>
+                  </select>
+                </label>
+              </div>
+              <div class="calc-result" id="measureResult" aria-live="polite"></div>
+            </div>
+          </article>
+
           <article class="calc-tool" id="forma-bolo">
             <div class="calc-tool-copy">
               <p class="eyebrow">Confeitaria</p>
@@ -440,6 +468,22 @@
         `;
       }
 
+      function updateMeasureCalculator() {
+        const amount = Math.max(Number(document.getElementById("measureAmount").value) || 0, 0);
+        const unit = document.getElementById("measureUnit").value;
+        const measure = {
+          "flour-cup": { label: "Farinha de trigo", value: 120, unit: "g" },
+          "sugar-cup": { label: "Açúcar", value: 200, unit: "g" },
+          "butter-cup": { label: "Manteiga", value: 200, unit: "g" },
+          "milk-cup": { label: "Leite", value: 240, unit: "ml" },
+          tbsp: { label: "Colher de sopa", value: 15, unit: "ml" },
+          tsp: { label: "Colher de chá", value: 5, unit: "ml" }
+        }[unit];
+        renderResult(document.getElementById("measureResult"), "Conversão aproximada", [
+          { label: measure.label, value: formatNumber(amount * measure.value, measure.unit) }
+        ], "A medida é uma base rápida para consulta, não substitui pesagem precisa.");
+      }
+
       function updateCakeCalculator() {
         const shape = document.getElementById("cakeShape").value;
         const height = Math.max(Number(document.getElementById("cakeHeight").value) || 0, 0);
@@ -486,6 +530,9 @@
         ], "Considere perfil dos convidados, duração da festa e se haverá refeição principal.");
       }
 
+      ["measureAmount", "measureUnit"].forEach((id) => {
+        document.getElementById(id).addEventListener("input", updateMeasureCalculator);
+      });
       ["cakeShape", "cakeHeight", "cakeWidth", "cakeLength"].forEach((id) => {
         document.getElementById(id).addEventListener("input", updateCakeCalculator);
       });
@@ -496,6 +543,7 @@
         document.getElementById(id).addEventListener("input", updatePartyCalculator);
       });
 
+      updateMeasureCalculator();
       updateCakeCalculator();
       updateDinnerCalculator();
       updatePartyCalculator();
