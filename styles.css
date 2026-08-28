@@ -13685,24 +13685,55 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 
 .school-number-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border-top: 7px solid #9f0009;
+  border-bottom: 1px solid rgba(167, 7, 10, 0.16);
+  background: linear-gradient(90deg, rgba(255, 253, 250, 0.96), rgba(255, 248, 242, 0.9));
+  box-shadow: 0 18px 46px rgba(57, 33, 20, 0.08);
+}
+
+.school-number-grid article {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: clamp(14px, 1.6vw, 22px);
+  align-items: center;
+  min-height: 104px;
+  padding: clamp(16px, 2vw, 28px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.school-number-grid article + article {
+  border-left: 1px solid rgba(167, 7, 10, 0.16);
 }
 
 .school-number-grid strong {
   display: block;
-  margin-bottom: 14px;
-  color: var(--wine);
+  color: #80613c;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(34px, 4.4vw, 62px);
+  font-size: clamp(34px, 3vw, 48px);
+  font-weight: 500;
   line-height: 0.9;
   letter-spacing: -0.05em;
 }
 
-.school-number-grid span {
+.school-number-grid h3 {
+  margin: 0 0 3px;
+  color: #a4000b;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(21px, 1.8vw, 28px);
+  line-height: 1.05;
+}
+
+.school-number-grid p {
+  margin: 0;
+  max-width: 330px;
   color: var(--muted);
-  font-weight: 700;
-  line-height: 1.35;
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.28;
 }
 
 .school-value-grid {
@@ -13970,14 +14001,8 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 }
 
 .school-number-grid {
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
-  gap: 14px;
-}
-
-.school-number-grid strong {
-  margin-bottom: 10px;
-  font-size: clamp(26px, 2.6vw, 40px);
-  line-height: 0.95;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
 }
 
 .school-value-grid {
