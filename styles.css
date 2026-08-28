@@ -14098,6 +14098,10 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 /* QF A Escola - refino de layout e anti-sobreposicao */
 .school-inside {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.34fr) minmax(640px, 0.66fr);
+  gap: clamp(28px, 4vw, 68px);
+  align-items: center;
   overflow: hidden;
   margin-top: clamp(12px, 2vw, 24px);
   border: 1px solid rgba(128, 97, 60, 0.22);
@@ -14125,31 +14129,30 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 .school-inside .school-section-heading {
   position: relative;
   z-index: 1;
-  grid-template-columns: minmax(320px, 0.56fr) minmax(320px, 0.44fr);
-  gap: clamp(24px, 4vw, 72px);
-  margin-bottom: clamp(18px, 2.3vw, 28px);
-  align-items: center;
+  display: block;
+  margin-bottom: 0;
 }
 
 .school-inside .school-section-heading h2 {
-  max-width: 660px;
-  font-size: clamp(31px, 3vw, 48px);
+  max-width: 500px;
+  font-size: clamp(29px, 2.55vw, 42px);
   line-height: 1.02;
 }
 
 .school-inside .school-section-heading p {
-  max-width: 580px;
-  font-size: clamp(15px, 1.05vw, 18px);
-  line-height: 1.56;
+  max-width: 460px;
+  margin-top: clamp(14px, 1.5vw, 22px);
+  font-size: clamp(14px, 0.98vw, 16px);
+  line-height: 1.5;
 }
 
 .school-gallery {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(420px, 1.15fr) repeat(2, minmax(220px, 0.7fr));
-  grid-auto-rows: clamp(168px, 13.5vw, 230px);
-  gap: clamp(12px, 1.2vw, 18px);
+  grid-template-columns: minmax(340px, 1.18fr) minmax(170px, 0.55fr) minmax(170px, 0.55fr);
+  grid-auto-rows: clamp(132px, 10vw, 178px);
+  gap: clamp(10px, 1vw, 15px);
 }
 
 .school-gallery figure,
@@ -14166,7 +14169,7 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 }
 
 .school-gallery .is-large {
-  grid-row: span 3;
+  grid-row: span 2;
 }
 
 .school-gallery figure::after,
@@ -14196,9 +14199,9 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 }
 
 .school-gallery .is-large figcaption {
-  left: 24px;
-  bottom: 24px;
-  max-width: calc(100% - 48px);
+  left: 18px;
+  bottom: 18px;
+  max-width: calc(100% - 36px);
 }
 
 .school-feature-grid,
@@ -14266,8 +14269,12 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 }
 
 @media (max-width: 1180px) {
+  .school-inside {
+    grid-template-columns: 1fr;
+  }
+
   .school-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(320px, 1fr) repeat(2, minmax(170px, 0.65fr));
   }
 }
 
@@ -14293,6 +14300,10 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 
   .school-gallery {
     grid-auto-rows: minmax(220px, auto);
+  }
+
+  .school-gallery .is-large {
+    grid-row: auto;
   }
 
   .school-feature-grid article,
