@@ -14731,3 +14731,254 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
     grid-auto-rows: minmax(280px, auto);
   }
 }
+
+/* QF A Escola - refino final dos quadros no estilo editorial aprovado */
+.school-page .school-section {
+  overflow: hidden;
+}
+
+.school-page .school-section-heading,
+.school-page .school-split {
+  width: min(100% - 48px, 1420px);
+  margin-inline: auto;
+  grid-template-columns: minmax(320px, 0.42fr) minmax(0, 0.58fr);
+  gap: clamp(28px, 5vw, 76px);
+}
+
+.school-page .school-section-heading h2,
+.school-page .school-split h2 {
+  max-width: 680px;
+  font-size: clamp(34px, 3.3vw, 56px);
+  line-height: 1.02;
+}
+
+.school-page .school-section-heading p,
+.school-page .school-split p:not(.eyebrow) {
+  max-width: 620px;
+  font-size: clamp(16px, 1.05vw, 19px);
+  line-height: 1.55;
+}
+
+.school-feature-grid,
+.school-value-grid,
+.school-paths,
+.school-timeline {
+  width: min(100% - 48px, 1420px);
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(18px, 2vw, 28px);
+}
+
+.school-feature-grid {
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+}
+
+.school-value-grid {
+  counter-reset: school-value;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+}
+
+.school-paths,
+.school-timeline {
+  counter-reset: school-path;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+}
+
+.school-timeline {
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+}
+
+.school-feature-grid article,
+.school-value-grid span,
+.school-paths article,
+.school-timeline article {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  min-height: 190px;
+  overflow: hidden;
+  border: 1px solid rgba(128, 97, 60, 0.18);
+  border-left: 5px solid var(--wine);
+  border-radius: 18px;
+  padding: clamp(24px, 2vw, 30px);
+  background:
+    radial-gradient(circle at calc(100% + 10px) calc(100% + 10px), transparent 0 58px, rgba(128, 97, 60, 0.055) 59px 84px, transparent 85px),
+    linear-gradient(135deg, rgba(255, 253, 250, 0.96), rgba(250, 245, 237, 0.92));
+  box-shadow: 0 18px 42px rgba(57, 33, 20, 0.08);
+}
+
+.school-feature-grid article:nth-child(even),
+.school-value-grid span:nth-child(even),
+.school-paths article:nth-child(even),
+.school-timeline article:nth-child(even) {
+  border-left-color: #80613c;
+}
+
+.school-feature-grid span,
+.school-value-grid span::before,
+.school-paths article::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 30px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--wine);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.school-value-grid span::before {
+  counter-increment: school-value;
+  content: counter(school-value, decimal-leading-zero);
+}
+
+.school-paths article::before {
+  counter-increment: school-path;
+  content: counter(school-path, decimal-leading-zero);
+}
+
+.school-feature-grid article:nth-child(even) span,
+.school-value-grid span:nth-child(even)::before,
+.school-paths article:nth-child(even)::before {
+  background: #b07d1a;
+}
+
+.school-feature-grid h3,
+.school-value-grid span,
+.school-paths h3,
+.school-timeline h3 {
+  max-width: none;
+  color: var(--wine);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(23px, 1.55vw, 30px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.school-feature-grid p,
+.school-paths p,
+.school-timeline p {
+  max-width: none;
+  color: var(--muted);
+  font-size: clamp(15px, 1vw, 17px);
+  line-height: 1.45;
+}
+
+.school-value-grid span {
+  display: block;
+  color: var(--wine);
+  font-weight: 800;
+}
+
+.school-number-grid {
+  width: min(100% - 48px, 1420px);
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 0;
+  border-top: 7px solid #9f0009;
+  border-bottom: 1px solid rgba(167, 7, 10, 0.15);
+  background: linear-gradient(90deg, rgba(255, 253, 250, 0.98), rgba(255, 248, 242, 0.94));
+  box-shadow: 0 18px 46px rgba(57, 33, 20, 0.08);
+}
+
+.school-number-grid article {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(18px, 2vw, 28px);
+  align-items: center;
+  min-height: 118px;
+  padding: clamp(22px, 2vw, 30px);
+  border: 0;
+  border-left: 1px solid rgba(167, 7, 10, 0.15);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.school-number-grid article:first-child {
+  border-left: 0;
+}
+
+.school-number-grid strong {
+  margin: 0;
+  color: #80613c;
+  font-size: clamp(34px, 3vw, 52px);
+  white-space: nowrap;
+}
+
+.school-number-grid h3 {
+  margin: 0 0 4px;
+  color: #a4000b;
+  font-size: clamp(20px, 1.45vw, 27px);
+}
+
+.school-number-grid p {
+  font-size: clamp(14px, 0.95vw, 16px);
+  line-height: 1.32;
+}
+
+.school-practice-link {
+  width: min(100% - 48px, 1420px);
+  margin-inline: auto;
+}
+
+.school-teacher-highlights {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.school-teacher-highlights span {
+  border-left: 5px solid var(--wine);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at calc(100% + 8px) calc(100% + 8px), transparent 0 42px, rgba(128, 97, 60, 0.08) 43px 62px, transparent 63px),
+    rgba(255, 253, 250, 0.9);
+  color: var(--wine);
+}
+
+@media (max-width: 1240px) {
+  .school-feature-grid,
+  .school-value-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+
+}
+
+@media (max-width: 860px) {
+  .school-page .school-section-heading,
+  .school-page .school-split,
+  .school-feature-grid,
+  .school-value-grid,
+  .school-paths,
+  .school-timeline,
+  .school-number-grid,
+  .school-practice-link {
+    width: min(100% - 32px, 1420px);
+    grid-template-columns: 1fr;
+  }
+
+  .school-feature-grid article,
+  .school-value-grid span,
+  .school-paths article,
+  .school-timeline article {
+    min-height: 0;
+  }
+
+  .school-number-grid {
+    gap: 12px;
+    border-top-width: 5px;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .school-number-grid article {
+    border: 1px solid rgba(128, 97, 60, 0.18);
+    border-left: 5px solid var(--wine);
+    border-radius: 18px;
+    background: rgba(255, 253, 250, 0.94);
+    box-shadow: 0 14px 34px rgba(57, 33, 20, 0.08);
+  }
+}
