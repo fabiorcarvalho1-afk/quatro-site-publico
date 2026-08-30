@@ -14982,3 +14982,280 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
     box-shadow: 0 14px 34px rgba(57, 33, 20, 0.08);
   }
 }
+
+/* QF A Escola - alinhamento definitivo no modelo aprovado */
+.school-page > .school-section {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: clamp(54px, 6vw, 86px) clamp(34px, 5vw, 72px) !important;
+  overflow: hidden !important;
+}
+
+.school-page .school-section-heading {
+  display: grid !important;
+  width: min(100%, 1420px) !important;
+  max-width: 1420px !important;
+  margin: 0 auto clamp(26px, 3vw, 38px) !important;
+  grid-template-columns: minmax(0, 0.58fr) minmax(280px, 0.42fr) !important;
+  gap: clamp(28px, 5vw, 86px) !important;
+  align-items: start !important;
+}
+
+.school-page .school-section-heading > div {
+  min-width: 0 !important;
+}
+
+.school-page .school-section-heading > p {
+  align-self: center !important;
+  max-width: 470px !important;
+  margin: clamp(14px, 2vw, 28px) 0 0 !important;
+  padding: 0 !important;
+  color: #5f5a54 !important;
+  font-size: clamp(18px, 1.35vw, 24px) !important;
+  line-height: 1.36 !important;
+}
+
+.school-page .school-section-heading h2 {
+  max-width: 760px !important;
+  margin-top: 14px !important;
+  color: #171714 !important;
+  font-size: clamp(42px, 4.25vw, 74px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.school-feature-grid,
+.school-value-grid,
+.school-paths,
+.school-timeline {
+  display: grid !important;
+  width: min(100%, 1420px) !important;
+  max-width: 1420px !important;
+  margin: 0 auto !important;
+  gap: clamp(18px, 2vw, 28px) !important;
+  overflow: visible !important;
+}
+
+.school-feature-grid,
+.school-value-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.school-paths {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.school-timeline {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.school-feature-grid article,
+.school-value-grid span,
+.school-paths article,
+.school-timeline article {
+  position: relative !important;
+  display: block !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(128, 97, 60, 0.18) !important;
+  border-left: 5px solid #b00008 !important;
+  border-radius: 16px !important;
+  padding: clamp(24px, 2vw, 30px) !important;
+  background:
+    radial-gradient(circle at calc(100% + 18px) calc(100% + 22px), transparent 0 58px, rgba(128, 97, 60, 0.06) 59px 84px, transparent 85px),
+    linear-gradient(135deg, rgba(255, 253, 250, 0.98), rgba(250, 246, 239, 0.94)) !important;
+  box-shadow: none !important;
+}
+
+.school-feature-grid article:nth-child(even),
+.school-value-grid span:nth-child(even),
+.school-paths article:nth-child(even),
+.school-timeline article:nth-child(even) {
+  border-left-color: #80613c !important;
+}
+
+.school-feature-grid span,
+.school-value-grid span::before,
+.school-paths article::before {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 30px !important;
+  margin: 0 0 18px !important;
+  border-radius: 999px !important;
+  background: #b00008 !important;
+  color: #fff !important;
+  font-family: "Montserrat", Arial, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+}
+
+.school-value-grid {
+  counter-reset: qf-value !important;
+}
+
+.school-paths {
+  counter-reset: qf-path !important;
+}
+
+.school-value-grid span::before {
+  counter-increment: qf-value !important;
+  content: counter(qf-value, decimal-leading-zero) !important;
+}
+
+.school-paths article::before {
+  counter-increment: qf-path !important;
+  content: counter(qf-path, decimal-leading-zero) !important;
+}
+
+.school-feature-grid article:nth-child(even) span,
+.school-value-grid span:nth-child(even)::before,
+.school-paths article:nth-child(even)::before {
+  background: #b07d1a !important;
+}
+
+.school-feature-grid h3,
+.school-value-grid span,
+.school-paths h3,
+.school-timeline h3 {
+  max-width: none !important;
+  margin: 0 0 8px !important;
+  color: #b00008 !important;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-size: clamp(25px, 1.65vw, 32px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.025em !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  text-overflow: clip !important;
+}
+
+.school-value-grid span {
+  font-weight: 800 !important;
+}
+
+.school-feature-grid p,
+.school-paths p,
+.school-timeline p {
+  max-width: none !important;
+  margin: 0 !important;
+  color: #5f5a54 !important;
+  font-size: clamp(15px, 1vw, 17px) !important;
+  line-height: 1.42 !important;
+}
+
+.school-number-grid {
+  display: grid !important;
+  width: min(100%, 1420px) !important;
+  max-width: 1420px !important;
+  margin: 0 auto !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+  border-top: 7px solid #9f0009 !important;
+  border-bottom: 1px solid rgba(167, 7, 10, 0.15) !important;
+  background: linear-gradient(90deg, rgba(255, 253, 250, 0.98), rgba(255, 248, 242, 0.94)) !important;
+  box-shadow: 0 18px 46px rgba(57, 33, 20, 0.08) !important;
+}
+
+.school-number-grid article {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) !important;
+  gap: clamp(18px, 2vw, 28px) !important;
+  align-items: center !important;
+  min-width: 0 !important;
+  min-height: 112px !important;
+  padding: clamp(22px, 2vw, 30px) !important;
+  border: 0 !important;
+  border-left: 1px solid rgba(167, 7, 10, 0.15) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.school-number-grid article:first-child {
+  border-left: 0 !important;
+}
+
+.school-number-grid strong {
+  display: block !important;
+  margin: 0 !important;
+  color: #80613c !important;
+  font-size: clamp(34px, 3.2vw, 56px) !important;
+  white-space: nowrap !important;
+}
+
+.school-number-grid h3 {
+  margin: 0 0 4px !important;
+  color: #b00008 !important;
+  font-size: clamp(20px, 1.5vw, 28px) !important;
+  line-height: 1.05 !important;
+}
+
+.school-number-grid p {
+  margin: 0 !important;
+  max-width: 360px !important;
+  color: #5f5a54 !important;
+  font-size: clamp(14px, 0.95vw, 16px) !important;
+  line-height: 1.32 !important;
+}
+
+.school-practice-link {
+  display: inline-flex !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 24px 0 0 calc((100% - min(100%, 1420px)) / 2) !important;
+}
+
+@media (max-width: 1180px) {
+  .school-feature-grid,
+  .school-value-grid,
+  .school-number-grid,
+  .school-paths {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .school-page > .school-section {
+    padding-inline: 20px !important;
+  }
+
+  .school-page .school-section-heading,
+  .school-feature-grid,
+  .school-value-grid,
+  .school-number-grid,
+  .school-paths,
+  .school-timeline {
+    grid-template-columns: 1fr !important;
+  }
+
+  .school-page .school-section-heading h2 {
+    font-size: clamp(34px, 10vw, 48px) !important;
+  }
+
+  .school-number-grid {
+    gap: 12px !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .school-number-grid article {
+    border: 1px solid rgba(128, 97, 60, 0.18) !important;
+    border-left: 5px solid #b00008 !important;
+    border-radius: 16px !important;
+    background: rgba(255, 253, 250, 0.96) !important;
+  }
+
+  .school-practice-link {
+    margin-left: 0 !important;
+  }
+}
