@@ -381,6 +381,24 @@ function formToObject(form) {
   return data;
 }
 
+function buildLeadTracking(source) {
+  const params = new URLSearchParams(window.location.search);
+  const tracking = {
+    source,
+    pageUrl: window.location.href,
+    pagePath: window.location.pathname,
+    pageTitle: document.title,
+    referrer: document.referrer || undefined
+  };
+
+  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
+    const value = params.get(key);
+    if (value) tracking[key] = value;
+  });
+
+  return tracking;
+}
+
 function ensureFeedback(form, className = "form-feedback") {
   let feedback = form.querySelector(`.${className}`);
   if (!feedback) {
@@ -461,6 +479,7 @@ function buildLeadPayload(form, source, extraPayload = {}) {
     source,
     message: message || undefined,
     payload: {
+      ...buildLeadTracking(source),
       page: window.location.href,
       turnstileToken,
       ...data,
