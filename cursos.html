@@ -34,8 +34,8 @@
       }
 
       .courses-catalog-page .courses-modern-hero .chef-course-card {
-        width: min(100%, 860px);
-        max-width: none;
+        width: fit-content;
+        max-width: min(100%, 860px);
         margin-bottom: -8px;
         padding: 12px clamp(18px, 2.2vw, 28px);
         border-bottom: 0;
@@ -329,6 +329,7 @@
 
       @media (max-width: 560px) {
         .courses-catalog-page .courses-modern-hero .chef-course-card {
+          width: 100%;
           margin-bottom: -6px;
           padding: 13px 18px;
         }
