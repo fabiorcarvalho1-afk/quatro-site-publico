@@ -21,27 +21,36 @@
       }
 
       .courses-catalog-page .courses-modern-hero {
-        min-height: clamp(420px, 52vw, 560px);
+        min-height: clamp(340px, 43vw, 470px);
+      }
+
+      .courses-catalog-page .courses-modern-hero .chef-course-hero-inner {
+        align-items: end;
+        grid-template-columns: minmax(0, 1fr);
+        padding-bottom: clamp(22px, 4vw, 48px);
       }
 
       .courses-catalog-page .courses-modern-hero .chef-course-card {
-        max-width: 500px;
-        padding: clamp(20px, 2.3vw, 32px);
-        border-radius: 18px;
-        background: rgba(255, 250, 242, 0.9);
+        width: min(100%, 860px);
+        max-width: none;
+        padding: clamp(16px, 1.7vw, 24px) clamp(22px, 2.6vw, 38px);
+        border-radius: 16px;
+        background: rgba(255, 250, 242, 0.88);
       }
 
       .courses-catalog-page .courses-modern-hero .chef-course-card h1 {
-        max-width: 430px;
-        font-size: clamp(32px, 3vw, 48px);
+        max-width: 780px;
+        margin-bottom: 6px;
+        font-size: clamp(30px, 3.2vw, 52px);
         line-height: 1;
         letter-spacing: -0.025em;
+        white-space: nowrap;
       }
 
       .courses-catalog-page .courses-modern-hero .chef-course-card p:last-child {
-        max-width: 420px;
+        max-width: 760px;
         font-size: clamp(15px, 1.05vw, 18px);
-        line-height: 1.38;
+        line-height: 1.28;
       }
 
       .courses-catalog-page .courses-modern-hero .chef-course-hero-video {
@@ -52,38 +61,6 @@
         background:
           linear-gradient(90deg, rgba(18, 12, 10, 0.48), rgba(18, 12, 10, 0.18) 46%, rgba(18, 12, 10, 0.48)),
           linear-gradient(180deg, rgba(18, 12, 10, 0.18), rgba(18, 12, 10, 0.18));
-      }
-
-      .courses-catalog-page .courses-hero-panel {
-        align-self: end;
-        width: min(100%, 310px);
-        border: 1px solid rgba(255, 248, 238, 0.28);
-        border-radius: 14px;
-        padding: 16px;
-        background: rgba(29, 18, 14, 0.68);
-        color: #fff8ee;
-        backdrop-filter: blur(16px);
-      }
-
-      .courses-catalog-page .courses-hero-panel h2 {
-        margin: 0 0 8px;
-        color: #fff8ee;
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(22px, 1.6vw, 28px);
-        line-height: 1.02;
-      }
-
-      .courses-catalog-page .courses-hero-panel a {
-        display: block;
-        border-top: 1px solid rgba(255, 248, 238, 0.16);
-        padding: 9px 0;
-        color: rgba(255, 248, 238, 0.86);
-        font-size: 14px;
-        font-weight: 750;
-      }
-
-      .courses-catalog-page .courses-hero-panel a:last-child {
-        padding-bottom: 0;
       }
 
       .courses-catalog-page .courses-proof {
@@ -331,11 +308,7 @@
 
       @media (max-width: 820px) {
         .courses-catalog-page .courses-modern-hero {
-          min-height: 560px;
-        }
-
-        .courses-catalog-page .courses-hero-panel {
-          width: 100%;
+          min-height: 500px;
         }
 
         .courses-catalog-page .course-catalog-grid,
@@ -345,8 +318,13 @@
       }
 
       @media (max-width: 560px) {
+        .courses-catalog-page .courses-modern-hero .chef-course-card {
+          padding: 18px;
+        }
+
         .courses-catalog-page .courses-modern-hero .chef-course-card h1 {
           font-size: clamp(32px, 9vw, 42px);
+          white-space: normal;
         }
 
         .courses-catalog-page .course-catalog-grid,
@@ -443,14 +421,6 @@
             <h1>Escolha seu caminho na gastronomia.</h1>
             <p>Formações profissionais, cursos rápidos, Mini Chef e vivências para aprender com técnica, prática e acompanhamento.</p>
           </div>
-
-          <aside class="courses-hero-panel" aria-label="Navegação rápida dos cursos">
-            <h2>Encontre seu curso</h2>
-            <a href="#profissionais">Ver catálogo completo</a>
-            <a href="cursos-profissionalizantes.html">Cursos profissionalizantes</a>
-            <a href="cursos-rapidos.html">Cursos rápidos</a>
-            <a href="#matricula">Matrícula assistida</a>
-          </aside>
         </div>
       </section>
 
