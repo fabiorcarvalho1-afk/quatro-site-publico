@@ -15301,3 +15301,214 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
     margin-left: 0 !important;
   }
 }
+
+/* QF A Escola - professores em cards editoriais */
+.school-professors-redesign {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(176, 125, 26, 0.18), transparent 28%),
+    radial-gradient(circle at 0 100%, rgba(167, 7, 10, 0.06), transparent 30%),
+    linear-gradient(135deg, #fffdf9 0%, #f8f0e7 68%, #efe1d2 100%) !important;
+}
+
+.school-professors-panel {
+  width: min(100%, 1480px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.42fr);
+  gap: clamp(28px, 3.8vw, 58px);
+  align-items: start;
+}
+
+.school-professors-copy {
+  min-width: 0;
+}
+
+.school-professors-copy .eyebrow,
+.school-professors-copy .eyebrow::before {
+  color: var(--wine) !important;
+}
+
+.school-professors-copy .eyebrow::before {
+  background: var(--wine) !important;
+}
+
+.school-professors-copy h2 {
+  max-width: 610px !important;
+  margin: 16px 0 20px !important;
+  color: #171714 !important;
+  font-size: clamp(42px, 4.15vw, 72px) !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.school-professors-copy h2 span {
+  color: var(--wine);
+}
+
+.school-professors-copy > p {
+  max-width: 590px !important;
+  margin: 0 !important;
+  color: #342f2a !important;
+  font-size: clamp(17px, 1.2vw, 20px) !important;
+  line-height: 1.48 !important;
+}
+
+.school-professor-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: clamp(24px, 2.3vw, 34px) 0 28px;
+}
+
+.school-professor-pillars article {
+  min-width: 0;
+  min-height: 128px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(128, 97, 60, 0.2);
+  border-radius: 16px;
+  padding: 18px 20px;
+  background:
+    radial-gradient(circle at calc(100% + 20px) calc(100% + 20px), transparent 0 54px, rgba(128, 97, 60, 0.055) 55px 82px, transparent 83px),
+    rgba(255, 253, 250, 0.72);
+  box-shadow: 0 10px 28px rgba(57, 33, 20, 0.055);
+}
+
+.school-professor-pillars strong {
+  display: block;
+  max-width: 220px;
+  margin-bottom: 8px;
+  color: var(--wine);
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: clamp(17px, 1.15vw, 20px);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.school-professor-pillars span {
+  display: block;
+  color: #5f5a54;
+  font-size: clamp(14px, 0.95vw, 16px);
+  line-height: 1.35;
+}
+
+.school-professors-copy .text-btn {
+  color: var(--wine) !important;
+}
+
+.school-professor-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: clamp(14px, 1.4vw, 20px);
+  align-items: stretch;
+}
+
+.school-professor-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(128, 97, 60, 0.22);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 250, 0.98), rgba(255, 248, 240, 0.98));
+  box-shadow: 0 18px 46px rgba(57, 33, 20, 0.12);
+}
+
+.school-professor-card img {
+  display: block;
+  width: 100%;
+  height: clamp(250px, 17vw, 330px);
+  object-fit: cover;
+  object-position: center top;
+  background: #efe4d8;
+}
+
+.school-professor-card > div {
+  padding: clamp(16px, 1.3vw, 22px);
+}
+
+.school-professor-card h3 {
+  margin: 0 0 12px;
+  color: #171714;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(25px, 1.75vw, 34px);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+}
+
+.school-professor-card h3 span {
+  display: block;
+  font-size: 0.72em;
+  font-weight: 500;
+}
+
+.school-professor-role {
+  display: block;
+  width: 100%;
+  margin: 0 0 13px !important;
+  border-radius: 7px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, var(--wine), var(--wine-dark));
+  color: #fffaf3 !important;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: clamp(11px, 0.78vw, 13px) !important;
+  font-weight: 900;
+  line-height: 1.2 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.school-professor-card p:not(.school-professor-role) {
+  margin: 0 !important;
+  color: #413b35;
+  font-size: clamp(14px, 0.92vw, 16px);
+  line-height: 1.42;
+}
+
+@media (min-width: 1181px) {
+  .school-professor-card:nth-child(4) {
+    grid-column: 1;
+  }
+
+  .school-professor-card:nth-child(5) {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 1280px) {
+  .school-professors-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .school-professors-copy h2,
+  .school-professors-copy > p {
+    max-width: 920px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .school-professor-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .school-professors-copy h2 {
+    font-size: clamp(36px, 12vw, 50px) !important;
+  }
+
+  .school-professor-pillars,
+  .school-professor-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .school-professor-pillars article {
+    min-height: 0;
+  }
+
+  .school-professor-card img {
+    height: min(78vw, 360px);
+  }
+}
