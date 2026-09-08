@@ -58,8 +58,8 @@
         "title": "Chef Express",
         "description": "Para aprender fundamentos da cozinha em um formato direto, prático e objetivo.",
         "duration": "10 aulas",
-        "image": "/assets/photos/chef-fogo.jpg",
-        "alt": "Chef preparando alimentos em uma cozinha profissional",
+        "image": "/assets/photos/chef-express-card.png",
+        "alt": "Chef finalizando prato em aula do Chef Express",
         "cta": "Conhecer curso",
         "href": "chef-express.html",
         "anchor": "express"
