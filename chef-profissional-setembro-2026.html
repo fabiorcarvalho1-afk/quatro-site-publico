@@ -11,39 +11,22 @@
   gtag('config', 'AW-946888639');
 </script>
 <script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  if (typeof gtag === 'function') {
-    gtag('event', 'conversion', {
-      'send_to': 'AW-946888639/_ipkCL2_-_QcEL-_wcMD',
-      'value': 1.0,
-      'currency': 'BRL',
-      'event_callback': callback
-    });
-  }
-  return false;
-}
-
 (function () {
-  var originalFetch = window.fetch;
-  if (typeof originalFetch !== 'function') return;
-
-  window.fetch = function () {
-    var input = arguments[0];
-    var requestUrl = typeof input === 'string' ? input : (input && input.url) || '';
-    var isLeadRequest = requestUrl.indexOf('/site/leads') !== -1;
-
-    return originalFetch.apply(this, arguments).then(function (response) {
-      if (isLeadRequest && response && response.ok) {
-        gtag_report_conversion();
-      }
-      return response;
+  function reportWhatsAppConversion() {
+    if (typeof gtag !== 'function') return false;
+    gtag('event', 'conversion', {
+      'send_to': 'AW-946888639/qMB9CKiq_vQcEL-_wcMD',
+      'value': 1.0,
+      'currency': 'BRL'
     });
-  };
+    return false;
+  }
+
+  document.addEventListener('click', function (event) {
+    var link = event.target && event.target.closest ? event.target.closest('a[href*="wa.me/"]') : null;
+    if (!link) return;
+    reportWhatsAppConversion();
+  });
 })();
 </script>
   <meta charset="utf-8">
