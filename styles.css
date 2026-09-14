@@ -1542,6 +1542,20 @@ textarea:focus-visible {
   width: 34px;
 }
 
+.is-disabled-link {
+  cursor: not-allowed;
+  opacity: 0.52;
+  filter: grayscale(0.2);
+  pointer-events: none;
+  user-select: none;
+}
+
+.solid-btn.is-disabled-link:hover,
+.ghost-btn.is-disabled-link:hover,
+.text-btn.is-disabled-link:hover {
+  transform: none;
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -16035,4 +16049,3 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
     min-height: 0;
   }
 }
-
