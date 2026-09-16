@@ -16,6 +16,9 @@ const skipNames = new Set([
   'scripts',
 ]);
 const maxAssetBytes = 25 * 1024 * 1024;
+const allowedOversizedAssets = new Set([
+  path.join('assets', 'video', 'confeitaria-profissional.mp4'),
+]);
 
 async function main() {
   await rm(distDir, { recursive: true, force: true });
@@ -33,7 +36,8 @@ async function main() {
     }
 
     const sourceStat = await stat(sourcePath);
-    if (sourceStat.size > maxAssetBytes) {
+    const relativePath = path.relative(rootDir, sourcePath);
+    if (sourceStat.size > maxAssetBytes && !allowedOversizedAssets.has(relativePath)) {
       console.warn(`Skipping oversized asset: ${entry.name} (${formatMiB(sourceStat.size)})`);
       continue;
     }
@@ -64,8 +68,9 @@ async function copyDirectoryFiltered(sourceDir, targetDir) {
     }
 
     const sourceStat = await stat(sourcePath);
-    if (sourceStat.size > maxAssetBytes) {
-      console.warn(`Skipping oversized asset: ${path.relative(rootDir, sourcePath)} (${formatMiB(sourceStat.size)})`);
+    const relativePath = path.relative(rootDir, sourcePath);
+    if (sourceStat.size > maxAssetBytes && !allowedOversizedAssets.has(relativePath)) {
+      console.warn(`Skipping oversized asset: ${relativePath} (${formatMiB(sourceStat.size)})`);
       continue;
     }
 
