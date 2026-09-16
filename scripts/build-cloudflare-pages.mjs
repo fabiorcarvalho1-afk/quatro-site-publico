@@ -11,14 +11,14 @@ const skipNames = new Set([
   '.git',
   '.github',
   '.codex-backups',
+  '.npm-cache',
+  '.wrangler-config',
   'dist-pages',
   'node_modules',
   'scripts',
+  'work',
 ]);
 const maxAssetBytes = 25 * 1024 * 1024;
-const allowedOversizedAssets = new Set([
-  path.join('assets', 'video', 'confeitaria-profissional.mp4'),
-]);
 
 async function main() {
   await rm(distDir, { recursive: true, force: true });
@@ -36,8 +36,7 @@ async function main() {
     }
 
     const sourceStat = await stat(sourcePath);
-    const relativePath = path.relative(rootDir, sourcePath);
-    if (sourceStat.size > maxAssetBytes && !allowedOversizedAssets.has(relativePath)) {
+    if (sourceStat.size > maxAssetBytes) {
       console.warn(`Skipping oversized asset: ${entry.name} (${formatMiB(sourceStat.size)})`);
       continue;
     }
@@ -69,7 +68,7 @@ async function copyDirectoryFiltered(sourceDir, targetDir) {
 
     const sourceStat = await stat(sourcePath);
     const relativePath = path.relative(rootDir, sourcePath);
-    if (sourceStat.size > maxAssetBytes && !allowedOversizedAssets.has(relativePath)) {
+    if (sourceStat.size > maxAssetBytes) {
       console.warn(`Skipping oversized asset: ${relativePath} (${formatMiB(sourceStat.size)})`);
       continue;
     }
