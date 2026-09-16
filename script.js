@@ -36,7 +36,7 @@ const PAGE_LEAD_INTERESTS = {
   "chef-profissional.html": "Chef Profissional",
   "chef-profissional-setembro-2026.html": "Chef Profissional — turma 14/09/2026",
   "confeitaria-profissional.html": "Confeitaria Profissional",
-  "confeitaria-profissional-setembro-2026.html": "Confeitaria Profissional — turma 10/09/2026",
+  "confeitaria-profissional-setembro-2026.html": "Confeitaria Profissional — turma 24/09/2026",
   "contato.html": "Contato geral",
   "criancas-e-escolas.html": "Crianças e escolas",
   "cursos.html": "Cursos Quatro Folhas",
