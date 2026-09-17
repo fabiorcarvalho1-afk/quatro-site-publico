@@ -381,7 +381,7 @@ function formToObject(form) {
   return data;
 }
 
-function buildLeadTracking(source) {
+function buildLeadTracking(source, formData = {}) {
   const params = new URLSearchParams(window.location.search);
   const tracking = {
     source,
@@ -391,8 +391,8 @@ function buildLeadTracking(source) {
     referrer: document.referrer || undefined
   };
 
-  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
-    const value = params.get(key);
+  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid"].forEach((key) => {
+    const value = (typeof formData[key] === "string" && formData[key].trim()) || params.get(key);
     if (value) tracking[key] = value;
   });
 
@@ -479,11 +479,11 @@ function buildLeadPayload(form, source, extraPayload = {}) {
     source,
     message: message || undefined,
     payload: {
-      ...buildLeadTracking(source),
       page: window.location.href,
       turnstileToken,
       ...data,
-      ...normalizedExtraPayload
+      ...normalizedExtraPayload,
+      ...buildLeadTracking(source, data)
     }
   };
 }
