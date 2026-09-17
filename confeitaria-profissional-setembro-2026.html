@@ -388,33 +388,53 @@
       const trackingFields = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'];
       const params = new URLSearchParams(window.location.search);
       let tracking = {};
-      let hasNewValue = false;
 
-      try {
-        tracking = JSON.parse(sessionStorage.getItem(storageKey) || '{}') || {};
-      } catch (error) {
-        tracking = {};
+      function readTracking() {
+        try {
+          return JSON.parse(sessionStorage.getItem(storageKey) || '{}') || {};
+        } catch (error) {
+          return {};
+        }
       }
 
-      trackingFields.forEach(function (name) {
-        const value = params.get(name);
-        if (value) {
-          tracking[name] = value;
-          hasNewValue = true;
-        }
-      });
-
-      if (hasNewValue) {
+      function writeTracking(nextTracking) {
         try {
-          sessionStorage.setItem(storageKey, JSON.stringify(tracking));
+          sessionStorage.setItem(storageKey, JSON.stringify(nextTracking));
         } catch (error) {}
       }
 
-      trackingFields.forEach(function (name) {
-        document.querySelectorAll('[name="' + name + '"]').forEach(function (field) {
-          field.value = tracking[name] || '';
+      function captureTracking() {
+        const nextTracking = Object.assign({}, readTracking());
+        let hasNewValue = false;
+
+        trackingFields.forEach(function (name) {
+          const value = params.get(name);
+          if (value) {
+            nextTracking[name] = value;
+            hasNewValue = true;
+          }
         });
-      });
+
+        if (hasNewValue) writeTracking(nextTracking);
+        tracking = nextTracking;
+        return nextTracking;
+      }
+
+      function hydrateTrackingFields(scope) {
+        const currentTracking = captureTracking();
+        trackingFields.forEach(function (name) {
+          scope.querySelectorAll('[name="' + name + '"]').forEach(function (field) {
+            field.value = currentTracking[name] || '';
+          });
+        });
+      }
+
+      hydrateTrackingFields(document);
+
+      document.addEventListener('submit', function (event) {
+        const form = event.target && event.target.closest ? event.target.closest('form') : null;
+        if (form) hydrateTrackingFields(form);
+      }, true);
     })();
   </script>
   <script src="script.js"></script>
