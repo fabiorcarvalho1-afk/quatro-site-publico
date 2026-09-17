@@ -429,10 +429,36 @@
 
   <script>
     (function () {
+      const storageKey = 'qf_lead_tracking';
+      const trackingFields = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'];
       const params = new URLSearchParams(window.location.search);
-      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'].forEach(function (name) {
-        const field = document.querySelector('[name="' + name + '"]');
-        if (field) field.value = params.get(name) || '';
+      let tracking = {};
+      let hasNewValue = false;
+
+      try {
+        tracking = JSON.parse(sessionStorage.getItem(storageKey) || '{}') || {};
+      } catch (error) {
+        tracking = {};
+      }
+
+      trackingFields.forEach(function (name) {
+        const value = params.get(name);
+        if (value) {
+          tracking[name] = value;
+          hasNewValue = true;
+        }
+      });
+
+      if (hasNewValue) {
+        try {
+          sessionStorage.setItem(storageKey, JSON.stringify(tracking));
+        } catch (error) {}
+      }
+
+      trackingFields.forEach(function (name) {
+        document.querySelectorAll('[name="' + name + '"]').forEach(function (field) {
+          field.value = tracking[name] || '';
+        });
       });
     })();
   </script>
