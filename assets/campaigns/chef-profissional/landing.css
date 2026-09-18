@@ -201,6 +201,89 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
 .offer-float small { display: block; color: #e8c889; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .offer-float strong { display: block; margin: 8px 0 5px; font-family: "Playfair Display", Georgia, serif; font-size: 34px; }
 .offer-float span { color: rgba(255,255,255,.8); font-size: 12px; }
+.cakes-fine-sweets-page .offer-float {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) 196px;
+  gap: 4px 20px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 16px 20px;
+  border-radius: 20px;
+}
+.cakes-fine-sweets-page .offer-float > small { font-size: 10px; letter-spacing: .1em; }
+.cakes-fine-sweets-page .offer-float > strong {
+  margin: 2px 0 0;
+  font-size: clamp(25px, 2.3vw, 32px);
+  line-height: 1.02;
+}
+.cakes-fine-sweets-page .offer-float-note {
+  display: block;
+  max-width: 350px;
+  color: rgba(255,255,255,.86);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.38;
+}
+.cakes-fine-sweets-page .hero-visual { min-height: 0; }
+.cakes-fine-sweets-page .hero-photo-main {
+  position: relative;
+  inset: auto;
+  height: 500px;
+}
+.offer-float-price {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 16px;
+  align-items: end;
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+.cakes-fine-sweets-page .offer-float-price {
+  display: block;
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  border-left: 1px solid rgba(255,255,255,.22);
+  padding-left: 20px;
+}
+.cakes-fine-sweets-page .offer-float-price span,
+.cakes-fine-sweets-page .offer-float-price strong,
+.cakes-fine-sweets-page .offer-float-price small { display: block; }
+.cakes-fine-sweets-page .offer-float-price small { margin-top: 4px; }
+.offer-float-price span {
+  grid-column: 1 / -1;
+  color: #e8c889;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.offer-float-price strong {
+  margin: 0;
+  color: #fff;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.offer-float-price small {
+  color: rgba(255,255,255,.78);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-align: left;
+  text-transform: none;
+}
 
 .proof-strip { position: relative; z-index: 2; border-bottom: 1px solid var(--line); background: #fff; }
 .proof-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
