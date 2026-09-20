@@ -45,6 +45,7 @@ button, input, select { font: inherit; }
   gap: 24px;
 }
 .campaign-brand img { width: 244px; height: auto; }
+.campaign-header-actions { display: flex; align-items: center; gap: 12px; }
 .header-cta,
 .primary-cta,
 .secondary-cta {
@@ -448,8 +449,11 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
 @media (max-width: 700px) {
   html, body { overflow-x: hidden; }
   .campaign-shell { width: min(100% - 32px, 620px); }
-  .campaign-header-inner { min-height: 76px; gap: 8px; }
+  .campaign-header-inner { min-height: 76px; gap: 8px; flex-wrap: wrap; padding: 10px 0; }
   .campaign-brand img { width: 168px; }
+  .campaign-header-actions { width: 100%; gap: 7px; }
+  .campaign-header-actions .header-cta,
+  .campaign-header-actions .secondary-cta { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 9px 10px; font-size: 10.5px; white-space: nowrap; }
   .header-cta { min-width: 154px; min-height: 44px; padding: 9px 10px; font-size: 10.5px; white-space: nowrap; }
   .campaign-hero { overflow: visible; padding: 0; background: #f8f1e7; }
   .campaign-hero::after { display: none; }
