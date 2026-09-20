@@ -6833,16 +6833,51 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
   font-weight: 750;
 }
 
+.brand-partnership-page .enterprise-hero {
+  grid-template-columns: minmax(0, .95fr) minmax(380px, .72fr);
+}
+
+.brand-partnership-page .enterprise-hero-photo {
+  aspect-ratio: 2.05 / 1;
+  background: #251713;
+}
+
+.brand-partnership-page .enterprise-hero-photo img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.brand-access-card {
+  grid-template-columns: 1fr;
+  margin-top: 18px;
+}
+
+.brand-access-card article {
+  min-height: 0;
+}
+
+.brand-access-card .text-btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  margin-top: 12px;
+}
+
 .team-building-page .content-band,
 .team-building-page .team-building-benefits-section,
 .team-building-page .team-building-route-section,
+.brand-partnership-page .content-band,
+.brand-partnership-page .team-building-benefits-section,
+.brand-partnership-page .team-building-route-section,
 .team-building-page .page-form-section {
   padding-top: clamp(30px, 4vw, 52px);
   padding-bottom: clamp(30px, 4vw, 52px);
 }
 
 .team-building-page .team-building-benefits-section,
-.team-building-page .team-building-route-section {
+.team-building-page .team-building-route-section,
+.brand-partnership-page .team-building-benefits-section,
+.brand-partnership-page .team-building-route-section {
   padding-top: clamp(24px, 3vw, 40px);
   padding-bottom: clamp(24px, 3vw, 40px);
 }
