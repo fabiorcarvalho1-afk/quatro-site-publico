@@ -201,6 +201,38 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
 .offer-float small { display: block; color: #e8c889; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .offer-float strong { display: block; margin: 8px 0 5px; font-family: "Playfair Display", Georgia, serif; font-size: 34px; }
 .offer-float span { color: rgba(255,255,255,.8); font-size: 12px; }
+.cakes-fine-sweets-page .offer-float {
+  right: -12px;
+  bottom: -64px;
+  width: min(380px, 82%);
+  padding: 19px 27px 21px;
+  border-radius: 22px;
+  background: rgba(87, 11, 26, .95);
+  backdrop-filter: blur(4px);
+}
+.cakes-fine-sweets-page .offer-float > small { font-size: 12px; letter-spacing: .08em; }
+.cakes-fine-sweets-page .offer-float > strong {
+  margin: 8px 0 7px;
+  color: #fff;
+  font-size: clamp(32px, 3.1vw, 42px);
+  line-height: .98;
+}
+.cakes-fine-sweets-page .offer-float > span {
+  display: block;
+  color: rgba(255,255,255,.9);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.38;
+}
+.cakes-fine-sweets-page .offer-float > em {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255,255,255,.86);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.35;
+}
 
 .proof-strip { position: relative; z-index: 2; border-bottom: 1px solid var(--line); background: #fff; }
 .proof-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }

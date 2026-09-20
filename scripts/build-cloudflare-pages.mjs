@@ -19,6 +19,14 @@ const skipNames = new Set([
   'work',
 ]);
 const maxAssetBytes = 25 * 1024 * 1024;
+const routeAliases = new Map([
+  ['chef', 'chef-profissional-setembro-2026.html'],
+  ['chef-profissional', 'chef-profissional-setembro-2026.html'],
+  ['confeitaria', 'confeitaria-profissional-setembro-2026.html'],
+  ['bolos-doces-finos', 'bolos-e-doces-finos-especializacao.html'],
+  ['aulas-tematicas', 'aulas-tematicas-experiencias.html'],
+  ['festa-infantil', 'festa-infantil-gastronomica-experiencia.html'],
+]);
 
 async function main() {
   await rm(distDir, { recursive: true, force: true });
@@ -45,12 +53,19 @@ async function main() {
   }
 
   await removeDuplicateRouteDirectories();
+  await createRouteAliases();
   await createRedirects();
 }
 
 async function createRedirects() {
   const redirectsPath = path.join(distDir, '_redirects');
   await writeFile(redirectsPath, '', 'utf8');
+}
+
+async function createRouteAliases() {
+  for (const [alias, target] of routeAliases) {
+    await cp(path.join(distDir, target), path.join(distDir, alias));
+  }
 }
 
 async function copyDirectoryFiltered(sourceDir, targetDir) {
