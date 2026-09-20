@@ -6714,6 +6714,42 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
   gap: 12px;
 }
 
+.team-building-card-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.team-building-section-heading {
+  display: grid;
+  grid-template-columns: minmax(180px, .7fr) minmax(0, 1.3fr);
+  gap: clamp(18px, 3vw, 42px);
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.team-building-section-heading .eyebrow {
+  margin: 0;
+  color: var(--wine);
+}
+
+.team-building-section-heading h2 {
+  max-width: 680px;
+  margin: 0;
+  color: var(--wine-dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -0.035em;
+}
+
+.team-building-section-heading p:not(.eyebrow) {
+  max-width: 700px;
+  margin: 12px 0 0;
+  color: #6b5c55;
+  font-size: clamp(15px, 1.35vw, 19px);
+  line-height: 1.48;
+}
+
 .team-building-card-grid article {
   position: relative;
   min-height: 132px;
@@ -6798,11 +6834,17 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
 }
 
 .team-building-page .content-band,
-.team-building-page .detail-section,
-.team-building-page .course-path,
+.team-building-page .team-building-benefits-section,
+.team-building-page .team-building-route-section,
 .team-building-page .page-form-section {
   padding-top: clamp(30px, 4vw, 52px);
   padding-bottom: clamp(30px, 4vw, 52px);
+}
+
+.team-building-page .team-building-benefits-section,
+.team-building-page .team-building-route-section {
+  padding-top: clamp(24px, 3vw, 40px);
+  padding-bottom: clamp(24px, 3vw, 40px);
 }
 
 @media (max-width: 860px) {
@@ -6813,6 +6855,11 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
 
   .team-building-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-building-section-heading {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .enterprise-hero-copy {
@@ -6845,6 +6892,19 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
 
   .team-building-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .team-building-section-heading {
+    margin-bottom: 14px;
+  }
+
+  .team-building-section-heading h2 {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.03;
+  }
+
+  .team-building-section-heading p:not(.eyebrow) {
+    font-size: 15px;
   }
 
   .team-building-card-grid article {
