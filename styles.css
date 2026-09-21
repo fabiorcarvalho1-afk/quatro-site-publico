@@ -7003,6 +7003,17 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
   color: #fff8ee;
 }
 
+.franchise-page .franchise-operations-section .section-heading .eyebrow,
+.franchise-page .franchise-operations-section .section-heading h2,
+.franchise-page .franchise-operations-section .section-heading > p,
+.franchise-page .franchise-operations-section .section-heading.split > p {
+  color: #fff8ee;
+}
+
+.franchise-page .franchise-operations-section .section-heading .eyebrow::before {
+  background: rgba(255, 248, 238, .78);
+}
+
 .franchise-system-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
