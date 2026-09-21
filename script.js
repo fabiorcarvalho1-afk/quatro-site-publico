@@ -41,6 +41,7 @@ const PAGE_LEAD_INTERESTS = {
   "criancas-e-escolas.html": "Crianças e escolas",
   "cursos.html": "Cursos Quatro Folhas",
   "cursos-rapidos.html": "Cursos rápidos",
+  "carreira.html": "Área de empregos para alunos",
   "empresas-e-marcas.html": "Empresas e marcas",
   "festa-infantil-gastronomica-experiencia.html": "Festa Infantil Gastronômica",
   "franquia.html": "Franquia Quatro Folhas",
@@ -713,8 +714,12 @@ const fieldTemplates = {
         <input name="empresa" type="text" required>
       </label>
       <label>
-        Responsável
-        <input name="responsavel" type="text" required>
+        Link do logotipo da empresa
+        <input name="logo_empresa" type="url" placeholder="https://...">
+      </label>
+      <label>
+        WhatsApp público da vaga
+        <input name="whatsapp_vaga" type="tel" required placeholder="Contato que será liberado somente para alunos logados">
       </label>
       <label>
         Cargo da vaga
@@ -730,15 +735,22 @@ const fieldTemplates = {
       </label>
       <label>
         Descrição da oportunidade
-        <textarea name="descricao" rows="4" required placeholder="Descreva atividades, requisitos, jornada e como será a candidatura."></textarea>
-      </label>
-      <label>
-        Como se candidatar
-        <input name="candidatura" type="text" required placeholder="WhatsApp, e-mail ou link de candidatura">
+        <textarea name="descricao" rows="4" required placeholder="Descreva atividades, requisitos e jornada."></textarea>
       </label>
     `
   })
 };
+
+function buildProtectedJobsUrl() {
+  const next = encodeURIComponent("/carreira");
+  return `${PORTAL_LOGIN_URL}?next=${next}`;
+}
+
+document.querySelectorAll("[data-student-job-contact]").forEach((link) => {
+  link.href = buildProtectedJobsUrl();
+  link.removeAttribute("target");
+  link.removeAttribute("rel");
+});
 
 menuToggle?.addEventListener("click", () => {
   const isOpen = siteHeader.classList.toggle("is-open");
@@ -803,7 +815,7 @@ document.querySelectorAll("[data-open]").forEach((trigger) => {
       "party-form": "Recebemos seu pedido. Nossa equipe entrará em contato pelo WhatsApp para montar a proposta da festa.",
       "school-form": "Recebemos seu pedido. Nossa equipe entrará em contato pelo WhatsApp para entender o projeto da escola.",
       "business-form": "Recebemos sua solicitação. Nossa equipe entrará em contato para preparar a proposta.",
-      "job-form": "Recebemos sua solicitação. Nossa equipe entrará em contato pelo WhatsApp para orientar o envio ou aprovação da vaga."
+      "job-form": "Recebemos sua vaga para análise. Ela só será publicada depois da aprovação da escola."
     }[type] || "Recebemos sua solicitação. Nossa equipe entrará em contato pelo WhatsApp.";
     modalTitle.textContent = template.title;
     modalEyebrow.textContent = template.eyebrow;
