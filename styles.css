@@ -6952,29 +6952,6 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
   background: #f4eadc;
 }
 
-.media-gallery-card figcaption {
-  display: flex;
-  min-height: 72px;
-  flex-direction: column;
-  gap: 4px;
-  justify-content: center;
-  padding: 15px 17px;
-  border-top: 1px solid rgba(116, 19, 38, .1);
-}
-
-.media-gallery-card strong {
-  color: var(--wine-dark);
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(20px, 1.35vw, 25px);
-  line-height: 1;
-}
-
-.media-gallery-card span {
-  color: #6b5c55;
-  font-size: 13px;
-  line-height: 1.35;
-}
-
 .team-building-page .content-band,
 .team-building-page .team-building-benefits-section,
 .team-building-page .team-building-route-section,
@@ -7069,11 +7046,6 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
   .media-gallery-card,
   .media-gallery-card img {
     border-radius: 16px;
-  }
-
-  .media-gallery-card figcaption {
-    min-height: 0;
-    padding: 14px 15px;
   }
 
   .team-building-section-heading {
