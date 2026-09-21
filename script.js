@@ -742,7 +742,7 @@ const fieldTemplates = {
 };
 
 function buildProtectedJobsUrl() {
-  const next = encodeURIComponent("/carreira");
+  const next = encodeURIComponent("/portal-aluno/carreira");
   return `${PORTAL_LOGIN_URL}?next=${next}`;
 }
 
