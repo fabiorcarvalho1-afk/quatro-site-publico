@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="questions-page">
     <header class="site-header">
       <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
@@ -77,105 +77,150 @@
     </header>
 
     <main>
-      <section class="page-hero">
+      <section class="page-hero questions-hero">
         <div>
-          <p class="eyebrow">Perguntas</p>
-          <h1>Respostas diretas para você escolher e chegar tranquilo</h1>
-          <p>Reunimos as dúvidas mais comuns sobre cursos, aulas temáticas, agenda e formatos para empresas.</p>
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h1>Respostas claras para escolher seu curso e se preparar melhor</h1>
+          <p>Organizamos as principais dúvidas sobre cursos, matrícula, agenda, aulas temáticas, crianças, empresas e certificados.</p>
           <div class="page-nav stacked-nav">
             <a href="#cursos">Cursos</a>
+            <a href="#matricula">Matrícula</a>
             <a href="#agenda">Agenda</a>
-            <a href="#tematicas">Aulas temáticas</a>
+            <a href="#experiencias">Experiências</a>
             <a href="#empresas">Empresas</a>
           </div>
         </div>
         <div class="page-hero-image" style="background-image:url('assets/photos/cozinha-bancadas.jpg')"></div>
       </section>
 
-      <section class="content-band light" id="cursos">
-        <div class="section-heading split">
-          <div><p class="eyebrow">Cursos</p><h2>Formação e matrículas</h2></div>
-          <p>Escolha o curso certo para seu objetivo e entenda os próximos passos.</p>
+      <section class="questions-overview" aria-label="Atalhos de atendimento">
+        <article>
+          <span>01</span>
+          <h2>Quero escolher um curso</h2>
+          <p>Veja as diferenças entre formação profissional, especializações, cursos rápidos e aulas temáticas.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Quero falar com a escola</h2>
+          <p>Para datas, valores, vagas e matrícula, o WhatsApp é o caminho mais rápido para atendimento.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Quero levar uma empresa</h2>
+          <p>Projetos corporativos são montados por proposta, conforme objetivo, grupo, duração e formato.</p>
+        </article>
+      </section>
+
+      <section class="questions-section" id="cursos">
+        <div class="questions-section-heading">
+          <p class="eyebrow">Cursos</p>
+          <h2>Escolha do curso</h2>
+          <p>Entenda qual formato combina melhor com seu momento.</p>
         </div>
-        <div class="faq-grid">
-          <details class="faq-item">
+        <div class="questions-panel">
+          <details class="faq-item" open>
             <summary>Como escolher o curso ideal?</summary>
-            <p>Pense no seu objetivo: iniciar na gastronomia, se especializar ou fazer uma jornada mais curta. Se estiver em dúvida, fale com a equipe pelo WhatsApp e a gente te orienta pelo seu perfil.</p>
+            <p>Comece pelo seu objetivo. Para uma formação completa, veja Chef Profissional ou Confeitaria Profissional. Para se especializar em uma área, veja Bolos e Doces Finos. Para uma experiência mais curta, escolha cursos rápidos ou aulas temáticas.</p>
           </details>
           <details class="faq-item">
-            <summary>Como funciona a matrícula?</summary>
-            <p>você envia seu interesse e a equipe orienta turma, disponibilidade e próximos passos. Em seguida, confirmamos a vaga e enviamos as instru??es.</p>
+            <summary>Preciso ter experiência para começar?</summary>
+            <p>Não. A escola recebe alunos iniciantes e também pessoas que já trabalham na área. O importante é escolher uma turma adequada ao seu objetivo e ao seu nível de prática.</p>
           </details>
           <details class="faq-item">
-            <summary>Preciso ter experiência?</summary>
-            <p>não. Os formatos foram pensados para atender diferentes níveis. A proposta é aprender com direção e prática.</p>
+            <summary>Qual é a diferença entre curso profissional e aula temática?</summary>
+            <p>O curso profissional tem uma jornada de formação, com sequência de aulas e desenvolvimento técnico. A aula temática é uma experiência pontual, prática e guiada, normalmente com preparo e degustação no mesmo encontro.</p>
           </details>
           <details class="faq-item">
             <summary>Os cursos entregam certificado?</summary>
-            <p>Sim. Ao final, você recebe certificado de participação/conclusão conforme o formato do curso.</p>
+            <p>Sim. O certificado é emitido conforme o formato contratado e as regras de participação do curso ou da aula.</p>
           </details>
         </div>
       </section>
 
-      <section class="content-band" id="agenda">
-        <div class="section-heading split">
-          <div><p class="eyebrow">Agenda</p><h2>Datas, turmas e inscrições</h2></div>
-          <p>Confira as próximas oportunidades e organize sua participação.</p>
+      <section class="questions-section questions-section-muted" id="matricula">
+        <div class="questions-section-heading">
+          <p class="eyebrow">Matrícula</p>
+          <h2>Vagas, pagamento e confirmação</h2>
+          <p>O atendimento confirma disponibilidade, valores e próximos passos.</p>
         </div>
-        <div class="faq-grid">
+        <div class="questions-panel">
           <details class="faq-item">
-            <summary>Como sei as próximas datas?</summary>
-            <p>As datas abertas ficam na p?gina de Agenda. você também pode deixar seu WhatsApp no rodap? para receber novidades.</p>
+            <summary>Como funciona a matrícula?</summary>
+            <p>Você informa o curso desejado e a equipe confirma turma, disponibilidade, valores e forma de pagamento. Depois da confirmação, a escola orienta os próximos passos para garantir a vaga.</p>
           </details>
           <details class="faq-item">
-            <summary>O que significa ??oem breve????</summary>
-            <p>Significa que a turma ainda está em preparação e a abertura de vagas acontece nos próximos ciclos. você pode registrar interesse para ser avisado.</p>
+            <summary>A vaga fica reservada só pelo contato?</summary>
+            <p>Não. A vaga é confirmada após a conclusão da etapa orientada pela equipe, conforme as condições da turma escolhida.</p>
           </details>
           <details class="faq-item">
-            <summary>Posso falar com a equipe antes de me inscrever?</summary>
-            <p>Sim. O WhatsApp do site é o canal mais rápido para tirar dúvidas e confirmar o melhor formato.</p>
-          </details>
-        </div>
-      </section>
-
-      <section class="content-band light" id="tematicas">
-        <div class="section-heading split">
-          <div><p class="eyebrow">Aulas temáticas</p><h2>Uma experiência prática e guiada</h2></div>
-          <p>Para aprender, cozinhar e degustar em um encontro conduzido.</p>
-        </div>
-        <div class="faq-grid">
-          <details class="faq-item">
-            <summary>O que está incluso?</summary>
-            <p>orientação do professor, prática, preparo completo e degustação ao final, com um momento é mesa e certificado.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Preciso levar algo?</summary>
-            <p>não. Os insumos e materiais são fornecidos pela escola para a realização da aula.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Como reservo minha vaga?</summary>
-            <p>você escolhe a aula e faz a reserva. A equipe confirma a vaga e orienta o pagamento.</p>
+            <summary>Posso tirar dúvidas antes de fechar?</summary>
+            <p>Sim. Você pode chamar no WhatsApp para entender carga horária, datas, valores, conteúdo do curso e melhor turma para o seu caso.</p>
           </details>
         </div>
       </section>
 
-      <section class="content-band" id="empresas">
-        <div class="section-heading split">
-          <div><p class="eyebrow">Empresas</p><h2>Projetos corporativos e qualificação</h2></div>
-          <p>Treinamento de equipes, experiências e formatos sob proposta.</p>
+      <section class="questions-section" id="agenda">
+        <div class="questions-section-heading">
+          <p class="eyebrow">Agenda</p>
+          <h2>Datas e turmas</h2>
+          <p>As turmas abrem conforme calendário e disponibilidade da escola.</p>
         </div>
-        <div class="faq-grid">
+        <div class="questions-panel">
+          <details class="faq-item">
+            <summary>Onde vejo as próximas datas?</summary>
+            <p>As datas abertas aparecem nas páginas dos cursos e na agenda divulgada pela escola. Se uma turma ainda não estiver aberta, você pode registrar interesse para ser avisado.</p>
+          </details>
+          <details class="faq-item">
+            <summary>O que significa “em breve”?</summary>
+            <p>Significa que a turma ou aula está em preparação. A abertura depende de calendário, professor, estrutura e quantidade de vagas.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Existe lista de interesse?</summary>
+            <p>Sim. Quando uma turma ainda não está aberta, a equipe pode anotar seu interesse para avisar quando houver nova data.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="questions-section questions-section-muted" id="experiencias">
+        <div class="questions-section-heading">
+          <p class="eyebrow">Experiências</p>
+          <h2>Aulas temáticas, crianças e escolas</h2>
+          <p>Formatos práticos para aprender, cozinhar, degustar e viver a cozinha.</p>
+        </div>
+        <div class="questions-panel">
+          <details class="faq-item">
+            <summary>O que está incluso em uma aula temática?</summary>
+            <p>Normalmente inclui orientação do professor, prática em cozinha, preparo das receitas e degustação ao final. A equipe informa os detalhes de cada aula antes da reserva.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Preciso levar ingredientes ou utensílios?</summary>
+            <p>Não. A escola fornece os insumos e materiais necessários para a realização da aula, salvo alguma orientação específica informada previamente.</p>
+          </details>
+          <details class="faq-item">
+            <summary>A escola atende crianças e grupos escolares?</summary>
+            <p>Sim. Há formatos para crianças, escolas e experiências gastronômicas adaptadas ao perfil do grupo, sempre com orientação da equipe.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="questions-section" id="empresas">
+        <div class="questions-section-heading">
+          <p class="eyebrow">Empresas</p>
+          <h2>Projetos corporativos e marcas</h2>
+          <p>Experiências e propostas são montadas conforme objetivo e perfil do grupo.</p>
+        </div>
+        <div class="questions-panel">
           <details class="faq-item">
             <summary>Quais formatos a Quatro Folhas oferece para empresas?</summary>
-            <p>Team building, experiências fechadas, ativações e produções, além de treinamentos e qualificação de equipes na Quatro Folhas ou in loco.</p>
+            <p>Team building, experiências gastronômicas, ações com marcas, locação de cozinha, gravações, treinamentos e projetos especiais sob proposta.</p>
           </details>
           <details class="faq-item">
             <summary>Como solicito uma proposta?</summary>
-            <p>Fale no WhatsApp com objetivo, tamanho do grupo e per?odo desejado. A equipe orienta o formato e conduz a proposta.</p>
+            <p>Envie pelo WhatsApp o objetivo, número de participantes, período desejado e formato imaginado. A equipe avalia a necessidade e monta a melhor proposta.</p>
           </details>
           <details class="faq-item">
-            <summary>A proposta e o media kit ficam onde?</summary>
-            <p>Parceiros acessam proposta e media kit pelo site, com senha, para manter tudo organizado.</p>
+            <summary>A escola faz eventos fora da unidade?</summary>
+            <p>Alguns projetos podem acontecer fora da escola, dependendo da estrutura, equipe, deslocamento e objetivo da ação. A viabilidade é avaliada caso a caso.</p>
           </details>
         </div>
       </section>
