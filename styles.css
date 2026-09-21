@@ -6943,12 +6943,12 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: #f4eadc;
 }
 
 .media-gallery-card-wide img {
-  object-fit: contain;
   background: #f4eadc;
 }
 
