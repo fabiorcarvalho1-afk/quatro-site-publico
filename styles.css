@@ -5419,6 +5419,11 @@ textarea {
     min-height: 0;
   }
 
+  .brand-partnership-page .enterprise-hero,
+  .media-production-page .enterprise-hero {
+    grid-template-columns: 1fr;
+  }
+
   .enterprise-hero-copy {
     max-width: 760px;
   }
@@ -6863,12 +6868,57 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
   margin-top: 12px;
 }
 
+.media-production-page .enterprise-hero {
+  grid-template-columns: minmax(0, .82fr) minmax(420px, .85fr);
+}
+
+.media-production-page .media-hero-photo {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: auto;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.media-production-page .media-hero-photo::after {
+  display: none;
+}
+
+.media-production-page .media-hero-photo img {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 22px;
+  object-fit: contain;
+  object-position: center;
+  background: #251713;
+  box-shadow: 0 20px 52px rgba(23, 23, 20, .16);
+}
+
+.media-production-page .media-hero-photo figcaption {
+  position: static;
+  align-self: flex-end;
+  max-width: none;
+  margin-top: 8px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #76655a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: none;
+}
+
 .team-building-page .content-band,
 .team-building-page .team-building-benefits-section,
 .team-building-page .team-building-route-section,
 .brand-partnership-page .content-band,
 .brand-partnership-page .team-building-benefits-section,
 .brand-partnership-page .team-building-route-section,
+.media-production-page .content-band,
+.media-production-page .team-building-benefits-section,
 .team-building-page .page-form-section {
   padding-top: clamp(30px, 4vw, 52px);
   padding-bottom: clamp(30px, 4vw, 52px);
@@ -6877,7 +6927,8 @@ body.theme-enterprise.enterprise-hub-page .content-band.dark .card-grid.compact 
 .team-building-page .team-building-benefits-section,
 .team-building-page .team-building-route-section,
 .brand-partnership-page .team-building-benefits-section,
-.brand-partnership-page .team-building-route-section {
+.brand-partnership-page .team-building-route-section,
+.media-production-page .team-building-benefits-section {
   padding-top: clamp(24px, 3vw, 40px);
   padding-bottom: clamp(24px, 3vw, 40px);
 }

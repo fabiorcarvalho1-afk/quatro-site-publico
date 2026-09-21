@@ -8,110 +8,108 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260920-midia-modern">
   </head>
-  <body class="theme-enterprise">
-    <header class="site-header">
+  <body class="theme-enterprise enterprise-hub-page media-production-page">
+    <header class="site-header simple-site-header">
       <a class="brand" href="index.html"><img src="assets/logo-quatrofolhas-horizontal.png" alt="Quatro Folhas Escola de Gastronomia"></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav class="main-nav" id="main-nav">
-        <a href="a-escola.html">A Escola</a>
-        <div class="nav-item has-mega">
-          <a href="cursos.html" class="nav-link">Cursos</a>
-          <div class="mega-menu" role="menu">
-            <div class="mega-inner">
-              <div class="mega-lead">
-                <strong>Cursos</strong>
-                <span>Escolha o curso.</span>
-              </div>
-              <div class="mega-grid">
-                <a class="mega-card" href="chef-profissional.html">
-                  <span class="thumb" style="background-image:url('assets/photos/cozinha-bancadas.jpg')"></span>
-                  <span class="title">Chef Profissional</span>
-                </a>
-                <a class="mega-card" href="confeitaria-profissional.html">
-                  <span class="thumb" style="background-image:url('assets/photos/aula-confeitaria.jpg')"></span>
-                  <span class="title">Confeitaria</span>
-                </a>
-                <a class="mega-card" href="cursos-rapidos.html">
-                  <span class="thumb" style="background-image:url('assets/photos/mesa-pratos.jpg')"></span>
-                  <span class="title">Cursos Rápidos</span>
-                </a>
-                <a class="mega-card" href="mini-chef.html">
-                  <span class="thumb" style="background-image:url('assets/photos/alunos-turma.jpg')"></span>
-                  <span class="title">Mini Chef</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-<a href="aulas-tematicas.html">Aulas Temáticas</a>
-        <a href="criancas-e-escolas.html">Crianças e Escolas</a>
-        <a href="empresas-e-marcas.html">Empresas e Marcas</a>
-        <a href="carreira.html">Carreira</a>
-        <a href="perguntas.html">Perguntas</a>
-        <a href="contato.html">Contato</a>
-      </nav>
-      <div class="header-actions">
-        <div class="lang-switch" aria-label="Idioma">
-          <a class="lang-link is-active" href="index.html" lang="pt-BR">PT</a>
-          <a class="lang-link" href="en/index.html" lang="en">EN</a>
-          <a class="lang-link" href="es/index.html" lang="es">ES</a>
-        </div>
-        <a class="ghost-btn cert-link" data-cert-link href="validar-certificado.html">Validar certificado</a><div class="student-portal"><button class="ghost-btn portal-toggle" type="button" aria-expanded="false">Portal do aluno</button><form class="portal-panel" data-portal-login><label>E-mail<input type="email" required></label><label>Senha<input type="password" required></label><button class="solid-btn" type="submit">Entrar</button><a href="contato.html">Esqueci minha senha</a></form></div><a class="solid-btn" href="solicitar-proposta.html">Solicitar proposta</a></div>
+      <div class="header-actions simple-header-actions">
+        <a class="ghost-btn" href="empresas-e-marcas.html">Voltar a empresas</a>
+        <a class="solid-btn" href="solicitar-proposta.html">Solicitar proposta</a>
+      </div>
     </header>
 
     <main>
-      <section class="page-hero">
-        <div>
+      <section class="enterprise-hero">
+        <div class="enterprise-hero-copy">
           <p class="eyebrow">Mídia e gravações</p>
           <h1>Um cenário gastronômico escolhido por grandes produções</h1>
-          <p>A estrutura da Quatro Folhas já recebeu programas de TV, realities, conteúdos digitais, produções para streaming e gravações de marcas. Para o aluno, isso reforça a sensação de estudar em um espaço vivo, reconhecido e preparado para a gastronomia acontecer.</p>
-          <div class="page-nav"><a href="#historico">Histórico</a><a href="#alunos">Valor para alunos</a><a href="#producoes">Produções e marcas</a></div>
-          <div class="info-strip"><span>TV Record</span><span>CazéTV / iFood</span><span>Globo / Globoplay</span><span>TudoGostoso</span></div>
+          <p>A estrutura da Quatro Folhas já recebeu programas de TV, realities, conteúdos digitais, produções para streaming e gravações de marcas. É uma cozinha real, equipada e pronta para gastronomia virar imagem.</p>
+          <div class="enterprise-actions">
+            <a class="solid-btn" href="solicitar-proposta.html">Solicitar proposta</a>
+            <a class="ghost-btn" href="#producoes">Ver possibilidades</a>
+          </div>
+          <div class="enterprise-metrics" aria-label="Destaques de mídia da Quatro Folhas">
+            <article>
+              <strong>01</strong>
+              <div>
+                <h2>TV e streaming</h2>
+                <p>Gravação de novela vertical para TV Globo e Globoplay.</p>
+              </div>
+            </article>
+            <article>
+              <strong>02</strong>
+              <div>
+                <h2>Reality</h2>
+                <p>Histórico com programas e conteúdos gastronômicos de grande alcance.</p>
+              </div>
+            </article>
+            <article>
+              <strong>03</strong>
+              <div>
+                <h2>Produção</h2>
+                <p>Ambiente profissional para filmar, fotografar, treinar e receber equipes.</p>
+              </div>
+            </article>
+          </div>
+          <nav class="enterprise-quick-nav" aria-label="Navegação da página">
+            <a href="#historico">Histórico</a>
+            <a href="#alunos">Para alunos</a>
+            <a href="#producoes">Produções</a>
+          </nav>
         </div>
-        <div class="page-hero-image" style="background-image:url('assets/photos/cozinha-qf.png')"></div>
+        <figure class="enterprise-hero-photo media-hero-photo">
+          <img src="assets/photos/midia-gravacao-novela-globoplay.png" alt="Gravação de novela vertical na cozinha da Quatro Folhas">
+          <figcaption>Créditos: Tv Globo/Globoplay</figcaption>
+        </figure>
       </section>
 
-      <section class="signature-strip" aria-label="Destaques de mídia">
-        <article><span>Confeitaria</span><strong>Batalha dos Confeiteiros</strong><p>A escola recebeu a abertura do programa da TV Record, um marco especialmente forte para alunos de confeitaria.</p></article>
-        <article><span>Reality</span><strong>Tá Na Mesa</strong><p>Reality da CazéTV com iFood, conectando gastronomia, entretenimento e audiência digital.</p></article>
-        <article><span>TV e streaming</span><strong>Globo / Globoplay</strong><p>A estrutura também recebeu gravação de novela vertical para TV Globo e Globoplay.</p></article>
-        <article><span>Conteúdo</span><strong>TudoGostoso</strong><p>Histórico ligado a reality show e conteúdos gastronômicos digitais.</p></article>
+      <section class="team-building-cards-section" aria-label="Destaques de mídia">
+        <div class="team-building-card-grid">
+          <article><span>01</span><h3>Batalha dos Confeiteiros</h3><p>A escola recebeu a abertura do programa da TV Record, um marco especialmente forte para alunos de confeitaria.</p></article>
+          <article><span>02</span><h3>Tá Na Mesa</h3><p>Reality da CazéTV com iFood, conectando gastronomia, entretenimento e audiência digital.</p></article>
+          <article><span>03</span><h3>Globo / Globoplay</h3><p>A estrutura também recebeu gravação de novela vertical em uma cozinha preparada para audiovisual.</p></article>
+          <article><span>04</span><h3>TudoGostoso</h3><p>Histórico ligado a reality show e conteúdos gastronômicos digitais.</p></article>
+        </div>
+        <div class="team-building-consultor">
+          <p>Precisa de uma cozinha profissional para gravar, fotografar ou receber uma produção?</p>
+          <a class="solid-btn" href="https://wa.me/5511947781922?text=Ola%2C%20quero%20falar%20sobre%20gravacoes%20e%20producoes%20na%20Quatro%20Folhas." target="_blank" rel="noreferrer">Falar com consultor</a>
+        </div>
       </section>
 
       <section class="content-band light" id="historico">
         <div class="section-heading split">
           <div><p class="eyebrow">Histórico</p><h2>Produções que reforçam a autoridade da escola</h2></div>
-        <p>Essas presenças mostram que a cozinha, a estrutura e a identidade da Quatro Folhas já foram escolhidas por equipes profissionais de audiovisual, entretenimento e gastronomia.</p>
+          <p>Essas presenças mostram que a cozinha, a estrutura e a identidade da Quatro Folhas já foram escolhidas por equipes profissionais de audiovisual, entretenimento e gastronomia.</p>
         </div>
-        <div class="admin-table comparison-table media-history-table">
-          <div class="admin-row admin-head"><span>Produção</span><span>Canal / marca</span><span>Formato</span><span>O que reforça</span><span>Relacionamento</span></div>
-          <div class="admin-row"><span>Batalha dos Confeiteiros</span><span>TV Record</span><span>Abertura de programa</span><span>Credibilidade para confeitaria</span><span><a href="confeitaria-profissional.html">Confeitaria</a></span></div>
-          <div class="admin-row"><span>Tá Na Mesa</span><span>CazéTV / iFood</span><span>Reality gastronômico</span><span>Alcance digital e entretenimento</span><span><a href="empresas-e-marcas.html">Marcas</a></span></div>
-          <div class="admin-row"><span>Admissão de participante</span><span>Reality de confeitaria</span><span>Gravação especial</span><span>Ligação com competições e seleção de talentos</span><span><a href="cursos-profissionalizantes.html">Cursos</a></span></div>
-          <div class="admin-row"><span>Novela vertical</span><span>TV Globo / Globoplay</span><span>Produção audiovisual</span><span>Espaço preparado para formatos atuais de conteúdo</span><span><a href="locacao-da-cozinha.html">Locação</a></span></div>
-          <div class="admin-row"><span>Reality Show</span><span>TudoGostoso</span><span>Conteúdo gastronômico</span><span>Presença em mídia digital de gastronomia</span><span><a href="parcerias-com-marcas.html">Parcerias</a></span></div>
+        <div class="card-grid compact">
+          <article><span class="tag">Confeitaria</span><h3>Batalha dos Confeiteiros</h3><p>TV Record, abertura de programa e credibilidade para confeitaria.</p><a class="text-btn" href="confeitaria-profissional.html">Ver confeitaria</a></article>
+          <article><span class="tag">Reality</span><h3>Tá Na Mesa</h3><p>CazéTV / iFood, reality gastronômico e alcance digital.</p><a class="text-btn" href="empresas-e-marcas.html">Ver marcas</a></article>
+          <article><span class="tag">Streaming</span><h3>Novela vertical</h3><p>TV Globo / Globoplay, produção audiovisual em formato atual de conteúdo.</p><a class="text-btn" href="locacao-da-cozinha.html">Ver locação</a></article>
+          <article><span class="tag">Digital</span><h3>Reality Show</h3><p>TudoGostoso, presença em mídia digital de gastronomia.</p><a class="text-btn" href="parcerias-com-marcas.html">Ver parcerias</a></article>
         </div>
       </section>
 
-      <section class="detail-section" id="alunos">
-        <div><p class="eyebrow">Para alunos</p><h2>Estudar onde a gastronomia também vira conteúdo</h2></div>
-        <div class="detail-list">
-          <div class="detail-item"><h3>Orgulho de pertencimento</h3><p>Alunos gostam de se ver no mesmo espaço que já foi palco de programas conhecidos, realities e gravações profissionais.</p></div>
-          <div class="detail-item"><h3>Credibilidade de estrutura</h3><p>Se uma produção escolhe a escola como cenário, isso reforça a qualidade visual, a organização e a estrutura da cozinha.</p></div>
-          <div class="detail-item"><h3>Valor para confeitaria</h3><p>O histórico com Batalha dos Confeiteiros conversa diretamente com quem busca confeitaria profissional, bolos, doces finos e acabamento.</p></div>
+      <section class="team-building-cards-section team-building-benefits-section" id="alunos" aria-label="Valor para alunos">
+        <div class="team-building-section-heading">
+          <p class="eyebrow">Para alunos</p>
+          <h2>Estudar onde a gastronomia também vira conteúdo</h2>
+        </div>
+        <div class="team-building-card-grid team-building-card-grid-three">
+          <article><span>01</span><h3>Orgulho de pertencimento</h3><p>Alunos se reconhecem em um espaço que já foi palco de programas, realities e gravações profissionais.</p></article>
+          <article><span>02</span><h3>Credibilidade de estrutura</h3><p>Quando uma produção escolhe a escola como cenário, isso reforça qualidade visual, organização e cozinha equipada.</p></article>
+          <article><span>03</span><h3>Valor para confeitaria</h3><p>O histórico com Batalha dos Confeiteiros conversa diretamente com quem busca confeitaria profissional, bolos e doces finos.</p></article>
         </div>
       </section>
 
       <section class="content-band" id="producoes">
         <div class="section-heading split">
-        <div><p class="eyebrow">Produtoras e marcas</p><h2>Uma escola de gastronomia para conteúdo, campanhas e experiências</h2></div>
-        <p>O mesmo histórico que encanta alunos também fortalece a proposta comercial para produtoras, agências e marcas que precisam de um ambiente gastronômico pronto para filmar, fotografar, treinar ou receber convidados.</p>
+          <div><p class="eyebrow">Produtoras e marcas</p><h2>Uma escola de gastronomia para conteúdo, campanhas e experiências</h2></div>
+          <p>O mesmo histórico que encanta alunos também fortalece a proposta comercial para produtoras, agências e marcas que precisam de um ambiente gastronômico pronto para filmar, fotografar, treinar ou receber convidados.</p>
         </div>
         <div class="card-grid compact">
           <article><span class="tag">Locação</span><h3>Gravações e fotos</h3><p>Cozinha profissional com identidade visual, bancadas, equipamentos e ambiente real de aula.</p><a class="text-btn" href="locacao-da-cozinha.html">Ver locação</a></article>
-        <article><span class="tag">Marcas</span><h3>Ativações e conteúdo</h3><p>Produtos aparecem em uso real, com contexto técnico, degustação e narrativa gastronômica.</p><a class="text-btn" href="parcerias-com-marcas.html">Ver parcerias</a></article>
+          <article><span class="tag">Marcas</span><h3>Ativações e conteúdo</h3><p>Produtos aparecem em uso real, com contexto técnico, degustação e narrativa gastronômica.</p><a class="text-btn" href="parcerias-com-marcas.html">Ver parcerias</a></article>
           <article><span class="tag">Proposta</span><h3>Projeto de produção</h3><p>A equipe avalia objetivo, formato, data, equipe envolvida, apoio técnico e uso de imagem.</p><a class="text-btn" href="solicitar-proposta.html">Solicitar proposta</a></article>
         </div>
       </section>
