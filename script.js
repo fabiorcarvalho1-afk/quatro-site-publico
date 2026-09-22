@@ -448,6 +448,12 @@ async function submitLead(payload) {
   });
 }
 
+function reportLeadFormConversionIfAvailable() {
+  if (typeof window.qfReportLeadFormConversionOnce === "function") {
+    window.qfReportLeadFormConversionOnce();
+  }
+}
+
 function buildLeadPayload(form, source, extraPayload = {}) {
   const data = formToObject(form);
   const turnstileToken = getTurnstileToken(form);
@@ -979,6 +985,7 @@ if (!isBackofficePage) {
 
       try {
         await submitLead(payload);
+        reportLeadFormConversionIfAvailable();
         feedback.textContent = form.dataset.successText || form.dataset.success || "Recebemos sua mensagem. Nossa equipe entrara em contato pelo WhatsApp.";
         form.reset();
         resetTurnstile(form);
