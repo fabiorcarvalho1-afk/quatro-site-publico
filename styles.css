@@ -17986,3 +17986,75 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
     min-height: 0;
   }
 }
+
+/* Mobile image framing safeguards */
+@media (max-width: 720px) {
+  body.home-page .home-editorial-hero .hero-media {
+    min-height: clamp(430px, 118vw, 560px);
+  }
+
+  body.home-page .home-editorial-hero .hero-video {
+    object-position: 50% 36%;
+  }
+
+  .home-path-photo,
+  .page-hero-image,
+  .voucher-premium-hero {
+    background-color: #f7f1e8;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .chef-course-gallery-grid img,
+  .chef-course-story img,
+  .chef-course-exchange img,
+  .pastry-feature-shot img,
+  .pastry-enroll-photo img,
+  .rapid-hero-photo img,
+  .mini-chef-photo img,
+  .mini-chef-gallery img,
+  .mini-chef-form-photo img,
+  .agenda-sales-photo img,
+  .agenda-orbit-card img,
+  .agenda-vitrine-card > img,
+  .school-hero-photo img,
+  .school-panel-photo img,
+  .school-gallery img,
+  .school-results-grid img,
+  .school-mosaic img,
+  .school-gallery-duo img,
+  .school-teachers-gallery img,
+  .school-professor-card img,
+  .enterprise-hero-photo img,
+  .thematic-course-hero-photo {
+    object-fit: contain;
+    object-position: center;
+    background: #f7f1e8;
+  }
+
+  .chef-course-story figure,
+  .chef-course-exchange figure,
+  .pastry-feature-shot figure,
+  .rapid-hero-photo,
+  .mini-chef-photo,
+  .mini-chef-form-photo,
+  .agenda-sales-photo,
+  .school-hero-photo,
+  .school-panel-photo {
+    background: #f7f1e8;
+  }
+}
+
+@media (max-width: 620px) {
+  .chef-course-hero-video {
+    height: 54%;
+    object-position: 50% 38%;
+  }
+
+  .pastry-video-side video {
+    object-fit: contain;
+    object-position: center;
+    background: #f7f1e8;
+  }
+}
