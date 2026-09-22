@@ -17989,23 +17989,58 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 
 /* Mobile image framing safeguards */
 @media (max-width: 720px) {
+  main figure,
+  main [class*="photo"],
+  main [class*="image"],
+  main [class*="gallery"],
+  main [class*="shot"],
+  main [class*="media"] {
+    background-color: #f7f1e8;
+  }
+
+  main figure > img,
+  main picture > img,
+  main [class*="photo"] img,
+  main [class*="image"] img,
+  main [class*="gallery"] img,
+  main [class*="shot"] img,
+  main [class*="media"] img,
+  main [class*="visual"] img,
+  main [class*="card"] > img {
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #f7f1e8 !important;
+  }
+
+  main [class*="photo"][style*="background"],
+  main [class*="image"][style*="background"],
+  main [class*="hero"][style*="background"] {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+  }
+
   body.home-page .home-editorial-hero .hero-media {
     min-height: clamp(430px, 118vw, 560px);
   }
 
   body.home-page .home-editorial-hero .hero-video {
-    object-position: 50% 36%;
+    object-fit: contain !important;
+    object-position: center !important;
   }
 
   .home-path-photo,
   .page-hero-image,
   .voucher-premium-hero {
-    background-color: #f7f1e8;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color: #f7f1e8 !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
   }
 
+  .prof-courses-hero__visual img,
+  .prof-course-card figure img,
+  .prof-courses-value__photo img,
   .chef-course-gallery-grid img,
   .chef-course-story img,
   .chef-course-exchange img,
@@ -18028,11 +18063,14 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
   .school-professor-card img,
   .enterprise-hero-photo img,
   .thematic-course-hero-photo {
-    object-fit: contain;
-    object-position: center;
-    background: #f7f1e8;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #f7f1e8 !important;
   }
 
+  .prof-courses-hero__visual,
+  .prof-course-card figure,
+  .prof-courses-value__photo,
   .chef-course-story figure,
   .chef-course-exchange figure,
   .pastry-feature-shot figure,
@@ -18042,19 +18080,20 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
   .agenda-sales-photo,
   .school-hero-photo,
   .school-panel-photo {
-    background: #f7f1e8;
+    background: #f7f1e8 !important;
   }
 }
 
 @media (max-width: 620px) {
   .chef-course-hero-video {
     height: 54%;
-    object-position: 50% 38%;
+    object-fit: contain !important;
+    object-position: center !important;
   }
 
   .pastry-video-side video {
-    object-fit: contain;
-    object-position: center;
-    background: #f7f1e8;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #f7f1e8 !important;
   }
 }
