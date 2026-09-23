@@ -686,3 +686,201 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .primary-cta,
   .secondary-cta { transition: none; }
 }
+
+/* Festa infantil gastronomica */
+.party-landing-page {
+  --wine-800: #8b1231;
+  --wine-700: #a51842;
+  --wine-900: #610a22;
+  --gold: #f0a72d;
+  --green: #3f8d65;
+  --line: rgba(139, 18, 49, .16);
+  background: #fffaf2;
+}
+
+.party-landing-page .campaign-hero {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(240, 167, 45, .22), transparent 19rem),
+    radial-gradient(circle at 86% 12%, rgba(63, 141, 101, .16), transparent 16rem),
+    linear-gradient(135deg, #fffaf2 0%, #fff2df 54%, #f6e5d4 100%);
+}
+
+.party-landing-page .campaign-hero::before {
+  position: absolute;
+  inset: 42px auto auto 5vw;
+  width: 124px;
+  height: 124px;
+  border: 18px solid rgba(240, 167, 45, .16);
+  border-radius: 36px;
+  transform: rotate(14deg);
+  content: "";
+}
+
+.party-landing-page .campaign-label {
+  color: #8b1231;
+}
+
+.party-landing-page .campaign-label::before {
+  background: linear-gradient(90deg, #f0a72d, #3f8d65);
+}
+
+.party-landing-page .last-spots-badge {
+  border-color: rgba(240, 167, 45, .5);
+  background: #fff1c9;
+  color: #7b3e00;
+}
+
+.party-landing-page .last-spots-badge::before {
+  background: #3f8d65;
+  box-shadow: 0 0 0 4px rgba(63, 141, 101, .12);
+}
+
+.party-landing-page .hero-included {
+  border-left-color: #3f8d65;
+  background: rgba(255, 250, 242, .9);
+}
+
+.party-landing-page .hero-fact,
+.party-landing-page .outcome-grid article,
+.party-landing-page .module-card,
+.party-landing-page .schedule-card,
+.party-landing-page .lead-card {
+  border-radius: 22px;
+}
+
+.party-landing-page .hero-photo-main {
+  inset: 0 24px 0 0;
+  border: 8px solid #fff7e8;
+  border-radius: 42px 42px 120px 42px;
+  background: #fff7e8;
+}
+
+.party-landing-page .party-video-frame video {
+  object-position: center;
+}
+
+.party-landing-page .video-sound-note {
+  background: rgba(63, 141, 101, .86);
+}
+
+.party-landing-page .offer-float {
+  background: linear-gradient(145deg, rgba(139, 18, 49, .96), rgba(97, 10, 34, .96));
+}
+
+.party-landing-page .offer-float small,
+.party-landing-page .value-feature-copy span,
+.party-landing-page .value-international-copy span {
+  color: #ffd46c;
+}
+
+.party-landing-page .proof-strip {
+  background: #fffdf7;
+}
+
+.party-landing-page .proof-item .proof-symbol {
+  color: #3f8d65;
+}
+
+.party-landing-page .proof-item strong,
+.party-landing-page .outcome-grid article strong,
+.party-landing-page .module-card h3,
+.party-landing-page .schedule-card h3,
+.party-landing-page .faq-list summary,
+.party-landing-page .lead-card h3 {
+  color: #8b1231;
+}
+
+.party-landing-page .module-card {
+  border-left-color: #3f8d65;
+  background: linear-gradient(145deg, #fffdf8, #fff1db);
+}
+
+.party-landing-page .module-card:nth-child(3n + 2) {
+  border-left-color: #f0a72d;
+}
+
+.party-landing-page .module-card:nth-child(3n) {
+  border-left-color: #8b1231;
+}
+
+.party-landing-page .module-card span,
+.party-landing-page .outcome-grid article span {
+  background: #3f8d65;
+}
+
+.party-landing-page .module-card:nth-child(3n + 2) span {
+  background: #c87900;
+}
+
+.party-landing-page .module-card:nth-child(3n) span {
+  background: #8b1231;
+}
+
+.party-landing-page .campaign-section.tinted,
+.party-landing-page .conversion-section {
+  background:
+    radial-gradient(circle at 100% 0, rgba(240, 167, 45, .16), transparent 18rem),
+    linear-gradient(135deg, #fff6e8, #fffdf8);
+}
+
+.party-landing-page .value-section {
+  background:
+    radial-gradient(circle at 5% 0, rgba(63, 141, 101, .12), transparent 18rem),
+    #fffaf2;
+}
+
+.party-landing-page .value-feature,
+.party-landing-page .value-card-international {
+  background: #3b1020;
+}
+
+.party-landing-page .value-card {
+  border-top-color: #3f8d65;
+}
+
+.party-landing-page .value-closing {
+  background: linear-gradient(135deg, #8b1231, #3f8d65);
+}
+
+.party-landing-page .module-cta-row {
+  background: #fff0cf;
+}
+
+@media (max-width: 700px) {
+  .party-landing-page .campaign-hero {
+    background: #fff2df;
+  }
+
+  .party-landing-page .campaign-hero::before {
+    display: none;
+  }
+
+  .party-landing-page .hero-visual {
+    min-height: 390px;
+  }
+
+  .party-landing-page .hero-photo-main {
+    border: 0;
+    border-radius: 0 0 34px 34px;
+  }
+
+  .party-landing-page .party-video-frame video {
+    object-position: center 35%;
+  }
+
+  .party-landing-page .hero-copy::before {
+    background: linear-gradient(145deg, #8b1231 0%, #3f8d65 100%);
+  }
+
+  .party-landing-page .hero-intro-card {
+    border-color: rgba(240, 167, 45, .78);
+  }
+
+  .party-landing-page .hero-intro-card .last-spots-badge {
+    background: linear-gradient(135deg, #3f8d65, #8b1231);
+  }
+
+  .party-landing-page .hero-mobile-highlights span {
+    border-color: rgba(255, 212, 108, .86);
+  }
+}

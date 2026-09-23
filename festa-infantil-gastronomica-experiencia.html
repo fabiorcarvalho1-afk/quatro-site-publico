@@ -1,6 +1,63 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18449102541"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18449102541');
+  gtag('config', 'G-HPEE95BMKQ');
+</script>
+<script>
+(function () {
+  var leadFormConversionSent = false;
+
+  function reportConversion(sendTo) {
+    if (typeof gtag !== 'function') return false;
+    gtag('event', 'conversion', {
+      'send_to': sendTo,
+      'value': 1.0,
+      'currency': 'BRL'
+    });
+    return false;
+  }
+
+  function reportWhatsAppConversion() {
+    return reportConversion('AW-18449102541/piH1CMet1fYcEM3tm91E');
+  }
+
+  window.qfReportLeadFormConversionOnce = function () {
+    if (leadFormConversionSent) return false;
+    leadFormConversionSent = true;
+    return reportConversion('AW-18449102541/5kFICJCMyfYcEM3tm91E');
+  };
+
+  document.addEventListener('click', function (event) {
+    var link = event.target && event.target.closest ? event.target.closest('a[href*="wa.me/"]') : null;
+    if (!link) return;
+    reportWhatsAppConversion();
+  });
+
+  var originalFetch = window.fetch;
+  if (typeof originalFetch === 'function') {
+    window.fetch = function () {
+      var input = arguments[0];
+      var requestUrl = typeof input === 'string' ? input : (input && input.url) || '';
+      var isLeadRequest = requestUrl.indexOf('/site/leads') !== -1;
+
+      return originalFetch.apply(this, arguments).then(function (response) {
+        if (isLeadRequest && response && response.ok) {
+          window.qfReportLeadFormConversionOnce();
+        }
+        return response;
+      });
+    };
+  }
+})();
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Festa Infantil Gastronômica | Quatro Folhas</title>
@@ -16,7 +73,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/campaigns/chef-profissional/landing.css?v=20260815-festa-infantil">
+  <link rel="stylesheet" href="assets/campaigns/chef-profissional/landing.css?v=20260923-festa-infantil">
   <script>
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -37,17 +94,8 @@
     j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TVNKR26F');
   </script>
-  <!-- Google tag (gtag.js) - GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPEE95BMKQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-HPEE95BMKQ");
-  </script>
-  <!-- End Google tag (gtag.js) - GA4 -->
   </head>
-<body class="campaign-chef-page">
+<body class="campaign-chef-page party-landing-page">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVNKR26F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="campaign-header">
@@ -94,13 +142,14 @@
           </div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo-main">
-            <img src="assets/photos/alunos-turma.jpg" alt="Crianças em experiência gastronômica na Quatro Folhas" loading="eager">
+          <div class="hero-photo-main party-photo-frame">
+            <img src="assets/photos/festa-infantil-home-rosto-ficticio-20260906.png" alt="Crianças em festa infantil gastronômica na Quatro Folhas" loading="eager">
+            <span class="video-sound-note">Experiência gastronômica infantil</span>
           </div>
           <div class="offer-float">
             <small>Experiência infantil</small>
-            <strong>Cozinhar também é celebrar</strong>
-            <span>Uma festa diferente para colocar a mão na massa e criar memórias.</span>
+            <strong>Parabéns com mão na massa</strong>
+            <span>As crianças cozinham, decoram, provam e celebram juntas.</span>
           </div>
         </div>
       </div>
@@ -174,7 +223,7 @@
 
         <div class="value-mosaic">
           <article class="value-feature">
-            <img src="assets/photos/cozinha-aula.jpg" alt="Cozinha escola preparada para experiência infantil" width="1200" height="900" loading="lazy">
+            <img src="assets/photos/festa-infantil-home-rosto-ficticio-20260906.png" alt="Crianças em festa infantil gastronômica na Quatro Folhas" width="1200" height="900" loading="lazy">
             <div class="value-feature-copy">
               <span>Estrutura Quatro Folhas</span>
               <h3>Uma festa dentro de uma escola de gastronomia</h3>
@@ -183,7 +232,7 @@
           </article>
 
           <article class="value-card value-card-international">
-            <img class="value-international-art" src="assets/photos/aluno-na-cozinha.png" alt="Aluno em atividade prática na cozinha" width="1200" height="900" loading="lazy">
+            <img class="value-international-art" src="assets/photos/mini-chef-home-criancas-20260906.png" alt="Crianças em atividade gastronômica infantil" width="1200" height="900" loading="lazy">
             <div class="value-international-copy">
               <span>Experiência ativa</span>
               <h3>Mão na massa do começo ao fim</h3>
@@ -220,7 +269,7 @@
             <strong>Uma festa diferente, participativa e memorável.</strong>
           </div>
           <div class="value-closing-footer">
-            <strong>Kids</strong>
+            <strong>Kids Party</strong>
             <span>Uma experiência gastronômica criada para crianças</span>
           </div>
         </div>
@@ -322,10 +371,36 @@
 
   <script>
     (function () {
+      const storageKey = 'qf_lead_tracking';
+      const trackingFields = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'];
       const params = new URLSearchParams(window.location.search);
-      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'].forEach(function (name) {
-        const field = document.querySelector('[name="' + name + '"]');
-        if (field) field.value = params.get(name) || '';
+      let tracking = {};
+      let hasNewValue = false;
+
+      try {
+        tracking = JSON.parse(sessionStorage.getItem(storageKey) || '{}') || {};
+      } catch (error) {
+        tracking = {};
+      }
+
+      trackingFields.forEach(function (name) {
+        const value = params.get(name);
+        if (value) {
+          tracking[name] = value;
+          hasNewValue = true;
+        }
+      });
+
+      if (hasNewValue) {
+        try {
+          sessionStorage.setItem(storageKey, JSON.stringify(tracking));
+        } catch (error) {}
+      }
+
+      trackingFields.concat(['fbclid']).forEach(function (name) {
+        document.querySelectorAll('[name="' + name + '"]').forEach(function (field) {
+          field.value = tracking[name] || params.get(name) || '';
+        });
       });
     })();
   </script>
