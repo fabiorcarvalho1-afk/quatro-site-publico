@@ -16,22 +16,13 @@
 (function () {
   var leadFormConversionSent = false;
 
-  function getGlobalGtag() {
-    window.dataLayer = window.dataLayer || [];
-    if (typeof window.gtag !== 'function') {
-      window.gtag = function () {
-        window.dataLayer.push(arguments);
-      };
-    }
-    return window.gtag;
-  }
-
   function reportConversion(sendTo) {
-    var globalGtag = getGlobalGtag();
-    globalGtag('event', 'conversion', {
-      'send_to': sendTo,
-      'value': 1.0,
-      'currency': 'BRL'
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+    window.gtag('event', 'conversion', {
+      send_to: sendTo,
+      value: 1.0,
+      currency: 'BRL'
     });
     return false;
   }
