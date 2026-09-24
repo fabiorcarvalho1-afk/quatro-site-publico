@@ -10602,7 +10602,7 @@ body.home-page .home-editorial-hero .hero-video {
 .chef-course-page .course-brochure-ribbon {
   position: absolute;
   z-index: 5;
-  top: clamp(14px, 2vw, 26px);
+  top: clamp(-16px, -1.2vw, -10px);
   right: clamp(18px, 5vw, 72px);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
