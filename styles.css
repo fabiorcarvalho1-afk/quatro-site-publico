@@ -10595,6 +10595,67 @@ body.home-page .home-editorial-hero .hero-video {
   object-fit: cover;
   object-position: 50% 42%;
 }
+.chef-course-page .chef-course-hero {
+  overflow: visible;
+}
+
+.chef-course-page .course-brochure-ribbon {
+  position: absolute;
+  z-index: 5;
+  top: -32px;
+  right: clamp(18px, 5vw, 72px);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 12px;
+  align-items: center;
+  width: min(350px, calc(100% - 36px));
+  padding: 12px 16px;
+  border: 1px solid rgba(116, 19, 38, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.96);
+  box-shadow: 0 18px 44px rgba(28, 19, 15, 0.18);
+  color: var(--ink);
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.chef-course-page .course-brochure-ribbon span {
+  grid-row: span 2;
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--brand-red);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.chef-course-page .course-brochure-ribbon strong {
+  min-width: 0;
+  color: var(--brand-red);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.18;
+}
+
+.chef-course-page .course-brochure-ribbon em {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.chef-course-page .course-brochure-ribbon:hover,
+.chef-course-page .course-brochure-ribbon:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 50px rgba(28, 19, 15, 0.22);
+}
 
 .chef-course-hero-inner {
   position: relative;
@@ -10931,6 +10992,23 @@ body.home-page .home-editorial-hero .hero-video {
   .chef-course-hero {
     min-height: 760px;
     padding: 250px 14px 0;
+  }
+  .chef-course-page .course-brochure-ribbon {
+    top: -22px;
+    right: 14px;
+    left: 14px;
+    width: auto;
+    padding: 11px 13px;
+  }
+
+  .chef-course-page .course-brochure-ribbon span {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .chef-course-page .course-brochure-ribbon strong {
+    font-size: 14px;
   }
 
   .chef-course-hero-video {

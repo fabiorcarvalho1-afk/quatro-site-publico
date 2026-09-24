@@ -48,7 +48,8 @@ button, input, select { font: inherit; }
 .campaign-header-actions { display: flex; align-items: center; gap: 12px; }
 .header-cta,
 .primary-cta,
-.secondary-cta {
+.secondary-cta,
+.brochure-cta {
   display: inline-flex;
   min-height: 52px;
   align-items: center;
@@ -67,13 +68,16 @@ button, input, select { font: inherit; }
   color: #fff;
 }
 .secondary-cta { padding: 13px 25px; border: 1px solid var(--wine-800); color: var(--wine-800); }
+.brochure-cta { padding: 12px 20px; border: 1px solid rgba(116, 19, 38, .22); background: #fffaf2; color: var(--wine-800); font-size: 12px; }
 .header-cta:hover,
 .primary-cta:hover,
-.secondary-cta:hover { transform: translateY(-2px); }
+.secondary-cta:hover,
+.brochure-cta:hover { transform: translateY(-2px); }
 .primary-cta:hover,
 .header-cta:hover { background: var(--wine-900); box-shadow: 0 18px 36px rgba(87, 11, 26, .28); }
 .primary-cta:focus-visible,
 .secondary-cta:focus-visible,
+.brochure-cta:focus-visible,
 .header-cta:focus-visible,
 input:focus-visible,
 select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset: 3px; }
@@ -637,7 +641,8 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   .hero-fact { min-height: 0; padding: 12px 13px; }
   .hero-fact strong { font-size: 13px; line-height: 1.35; }
   .hero-actions .primary-cta { width: 100%; }
-  .hero-actions .secondary-cta { width: 100%; }
+  .hero-actions .secondary-cta,
+  .hero-actions .brochure-cta { width: 100%; }
   .hero-social { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 16px 14px; border: 0; border-radius: 16px; background: #fffaf2; }
   .hero-social > div { align-items: center; padding: 13px 10px; border-right: 0; border-bottom: 1px solid var(--line); text-align: center; }
   .hero-social > div:first-child { grid-column: 1 / -1; padding: 2px 8px 17px; }
@@ -750,7 +755,8 @@ select:focus-visible { outline: 3px solid rgba(200, 154, 74, .5); outline-offset
   html { scroll-behavior: auto; }
   .header-cta,
   .primary-cta,
-  .secondary-cta { transition: none; }
+  .secondary-cta,
+  .brochure-cta { transition: none; }
 }
 
 /* Festa infantil gastronomica */
