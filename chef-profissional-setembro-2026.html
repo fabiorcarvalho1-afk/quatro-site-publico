@@ -5,20 +5,30 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18449102541"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
 
-  gtag('config', 'AW-18449102541');
-  gtag('config', 'AW-18415589431');
-  gtag('config', 'G-HPEE95BMKQ');
+  window.gtag('config', 'AW-18449102541');
+  window.gtag('config', 'AW-18415589431');
+  window.gtag('config', 'G-HPEE95BMKQ');
 </script>
 <script>
 (function () {
   var leadFormConversionSent = false;
 
+  function getGlobalGtag() {
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+    }
+    return window.gtag;
+  }
+
   function reportConversion(sendTo) {
-    if (typeof gtag !== 'function') return false;
-    gtag('event', 'conversion', {
+    var globalGtag = getGlobalGtag();
+    globalGtag('event', 'conversion', {
       'send_to': sendTo,
       'value': 1.0,
       'currency': 'BRL'
@@ -33,9 +43,10 @@
 
   window.qfReportLeadFormConversionOnce = function () {
     if (leadFormConversionSent) return false;
-    leadFormConversionSent = true;
     reportConversion('AW-18449102541/5kFICJCMyfYcEM3tm91E');
-    return reportConversion('AW-18415589431/3erVCJqM1P8cELewns1E');
+    reportConversion('AW-18415589431/3erVCJqM1P8cELewns1E');
+    leadFormConversionSent = true;
+    return false;
   };
 
   document.addEventListener('click', function (event) {
