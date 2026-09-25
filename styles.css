@@ -11001,7 +11001,8 @@ body.home-page .home-editorial-hero .hero-video {
 
 @media (max-width: 620px) {
   .chef-course-hero {
-    min-height: 760px;
+    min-height: auto;
+    overflow: hidden;
     padding: 250px 14px 0;
   }
   .chef-course-page .course-brochure-ribbon {
@@ -11072,7 +11073,7 @@ body.home-page .home-editorial-hero .hero-video {
   }
 
   .chef-course-proof {
-    padding: 22px 14px 22px;
+    padding: 12px 14px 18px;
     margin-top: 0;
   }
 
@@ -18180,7 +18181,7 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
 
 @media (max-width: 620px) {
   .chef-course-hero-video {
-    height: 54%;
+    height: 250px;
     object-position: 50% 38%;
   }
 
@@ -18190,3 +18191,4 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
     background: #f7f1e8;
   }
 }
+
