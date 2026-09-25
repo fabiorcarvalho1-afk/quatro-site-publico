@@ -18212,4 +18212,90 @@ body.entrepreneurs-page main .entrepreneurs-hero .eyebrow::before {
     background: #f7f1e8;
   }
 }
+/* Global page sharing */
+.site-share-button {
+  position: fixed;
+  z-index: 85;
+  right: 18px;
+  bottom: 94px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 10px 15px 10px 10px;
+  border: 1px solid rgba(255, 253, 250, 0.34);
+  border-radius: 999px;
+  background: #138c46;
+  box-shadow: 0 16px 40px rgba(23, 23, 20, 0.22);
+  color: #fff;
+  cursor: pointer;
+  font: 900 13px/1 Inter, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.site-share-button:hover,
+.site-share-button:focus-visible {
+  transform: translateY(-2px);
+  background: #0f7a3c;
+  box-shadow: 0 20px 46px rgba(23, 23, 20, 0.28);
+}
+
+.site-share-icon {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.site-share-text {
+  white-space: nowrap;
+}
+
+@media (min-width: 900px) {
+  .site-share-button {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .site-share-button:hover,
+  .site-share-button:focus-visible {
+    transform: translateY(calc(-50% - 2px));
+  }
+}
+
+@media (max-width: 720px) {
+  .site-share-button {
+    right: 14px;
+    bottom: 76px;
+    min-height: 42px;
+    padding: 8px 12px 8px 8px;
+    font-size: 12px;
+  }
+
+  body.home-page .site-share-button {
+    bottom: 72px;
+  }
+
+  .site-share-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-share-text {
+    display: none;
+  }
+
+  .site-share-button {
+    padding: 8px;
+  }
+}
 

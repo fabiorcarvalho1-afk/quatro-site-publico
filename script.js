@@ -1,4 +1,4 @@
-﻿const siteHeader = document.querySelector(".site-header");
+const siteHeader = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const modal = document.querySelector("#lead-modal");
 const leadForm = document.querySelector("#lead-form");
@@ -1501,6 +1501,43 @@ loadAgendaPage();
 loadThematicClassesPage();
 loadCoursesPage();
 loadPublicSiteSettings();
+function installSiteShareButton() {
+  const hiddenPrefixes = ["admin-", "portal-", "franquia-area", "parceiros-area"];
+  if (hiddenPrefixes.some((prefix) => currentPage.startsWith(prefix))) return;
+  if (!document.querySelector(".site-header, .site-footer")) return;
+  if (document.querySelector(".site-share-button")) return;
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "site-share-button";
+  button.setAttribute("aria-label", "Compartilhar esta página pelo WhatsApp");
+  button.innerHTML = `
+    <span class="site-share-icon" aria-hidden="true">W</span>
+    <span class="site-share-text">Compartilhar</span>
+  `;
+
+  button.addEventListener("click", async () => {
+    const canonical = document.querySelector('link[rel="canonical"]')?.href;
+    const pageUrl = canonical || window.location.href.split("#")[0];
+    const pageTitle = document.querySelector('meta[property="og:title"]')?.content || document.title || "Quatro Folhas Escola de Gastronomia";
+    const shareText = `${pageTitle}\n${pageUrl}`;
+
+    if (navigator.share && window.matchMedia("(max-width: 820px)").matches) {
+      try {
+        await navigator.share({ title: pageTitle, text: pageTitle, url: pageUrl });
+        return;
+      } catch (error) {
+        if (error?.name === "AbortError") return;
+      }
+    }
+
+    window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, "_blank", "noopener,noreferrer");
+  });
+
+  document.body.appendChild(button);
+}
+
+installSiteShareButton();
 
 // Valores preliminares do simulador de festa infantil.
 // Quando a administracao definir os valores reais, altere apenas estes campos.
@@ -1711,3 +1748,4 @@ if (!localStorage.getItem(COOKIE_KEY)) {
     });
   });
 }
+
