@@ -128,7 +128,10 @@
         .home-path-featured,
         .home-path-small { height: auto; min-height: 0; }
         .home-path-featured .home-path-photo,
-        .home-path-small .home-path-photo { min-height: 190px; }
+        .home-path-small .home-path-photo {
+          min-height: clamp(260px, 58vw, 340px);
+          background-position: center top;
+        }
       }
 
       /* Ajuste de escala e composição dos títulos */
