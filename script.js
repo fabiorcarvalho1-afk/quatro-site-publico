@@ -23,6 +23,15 @@ const AUTH_ACCESS_TOKEN_KEY = "qf_admin_access_token";
 const AUTH_REFRESH_TOKEN_KEY = "qf_admin_refresh_token";
 const AUTH_CURRENT_USER_KEY = "qf_current_user";
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
+function qfToggleMobileMenu() {
+  if (!siteHeader || !menuToggle) return;
+  const isOpen = siteHeader.classList.toggle("is-open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "Fechar" : "Menu";
+}
+
+menuToggle?.addEventListener("click", qfToggleMobileMenu);
+
 const PAGE_LEAD_INTERESTS = {
   "a-escola.html": "Visita ou atendimento institucional",
   "aulas-para-escolas.html": "Aulas para escolas",
@@ -824,13 +833,6 @@ document.querySelectorAll("[data-student-job-contact]").forEach((link) => {
   link.href = buildProtectedJobsUrl();
   link.removeAttribute("target");
   link.removeAttribute("rel");
-});
-
-menuToggle?.addEventListener("click", () => {
-  if (!siteHeader) return;
-  const isOpen = siteHeader.classList.toggle("is-open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "Fechar" : "Menu";
 });
 
 mountWhatsappFab();
