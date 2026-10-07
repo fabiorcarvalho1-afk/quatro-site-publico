@@ -9835,8 +9835,12 @@ main .page-form-section.visit-section .eyebrow::before {
 }
 
 @media (max-width: 1060px) {
-  body:has(.site-header.is-open) {
+  body.qf-menu-open {
     overflow: hidden;
+  }
+
+  .site-header .header-whatsapp {
+    display: none !important;
   }
 
   .site-header.is-open {
@@ -9975,6 +9979,36 @@ main .page-form-section.visit-section .eyebrow::before {
 
   .site-header.is-open .main-nav > .nav-item .mega-menu {
     display: none !important;
+  }
+
+  .site-header.is-open .main-nav > .nav-item.is-open .mega-menu {
+    position: static;
+    display: block !important;
+    width: 100%;
+    margin: 8px 0 0;
+    padding: 10px;
+    border: 1px solid rgba(116, 96, 68, 0.16);
+    border-radius: 16px;
+    background: #fffaf2;
+    box-shadow: none;
+  }
+
+  .site-header.is-open .main-nav > .nav-item.is-open > .nav-link::after {
+    content: "⌄";
+  }
+
+  .site-header.is-open .kids-menu-heading {
+    padding: 2px 2px 10px;
+  }
+
+  .site-header.is-open .kids-menu-links {
+    gap: 7px;
+  }
+
+  .site-header.is-open .kids-menu-links > a {
+    min-height: 0;
+    padding: 10px 12px;
+    border-radius: 12px;
   }
 
   .site-header.is-open .main-nav > .qf-mobile-feature,

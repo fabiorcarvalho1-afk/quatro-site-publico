@@ -26,6 +26,7 @@ const currentPage = window.location.pathname.split("/").pop() || "index.html";
 function qfToggleMobileMenu() {
   if (!siteHeader || !menuToggle) return;
   const isOpen = siteHeader.classList.toggle("is-open");
+  document.body.classList.toggle("qf-menu-open", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.textContent = isOpen ? "Fechar" : "Menu";
 }
@@ -192,7 +193,17 @@ function installKidsSchoolsMenu() {
   kidsLink.addEventListener('click', (event) => {
     const touchLayout = window.matchMedia('(max-width: 1060px), (hover: none) and (pointer: coarse)').matches;
     if (!touchLayout) return;
-    if (siteHeader?.classList.contains('is-open')) return;
+    if (siteHeader?.classList.contains('is-open')) {
+      event.preventDefault();
+      document.querySelectorAll('.nav-item.has-mega.is-open').forEach((openItem) => {
+        if (openItem === item) return;
+        openItem.classList.remove('is-open');
+        Array.from(openItem.children || []).find((child) => child.matches?.('a'))?.setAttribute('aria-expanded', 'false');
+      });
+      const isOpen = item.classList.toggle('is-open');
+      kidsLink.setAttribute('aria-expanded', String(isOpen));
+      return;
+    }
     if (!item.classList.contains('is-open')) {
       event.preventDefault();
       item.classList.add('is-open');
@@ -218,14 +229,7 @@ function installCalculatorsMenuLink() {
   link.href = "calculadoras-gastronomicas.html";
   link.textContent = "Calculadoras";
 
-  const agendaLink = nav.querySelector('a[href$="agenda.html"]');
-  const thematicLink = nav.querySelector('a[href$="aulas-tematicas.html"]');
-  const reference = thematicLink || agendaLink?.nextSibling || agendaLink;
-  if (reference && reference.parentNode === nav) {
-    nav.insertBefore(link, reference);
-  } else {
-    nav.appendChild(link);
-  }
+  nav.appendChild(link);
 }
 
 installCalculatorsMenuLink();
@@ -273,7 +277,17 @@ function simplifyCoursesMenu() {
   coursesLink.addEventListener('click', (event) => {
     const touchLayout = window.matchMedia('(max-width: 1060px), (hover: none) and (pointer: coarse)').matches;
     if (!touchLayout) return;
-    if (siteHeader?.classList.contains('is-open')) return;
+    if (siteHeader?.classList.contains('is-open')) {
+      event.preventDefault();
+      document.querySelectorAll('.nav-item.has-mega.is-open').forEach((openItem) => {
+        if (openItem === item) return;
+        openItem.classList.remove('is-open');
+        Array.from(openItem.children || []).find((child) => child.matches?.('a'))?.setAttribute('aria-expanded', 'false');
+      });
+      const isOpen = item.classList.toggle('is-open');
+      coursesLink.setAttribute('aria-expanded', String(isOpen));
+      return;
+    }
     if (!item.classList.contains('is-open')) {
       event.preventDefault();
       document.querySelectorAll('.nav-item.has-mega.is-open').forEach((openItem) => {
@@ -336,7 +350,9 @@ function installModernMobileMenu() {
     ensureTopLink("franquia.html", "Franquia"),
     ensureTopLink("carreira.html", "Carreira"),
     ensureTopLink("perguntas.html", "Perguntas frequentes"),
-    ensureTopLink("contato.html", "Contato")
+    ensureTopLink("contato.html", "Contato"),
+    ensureSection("Ferramentas"),
+    ensureTopLink("calculadoras-gastronomicas.html", "Calculadoras")
   ];
 
   Array.from(nav.children).forEach((child) => {
