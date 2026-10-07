@@ -9827,6 +9827,194 @@ main .page-form-section.visit-section .eyebrow::before {
 }
 
 
+/* Menu mobile premium */
+.qf-mobile-menu-section,
+.qf-mobile-only,
+.qf-mobile-menu-whatsapp {
+  display: none;
+}
+
+@media (max-width: 1060px) {
+  body:has(.site-header.is-open) {
+    overflow: hidden;
+  }
+
+  .site-header.is-open {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas:
+      "brand tools"
+      "nav nav";
+    align-content: start;
+    gap: 18px 12px;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow-y: auto;
+    padding: 18px;
+    border-bottom: 0;
+    background: linear-gradient(180deg, #fffaf2 0%, #f1e4d1 100%);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .home-page .site-header.is-open {
+    position: fixed;
+    border-bottom: 0;
+    background: linear-gradient(180deg, #fffaf2 0%, #f1e4d1 100%);
+    box-shadow: none;
+  }
+
+  .home-page .site-header.is-open::after {
+    display: none;
+  }
+
+  .site-header.is-open .brand {
+    align-self: center;
+    min-width: 0;
+  }
+
+  .site-header.is-open .brand-logo-default {
+    display: block !important;
+  }
+
+  .site-header.is-open .brand-logo-light {
+    display: none !important;
+  }
+
+  .site-header.is-open .brand img {
+    width: min(202px, 62vw);
+  }
+
+  .site-header.is-open .menu-toggle {
+    min-height: 44px;
+    padding: 0 18px;
+    border-color: transparent;
+    background: var(--wine);
+    color: #fffaf2;
+    box-shadow: 0 12px 24px rgba(117, 19, 38, 0.2);
+  }
+
+  .site-header.is-open .main-nav {
+    display: grid !important;
+    grid-area: nav;
+    grid-template-columns: 1fr;
+    align-content: start;
+    align-items: stretch;
+    gap: 9px;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    padding: 0 0 24px;
+    overflow: visible;
+    white-space: normal;
+    font-size: 16px;
+  }
+
+  .site-header.is-open .qf-mobile-menu-section {
+    display: block;
+    margin: 10px 0 1px;
+    color: rgba(52, 53, 47, 0.64);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .site-header.is-open .qf-mobile-only {
+    display: flex;
+  }
+
+  .site-header.is-open .main-nav > a,
+  .site-header.is-open .main-nav > .nav-item > .nav-link,
+  .site-header.is-open .qf-mobile-menu-whatsapp {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 54px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 0 15px;
+    border: 1px solid rgba(116, 96, 68, 0.18);
+    border-radius: 16px;
+    background: #fffdf8;
+    color: #2c1d16 !important;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-decoration: none;
+    text-shadow: none !important;
+    box-shadow: 0 9px 22px rgba(52, 32, 24, 0.06);
+  }
+
+  .site-header.is-open .main-nav > a::after,
+  .site-header.is-open .main-nav > .nav-item > .nav-link::after {
+    content: "›";
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    color: currentColor;
+    font-size: 26px;
+    line-height: 1;
+    opacity: 0.72;
+    transform: none;
+  }
+
+  .site-header.is-open .main-nav > .nav-item {
+    display: block;
+    width: 100%;
+  }
+
+  .site-header.is-open .main-nav > .nav-item .mega-menu {
+    display: none !important;
+  }
+
+  .site-header.is-open .main-nav > .qf-mobile-feature,
+  .site-header.is-open .main-nav > .nav-item.qf-mobile-feature > .nav-link {
+    min-height: 58px;
+    border-color: var(--wine);
+    background: var(--wine);
+    color: #fffaf2 !important;
+    box-shadow: 0 12px 24px rgba(117, 19, 38, 0.22);
+  }
+
+  .site-header.is-open .main-nav > .qf-mobile-gold {
+    border-color: rgba(214, 179, 95, 0.72);
+    background: #fff2c6;
+    color: #60410a !important;
+  }
+
+  .site-header.is-open .qf-mobile-menu-whatsapp {
+    justify-content: center;
+    margin-top: 6px;
+    border-color: #165c45;
+    background: #165c45;
+    color: #fffaf2 !important;
+  }
+
+  .site-header.is-open .qf-mobile-menu-whatsapp::before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 0 -4px currentColor;
+  }
+
+  .site-header.is-open .header-whatsapp {
+    display: none !important;
+  }
+}
+
+
 /* Festa infantil: vídeo vertical no hero */
 .party-video-hero {
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);

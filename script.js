@@ -183,6 +183,7 @@ function installKidsSchoolsMenu() {
   kidsLink.addEventListener('click', (event) => {
     const touchLayout = window.matchMedia('(max-width: 1060px), (hover: none) and (pointer: coarse)').matches;
     if (!touchLayout) return;
+    if (siteHeader?.classList.contains('is-open')) return;
     if (!item.classList.contains('is-open')) {
       event.preventDefault();
       item.classList.add('is-open');
@@ -263,6 +264,7 @@ function simplifyCoursesMenu() {
   coursesLink.addEventListener('click', (event) => {
     const touchLayout = window.matchMedia('(max-width: 1060px), (hover: none) and (pointer: coarse)').matches;
     if (!touchLayout) return;
+    if (siteHeader?.classList.contains('is-open')) return;
     if (!item.classList.contains('is-open')) {
       event.preventDefault();
       document.querySelectorAll('.nav-item.has-mega.is-open').forEach((openItem) => {
@@ -281,6 +283,71 @@ function simplifyCoursesMenu() {
 }
 
 simplifyCoursesMenu();
+
+function installModernMobileMenu() {
+  if (currentPage.startsWith("admin-")) return;
+  const nav = document.querySelector(".main-nav");
+  if (!nav || nav.dataset.mobileMenuReady === "true") return;
+
+  const topNode = (href) => Array.from(nav.children).find((child) => {
+    if (child.matches?.(`a[href$="${href}"]`)) return true;
+    return Boolean(child.querySelector?.(`:scope > a[href$="${href}"]`));
+  });
+
+  const ensureTopLink = (href, label, className = "") => {
+    let node = topNode(href);
+    if (!node) {
+      node = document.createElement("a");
+      node.href = href;
+      node.textContent = label;
+      nav.appendChild(node);
+    }
+    if (className) node.classList.add(className);
+    return node;
+  };
+
+  const ensureSection = (label) => {
+    const section = document.createElement("span");
+    section.className = "qf-mobile-menu-section";
+    section.textContent = label;
+    return section;
+  };
+
+  const orderedNodes = [
+    ensureSection("Institucional"),
+    ensureTopLink("a-escola.html", "A Escola"),
+    ensureSection("Aprenda na escola"),
+    ensureTopLink("cursos.html", "Cursos", "qf-mobile-feature"),
+    ensureTopLink("aulas-tematicas.html", "Aulas temáticas"),
+    ensureTopLink("mini-chef.html", "Mini Chef", "qf-mobile-gold qf-mobile-only"),
+    ensureTopLink("criancas-e-escolas.html", "Crianças e Escolas"),
+    ensureSection("Outros acessos"),
+    ensureTopLink("empresas-e-marcas.html", "Empresas e Marcas"),
+    ensureTopLink("franquia.html", "Franquia"),
+    ensureTopLink("carreira.html", "Carreira"),
+    ensureTopLink("perguntas.html", "Perguntas frequentes"),
+    ensureTopLink("contato.html", "Contato")
+  ];
+
+  Array.from(nav.children).forEach((child) => {
+    if (orderedNodes.includes(child)) return;
+    if (child.matches?.(".qf-mobile-menu-section")) return;
+    orderedNodes.push(child);
+  });
+
+  const whatsapp = document.createElement("a");
+  whatsapp.className = "qf-mobile-menu-whatsapp";
+  whatsapp.href = buildWhatsAppUrl(encodeURIComponent("Olá, gostaria de falar com a Quatro Folhas."));
+  whatsapp.target = "_blank";
+  whatsapp.rel = "noreferrer";
+  whatsapp.textContent = "Falar com consultor";
+  orderedNodes.push(whatsapp);
+
+  orderedNodes.forEach((node) => nav.appendChild(node));
+  nav.dataset.mobileMenuReady = "true";
+}
+
+installModernMobileMenu();
 
 const portalStatusLabels = {
   open: "Inscricoes abertas",
@@ -761,6 +828,7 @@ document.querySelectorAll("[data-student-job-contact]").forEach((link) => {
 menuToggle?.addEventListener("click", () => {
   const isOpen = siteHeader.classList.toggle("is-open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "Fechar" : "Menu";
 });
 
 mountWhatsappFab();
