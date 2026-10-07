@@ -291,7 +291,8 @@ function installModernMobileMenu() {
 
   const topNode = (href) => Array.from(nav.children).find((child) => {
     if (child.matches?.(`a[href$="${href}"]`)) return true;
-    return Boolean(child.querySelector?.(`:scope > a[href$="${href}"]`));
+    const directLink = Array.from(child.children || []).find((item) => item.matches?.(`a[href$="${href}"]`));
+    return Boolean(directLink);
   });
 
   const ensureTopLink = (href, label, className = "") => {
@@ -826,6 +827,7 @@ document.querySelectorAll("[data-student-job-contact]").forEach((link) => {
 });
 
 menuToggle?.addEventListener("click", () => {
+  if (!siteHeader) return;
   const isOpen = siteHeader.classList.toggle("is-open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.textContent = isOpen ? "Fechar" : "Menu";
