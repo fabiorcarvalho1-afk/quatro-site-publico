@@ -337,6 +337,11 @@ function installModernMobileMenu() {
     return section;
   };
 
+  const portalLink = document.createElement("a");
+  portalLink.href = PORTAL_LOGIN_URL;
+  portalLink.textContent = "Portal do aluno";
+  portalLink.className = "qf-mobile-portal";
+
   const orderedNodes = [
     ensureSection("Institucional"),
     ensureTopLink("a-escola.html", "A Escola"),
@@ -352,6 +357,7 @@ function installModernMobileMenu() {
     ensureTopLink("perguntas.html", "Perguntas frequentes"),
     ensureTopLink("contato.html", "Contato"),
     ensureSection("Ferramentas"),
+    portalLink,
     ensureTopLink("calculadoras-gastronomicas.html", "Calculadoras")
   ];
 
@@ -855,7 +861,18 @@ mountWhatsappFab();
 mountHeroVideoReady();
 
 portalToggle?.addEventListener("click", (event) => {
+  event.preventDefault();
   event.stopPropagation();
+  const portalPanel = studentPortal?.querySelector("[data-portal-login]");
+  const canUseInlinePanel = Boolean(portalPanel)
+    && window.matchMedia("(min-width: 1061px)").matches
+    && window.getComputedStyle(studentPortal).display !== "none";
+
+  if (!canUseInlinePanel) {
+    window.location.href = PORTAL_LOGIN_URL;
+    return;
+  }
+
   const isOpen = studentPortal.classList.toggle("is-open");
   portalToggle.setAttribute("aria-expanded", String(isOpen));
 });
