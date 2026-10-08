@@ -861,6 +861,7 @@ mountWhatsappFab();
 mountHeroVideoReady();
 
 portalToggle?.addEventListener("click", (event) => {
+  if (portalToggle.matches("a[href]")) return;
   event.preventDefault();
   event.stopPropagation();
   const portalPanel = studentPortal?.querySelector("[data-portal-login]");
