@@ -4922,6 +4922,20 @@ textarea {
   font-weight: 800;
 }
 
+.form-feedback:empty {
+  display: none;
+}
+
+.form-feedback.is-error {
+  background: rgba(167, 7, 10, 0.1);
+  color: var(--wine);
+}
+
+.form-feedback.is-success {
+  background: rgba(140, 198, 62, 0.14);
+  color: var(--green);
+}
+
 .validation-result {
   display: grid;
   gap: 8px;

@@ -84,8 +84,8 @@ function createPortalLoginForm(id = "portal-panel") {
   form.setAttribute("data-portal-login", "");
   form.innerHTML = `
     <label>
-      Login
-      <input type="text" placeholder="E-mail ou CPF" autocomplete="username" required>
+      CPF
+      <input type="text" placeholder="Digite seu CPF" autocomplete="username" inputmode="numeric" required>
     </label>
     <label>
       Senha
@@ -599,6 +599,69 @@ function buildPortalHandoffUrl(tokens) {
   return `${PORTAL_LOGIN_URL}#handoff=${handoff}`;
 }
 
+function normalizeCpf(value) {
+  return String(value || "").replace(/\D/g, "");
+}
+
+function portalLoginErrorMessage(error) {
+  if (error instanceof TypeError) return "Nao foi possivel conectar ao portal agora. Tente novamente em alguns instantes.";
+  if (error instanceof Error && error.message) return error.message;
+  return "Nao foi possivel entrar no portal.";
+}
+
+async function handlePortalLoginSubmit(form) {
+  const button = form.querySelector("button[type='submit']");
+  const identifierInput = form.querySelector("input[name='cpf'], input[type='text'], input[type='email']");
+  const passwordInput = form.querySelector("input[type='password']");
+  const cpf = normalizeCpf(identifierInput?.value);
+  const password = passwordInput?.value || "";
+  const feedback = ensureFeedback(form);
+
+  feedback.textContent = "";
+  feedback.classList.remove("is-error", "is-success");
+
+  if (cpf.length !== 11) {
+    feedback.classList.add("is-error");
+    feedback.textContent = "Informe um CPF com 11 números.";
+    identifierInput?.focus();
+    return;
+  }
+
+  if (!password) {
+    feedback.classList.add("is-error");
+    feedback.textContent = "Informe a senha do portal.";
+    passwordInput?.focus();
+    return;
+  }
+
+  const stopLoading = setButtonLoading(button, "Entrando");
+
+  try {
+    const tokens = await apiRequest("/auth/login", {
+      method: "POST",
+      body: JSON.stringify({ identifier: cpf, password })
+    });
+
+    savePortalTokens(tokens);
+    feedback.classList.add("is-success");
+    feedback.textContent = "Acesso liberado. Abrindo o portal oficial do aluno...";
+    window.location.href = buildPortalHandoffUrl(tokens);
+  } catch (error) {
+    feedback.classList.add("is-error");
+    feedback.textContent = portalLoginErrorMessage(error);
+  } finally {
+    stopLoading();
+  }
+}
+
+document.addEventListener("submit", (event) => {
+  const form = event.target instanceof HTMLFormElement ? event.target : null;
+  if (!form?.matches("[data-portal-login]")) return;
+  event.preventDefault();
+  event.stopPropagation();
+  void handlePortalLoginSubmit(form);
+});
+
 async function submitLead(payload) {
   if (!payload?.payload?.turnstileToken) {
     const error = new Error("Conclua a verificação de segurança antes de enviar.");
@@ -687,12 +750,13 @@ function describeCourse(course) {
 
 function normalizePortalLoginFields() {
   document.querySelectorAll("[data-portal-login]").forEach((form) => {
-    const identifierInput = form.querySelector("input[type='email']");
+    const identifierInput = form.querySelector("input[type='text'], input[type='email']");
     if (identifierInput) {
       identifierInput.type = "text";
-      identifierInput.placeholder = "Seu e-mail ou CPF";
+      identifierInput.name = "cpf";
+      identifierInput.placeholder = "Digite seu CPF";
       identifierInput.setAttribute("autocomplete", "username");
-      identifierInput.setAttribute("inputmode", "text");
+      identifierInput.setAttribute("inputmode", "numeric");
     }
   });
 }
@@ -1175,32 +1239,6 @@ if (!isBackofficePage) {
     });
   });
 }
-
-document.querySelectorAll("[data-portal-login]").forEach((form) => {
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const button = form.querySelector("button[type='submit']");
-    const identifier = form.querySelector("input[type='text'], input[type='email']")?.value?.trim() || "";
-    const password = form.querySelector("input[type='password']")?.value || "";
-    const feedback = ensureFeedback(form);
-    const stopLoading = setButtonLoading(button, "Entrando");
-
-    try {
-      const tokens = await apiRequest("/auth/login", {
-        method: "POST",
-        body: JSON.stringify({ identifier, password })
-      });
-
-      savePortalTokens(tokens);
-      feedback.textContent = "Acesso liberado. Abrindo o portal oficial do aluno...";
-      window.location.href = buildPortalHandoffUrl(tokens);
-    } catch (error) {
-      feedback.textContent = error instanceof Error ? error.message : "Nao foi possivel entrar no portal.";
-    } finally {
-      stopLoading();
-    }
-  });
-});
 
 document.querySelectorAll("[data-admin-login]").forEach((form) => {
   form.addEventListener("submit", (event) => {
