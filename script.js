@@ -6,8 +6,8 @@ const dynamicFields = document.querySelector("#dynamic-fields");
 const modalTitle = document.querySelector("#modal-title");
 const modalEyebrow = document.querySelector("#modal-eyebrow");
 const successMessage = document.querySelector(".success-message");
-const studentPortal = document.querySelector(".student-portal");
-const portalToggle = document.querySelector(".portal-toggle");
+let studentPortal = document.querySelector(".student-portal");
+let portalToggle = document.querySelector(".portal-toggle");
 const runtimeProtocol = window.location.protocol === "file:" ? "http:" : window.location.protocol;
 const runtimeHostname = window.location.hostname || "127.0.0.1";
 const isLocalRuntime = runtimeHostname === "127.0.0.1" || runtimeHostname === "localhost";
@@ -75,6 +75,69 @@ let publicSiteSettings = {
 function buildWhatsAppUrl(encodedText = "") {
   const number = String(publicSiteSettings.contact?.whatsapp_number || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, "");
   return `https://wa.me/${number}${encodedText ? `?text=${encodedText}` : ""}`;
+}
+
+function createPortalLoginForm(id = "portal-panel") {
+  const form = document.createElement("form");
+  form.className = "portal-panel";
+  form.id = id;
+  form.setAttribute("data-portal-login", "");
+  form.innerHTML = `
+    <label>
+      Login
+      <input type="text" placeholder="E-mail ou CPF" autocomplete="username" required>
+    </label>
+    <label>
+      Senha
+      <input type="password" placeholder="Sua senha" autocomplete="current-password" required>
+    </label>
+    <button class="solid-btn" type="submit">Entrar</button>
+    <a href="contato.html">Preciso de ajuda com meu acesso</a>
+  `;
+  return form;
+}
+
+function ensureStudentPortalEntrypoint() {
+  if (currentPage.startsWith("admin-")) return;
+  const headerActions = document.querySelector(".site-header .header-actions");
+  if (!headerActions) return;
+
+  studentPortal = document.querySelector(".student-portal");
+  portalToggle = document.querySelector(".portal-toggle");
+
+  if (!studentPortal) {
+    const existingLink = portalToggle || headerActions.querySelector('a[href$="portal-do-aluno.html"]');
+    if (!existingLink) return;
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "student-portal";
+
+    const button = document.createElement("button");
+    button.className = existingLink.className?.replace("portal-toggle", "").trim() || "ghost-btn";
+    button.classList.add("portal-toggle");
+    button.type = "button";
+    button.textContent = existingLink.textContent?.trim() || "Portal do aluno";
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", "portal-panel");
+
+    wrapper.appendChild(button);
+    wrapper.appendChild(createPortalLoginForm("portal-panel"));
+    existingLink.replaceWith(wrapper);
+  } else if (!studentPortal.querySelector("[data-portal-login]")) {
+    studentPortal.appendChild(createPortalLoginForm("portal-panel"));
+  }
+
+  portalToggle = studentPortal.querySelector(".portal-toggle");
+  if (portalToggle?.matches("a[href]")) {
+    const button = document.createElement("button");
+    button.className = portalToggle.className;
+    button.type = "button";
+    button.textContent = portalToggle.textContent?.trim() || "Portal do aluno";
+    button.setAttribute("aria-expanded", portalToggle.getAttribute("aria-expanded") || "false");
+    button.setAttribute("aria-controls", portalToggle.getAttribute("aria-controls") || "portal-panel");
+    portalToggle.replaceWith(button);
+    portalToggle = button;
+  }
 }
 
 async function loadPublicSiteSettings() {
@@ -151,6 +214,8 @@ async function loadPublicSiteSettings() {
     console.warn("[Quatro Folhas] Configurações gerais atuais preservadas.", error);
   }
 }
+
+ensureStudentPortalEntrypoint();
 
 
 function installKidsSchoolsMenu() {
@@ -338,7 +403,7 @@ function installModernMobileMenu() {
   };
 
   const portalLink = document.createElement("a");
-  portalLink.href = PORTAL_LOGIN_URL;
+  portalLink.href = "portal-do-aluno.html";
   portalLink.textContent = "Portal do aluno";
   portalLink.className = "qf-mobile-portal";
 
@@ -861,7 +926,6 @@ mountWhatsappFab();
 mountHeroVideoReady();
 
 portalToggle?.addEventListener("click", (event) => {
-  if (portalToggle.matches("a[href]")) return;
   event.preventDefault();
   event.stopPropagation();
   const portalPanel = studentPortal?.querySelector("[data-portal-login]");
@@ -870,7 +934,7 @@ portalToggle?.addEventListener("click", (event) => {
     && window.getComputedStyle(studentPortal).display !== "none";
 
   if (!canUseInlinePanel) {
-    window.location.href = PORTAL_LOGIN_URL;
+    window.location.href = "portal-do-aluno.html";
     return;
   }
 
