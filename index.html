@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20261011-portal-inline-2">
+    <link rel="stylesheet" href="styles.css?v=20261011-portal-inline-4">
     <style>
       /* Caminhos da home: resumo por intenção, sem duplicar o catálogo */
       .home-pathways-section{padding:clamp(74px,8vw,118px) clamp(22px,4vw,72px);background:#f8f4ee}
@@ -387,15 +387,15 @@
           <a class="ghost-btn portal-toggle" href="portal-do-aluno.html" aria-expanded="false" aria-controls="portal-panel">Portal do aluno</a>
           <form class="portal-panel" id="portal-panel" data-portal-login>
             <label>
-              E-mail
-              <input type="email" placeholder="seuemail@exemplo.com" required>
+              CPF
+              <input name="cpf" type="text" placeholder="Digite seu CPF" autocomplete="username" inputmode="numeric" required>
             </label>
             <label>
               Senha
               <input type="password" placeholder="Sua senha" required>
             </label>
             <button class="solid-btn" type="submit">Entrar</button>
-            <a href="contato.html">Esqueci minha senha</a>
+            <a href="contato.html">Preciso de ajuda com meu acesso</a>
           </form>
         </div>
       </div>
@@ -978,7 +978,7 @@
         tryPlay();
       })();
     </script>
-    <script src="script.js?v=20261011-portal-inline-2"></script>
+    <script src="script.js?v=20261011-portal-inline-4"></script>
     <script src="content-loader.js"></script>
     <script src="thematic-loader.js"></script>
   </body>

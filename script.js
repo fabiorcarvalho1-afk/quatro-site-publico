@@ -755,6 +755,7 @@ function describeCourse(course) {
 function normalizePortalLoginFields() {
   document.querySelectorAll("[data-portal-login]").forEach((form) => {
     const identifierInput = form.querySelector("input[type='text'], input[type='email']");
+    const identifierLabel = identifierInput?.closest("label");
     if (identifierInput) {
       identifierInput.type = "text";
       identifierInput.name = "cpf";
@@ -762,6 +763,27 @@ function normalizePortalLoginFields() {
       identifierInput.setAttribute("autocomplete", "username");
       identifierInput.setAttribute("inputmode", "numeric");
     }
+    if (identifierLabel?.firstChild) {
+      identifierLabel.firstChild.textContent = "CPF";
+    }
+  });
+}
+
+function updatePortalLoginReadyState(form) {
+  const cpfInput = form.querySelector("input[name='cpf'], input[type='text'], input[type='email']");
+  const passwordInput = form.querySelector("input[type='password']");
+  const submitButton = form.querySelector("button[type='submit']");
+  const hasCpf = normalizeCpf(cpfInput?.value).length === 11;
+  const hasPassword = Boolean(passwordInput?.value);
+  submitButton?.classList.toggle("is-ready", hasCpf && hasPassword);
+}
+
+function bindPortalLoginReadyState(root = document) {
+  root.querySelectorAll("[data-portal-login]").forEach((form) => {
+    if (form.dataset.readyStateBound === "true") return;
+    form.dataset.readyStateBound = "true";
+    form.addEventListener("input", () => updatePortalLoginReadyState(form));
+    updatePortalLoginReadyState(form);
   });
 }
 
@@ -1009,6 +1031,8 @@ document.addEventListener("click", (event) => {
 
   if (!portal.querySelector("[data-portal-login]")) {
     portal.appendChild(createPortalLoginForm(toggle.getAttribute("aria-controls") || "portal-panel"));
+    normalizePortalLoginFields();
+    bindPortalLoginReadyState(portal);
   }
 
   const isOpen = portal.classList.toggle("is-open");
@@ -1019,9 +1043,12 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("click", (event) => {
+  if (event.target instanceof Element && event.target.closest(".portal-toggle")) return;
   if (!studentPortal?.contains(event.target)) {
     studentPortal?.classList.remove("is-open");
-    portalToggle?.setAttribute("aria-expanded", "false");
+    document.querySelectorAll(".portal-toggle").forEach((item) => {
+      item.setAttribute("aria-expanded", "false");
+    });
   }
 });
 
@@ -1714,6 +1741,7 @@ async function loadCoursesPage() {
 }
 
 normalizePortalLoginFields();
+bindPortalLoginReadyState();
 enhanceDynamicTriggers(document);
 bindThematicFilters();
 loadSiteHome();

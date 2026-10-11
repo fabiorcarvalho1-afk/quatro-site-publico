@@ -1415,6 +1415,22 @@ textarea {
   font-weight: 800;
 }
 
+.portal-panel .solid-btn,
+.portal-page-form .solid-btn {
+  background: #d7d2ca;
+  color: rgba(255, 253, 250, 0.92);
+  box-shadow: none;
+}
+
+.portal-panel .solid-btn.is-ready,
+.portal-page-form .solid-btn.is-ready,
+.home-page .site-header:not(.is-open) .portal-panel .solid-btn.is-ready {
+  border-color: rgba(255, 253, 250, 0.16);
+  background: linear-gradient(135deg, #0f7a49, #0a5f39);
+  color: #fffdf8;
+  box-shadow: 0 13px 30px rgba(15, 122, 73, 0.24), inset 0 0 0 1px rgba(255, 253, 250, 0.14);
+}
+
 .menu-toggle {
   display: none;
   align-items: center;
@@ -1471,6 +1487,20 @@ textarea {
   border-color: rgba(255, 253, 250, 0.48);
   background: rgba(23, 23, 20, 0.12);
   color: var(--cream);
+}
+
+.home-page .site-header:not(.is-open) .portal-panel .solid-btn {
+  border-color: transparent;
+  background: #d7d2ca;
+  color: rgba(255, 253, 250, 0.92);
+  box-shadow: none;
+}
+
+.home-page .site-header:not(.is-open) .portal-panel .solid-btn.is-ready {
+  border-color: rgba(255, 253, 250, 0.16);
+  background: linear-gradient(135deg, #0f7a49, #0a5f39);
+  color: #fffdf8;
+  box-shadow: 0 13px 30px rgba(15, 122, 73, 0.24), inset 0 0 0 1px rgba(255, 253, 250, 0.14);
 }
 
 .solid-btn:hover {
