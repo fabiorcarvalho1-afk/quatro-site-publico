@@ -391,7 +391,9 @@ function installModernMobileMenu() {
       node.textContent = label;
       nav.appendChild(node);
     }
-    if (className) node.classList.add(className);
+    if (className) {
+      className.split(/\s+/).filter(Boolean).forEach((name) => node.classList.add(name));
+    }
     return node;
   };
 
