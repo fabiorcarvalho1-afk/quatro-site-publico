@@ -85,7 +85,7 @@ function createPortalLoginForm(id = "portal-panel") {
   form.innerHTML = `
     <label>
       CPF
-      <input type="text" placeholder="Digite seu CPF" autocomplete="username" inputmode="numeric" required>
+      <input name="cpf" type="text" placeholder="Digite seu CPF" autocomplete="username" inputmode="numeric" required>
     </label>
     <label>
       Senha
@@ -403,9 +403,11 @@ function installModernMobileMenu() {
   };
 
   const portalLink = document.createElement("a");
-  portalLink.href = "portal-do-aluno.html";
+  portalLink.href = "#portal-panel";
   portalLink.textContent = "Portal do aluno";
-  portalLink.className = "qf-mobile-portal";
+  portalLink.className = "qf-mobile-portal portal-toggle";
+  portalLink.setAttribute("aria-expanded", "false");
+  portalLink.setAttribute("aria-controls", "portal-panel");
 
   const orderedNodes = [
     ensureSection("Institucional"),
@@ -989,21 +991,29 @@ document.querySelectorAll("[data-student-job-contact]").forEach((link) => {
 mountWhatsappFab();
 mountHeroVideoReady();
 
-portalToggle?.addEventListener("click", (event) => {
+document.addEventListener("click", (event) => {
+  const toggle = event.target instanceof Element ? event.target.closest(".portal-toggle") : null;
+  if (!toggle) return;
+
+  const portal = toggle.closest(".student-portal") || studentPortal || document.querySelector(".student-portal");
+  if (!portal) return;
+
   event.preventDefault();
   event.stopPropagation();
-  const portalPanel = studentPortal?.querySelector("[data-portal-login]");
-  const canUseInlinePanel = Boolean(portalPanel)
-    && window.matchMedia("(min-width: 1061px)").matches
-    && window.getComputedStyle(studentPortal).display !== "none";
+  siteHeader?.classList.remove("is-open");
+  document.body.classList.remove("qf-menu-open");
+  menuToggle?.setAttribute("aria-expanded", "false");
+  if (menuToggle) menuToggle.textContent = "Menu";
 
-  if (!canUseInlinePanel) {
-    window.location.href = "portal-do-aluno.html";
-    return;
+  if (!portal.querySelector("[data-portal-login]")) {
+    portal.appendChild(createPortalLoginForm(toggle.getAttribute("aria-controls") || "portal-panel"));
   }
 
-  const isOpen = studentPortal.classList.toggle("is-open");
-  portalToggle.setAttribute("aria-expanded", String(isOpen));
+  const isOpen = portal.classList.toggle("is-open");
+  document.querySelectorAll(".portal-toggle").forEach((item) => {
+    item.setAttribute("aria-expanded", String(isOpen));
+  });
+  portal.querySelector("input[name='cpf'], input[type='text']")?.focus();
 });
 
 document.addEventListener("click", (event) => {

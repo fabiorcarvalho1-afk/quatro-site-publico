@@ -1307,8 +1307,7 @@ textarea {
   }
 }
 
-.site-header .cert-link,
-.site-header .student-portal {
+.site-header .cert-link {
   display: none;
 }
 
@@ -1316,7 +1315,7 @@ textarea {
   display: inline-flex;
 }
 
-.home-page .site-header .student-portal {
+.site-header .student-portal {
   display: block;
 }
 
@@ -1383,6 +1382,7 @@ textarea {
   border-radius: 6px;
   background: var(--paper);
   box-shadow: var(--shadow);
+  z-index: 120;
 }
 
 .student-portal.is-open .portal-panel {
@@ -5605,7 +5605,13 @@ textarea {
   }
 
   .portal-panel {
-    right: 0;
+    position: fixed;
+    top: 86px;
+    right: 14px;
+    left: 14px;
+    width: auto;
+    max-width: none;
+    z-index: 140;
   }
 
   .portal-panel::before {
