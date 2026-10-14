@@ -17,11 +17,8 @@ const SITE_API_URL = window.QF_API_URL || (isLocalRuntime
 const PORTAL_WEB_URL = window.QF_PORTAL_URL || (isLocalRuntime
   ? `${runtimeProtocol}//${runtimeHostname}:3000`
   : "https://sistema.quatrofolhasgastronomia.com.br");
-const PORTAL_LOGIN_URL = `${PORTAL_WEB_URL}/login`;
+const PORTAL_LOGIN_URL = `${PORTAL_WEB_URL}/login?portal=aluno`;
 const TURNSTILE_SITE_KEY = "0x4AAAAAAD64c541osMVHz3x";
-const AUTH_ACCESS_TOKEN_KEY = "qf_admin_access_token";
-const AUTH_REFRESH_TOKEN_KEY = "qf_admin_refresh_token";
-const AUTH_CURRENT_USER_KEY = "qf_current_user";
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 function qfToggleMobileMenu() {
   if (!siteHeader || !menuToggle) return;
@@ -590,27 +587,8 @@ function setButtonLoading(button, text) {
   };
 }
 
-function savePortalTokens(tokens) {
-  window.localStorage.setItem(AUTH_ACCESS_TOKEN_KEY, tokens.accessToken);
-  window.localStorage.setItem(AUTH_REFRESH_TOKEN_KEY, tokens.refreshToken);
-  if (tokens.user) {
-    window.localStorage.setItem(AUTH_CURRENT_USER_KEY, JSON.stringify(tokens.user));
-  }
-}
-
-function buildPortalHandoffUrl(tokens) {
-  const handoff = encodeURIComponent(JSON.stringify(tokens));
-  return `${PORTAL_LOGIN_URL}#handoff=${handoff}`;
-}
-
 function normalizeCpf(value) {
   return String(value || "").replace(/\D/g, "");
-}
-
-function portalLoginErrorMessage(error) {
-  if (error instanceof TypeError) return "Nao foi possivel conectar ao portal agora. Tente novamente em alguns instantes.";
-  if (error instanceof Error && error.message) return error.message;
-  return "Nao foi possivel entrar no portal.";
 }
 
 async function handlePortalLoginSubmit(form) {
@@ -638,24 +616,12 @@ async function handlePortalLoginSubmit(form) {
     return;
   }
 
-  const stopLoading = setButtonLoading(button, "Entrando");
-
-  try {
-    const tokens = await apiRequest("/auth/login", {
-      method: "POST",
-      body: JSON.stringify({ identifier: cpf, password })
-    });
-
-    savePortalTokens(tokens);
-    feedback.classList.add("is-success");
-    feedback.textContent = "Acesso liberado. Abrindo o portal oficial do aluno...";
-    window.location.href = buildPortalHandoffUrl(tokens);
-  } catch (error) {
-    feedback.classList.add("is-error");
-    feedback.textContent = portalLoginErrorMessage(error);
-  } finally {
-    stopLoading();
-  }
+  const stopLoading = setButtonLoading(button, "Abrindo");
+  feedback.classList.add("is-success");
+  feedback.textContent = "Por segurança, o acesso sera concluido no portal oficial do aluno.";
+  const separator = PORTAL_LOGIN_URL.includes("?") ? "&" : "?";
+  window.location.href = `${PORTAL_LOGIN_URL}${separator}cpf=${encodeURIComponent(cpf)}`;
+  stopLoading();
 }
 
 document.addEventListener("submit", (event) => {
