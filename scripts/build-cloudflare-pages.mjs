@@ -13,9 +13,12 @@ const skipNames = new Set([
   '.codex-backups',
   '.npm-cache',
   '.wrangler-config',
+  '.wrangler',
   'dist-pages',
   'node_modules',
   'scripts',
+  'tools',
+  'worker',
   'work',
 ]);
 const maxAssetBytes = 25 * 1024 * 1024;
