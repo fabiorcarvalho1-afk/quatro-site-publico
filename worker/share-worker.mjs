@@ -7,6 +7,10 @@ const escape = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "
 export const slug = (value) => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 120);
 const plain = (value, limit = 6000) => String(value || "").trim().slice(0, limit);
 const compact = (value) => plain(value, 1200).replace(/\s+/g, " ").slice(0, 220);
+const defaultFetch = (url, options) => globalThis.fetch(url, options);
+class PublicSourceError extends Error {
+  constructor(code) { super(code); this.code = code; }
+}
 
 export function publicImage(value) {
   try {
@@ -26,9 +30,15 @@ function courseHref(value) {
 }
 
 async function publicJson(url, fetcher) {
-  const response = await fetcher(url, { method: "GET", headers: { Accept: "application/json" }, redirect: "error", signal: AbortSignal.timeout(7000) });
-  if (!response.ok) throw new Error("Public content unavailable");
-  return response.json();
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 7000);
+  try {
+    let response;
+    try { response = await fetcher(url, { method: "GET", headers: { Accept: "application/json" }, redirect: "error", signal: controller.signal }); }
+    catch { throw new PublicSourceError(controller.signal.aborted ? "public-source-timeout" : "public-source-network"); }
+    if (!response.ok) throw new PublicSourceError(`public-source-${response.status}`);
+    try { return await response.json(); } catch { throw new PublicSourceError("public-source-json"); }
+  } finally { clearTimeout(timer); }
 }
 
 async function catalog(env) {
@@ -41,7 +51,7 @@ async function catalog(env) {
 const money = (cents) => Number.isFinite(Number(cents)) && Number(cents) > 0 ? new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(Number(cents) / 100) : "Consulte condições";
 const listItems = (value) => plain(value).split(/\r?\n|\s+[•·]\s+|;/).map((item) => item.trim().replace(/^[\-–—•]+\s*/, "")).filter(Boolean).slice(0, 40);
 
-export async function resolveItem(kind, id, env, fetcher = fetch) {
+export async function resolveItem(kind, id, env, fetcher = defaultFetch) {
   if (kind === "aula") {
     const rows = await publicJson(API + "/thematic-registrations/public/classes", fetcher);
     if (!Array.isArray(rows)) throw new Error("Invalid public response");
@@ -114,7 +124,7 @@ function htmlResponse(body, status, head) {
   } });
 }
 
-export async function handleRequest(request, env, fetcher = fetch) {
+export async function handleRequest(request, env, fetcher = defaultFetch) {
   const pathname = new URL(request.url).pathname;
   if (!pathname.startsWith("/compartilhar/")) return env.ASSETS.fetch(request);
   if (!["GET", "HEAD"].includes(request.method)) return new Response(null, { status: 405, headers: { Allow: "GET, HEAD" } });
@@ -124,8 +134,11 @@ export async function handleRequest(request, env, fetcher = fetch) {
     const item = await resolveItem(match[1], match[2], env, fetcher);
     if (!item) return htmlResponse("<!doctype html><meta charset=utf-8><meta name=robots content=noindex><h1>Conteúdo não disponível</h1>", 404, request.method === "HEAD");
     return htmlResponse(renderItem(item), 200, request.method === "HEAD");
-  } catch {
-    return htmlResponse(`<!doctype html><meta charset=utf-8><meta name=robots content=noindex><h1>Conteúdo temporariamente indisponível</h1><a href="${SITE}/aulas-tematicas.html">Consultar a escola</a>`, 503, request.method === "HEAD");
+  } catch (error) {
+    const response = htmlResponse(`<!doctype html><meta charset=utf-8><meta name=robots content=noindex><h1>Conteúdo temporariamente indisponível</h1><a href="${SITE}/aulas-tematicas.html">Consultar a escola</a>`, 503, request.method === "HEAD");
+    const code = error instanceof PublicSourceError ? error.code : "public-source-format";
+    response.headers.set("X-QF-Preview-Status", /^public-source-(?:[1-5]\d\d|network|timeout|json|format)$/.test(code) ? code : "public-source-format");
+    return response;
   }
 }
 
