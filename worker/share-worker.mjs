@@ -34,7 +34,7 @@ async function publicJson(url, fetcher) {
   const timer = setTimeout(() => controller.abort(), 7000);
   try {
     let response;
-    try { response = await fetcher(url, { method: "GET", headers: { Accept: "application/json" }, redirect: "error", signal: controller.signal }); }
+    try { response = await fetcher(url, { method: "GET", headers: { Accept: "application/json" }, redirect: "manual", signal: controller.signal }); }
     catch { throw new PublicSourceError(controller.signal.aborted ? "public-source-timeout" : "public-source-network"); }
     if (!response.ok) throw new PublicSourceError(`public-source-${response.status}`);
     try { return await response.json(); } catch { throw new PublicSourceError("public-source-json"); }

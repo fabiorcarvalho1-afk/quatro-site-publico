@@ -39,6 +39,7 @@ test("published class has server-rendered metadata and its own canonical URL", a
   assert.equal(calls[0].url, "https://quatro-folhas-backend-api.onrender.com/thematic-registrations/public/classes");
   assert.deepEqual(calls[0].options.headers, { Accept: "application/json" });
   assert.equal(calls[0].options.method, "GET");
+  assert.equal(calls[0].options.redirect, "manual");
 });
 test("draft and missing classes are never exposed", async () => {
   for (const id of ["draft-1", "missing"]) assert.equal((await handleRequest(new Request("https://example.invalid/compartilhar/aula/" + id), env, fetcher)).status, 404);
