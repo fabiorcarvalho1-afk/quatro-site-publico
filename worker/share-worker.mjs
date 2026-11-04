@@ -5,6 +5,7 @@ const FALLBACK_IMAGE = `${SITE}/assets/photos/cozinha-escola-horizontal.png`;
 const imageHosts = new Set([new URL(SITE).host, new URL(ORIGIN).host, new URL(API).host, "www.quatrofolhasgastronomia.com.br", "rascunho.quatrofolhasgastronomia.com.br"]);
 const escape = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
 export const slug = (value) => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 120);
+const courseAliases = { "confeitaria-especializacao-bolos-e-doces-finos": "especializacao-em-bolos-e-doces-finos" };
 const plain = (value, limit = 6000) => String(value || "").trim().slice(0, limit);
 const compact = (value) => plain(value, 1200).replace(/\s+/g, " ").slice(0, 220);
 const defaultFetch = (url, options) => globalThis.fetch(url, options);
@@ -84,7 +85,8 @@ export async function resolveItem(kind, id, env, fetcher = defaultFetch) {
   const data = await publicJson(API + "/site/courses", fetcher);
   const item = data.items?.find((course) => course.id === id);
   if (!item) return null;
-  const matched = courses.find((course) => slug(course.title) === slug(item.title));
+  const courseKey = courseAliases[slug(item.title)] || slug(item.title);
+  const matched = courses.find((course) => slug(course.title) === courseKey);
   return {
     kind, id, title: plain(item.title, 180), description: plain(item.description), image: publicImage(matched?.image), imageAlt: plain(matched?.alt || item.title, 180),
     details: [["Carga horária", item.workloadHours ? `${Number(item.workloadHours)}h` : "Consulte a escola"]], preparations: [], includes: "",

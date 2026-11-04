@@ -107,6 +107,9 @@
 
   const renderThematicCard = (item, options = {}) => {
     const article = create("article", "thematic-card");
+    article.dataset.qfShareKind = "aula";
+    article.dataset.qfShareId = item.id || "";
+    article.dataset.qfShareTitle = item.title || "Aula temática";
     article.dataset.category = item.category || "cozinha";
     article.id = `aula-${item.id || item.title || "tematica"}`.replace(/[^a-zA-Z0-9_-]+/g, "-");
 
@@ -179,6 +182,9 @@
 
   const renderAgendaCard = (item, reserveLabel) => {
     const article = create("article", "agenda-card");
+    article.dataset.qfShareKind = "aula";
+    article.dataset.qfShareId = item.id || "";
+    article.dataset.qfShareTitle = item.title || "Aula temática";
     const content = create("div");
     content.append(
       create("span", `tag${item.urgent ? " accent" : ""}`, item.status || ""),
@@ -237,6 +243,9 @@
 
     if (featureRoot) {
       if (featured) {
+        featureRoot.dataset.qfShareKind = "aula";
+        featureRoot.dataset.qfShareId = featured.id || "";
+        featureRoot.dataset.qfShareTitle = featured.title || "Aula temática";
         const meta = create("div", "agenda-meta");
         [formatDate(featured.date), formatTime(featured.time), featured.duration || "", copy.feature_note || ""]
           .forEach((value) => meta.append(create("span", "", value)));

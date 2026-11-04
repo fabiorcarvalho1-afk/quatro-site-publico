@@ -26,6 +26,9 @@
   const createCourseCard = (course) => {
     const article = document.createElement("article");
     article.className = "catalog-course-card";
+    article.dataset.qfShareKind = "curso";
+    article.dataset.qfShareId = course.shareId || String(course.title || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 120);
+    article.dataset.qfShareTitle = course.title || "Curso";
 
     if (typeof course.anchor === "string" && /^[A-Za-z][A-Za-z0-9_-]*$/.test(course.anchor)) {
       article.id = course.anchor;

@@ -26,6 +26,12 @@ test("all visible catalog courses have distinct valid preview IDs and the correc
     assert.match(renderItem(item), /property="og:image"/);
   }
 });
+test("existing specialization name resolves to its own course photo and destination", async () => {
+  const item = await resolveItem("curso", "specialization-id", env, async () => Response.json({ items: [{ id: "specialization-id", title: "Confeitaria Especialização Bolos e doces finos" }] }));
+  assert.equal(item.title, "Confeitaria Especialização Bolos e doces finos");
+  assert.equal(item.image, "https://quatrofolhasgastronomia.com.br/assets/photos/especializacao-bolos-doces-card.png");
+  assert.equal(item.target, "https://quatrofolhasgastronomia.com.br/bolos-e-doces-finos.html");
+});
 test("published class has server-rendered metadata and its own canonical URL", async () => {
   calls.length = 0;
   const response = await handleRequest(new Request("https://example.invalid/compartilhar/aula/published-1", { headers: { Cookie: "private-session=never-forward", Authorization: "Bearer never-forward" } }), env, fetcher);

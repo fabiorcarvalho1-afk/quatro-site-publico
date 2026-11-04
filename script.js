@@ -1505,7 +1505,7 @@ function renderThematicCard(item, index = 0) {
   const category = thematicCategory(item);
   const soldOut = item.status === "sold_out" || available === 0;
   return `
-    <article class="thematic-card" data-category="${escapeHtml(category)}">
+    <article class="thematic-card" data-category="${escapeHtml(category)}" data-qf-share-kind="aula" data-qf-share-id="${escapeHtml(item.id || "")}" data-qf-share-title="${escapeHtml(title)}">
       <figure class="thematic-card-image">
         <img src="${thematicImage(item, index)}" alt="${escapeHtml(title)}" loading="lazy">
         <span class="thematic-status${status === "Últimas vagas" ? " is-urgent" : ""}">${escapeHtml(status)}</span>
@@ -1554,7 +1554,7 @@ function renderCourseCard(course) {
     : "Nova turma sob consulta";
   const metaText = describeCourse(course);
   return `
-    <article class="course-card">
+    <article class="course-card" data-qf-share-kind="curso" data-qf-share-id="${escapeHtml(course.id || "")}" data-qf-share-title="${escapeHtml(course.title || "Curso Quatro Folhas")}">
       <div class="tag-row">
         <span class="tag">${escapeHtml(course.category?.name || "Curso")}</span>
         ${course.nextClass ? `<span class="tag hot">${escapeHtml(classStatusLabel(course.nextClass.status))}</span>` : ""}
@@ -1716,39 +1716,12 @@ loadThematicClassesPage();
 loadCoursesPage();
 loadPublicSiteSettings();
 function installSiteShareButton() {
-  const hiddenPrefixes = ["admin-", "portal-", "franquia-area", "parceiros-area"];
-  if (hiddenPrefixes.some((prefix) => currentPage.startsWith(prefix))) return;
-  if (!document.querySelector(".site-header, .site-footer")) return;
-  if (document.querySelector(".site-share-button")) return;
-
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "site-share-button";
-  button.setAttribute("aria-label", "Compartilhar esta página pelo WhatsApp");
-  button.innerHTML = `
-    <span class="site-share-icon" aria-hidden="true">W</span>
-    <span class="site-share-text">Compartilhar</span>
-  `;
-
-  button.addEventListener("click", async () => {
-    const canonical = document.querySelector('link[rel="canonical"]')?.href;
-    const pageUrl = canonical || window.location.href.split("#")[0];
-    const pageTitle = document.querySelector('meta[property="og:title"]')?.content || document.title || "Quatro Folhas Escola de Gastronomia";
-    const shareText = `${pageTitle}\n${pageUrl}`;
-
-    if (navigator.share && window.matchMedia("(max-width: 820px)").matches) {
-      try {
-        await navigator.share({ title: pageTitle, text: pageTitle, url: pageUrl });
-        return;
-      } catch (error) {
-        if (error?.name === "AbortError") return;
-      }
-    }
-
-    window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, "_blank", "noopener,noreferrer");
-  });
-
-  document.body.appendChild(button);
+  if (/^(admin(?:[-.]|$)|portal(?:[-.]|$)|franquia-(?:area|acesso)|parceiros-(?:area|acesso)|sistema-api|escopo-site-sistema|variacoes-visuais)/.test(currentPage)) return;
+  if (!document.querySelector('meta[name="qf:sharing"][content="public"]') || !document.querySelector("main") || document.getElementById("qf-share-script")) return;
+  const script = document.createElement("script");
+  script.id = "qf-share-script";
+  script.src = new URL("share.js?v=20261029-1", document.currentScript?.src || window.location.href).href;
+  document.head.appendChild(script);
 }
 
 installSiteShareButton();
