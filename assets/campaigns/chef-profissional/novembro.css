@@ -1,0 +1,41 @@
+.chef-november-banner { background: #f6edda; border-bottom: 1px solid #dfc58f; color: #59202b; }
+.chef-november-banner > div { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 14px; padding-bottom: 14px; }
+.chef-november-banner p { margin: 0; font: 14px/1.5 Inter, sans-serif; }
+.chef-november-banner p strong, .chef-november-banner p span { display: block; }
+.chef-november-banner p strong { font-weight: 750; }
+.chef-november-banner a { flex: 0 0 auto; color: #741326; font: 700 14px/1.4 Inter, sans-serif; text-decoration: underline; text-underline-offset: 4px; }
+.schedule-card .chef-november-availability { display: inline-block; margin-top: 14px; padding: 7px 12px; border: 1px solid #c9dacc; border-radius: 6px; color: #235940; background: #edf5ee; font: 700 14px/1.4 Inter, sans-serif; }
+.chef-november-dialog { box-sizing: border-box; width: min(500px, calc(100% - 32px)); max-height: calc(100dvh - 40px); margin: auto; padding: 34px 32px 24px; border: 1px solid #e5d4bf; border-top: 5px solid #741326; border-radius: 18px; background: #fffdf8; color: #302a27; box-shadow: 0 24px 100px #17080d44; overflow-y: auto; font: 15px/1.5 Inter, sans-serif; }
+.chef-november-dialog::backdrop { background: #25151b99; }
+html:has(.chef-november-dialog[open]) { overflow: hidden; }
+.chef-november-dialog * { box-sizing: border-box; }
+.chef-november-dialog p { margin: 0; }
+.chef-november-close { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: #f1e9df; color: #5a2430; font: 400 27px/1 Inter, sans-serif; cursor: pointer; }
+.chef-november-dialog .chef-november-label { margin: 0 30px 12px 0; color: #741326; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.chef-november-dialog h2 { margin: 0 0 12px; color: #5b1322; font: 600 31px/1.13 "Playfair Display", Georgia, serif; letter-spacing: -.02em; }
+.chef-november-price { margin: 20px 0 12px; padding: 16px 20px; border: 1px solid #e7d7b4; border-radius: 10px; background: #f7efdf; color: #681329; }
+.chef-november-price > span { margin-right: 6px; font-size: 20px; font-weight: 600; }
+.chef-november-price > strong { font-size: 44px; line-height: 1.1; letter-spacing: -.035em; }
+.chef-november-price small { display: block; margin-top: 6px; color: #66584d; font-size: 12px; }
+.chef-november-dialog .chef-november-next { color: #594c45; font-size: 14px; }
+.chef-november-next span { color: #235940; font-size: 12px; }
+.chef-november-seats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 12px; }
+.chef-november-seats > div { padding: 11px 12px; border: 1px solid #e5ddd1; border-radius: 8px; background: #fff; }
+.chef-november-seats span, .chef-november-seats strong { display: block; }
+.chef-november-seats span { color: #6a5b52; font-size: 11px; }
+.chef-november-seats strong { margin-top: 4px; color: #741326; font-size: 14px; }
+.chef-november-dialog .chef-november-start { margin-bottom: 16px; font-size: 13px; color: #68594e; }
+.chef-november-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 13px 17px; border-radius: 8px; background: #741326; color: #fff; font: 700 14px/1.4 Inter, sans-serif; text-decoration: none; }
+.chef-november-cta:hover { background: #551020; }
+.chef-november-close:focus-visible, .chef-november-cta:focus-visible { outline: 3px solid #28704e; outline-offset: 3px; }
+.chef-november-dialog .chef-november-fineprint { margin-top: 12px; font-size: 10px; line-height: 1.5; color: #75665b; }
+@media (max-width: 600px) {
+  .chef-november-banner > div { align-items: flex-start; gap: 10px; padding-top: 12px; padding-bottom: 12px; }
+  .chef-november-banner p { font-size: 11px; }
+  .chef-november-banner a { max-width: 85px; font-size: 11px; }
+  .chef-november-dialog { width: 100%; max-width: 500px; max-height: calc(100dvh - 20px); margin: auto auto 0; padding: 30px 22px max(20px, env(safe-area-inset-bottom)); border-radius: 18px 18px 0 0; }
+  .chef-november-dialog h2 { font-size: 28px; }
+  .chef-november-dialog { font-size: 14px; }
+  .chef-november-price { margin-top: 16px; padding: 14px 16px; }
+  .chef-november-price > strong { font-size: 40px; }
+}
